@@ -1,0 +1,325 @@
+=== ID: D149 ===
+=== SOURCE: Wiki Monific\drive-download-20260807T143807Z-1-001\Monific y Black-n- Orange_ Sesión de Kickoff_ 2026_01_07 13_33 GMT-05_00 - Notas de Gemini.docx ===
+=== MODIFIED: 2026-08-07 ===
+
+📝 Notas
+7 ene 2026
+ Monific y Black-n- Orange: Sesión de Kickoff
+Invitados Rodrigo Yeo Ricardo Gomez David Ochoa Caroline Bersot Emmanuel Chulin Eduardo Solís Josue Torres Monific
+Archivos adjuntos  Monific y Black-n- Orange: Sesión de Kickoff
+Registros de la reunión Transcripción Grabación
+
+Resumen
+Eduardo Solís dio inicio oficial al proyecto y presentó a Caroline Bersot, consultora inbound, como líder del proyecto, quien junto con David Ochoa serán los contactos directos para Raquel de Monific. El objetivo del proyecto es unificar toda la información de Monific en Hubspot para centralizar y automatizar estrategias, con la fase de mapeo planeada para enero-febrero, implementación para marzo-abril, y capacitaciones para mayo-junio. Raquel, como Champion del proyecto, aceptó la propuesta de Ricardo Gómez de incrementar la frecuencia de las sesiones de mapeo a dos veces por semana (martes a las 2 pm y jueves a las 4 pm), y compartió la documentación exhaustiva que preparó para agilizar el mapeo; el equipo decidió preestablecer el inicio del mapeo con el módulo de ventas, sujeto a la revisión de la documentación de Raquel.
+
+Detalles
+Longitud de las notas: Estándar
+Introducción y Presentaciones del Equipo La reunión comenzó con la bienvenida y las presentaciones de los participantes. Eduardo Solís dio inicio al kickoff oficial del proyecto y presentó a Caroline Bersot como la consultora que liderará el proyecto (00:03:01). Caroline Bersot, consultora inbound, junto con David Ochoa, el implementador del proyecto, serán los contactos directos para Raquel de Monific después de la fase de mapeo. El equipo de mapeo para la fase inicial incluirá a Rodrigo, Ricardo Gómez, y Josué (00:04:16).
+Dinámica y Expectativas del Proyecto Caroline Bersot describió la dinámica de trabajo, que incluye un calendario de lunes a viernes de 9 a 6, horario central de Ciudad de México. Las reuniones incluirán la sesión de kickoff, reuniones de seguimiento (followup), y sesiones de trabajo. Los canales de comunicación serán el correo electrónico para comunicación formal y envío de documentos, ClickUp para gestión del proyecto (cuyo acceso se otorgará a Raquel@monific), y WhatsApp para comunicación rápida o urgente (00:05:59).
+Objetivos y Alcance del Proyecto El objetivo principal del proyecto es unificar la información de Monific (financiera, cobranza, servicios) dentro de Hubspot, que ya posee en los tres hubs principales en versión profesional, para que sea la "fuente de la verdad" y permita una estrategia centralizada y automatizada para atacar a clientes inversionistas y solicitantes de financiamiento. Raquel confirmó que Hubspot será un espejo de la información que desean transmitir, buscando centralización y automatización (00:07:25). La estimación del plan de reuniones trimestrales es: enero-febrero para mapeo de procesos, marzo-abril para implementación, y mayo-junio para capacitaciones a los equipos (00:09:06). El alcance incluye mapeos elite, implementación de automatizaciones y reportes, integración técnica, y soporte continuo (00:10:39).
+Alineación de Sesiones y Rol de Raquel Se definieron los horarios y frecuencia de las sesiones de mapeo. Ricardo Gómez propuso incrementar la frecuencia a al menos dos sesiones por semana para cumplir con los tiempos establecidos de dos meses. Raquel aceptó la propuesta, indicando que este proyecto es su prioridad y que no tiene inconvenientes con la cantidad de sesiones (00:12:21) (00:16:18). Se acordó realizar las sesiones de mapeo los martes a las 2 pm y los jueves a las 4 pm, con Ricardo Gómez enviando las invitaciones (00:18:46). Raquel se confirmó como la Champion del proyecto, siendo la persona para la aprobación final y la dirección para el equipo (00:12:21).
+Propuesta de Mapeo de Procesos y Documentación Raquel informó que durante diciembre preparó una documentación exhaustiva, dividida entre solicitantes e inversionistas, para agilizar las reuniones de mapeo (00:18:46). Este documento ("la Biblia de Monific") plasma los procesos actuales y cómo operan, incluyendo plantillas de comunicación, para evitar que el equipo necesite más información que no sea del equipo tecnológico (API) (00:21:39) (00:28:04). La documentación será compartida una vez que el equipo legal la revise (00:18:46).
+Priorización de Módulos para la Implementación El equipo debatió la mejor secuencia para abordar el mapeo de los tres módulos: ventas, cobranza y servicio. Ricardo Gómez y Caroline Bersot sugirieron la secuencia ventas, cobranza y servicio (00:13:43) (00:25:21). Eduardo Solís propuso priorizar un proceso completo (por ejemplo, solicitantes de financiamiento) en todos los módulos, en lugar de dividir la implementación por módulos. Raquel prefirió que el equipo de implementación, debido a su experiencia en Hubspot, decidiera el orden más eficiente (00:14:59) (00:24:10). El equipo acordó dejar preestablecido comenzar con ventas, pero revisando primero la documentación de Raquel para determinar si se sigue con un segmento de cliente o se abarca todo ventas en paralelo (00:26:42).
+Participación en Sesiones de Mapeo y Siguientes Pasos Ricardo Gómez consultó sobre la necesidad de involucrar a otras personas del equipo de ventas, a lo que Raquel respondió que debido al tamaño de Monific (11 personas), ella domina y conoce los procesos de ventas para ambos tipos de clientes (00:28:04). La documentación extensa de Raquel significa que las sesiones se centrarán en preguntas y respuestas específicas (00:29:05). Caroline Bersot se comprometió a enviar dos correos: uno para la información faltante y los accesos de Leticia a la cuenta de Hubspot, y otro con Ricardo Gómez y Josué para el hilo de comunicación relacionado con el mapeo, donde Raquel enviará la documentación preparada .
+
+Pasos siguientes recomendados
+Caroline Bersot enviará un correo electrónico a Monific solicitando su número de WhatsApp para armar un grupo.
+Caroline Bersot dará acceso a Monific al proyecto en ClickUp con su correo electrónico y le enviará el enlace para que pueda dar acceso a Leticia a la cuenta de Hubspot.
+Ricardo Gomez enviará las invitaciones para las dos sesiones de mapeo que se realizarán los martes a las 2 pm y los jueves a las 4 pm de la próxima semana.
+Monific compartirá con todos la documentación sobre los procesos una vez que el equipo de legal revise los contratos.
+Caroline Bersot enviará un correo electrónico a Monific con lo faltante, como la SL para los accesos, y en paralelo otro correo a Ricardo Gomez y Josué para el hilo relacionado con el mapeo.
+
+Revisa las notas de Gemini para asegurarte de que sean correctas. Obtén consejos y descubre cómo toma notas Gemini
+Danos tu opinión sobre el uso de Gemini para tomar notas en una breve encuesta.
+📖 Transcripción
+7 ene 2026
+ Monific y Black-n- Orange: Sesión de Kickoff - Transcripción
+00:00:00
+
+Caroline Bersot: Raquel, ¿cómo vas? Mucho
+Monific: Igualmente, mucho gusto.
+Caroline Bersot: gusto.
+Monific: Bien, ¿y
+Arkode's Notetaker: reunión está siendo grabada.
+Monific: tú?
+Caroline Bersot: Vamos esperar a los las personas que que están invitadas para que podamos
+Monific: Sí.
+Caroline Bersot: empezar.
+Monific: Va, perdón.
+Caroline Bersot: Y qué tal que fue de fin de año todo
+Monific: Sí, muy bien.
+Caroline Bersot: bien aquí también super bien.
+Monific: a ustedes.
+Caroline Bersot: Tuvimos como un un receso del 22 al 5, entonces ahí descansamos bastante, pasamos con familia y todo muy
+Monific: Me da gusto. Qué
+Caroline Bersot: bien.
+Monific: bueno.
+Caroline Bersot: Hola, Em, ¿cómo vas?
+Emmanuel Chulin: Hola, Caro. ¿Todo bien? Gracias.
+Monific: Hola, mucho gusto.
+Emmanuel Chulin: Hola, buen día.
+Caroline Bersot: Te presento a
+Monific: Bueno,
+Emmanuel Chulin: Hola, Raquel. Qué gusto.
+Caroline Bersot: Raquel.
+Monific: igualmente, mucho gusto, Manuel. Ok.
+Caroline Bersot: Bueno, cuando entre los otros ahí yo empiezo a grabar la sesión para que la tengamos ahí.
+Emmanuel Chulin: Listo. De tu equipo, Raquel, no esperamos a nadie más.
+Monific: No, solamente voy a hacer
+
+00:01:48
+
+Emmanuel Chulin: Listo.
+Monific: yo.
+Caroline Bersot: Sí, aquí ahora es Lalo y y estaríamos completos. Hola, Dave, ¿cómo vas? M.
+David Ochoa: Hola, buenas tardes.
+Monific: Buenas tardes. Mucho gusto, David. Hola, Eduardo.
+Eduardo Solís: Hola, hola. ¿Qué tal? ¿Cómo estás,
+Monific: Muy bien.
+Eduardo Solís: equipo?
+Monific: ¿Y tú?
+Eduardo Solís: Buenas tardes. Igual muy bien. Muchas gracias. ¿Cómo estuvo el cierre de año y el inicio del
+Monific: Qué bueno. Bien, justo era lo que estábamos platicando ahorita.
+Eduardo Solís: año?
+Monific: Muy bien. Este, ahí andamos ya listos para arrancar con todo el 2026.
+Eduardo Solís: Qué bueno, qué bueno. ¿Qué tal estuvo el crucero? ¿Pudiste descansar?
+Monific: Sí, la verdad sí me intenté desconectar un poquito.
+Eduardo Solís: A veces es necesario, a veces es necesario. Eh, pero bueno, hemos llegado finalmente,
+Monific: Sí.
+Eduardo Solís: ahora sí que al día clave. Este, Raquel, antes que nada, nuevamente muchas gracias por la confianza, ¿no? Aquí ya se fue uniendo también el equipo, como saben, eh, hoy va a ser o es el el kickoff ya oficial de del proyecto, ¿no?
+
+00:03:01
+
+Eduardo Solís: Eh, la primera sesión. La idea, digo, ahorita se va a presentar a todo el equipo este Raquel, pero la idea hoy es presentarte un panorama general de cómo vamos a estar abordando el proyecto, que tú conozcas al equipo, ¿no? También eh me comentabas que tú habías estado preparando también algunas cosas, ¿no? Para poder eh ser ágiles, ¿no?, en en el arranque del mismo. Entonces, por ahí agradecerles a todos la presencia y pues nada, inicio por presentar a a Carolline, quien va a ser ahora sí que la consultora que va a estar liderando el proyecto. Caroline, adelante si quieres tú misma presentarte de viva voz y pues de ahí nos arrancamos. A mí ya me conoce
+Monific: He.
+Eduardo Solís: Raquel.
+Caroline Bersot: Gracias, gracias por la por la intro. Eh, Raquel, si te parece, hacemos lo siguiente. Tengo aquí una eh presentación. Eh, utilizamos los 20 primeros minutos para la presentación de la kickof. eh dudas en caso de que tú tengas y los últimos 25 tú presentas porque ya que también ya llegó Ricardo de Arcode y Josué que van a ser las personas responsables del mapeo. Vale,
+Monific: Perdón.
+Caroline Bersot: entonces ahí hablamos sobre eso en los 25 minutos eh finales.
+
+00:04:16
+
+Eduardo Solís: Te
+Caroline Bersot: Entonces, déjame que voy a presentar mi pantalla.
+Monific: M.
+Caroline Bersot: Y bueno,
+Eduardo Solís: Perfecto. Yeah.
+Caroline Bersot: entonces vamos a ver sobre el equipo que vamos a trabajar, dinámica de trabajo, recapitulación de alcances y prioridades y los siguientes pasos que van a ser la el agendamiento de las sesiones de trabajo. ¿Vale? Entonces, el equipo directo, o sea, con quién tú vas a tener eh Raquel contacto más directo, principalmente después de la fase de empapeo, va a ser conmigo, que soy la consultora inbound, vamos a tener las sesiones semanales y también con Dave, que va a ser el implementador del proyecto, o sea, la parte del do metodología. Dale, en esta primer fase que va a ser en este mes y el próximo va a ser con eh Rodrigo y Ricardo, principalmente con Ricardo que está aquí con nosotros y también con Josué que está aquí con nosotros en sesión. Y el equipo de apoyo que es nuestro liderazgo aquí dentro de Black and Orange es M, que está aquí acompañando a nosotros, Leticia, que es la directora de operaciones, que en un dado momento te voy a pedir para dar el acceso a Hubspot a ella para que ella pueda dar a Daí para que podamos hacer todo lo relacionado a la implementación en la cuenta y Jorge que es el client manager.
+
+00:05:59
+
+Caroline Bersot: Entonces, ¿cuáles son las expectativas del proyecto? Bueno, relacionado a horarios, eh nuestro calendario es de lunes a viernes eh de 9 a la 6, horario central de Ciudad de México. Y nuestros formatos de reuniones son la kickof, que es lo que estamos teniendo hoy, las reuniones de followup que vamos a tener a partir de la fase de la implementación. En esta primer fase de mapeo vamos a tener una sesión semanal que es la sesión de trabajo como tal, que es la tercer parte que son las sesiones de trabajo. Dale. Nuestros canales de comunicación. Bueno, para una comunicación formal e envío de documentos, vamos a utilizar el correo. Eh, vamos también a tener un proyecto en Clickup que en realidad ya está creado y yo te voy a dar el acceso y ahí solamente quería preguntarte lo siguiente. ¿Quieres que el acceso sea con tu correo Raquel @monific o el de contacto@monific? ¿Qué te parece mejor?
+Monific: con cualquiera de los dos está bien. O sea, los dos los tengo
+Caroline Bersot: Está bien, perfecto.
+Monific: ligados.
+Caroline Bersot: Okay. Y también vamos a tener un canal de comunicación en WhatsApp para una comunicación un poco más rápida, eh directa de cosas así urgentes que se requiere una respuesta inmediata, pero no un canal formal de comunicación.
+
+00:07:25
+
+Caroline Bersot: Dale. Entonces ahí en el final te voy a enviar un correo con los SL y ahí tú me pasas tu número de WhatsApp para que yo pueda armar un grupo. Dale.
+Monific: Va.
+Caroline Bersot: Bueno, el proyecto en ClickUp, eso va a ser lo que tú vas a ver. Dale, está por fases, el onboarding, el mapeo, las capacitaciones y finalizando la sesión yo también te voy a dar el acceso con el correo. ¿Vale? Bueno, un rápido contexto y objetivos porque Monific llegó hacia nosotros y también hacia Hubspot. Bueno, hoy ustedes ya tienen eh Hubspot en los tres hubs principales en la versión profesional y también tiene algunos sistemas de ustedes que no están, digamos que haciendo una conversa dentro de Hubs, o sea, con Hubspot como tal. Entonces, eh como formularios, las herramientas de performance, etcétera. Entonces, la idea de este proyecto es unificar toda esa información eh financiero, cobranza, servicios justamente para que Hubspot sea su eh fuente de la verdad, ¿no? O sea, entonces ese es lo objetivo que queremos y que vamos a lograr en el final del proyecto. ¿Estamos de acuerdo con eso, Raquel?
+Monific: Sí, o sea, nuestra fuente, la verdad, va a ser como un espejo que quiero que se transmita dentro de hotspot y la principal razón prácticamente es para poder, o sea, con todas estas estrategias lograr un buen ataque a clientes, ya sean inversionistas o solicitantes de financiamiento, todo de forma centralizada y un poco automatizada.
+
+00:09:06
+
+Caroline Bersot: Mm, perfecto. Sí. Bueno, entonces aquí tenemos un plan de reuniones trimestrales donde, como puedes ver, enero febrero es lo estimado que vamos a utilizar para el mapeo de procesos en marzo y abril, bueno, en el final de febrero vamos a tener nuestra primer sesión de followup. Eh, y marzo, abril sería toda la parte de la implementación, donde vamos a tener las sesiones de followup y también de dimensionamiento. O sea, ¿cómo que van a funcionar esas sesiones? serían eh una sesión semanal de followup de unos 30 minutos para decirnos los avances, cosas de retroalimentación de ustedes para nosotros y también una eh mensual, la de dimensionamiento mensual, que es un poco más larga de una hora para que podamos ver unas cosas más un poco densas, ¿vale? Y estimamos que mayo y junio estemos con las sesiones de capacitación con los equipos. Dale, para la utilización de Hubspot,
+Monific: Ok.
+Caroline Bersot: el learning, ¿vale? Y aquí también eh yo puse rápidamente la Gant. Eh, esa presentación se va para ti. Dale, yo también te voy a enviar esa presentación, pero yo sé que eso ya estaba en la presentación del alo, pero yo puse aquí también para que tú tengas tengas una idea de los tiempos estimados.
+
+00:10:39
+
+Caroline Bersot: Bueno, y aquí tenemos los alcances de nuestro proyecto. Entonces, primero vamos a empezar con el proceso de mapeos elite, que van a tener eh el levantamiento, análisis de documentación,
+Monific: Vamos.
+Caroline Bersot: flujos operativos, propiedades, qué se debe pasar, por ejemplo, de expediente azul y a Hubspot y viceversa. Todo eso vamos a tener documentado y en el final de proyecto eso se va eso se va para ti para tener una aprobación final y toda la parte de la ejecución después de este mapeo. Entonces yo voy a actuar como tu consultora y project manager eh para la dirección estratégica de este proyecto. Dave nos va a ayudar con la parte de la implementación. es h uno de los mayores expertos de HSpot que yo ya he conocido y yo he trabajado bastante con en partners eh y puedo asegurar que es un excelente profesional. También vamos a tener una una parte para la integración eh técnica, revisión de APIs para ayudarle con ayudarles con la conexión e integración. Eh, vamos a implementar también toda la parte de las automatizaciones, los reportes y después la capacitación que va a ser muy direccionada para los equipos que están utilizando HSpot, ¿vale? y el soporte funcional continuo. Bueno, y aquí el plan de reuniones, yo dejé esos horarios y aquí, Ricardo, yo no había contemplado contigo si está bien para ti, pero aquí vemos eh sobre eso.
+
+00:12:21
+
+Caroline Bersot: Entonces, si quiere eh Raquel, no sé si tiene alguna duda eh relacionado a la presentación.
+Monific: No, no tengo ninguna duda y cualquiera de los dos horarios me queda bien. Entonces, ahora sí que lo que Ricardo se le acomode
+Caroline Bersot: Perfecto.
+Monific: más.
+Caroline Bersot: Entonces, aquí si quieres le voy a Ah, ya. Y te voy a pedir también, te voy a enviar el enlace, este enlace para que pueda dar acceso a Leticia para que nosotros ya podamos ingresar a la cuenta. Dale, Raquel, solamente quiero confirmar, tú vas a ser la Champion del proyecto, ¿cierto? O sea, cualquier aprobación es contigo la palabra final. O sea, siempre me direcciono contigo. Perfecto. Entonces,
+Monific: C.
+Caroline Bersot: si quieren eh Ricardo, no sé si me puede confirmar si alguno de esos horarios se queda bien, porque ahí ya pasamos para que Raquel pueda. Tú estás muteado.
+Ricardo Gomez: Ahí voy, ahí voy. Estoy revisando justamente mi agenda. Sale. Digo, de momento creo que sí está todo disponible. Solamente aquí. Eh, Raquel, tal vez me gustaría hacer la mención, el expandir un poquito más el número de sesiones por semana, ¿sale? porque porque quieras o no van a ser varios procesos, entiendo que son tres.
+
+00:13:43
+
+Ricardo Gomez: Entonces, e a ver, la primera pregunta es, ¿estamos alineados y se te hace correcto que iniciemos con el mapeo primero del proceso de venta, después del de cobranza y final del service? ¿O necesitas tal vez cambiar ese ese flujo?
+Monific: Yo ahí lo que Ah, bueno, si quieres Eduardo, habla y ya si quieres
+Eduardo Solís: Gracias Raquel, ¿no? Justo yo iba a mencionar que eso más bien creo que dependía de tu input este Raquel, ¿no? Porque obviamente dentro de lo que has trabajado en estas semanas y lo que los quieres presentar hoy, creo que también hay muchas cosas que nos pueden dar mucha luz sobre cuáles son los primeros puntos a atacar dentro de todo el proyecto, ¿no? Y cuáles serían esas prioridades. Entonces, yo diría que ese input más bien es el que tú nos indiques.
+Monific: Sí, justo. Este, gracias, Eduardo. Y como preguntas, Ricardo, mira, yo al final del camino tenemos estos tres módulos que son sales, service y el de marketing. Tenemos también los dos tipos de clientes que son los inversionistas por un lado y los que solicitan financiamiento por el otro
+Ricardo Gomez: Hm.
+Monific: lado. Lo que yo estuve haciendo durante este mes, que fue diciembre fue bajar mis procesos así como Eduardo me lo pidió para que ustedes me ayuden a entender por dónde conviene empezar en esta primera
+
+00:14:59
+
+Eduardo Solís: Ok.
+Monific: fase que es el TB. O sea, yo prefiero que ustedes me digan mejor por dónde podríamos arrancar a que yo les diga, porque ustedes tienen más experiencia que yo en en toda la parte de Hotspot. Yo tengo experiencia en mi modelo de negocio, pero no en cómo bajarlo hacia Hobspot. Entonces, prefiero adaptarme a lo que ustedes me digan basado en lo que yo les platiqué y la
+Eduardo Solís: el mapeo.
+Monific: documentación.
+Ricardo Gomez: Okay. E ahí no sé,
+Eduardo Solís: Correcto.
+Ricardo Gomez: Eduardo, tal vez ahorita tú eres el que tiene más contexto. Mi propuesta sería avanzar ventas, cobranza, ya después un tema de de service, pero igual no sé si hay algo que me esté
+Eduardo Solís: Esa sería esa sería mi lógica también,
+Ricardo Gomez: faltando.
+Eduardo Solís: Ricardo, pero sí me gustaría ver primero lo que nos preparó Raquel para hoy y ya basado en eso, este, tomar la decisión, ¿no? Y y avanzar.
+Ricardo Gomez: Perfecto. Okay, me hace sentido. E, entonces eso queda pendiente con el tema de las sesiones. Entonces ahí, Raquel, como te proponía que fueran al menos dos sesiones por semana de mapeo, ¿sale? Eh, para poder alcanzar con los tiempos y porque vamos en esas en esos dos meses que que propone Caro, eh, deben de ir de nuestro lado, ¿sale?
+
+00:16:18
+
+Ricardo Gomez: Sesiones de mapeo para entender sus procesos, obviamente tiempo operativo de nuestro lado para entender la información, eh toda la data que me pudieras compartir y también vamos a tener sesiones en las cuales les vamos a estar presentando estos entregables, ¿sale? digas un flujograma, un máster de implementación. Digo, ya después eh explicamos de qué va todo esto, ¿no? Pero el punto es que para poder abarcar con todo eso, creo que sí hay que ser un poquito más, digámoslo así, como agresivos en el tema de las sesiones, ¿vale? Entonces ahí te propongo que sean dos igual.
+Monific: Sí,
+Ricardo Gomez: No sé si tengas algún inconveniente con esto,
+Monific: está perfecto, ¿no? A ver, yo este este primer semestre del año o trimestre o el tiempo que nos tome,
+Ricardo Gomez: No.
+Monific: me quiero dedicar exclusivamente a este proyecto. Entonces, si necesitamos hacer dos sesiones a la semana o las que se necesiten, no tengo ningún problema. Ahorita lo que más quise avanzar justo en diciembre para que podamos arrancar con un poco de información y que ustedes no estén en blanco es con todo lo que hacemos hoy y cómo estamos hoy. Y mi idea es que en estas sesiones sé que van a necesitar ustedes cosas más de nuestro equipo tecnológico, ellos son un poquito más lentos, entonces ahí yo voy a estar atrás de ellos y por eso quise avanzar ahorita con eso.
+
+00:17:28
+
+Monific: Yo no tengo tema en la cantidad de sesiones que necesiten. Prefiero que sea un trabajo de calidad a que les quite tiempo a ustedes, no
+Ricardo Gomez: Perfecto, por mí está bien. Entonces,
+Monific: sé.
+Ricardo Gomez: lo podemos establecer ahorita al menos como dos sesiones y ya después vamos viendo si se ocupamos si ocupamos más, ¿no? Pues por mí está está bien igual, Caro. Eh, los días que mencionas me hacen bien. Eh,
+Eduardo Solís: Var
+Ricardo Gomez: no sé si vi por ahí que era miércoles y jueves. Tal vez yo propondría que fuera un poquito más espaciado, digas un lunes, miércoles, martes, jueves, pero igual no no sé también caro tu disponibilidad, eh, Raquel. Digo, yo tengo ahorita un poco de agenda
+Monific: Yo puedo cualquier día de la semana,
+Ricardo Gomez: abierta.
+Monific: excepto los lunes, que es como mi día un poquito más pesado en cuanto a reuniones y cuanto a metodología de trabajo. Fuera de esos días me puedo acomodar sin ningún
+Caroline Bersot: Dale,
+Ricardo Gomez: Okay,
+Caroline Bersot: entonces.
+Ricardo Gomez: Entonces,
+Monific: problema.
+Caroline Bersot: Rápidamente, equipo, puede ser, vamos a estabalecer de pronto dos fechas,
+Ricardo Gomez: S
+Caroline Bersot: eh, como no sé, todos los martes, eh, a las 2 de pronto y los jueves a las 4, ¿qué les parece?
+
+00:18:46
+
+Caroline Bersot: o el viernes a las
+Monific: No,
+Caroline Bersot: 2 te queda bien también a
+Monific: los jueves a las 4 y los martes a las 2. A mí me queda
+Caroline Bersot: ti, eh, Ricardo.
+Ricardo Gomez: Sí, sí, sí, totalmente.
+Caroline Bersot: Entonces,
+Ricardo Gomez: Ah.
+Caroline Bersot: martes 2 pm y jueves 4 pm.
+Eduardo Solís: Ah.
+Caroline Bersot: Dale, Ricardo. Esa invitación, por lo que entiendo, sale desde ti. Correcto.
+Ricardo Gomez: Okay. Sí, claro que sí. Sin tema ahorita envío esas
+Caroline Bersot: Perfecto, perfecto.
+Ricardo Gomez: agendas.
+Caroline Bersot: Entonces ahí eh por Rangel, si quiere ahí platicarnos de lo que ya hiciste. Perfecto. Vamos por esto.
+Monific: Sí. Este, un segundo. A ver, lo que yo estuve haciendo este, como les dije, este diciembre fue intentar plasmar lo más que se puedan los procesos así para que las reuniones sean lo más fluidas posibles. Una vez que el equipo de legal y todo me revisen los contratos y ya se los regresé a ustedes, ya les comparto esto para que lo puedan leer, pero lo dividí entre solicitantes y entre inversionistas y cómo está hoy en día nuestra app y nuestra página web para que a ustedes no les queden ningunas dudas de cómo funciona los proyectos desde que llegan hasta que terminan prácticamente.
+
+00:20:16
+
+Monific: Y para los inversionistas, desde que llegan en campañas hasta que se convierten en un inversionista y siguen invirtiendo. Eduardo no me va a dejar mentir ahí tengo un poquito de TOC, entonces siempre intento meter la mayor cantidad de información posible. Si se abruman, prefiero que me lo digan. Yo les prefiero explicar, pero acá, o sea, lo hice como en un modo de libro también un poquito para que aunque terminemos una reunión siempre que tengan alguna duda lo puedan o consultar acá. o ver conmigo y lo puse como por órdenes. Al final del camino, les digo, es un documento bastante largo, lo dividí entre los dos tipos de clientes y pues es como operamos. Ahorita no se los voy a leer porque siento que es mejor que ustedes lo vean, pero eso es lo que preparé para empezar a arrancar.
+Eduardo Solís: Todo eso, este, Raquel, ¿no lo vas a compartir para que puedan echarle el ojo a Ricardo y Caroline,
+Monific: Sí, se los voy a compartir a todos.
+Eduardo Solís: y seguirá revisando en las
+Monific: O sea, la idea es que eso es de ustedes, o sea,
+Eduardo Solís: sesiones?
+Monific: va a ser de ustedes. Es como literalmente nuestro libro de cómo operamos
+Eduardo Solís: S. Eso va a ser oro para Ricardo
+Monific: hoy.
+Ricardo Gomez: Sí, justo.
+
+00:21:39
+
+Ricardo Gomez: Sí, sí, totalmente. No más hay pregunta Raquel, en esos documentos por ahí mencionaste si entendí mucho temas de ventas, también por ahí podemos ver procesos de cobranza, todo el tema de service.
+Monific: Está todo. O sea,
+Ricardo Gomez: Ok.
+Monific: yo no lo dividí por módulo por lo que les comentaba. Al final, chance ustedes me dicen que una cosa puede estar en un módulo y yo tengo noción de que puede estar en otro. Yo les puse mis procesos como están al solicitante desde que llega hasta que termina su proyecto. Y cuando termina su proyecto me refiero a que adentro de eso que está viva la operación,
+Ricardo Gomez: Ah.
+Monific: le estamos cobrando,
+Ricardo Gomez: Yeah.
+Monific: le estamos haciendo esto, el otro. Entonces, ya para que ustedes me puedan ayudar a decir,
+Ricardo Gomez: Ok.
+Monific: "Oye, esto va acá, esto va en un workflow, esto va en una secuencia y a partir de eso ya irlo trabajando." Incluso también metí
+Eduardo Solís: Ay!
+Monific: este plantillas de comunicación para que solamente copiemos y peguemos, o sea, ahí cuando lo vean van a ver que tengo un poco de TOC, pero todo lo que necesiten en esa parte como más operativa lo van a tener a la mano luego luego. y cosas más tecnológicas en cuanto a cosas que tengan que ver con sistemas, algo así pueden llegar a tardar un poquito más, pero igual tengo buena comunicación con el equipo de TI y me ayudan mientras Pres.
+
+00:22:51
+
+Ricardo Gomez: Muy bien. Okay. Em, digo, está perfecto. Siento que es mucha información e que estaremos revisando. Entonces ahí no sé, Lalo, tu visto bueno o tu bobo de esta misma lógica, o sea, ventas, después tema de cobranza, ya después temas de service como justamente lo empezó a bajar Raquel, lo tiene bajado. Ah.
+Eduardo Solís: Yo lo haría realmente como lo está planteando Raquel, ¿no? Porque al final de cuentas no podemos implementar nada más la parte de atracción para los inversionistas o la parte de atracción para los, ¿cómo se llama? eh eh este proyectos para los solicitantes. Exactamente,
+Monific: It
+Eduardo Solís: porque el proceso quedaría pues ahora sí que incompleto, ¿no? Y de lo que se trata es de depurar un proceso. Entonces,
+Ricardo Gomez: Mhm.
+Eduardo Solís: yo lo que haría es iniciar, a lo mejor definir en conjunto con Raquel. Prioridad número uno, para mí prioridad número uno, digo, tal vez tú, Raquel, tendrás otro enfoque, pero para mí prioridad número uno probablemente sea eh eh los proyectos, ¿no? Los los solicitantes, porque al final de cuentas hay un proceso de cobranza que va detrás de ahí y que creo que impacta mucho y es un foco importante para el negocio, ¿no?
+
+00:24:10
+
+Eduardo Solís: Entonces, a lo mejor yo iniciaría con ese proceso en todos los módulos y ya eh a lo mejor finalizando ese empezar a trabajar el otro el otro proceso completo, ¿no? Ahora sí que el de el de inversionistas, o sea, yo lo vería así más que dividirlo como tal en los módulos, también lo yo me enfocaría en finalizar el proceso completo para cada uno de los perfiles de usuario, ¿no? Porque se trata de que el progreso sea fluido para ellos en cada una de las etapas.
+Ricardo Gomez: Ok.
+Eduardo Solís: No sé. sentido a todos.
+Monific: Yo no tengo, perdón que los interrumpa acá, yo no tengo tema en cómo se empiece o por dónde empezar. Prefiero que ustedes lo revisen y me digan por dónde vale la pena empezar o por dónde a ustedes se les hace más fácil empezar. Al final del camino les digo, es una es mucha información. Al ser una fintech y ser una empresa regulada. Tenemos muchos procesos, hacemos muchas cosas. El punto justamente es como organizarlo todo, eh, que fue lo que hice ahorita como lo que tenemos también. Incluso puse un tob ideal, pero chanzo ustedes me dicen, "El beb que estás proponiendo no es viable, jala más por este lado. Al final ustedes son los expertos." Entonces yo ahí sí me acoplo a lo que me
+
+00:25:21
+
+Ricardo Gomez: Okay.
+Eduardo Solís: Sí,
+Monific: digan.
+Eduardo Solís: porque al final de cuentas va a haber va a haber procesos que se van a no va a replicar el 100% pero que van
+Ricardo Gomez: Ok.
+Eduardo Solís: a converger o no procesos, sino configuraciones. Por ejemplo, las los canales de atracción, ¿no? Redes sociales, todo eso, muy posiblemente haya ese mismo canal impacte tanto al proceso de solicitantes como el proceso de inversionistas, ¿no? Entonces creo que hay cosas que se pueden, digamos, implementar en paralelo, ¿no? Pero hay cosas que si tienen que ser detalladas, detalladas por cada ahora sí que unidad de negocio, tanto para los solicitantes como para los inversionistas. Yo lo vería de esa manera, no sea aquí igual este Caroline, Dave, M, George también por allá, si ustedes vean lo vean de la misma manera.
+Caroline Bersot: Yo, bueno, yo considero que eh el empiezo por ventas, cobranzas y servicio, por mi experiencia sería lo más lógico. Yo aquí estoy de acuerdo con con Ricardo. Sí.
+Ricardo Gomez: Okay.
+Eduardo Solís: Pero entonces ahí habría tendría que ser paralelo si es por módulo. Entonces paralelamente se tendrían que implementar ventas tanto para nuevos proyectos o nuevos solicitantes como para nuevos este eh nuevos solicitantes como para
+
+00:26:42
+
+Caroline Bersot: solicitantes. inversionistas.
+Eduardo Solís: nuevos inversionistas.
+Ricardo Gomez: Okay. Digo, tal vez lo podemos dejar como preestablecido porque entiendo que también hace falta revisar toda la información de Raquel. Lo podemos dejar así, ¿no? Primero empezar con ventas, ya después vemos si nos seguimos corrido con un tipo de segmento de cliente o abarcamos todo ventas. Eh, ¿qué opinan? E, okay. A ver, entonces digo, creo que vamos alineándonos, o sea, la siguiente semana, Raquel. Entonces, empezamos a tener estas sesiones de mapeo. Ahí la pregunta es, eh, suponiendo que iniciaremos con ventas, eh necesitamos a personas diferentes del equipo de ventas para este tipo de sesiones? O sea, me explico, por ejemplo, si vamos a a mapear ventas, lo que solemos hacer o solemos pedir al cliente es justamente, ¿no?, tal vez una persona con un rol un poco más alto, díganse un gerente, un directivo, un coordinador que justamente sea el champion de ese proceso, ¿no? Conozca la perfección, en dónde estamos y a dónde queremos ir, ¿sale? Entonces, e igual no sé si tal vez tú serías esta persona o alguna otra.
+Monific: Mira, al final, Ricardo, la ventaja y desventaja de Bonifica es que es una empresa chica,
+
+00:28:04
+
+Ricardo Gomez: Ok.
+Monific: somos 11 personas y yo llevo casi todo. Entonces, en esta parte no te preocupes, la parte de ventas, tanto de inversionistas como de solicitantes, la domino, la conozco y sé hacia dónde vamos. Eh, específicamente la parte de solicitantes a nivel comercial, yo hice el flujo y quiero mejorarlo, pero no lo llevo yo como tal, lo lleva ya una persona más. Si yo veo que es necesario que se incluya en alguna reunión puntual, se los haré saber con todo el gusto, pero es mejor que que lo canalicemos a través de mí y a partir de eso si llegamos a necesitar información o cosas que ustedes lleguen a necesitar, yo las vaya pidiendo. Pero intenté con estos documentos evitar que necesiten más que cosas del equipo tecnológico, que son un poco más temas de la API y eso.
+Ricardo Gomez: Okay, muy bien. Okay, está perfecto. Entonces digo,
+Eduardo Solís: Hay que revisar la documentación.
+Ricardo Gomez: creo que todo recae que revisemos.
+Eduardo Solís: Entonces,
+Ricardo Gomez: Ajá.
+Eduardo Solís: sí,
+Ricardo Gomez: Todo recae que revisemos el documento,
+Eduardo Solís: la
+Ricardo Gomez: ¿no? Eh,
+Eduardo Solís: documentación.
+Ricardo Gomez: lo explico más que nada. ¿Por qué? Porque digo de manera normal, ¿no?
+
+00:29:05
+
+Ricardo Gomez: Con todos los clientes no suelen tener como tanta robustez en su información, es un poco más al revés, ¿no? O sea, llegamos con ellos, oye, ¿cómo es tu proceso? Platícame, etcétera, etcétera. Entiendo que contigo va a ser un poco diferente, ¿no? Y casi casi las sesiones van a ser mínimas. y en función casi casi como de pregunta respuesta, ¿no? Oye, tengo esta duda, ¿qué pasa con esto? No te entendí, etcétera, etcétera. Entonces, digo, creo que sin tema lo podemos trabajar
+Monific: Sí,
+Ricardo Gomez: así.
+Monific: o sea, lo intenté hacer justo de esa forma para que tengan ustedes ya una Biblia de Bonific, pero si prefieren la otra manera también lo podemos hacer. La que quieran, yo me adapto.
+Ricardo Gomez: Okay, está bien. Digo,
+Eduardo Solís: Yo creo que es un mix.
+Ricardo Gomez: vamos a avanzar.
+Eduardo Solís: Yo creo yo creo que va yo creo que va a terminar siendo un mix, ¿no? Porque obviamente los documentos nos van a dar mucha claridad de inicio, pero las conversaciones en sesiones se van a volver en eso, ¿no? En en oye, esta es la mejor manera, esta no es la mejor manera.
+
+00:29:56
+
+Eduardo Solís: Fíjate que a lo mejor esto puede ser en otro momento, esta es una prioridad porque este impacta de esta manera este otro proceso. Entonces creo que sí suma mucho y va a terminar siendo ese ese mix.
+Monific: Buenísimo.
+Ricardo Gomez: Muy bien.
+Eduardo Solís: Ah.
+Ricardo Gomez: Vale. Eh, pues listo, Caro. Eh, igual recapitulando. A mi lado, yo quedo con la parte de agendar estas dos sesiones para la siguiente semana. Eh, ahí Raquel, suelo compartir una especie como de agenda o descripción de lo que veríamos, ¿vale? Suele ser a veces un poco genérica, eh, pero digo, conforme poco a poco vayamos avanzando se va a volver un poco más precisa, ¿no?, o específica. Y pues nada, o sea, esperamos ahí la tu solicitud, pues de la de que nos compartas esa información para empezar a revisarla, ¿sale?
+Monific: Sí, ahorita yo ya le pedí al equipo de legal que me mande los contratos en caso de que tenga comentarios. Una vez que me los manden y firmemos, ya les hago llegar toda la documentación y también sería bueno si la empiezan a leer que para que no se les vaya ninguna duda ahí anoten sus dudas y en las siguientes reuniones pues verlas también puntuales como sugerencia. independientemente eh pues ahorita veo cómo va el equipo legal y les mando un correo de regreso.
+Ricardo Gomez: Super.
+Eduardo Solís: Perfecto.
+Monific: Mil gracias a todos por su tiempo y pues feliz año.
+Ricardo Gomez: Gracias.
+Eduardo Solís: Ah.
+Caroline Bersot: Listo. Eh, Raquel, solamente una última cosa entonces para dejar bien organizado. Te voy a enviar un correo con eh lo faltante, ¿vale? O sea, de la de la SL para los accesos y en paralelo te voy a enviar un otro correo ahí sí copiando a Ricardo y a Josué para que tengamos este hilo relacionado todo con lo del mapeo. Ahí tú puedes enviar la documentación y viceversa. Perfecto, perfecto. Entonces, eh, gracias Ricardo, gracias equipo, gracias Raquel, y ahí nos vemos la próxima semana.
+
+La transcripción finalizó después de 00:32:12
+
+Esta transcripción editable se ha generado por ordenador y puede contener errores. Los usuarios también pueden cambiar el texto después de que se haya generado.

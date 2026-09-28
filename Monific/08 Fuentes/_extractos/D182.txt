@@ -1,0 +1,85 @@
+=== ID: D182 ===
+=== SOURCE: Wiki Monific\drive-download-20260807T144042Z-1-001\3. Martes 3 de Febrero 2026.docx ===
+=== MODIFIED: 2026-08-07 ===
+
+Minuta – Reunión de hoy (Integración CallPicker + HubSpot y Demo Moonflow / Cobranza)
+Fecha: 03 de febrero de 2026
+Duración: 60 min (estimado por lo conversado)
+Objetivo macro: Alinear el plan de integración de telefonía (CallPicker) y aterrizar el flujo operativo de cobranza (Moonflow) para migrarlo y automatizarlo en HubSpot.
+Entregables (tareas) Entregables 3 de Febrero
+
+1) Asistentes
+Raquel (Monific) – Admin / Owner en plataformas (HubSpot y CallPicker)
+Black & Orange – Equipo de implementación (Ricardo, Dave, Josué)
+Vianey (Monific) – Dueña operativa de cobranza / Moonflow (presentación y proceso)
+
+2) Agenda
+Coordinación para integración CallPicker (reunión con soporte de CallPicker).
+Demo Moonflow: alta de solicitantes, órdenes de pago, pagos parciales, mora y plantillas de cobranza.
+Aterrizar lineamientos para automatización en HubSpot: recordatorios, clasificación de proyectos, tareas internas y escalamiento.
+Próximos pasos y calendario: siguiente sesión enfocada en Service.
+
+3) Puntos clave y acuerdos
+A) Integración CallPicker (Telefonía)
+Se acordó que:
+Para conectar CallPicker correctamente, es necesario levantar un ticket con soporte de CallPicker y coordinar una sesión conjunta (CallPicker + Black & Orange + Monific).
+El ticket debe incluir en copia únicamente a Dave y Ricardo por parte de Black & Orange (evitar cadenas largas).
+La sesión ideal es de hasta 1 hora para cerrar configuración sin fricción.
+Temas a validar con CallPicker:
+Si CallPicker ofrece función tipo centralita / enrutamiento inteligente (derivar a agente disponible).
+Si no lo ofrece, evaluar si la telefonía nativa de HubSpot cubre ese requerimiento.
+Confirmar que se puede mantener el mismo número y cómo queda el ruteo (CallPicker vs HubSpot).
+3 frentes técnicos que se revisarán en la sesión:
+Conexión de contactos (sincronización/identificación).
+Widget de llamadas (funcionamiento dentro del flujo comercial).
+Sincronización de actividad (logs/registro en HubSpot, actualización y trazabilidad).
+Permisos requeridos:
+Monific debe asegurar que en la sesión haya al menos 1 persona con permisos admin en HubSpot y CallPicker.
+Se confirmó que Raquel cuenta con permisos en ambas; TI solo se suma si se detecta un bloqueo específico (no se considera indispensable por ahora).
+
+B) Demo Moonflow – Cobranza (Proceso actual)
+Moonflow hoy se usa para:
+Alta de solicitantes (clientes) y carga de órdenes de pago por proyecto/campaña.
+Gestión de estatus: Pendiente / Vencido / Pagado / Pagado parcialmente.
+Registro de pagos: manual (casos puntuales) y carga masiva (operación normal).
+Envío de campañas de cobranza por correo (plantillas y calendario ya definidos).
+Reglas operativas que quedaron claras:
+Pago parcial no “resetea” mora: si la cuota venció, sigue contando días de mora aunque exista abono; el estatus queda “pagado parcialmente”.
+Intereses moratorios: hoy no se ha operado plenamente con cálculo real en todos los casos, pero el diseño del sistema respeta fecha de vencimiento para permitirlo.
+Para liquidación (capital), además del sistema hay acciones “extra-plataforma”: cartas, seguimiento y confirmación del medio de pago (venta/refinanciamiento/flujo propio).
+Inputs / Fuente de verdad:
+El Admin de Monific es la fuente principal (calendarios, montos, campañas, comisiones, garantías, etc.).
+Moonflow actúa como capa operativa para recordatorios y control (hoy con demasiada carga manual).
+
+C) Hallazgos operativos y visión “To-Be” en HubSpot
+Dolor actual identificado:
+Mucho “trabajo de manos”: revisar pagos, conciliar, exportar/armar plantillas, cargar en Moonflow, mandar recordatorios.
+Riesgo de escalamiento por falta de visibilidad o saturación cuando crezca el volumen.
+Dirección acordada:
+Centralizar en HubSpot la automatización de:
+Recordatorios por WhatsApp (prioridad por reacción inmediata) + soporte por correo.
+Clasificación por tipo de proyecto: Rendimiento fijo vs variable y además Legacy vs nuevo modelo (para moras/condiciones).
+Escalamiento: que lo automático haga la “cobranza preventiva” y solo cree tareas internas cuando ya hay incumplimiento real.
+Recordatorios internos para liquidación: crear tarea automática 3 meses antes del vencimiento para pedir plan (pago/refinanciamiento/venta) y activar plantilla/carta.
+
+4) Entregables / Tareas (con responsables)
+Abrir ticket con soporte CallPicker y copiar a Dave + Ricardo (Black & Orange).
+Responsable: Raquel
+Resultado esperado: Cadena activa con propuesta de horarios y confirmación de sesión.
+Coordinar sesión de 1 hora con CallPicker para revisar los 3 frentes (contactos, widget, sync HubSpot).
+Responsables: Raquel + Black & Orange + Soporte CallPicker
+Dependencia: Ticket abierto.
+Compartir plantillas Excel (carga masiva):
+Plantilla de órdenes de pago
+Plantilla de pagos masivos
+Responsable: Vianey
+Instrucción acordada: enviarlas a Raquel para que las suba a la carpeta “Entregables pendientes” y anexarlas a esta minuta.
+Revisar el documento compartido la semana pasada (SLA/flujo de cobranza) y devolver comentarios / propuestas de reportería.
+Responsables: Black & Orange
+Salida esperada: recomendaciones “To-Be” (qué automatizar, qué reportes valen oro, qué sobra).
+
+5) Decisiones tomadas
+La integración con CallPicker sí requiere ticket y reunión con su soporte.
+WhatsApp es el canal prioritario para impulsar pagos a tiempo; correo queda como soporte formal/registro.
+El enfoque del rediseño es: automatizar lo repetible, escalar tareas humanas solo cuando hay incumplimiento real o eventos críticos (ej. liquidación).
+

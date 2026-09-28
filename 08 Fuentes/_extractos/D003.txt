@@ -1,5 +1,0 @@
-﻿=== ID: D003 ===
-=== SOURCE: Claves de servicio Hubspot\Clave de servicio.txt ===
-=== MODIFIED: 2026-07-07 ===
-
-[CREDENCIAL RETIRADA - vive cifrada en la boveda. Usa el proxy: http://127.0.0.1:8787/Monific/]

@@ -1,0 +1,619 @@
+=== ID: D152 ===
+=== SOURCE: Wiki Monific\drive-download-20260807T143807Z-1-001\Presentación de Flujograma de Servicios - Monific_ 2026_03_12 10_58 GMT-05_00 - Notas de Gemini.docx ===
+=== MODIFIED: 2026-08-07 ===
+
+📝 Las notas
+12 mar 2026
+Presentación de Flujograma de Servicios - Monific
+Invitados Caroline Bersot David Ochoa Monific Ricardo Gomez Josue Torres
+Archivos adjuntos Presentación de Flujograma de Servicios - Monific
+Registros de la reunión Transcripción Grabación
+
+Resumen
+Revisión exhaustiva del flujograma de servicio con enfoque en canales, roles, tipos de tickets, y el acuerdo de SLA de 5 minutos.
+
+Revisión del Flujograma de Servicio
+Se presentó el flujograma de servicio, identificando 5 canales de entrada y 5 tipos de tickets de atención al cliente, incluyendo una corrección en el acrónimo para un rol ejecutivo. Se acordó que el contacto principal para la documentación del proceso del equipo de TI debe ser por rol o equipo y no por nombre.
+
+Definición de Lógica de Hotspot
+La lógica de interacción inicial en Hotspot implica la clasificación del tipo de solicitud y la validación del contacto para la creación de tickets y su asignación. El equipo acordó el ajuste del SLA de primera atención a 5 minutos, y los tickets se asignarán al ejecutivo vía round robin según el horario activo.
+
+Flujos de Atención y Reclamaciones UNE
+Se definieron los flujos de atención para los 5 tipos de tickets, incluyendo el traspaso directo de tickets Tipo C al ejecutivo de solicitantes para evitar pasos intermedios. El proceso para reclamaciones formales (Tipo E/UNE) requiere el envío de un formato por correo y la reasignación a Dirección Comercial para la emisión de un dictamen.
+
+Detalles
+Revisión inicial del flujograma de servicio y nomenclatura: Josué Torres presentó el flujograma de servicio para la atención al cliente de inversionistas, destacando el uso de acrónimos para puestos y equipos, un cuadro de simbología, y la interacción clave con Notion (00:00:00). Monific solicitó corregir un acrónimo, señalando que "Guillermo" es Ejecutivo de Atención a Solicitantes y que "Sasha" es la ejecutiva de atención a clientes de fin de semana, con una vacante por cubrir entre semana (00:01:24).
+Alineación del equipo de Tecnología de Información (TI) y roles: Se discutió la composición del equipo de TI con el que se realizó la alineación técnica, incluyendo a Jesús (CTO), Dani Torres, Gustavo Torres para tickets sencillos, y Edrey, Edgar, y Frida Luna enfocados en la parte de diseño y la *landing*. Se acordó nombrar a "Jesús" como el principal contacto, priorizando el rol o equipo sobre el nombre de la persona en la documentación del proceso (00:02:36).
+Identificación de canales de entrada para atención a clientes: Josué Torres mencionó que el cliente ingresa a través de tres canales activos identificados: WhatsApp, Chat Web y el formulario de la UNE. Monific indicó que existen dos canales adicionales activos que no son tan frecuentes, como un formulario que promueve un "plan de inversión a la medida" (00:04:02).
+Clasificación de nuevos canales y leads comerciales: Monific explicó que el formulario del "plan a la medida" actúa como un gancho para la captación de *leads*. Josué Torres sugirió que este ingreso se mapee dentro del flujo de inversionistas y la parte comercial, ya que se relaciona con temas de captación y no con la atención inmediata al cliente (00:05:15).
+Definición de tipos de tickets de atención: Josué Torres detalló los cinco tipos de tickets que se están considerando: Tipo A (problema técnico), Tipo B (información o dudas sobre inversión), Tipo C (solicitante), Tipo D (queja o inconformidad), y Tipo E (reclamación formal ante la UNE) (00:06:37). Se destacó que los tickets Tipo D y Tipo E tendrán una interacción clave para intentar resolver las quejas antes de que escalen a una reclamación formal (00:07:46).
+Lógica inicial de interacción y clasificación en Hotspot: La interacción inicial implica solicitar al cliente su nombre y correo, y clasificar el tipo de solicitud mediante un desplegable de preguntas frecuentes alineado con el centro de ayuda. Hotspot validará si el contacto está registrado y, en caso contrario, creará un nuevo contacto, para después crear el ticket y asignarlo a un ejecutivo (00:08:59) (00:11:35).
+Asignación de tickets y cronómetro de SLA de primera atención: La asignación de tickets al ejecutivo se realizará por *round robin* y según el horario activo (persona entre semana y fines de semana). Se propuso un tiempo máximo para el SLA (Acuerdo de Nivel de Servicio) de primera atención de 15 minutos, aunque Monific sugirió ajustarlo a 5 minutos, ya que es más estricta con sus agentes. El equipo acordó ajustar el SLA a 5 minutos (00:13:06) (00:17:25).
+Funcionamiento técnico de la creación de tickets en paralelo con la conversación: David Ochoa explicó que cuando un cliente se comunica, se crea una conversación en Hotspot y, en paralelo, se crea un *ticket* que funciona como un registro estructurado. Este *ticket* captura información (propiedades, campos, tiempo de respuesta, cierres, etc.) de manera manual y automática, lo que permite generar reportes visuales, independientemente del canal de comunicación (como WhatsApp) (00:15:52).
+Actualización del estatus del ticket y validación del SLA: Una vez asignado el ticket, el ejecutivo recibe la información y comienza la atención. El estatus del ticket debe actualizarse de "nuevo" a "en atención", y se confirmó que esta actualización puede ser automática al momento de enviar la primera respuesta (00:18:38). Si el SLA de 5 minutos se supera, Hotspot notificará a la Dirección Comercial para que dé seguimiento al ticket (00:21:15).
+Flujo de atención para tickets Tipo A (Problema Técnico): El ejecutivo analiza la información del ticket. Si pueden solucionar el problema, resuelven la solicitud y cierran el ticket como "resuelto" (00:22:33). Si la solución no es efectiva o si el ejecutivo no puede resolver el problema inicialmente, se escala a TI a través de Notion (00:23:45). El ejecutivo debe dar seguimiento y mantener informado al cliente hasta que TI finalice su proceso de solución (00:25:05).
+Métricas y reportes para seguimiento de tickets de TI: Monific solicitó un reporte para medir el tiempo que tarda el equipo de TI en resolver los tickets. La intención es identificar problemas recurrentes y posibles automatizaciones o cambios en procesos internos, como permitir al ejecutivo realizar cambios de contraseña directamente (00:26:29). David Ochoa sugirió incluir categorías y subcategorías para tipificar las incidencias en el reporte, permitiendo un análisis profundo del tiempo promedio de resolución por tipo de incidencia (00:27:46) (00:30:21).
+Flujo de atención para tickets Tipo B (Información o Dudas): Para el Tipo B, el ejecutivo debe realizar contacto para dar una respuesta puntual, usando la información del centro de ayuda o fragmentos internos (00:31:35). La validación consiste en si la duda fue resuelta; si no lo es, se debe continuar interactuando con el cliente hasta lograr resolverla, momento en el cual se cierra el ticket como "resuelto" (00:32:51).
+Flujo de atención para tickets Tipo C (Nuevo Solicitante) y revisión de asignación: El ejecutivo debe orientar al cliente sobre la metodología de registro como solicitante y enviarles el enlace al formulario (00:32:51). Este flujo debe enlazar con el *pipeline* de ventas de solicitantes. Monific sugirió que, dado que el trabajo posterior corresponde a "Memo" (Ejecutivo de Atención a Solicitantes), se debería asignar directamente a Memo para evitar un paso intermedio (00:34:25).
+Capacidades de la licencia de ventas (Sales) para atender tickets: David Ochoa confirmó que una persona con licencia *Sales* puede utilizar el centro de ayuda para contestar y recibir consultas, aunque de manera limitada en comparación con una licencia *Service* (00:41:57). Se determinó que sería posible que un ejecutivo de atención transfiera el ticket a Guillermo, el cual podría atenderlo y darle cierre, aunque David Ochoa revisaría si es posible que la notificación de un nuevo *lead* se derive automáticamente a Guillermo (00:43:30).
+Traspaso de tickets Tipo C (Solicitantes): Josué Torres propuso que, una vez asignado el ticket al ejecutivo de atención y clasificado como Tipo C, el ejecutivo realice el traspaso directo del ticket a Guillermo para que él realice la atención y cierre (00:44:47). Monific estuvo de acuerdo con esta propuesta y que la opción C se mantenga, ya que los solicitantes suelen tener dudas antes de completar un formulario (00:46:07).
+Flujo de atención para quejas (Tipo D) y formalización (Tipo E): Para las quejas, el ejecutivo buscará una solución inmediata (00:37:35). Si la queja procede, se resuelve y se cierra el ticket; si no procede, el ejecutivo debe validar si el cliente desea formalizarla. Si el cliente no desea formalizarla, se intenta dar solución y cerrar el ticket. Si el cliente desea formalizarla (Tipo E), se marca el ticket con la etiqueta "UNE" (00:38:59) (00:48:47).
+Proceso de reclamación formal ante la UNE (Tipo E): Se acordó que, si un cliente quiere formalizar la queja, Hotspot enviará un correo solicitando que llenen el formato de queja (00:48:47). Una vez que el cliente envía la información, la gestión se reasigna a Dirección Comercial (Monific), ya que la atención de la UNE es delicada y está ligada a contratos (00:51:39). Hotspot notifica al cliente sobre el inicio de la atención formal y a Dirección Comercial para que comience con la recopilación de información (00:48:47).
+Emisión de dictámenes y cierre de tickets de la UNE: Si la queja no es procedente, Dirección Comercial cierra el ticket y envía un dictamen no procedente por correo, sin esperar una respuesta del cliente (00:50:14) (00:54:10). Se discutió que puede haber dictámenes favorables al cliente, aunque hoy en día no ha sucedido (00:55:16). Si la queja es procedente, se emite un dictamen favorable que resulta en la devolución de los recursos reclamados, movimiento que es realizado por el equipo de TI tras la aprobación de los equipos legal y PLD (00:56:48).
+Métricas adicionales para casos UNE: Monific solicitó que se pueda medir la categoría y subcategoría de las quejas UNE, el enlace al dictamen (subido a Drive) y el importe reclamado (00:55:16). Esto ayudará a medir trimestralmente el volumen de quejas y facilitará la duplicación de documentos en casos de solicitudes recurrentes (00:56:48).
+Comentarios sobre el Producto Mínimo Viable (MVP): Monific expresó que el MVP actual es adecuado para comenzar, aunque anticipan la necesidad de buscar al equipo nuevamente en el futuro, probablemente el próximo año, para un nuevo proyecto. Josué Torres preguntó si David Ochoa y Ricardo Gomez (Rich) podían retirarse debido a temas de tiempo, especialmente ya que Rich tenía otro compromiso (00:59:21).
+Discusión sobre Encuestas de Satisfacción: Josué Torres planteó la pregunta de si se debían incluir encuestas de satisfacción de inmediato o guardarlas para un segundo MVP, ya que inicialmente no estaban consideradas en las conversaciones de mapeo (00:59:21). Monific solicitó una recomendación sobre el tema, ya que no tenían experiencia previa en el envío de este tipo de encuestas (01:00:35).
+Alternativas a las Encuestas y Recomendación de CTA: Monific mencionó que sus reseñas de Google (Google Reviews) eran bajas, alrededor de 3.99, y sugirió que en lugar de una encuesta, sería más valioso enviar una llamada a la acción (CTA) el día del pago de rendimientos para fomentar el aumento de las reseñas. David Ochoa sugirió que sería recomendable agregar una encuesta "sencilleta" al final de la resolución de un caso para medir la satisfacción de la persona (01:00:35).
+Integración de Encuestas y CTA de Marketing: David Ochoa también sugirió que el CTA de Monific para las reseñas podría integrarse en los correos de marketing para dirigir a las personas a la web y que dejen su comentario, de manera aislada o antes/después de una campaña. Monific aceptó la recomendación de David Ochoa de integrar una encuesta no invasiva que sirva como indicador de la satisfacción con la resolución y el trato del equipo (01:00:35).
+Compromisos Finales y Cierre de la Reunión: Josué Torres confirmó que las encuestas se anexarían al plan. Monific indicó que su tarea pendiente era enviar el mapeo tecnológico, que describieron como pequeño, y que lo subirían a la carpeta de tareas, enviando el enlace por correo (01:00:35).
+
+Pasos siguientes recomendados
+Monific will download the titles from Notion, use AI to categorize them, and segment the categories and subcategories for the tickets.
+Monific will provide Josué Torres and David Ochoa with the categories and subcategories, the link to the dictamen, and the claimed amount for integration into Hotspot.
+David Ochoa will confirm the capabilities of a person with a Sales license to use the service center regarding ticket response and modifications for the best derivation of type C ticket information input.
+Monific enviará el mapeo tecnológico a la carpeta de tareas y mandará el enlace por correo.
+Josué Torres aplicará los ajustes de los temas que se discutieron hoy.
+
+Revisa las notas de Gemini para asegurarte de que sean correctas. Obtén consejos y descubre cómo toma notas Gemini
+Danos tu opinión sobre el uso de Gemini para tomar notas en una breve encuesta.
+📖 Transcripción
+12 mar 2026
+Presentación de Flujograma de Servicios - Monific - Transcripción
+00:00:00
+
+Josué Torres: Va, que va, equipo. Bueno, hoy vamos a ver entonces el flujograma de servicio. Va. Eh, explico rápidamente nada más como para no perder el contexto. Ya habíamos comentado anteriormente que aquí tenemos la tabla de este de acrónimos, tanto puestos como este equipos. Y este de este lado tenemos nuestro cuadro de simbología. Sí, en nuestro cuadro de simbología se añade actualmente la interacción con Notion. En otros eh swims habíamos visto interacciones con adminif, con appunific. Eh, bueno, el día de hoy es con no más que más que nada. Eh, ese es el cambio importante. De este lado, pues tenemos a los carriles. Cada uno de los carriles pues representa la acción de de este de un personaje dentro del proceso. Por ejemplo, aquí el equipo de tecnología de información, ¿no?, que sería ti, el cliente. Eh, también tenemos el ejecutivo atención a clientes, que es quien juega el papel central en este eh pipeline y dirección o director directora comercial. Va, como ya saben, este, cualquier duda, comentario, me pueden interrumpir sin ningún problema y lo atendemos para que
+Monific: Aquí lo primeritito que veo este J Dijiste que ahorita
+
+00:01:24
+
+Josué Torres: va.
+Monific: el principal es el notion, pero o sea, supongo que vamos a abarcar el servicio para inversionistas. Atención a clientes de inversionistas. ¿Es correcto?
+Josué Torres: Sí, sí, sí,
+Monific: Okay.
+Josué Torres: sí.
+Monific: Este, entonces, no tendría nada que ver acá los inversionistas los atendemos realmente en
+Josué Torres: Sí, todo es en hotpot.
+Monific: Hobspot.
+Josué Torres: Nada más está considerado para el caso del escalamiento hacia Te lo habíamos platicado los
+Monific: Ah, correcto. Sí.
+Josué Torres: matas.
+Monific: Sí, lo subimos hoy en día notion.
+Josué Torres: Ajá.
+Monific: Y otra cosa importante en la tablita que vi que eh de los acrónimos pusiste
+Josué Torres: Sí.
+Monific: a Guillermo de Ejecutivo Atención a Clientes, eso no está correcto. Él es de atención a solicitantes. Ahorita eh Sasha es en fines de semana en ejecutiva de atención a
+Josué Torres: Okay.
+Monific: clientes y tengo mi vacante eh para los puestos de de entre semana. Hoy la estoy cubriendo yo esa persona, por así decirlo,
+Josué Torres: Okay. Vamos a ponerlo así.
+Monific: pero ya esta semana ya se integré una persona para que entre, pero para que estemos ahí en
+
+00:02:36
+
+Josué Torres: Okay, va que va. Excelente.
+Monific: línea.
+Josué Torres: Bien, pues aquí esto pues ya los conocemos. Aquí es Raquel y aquí si este si me apoyas este Raquel,
+Monific: Sí.
+Josué Torres: por
+Monific: Bueno,
+Josué Torres: favor.
+Monific: eh son las personas con las que tuvimos la conversación de la alineación técnica, que en este caso es Jesús el CTO, Jesús Torres, eh Dani es Dani Torres es el que sigue de
+Josué Torres: Mhm.
+Monific: Jesús. Luego están los que están abajo de Jesús y Dani, que son Gustavo Torres para tickets un poquito más este sencillos.
+Josué Torres: Hm.
+Monific: E Edrey y Edgar se encargan y Frida Luna se encargan un poco más de la parte de diseño y de cosas de este de la landing. Entonces eso ellos tres son más como de estos
+Josué Torres: Okay, okay,
+Monific: tickets.
+Josué Torres: okay. Si te parece bien, ponemos como a a Jesús, ¿no? Como principal.
+Monific: Sí, ponemos a
+Josué Torres: Sí, de todos modos, este, estamos en tod mapeos,
+Monific: Jesús.
+Josué Torres: digo, como para hacer esa precisión, no estamos poniendo nombres como tal, sino los puestos o los equipos y eso pues nos facilita también no enfocarnos en la persona, sino en el rol que va a ejecutar la tarea, ¿no?
+
+00:04:02
+
+Monific: De acuerdo.
+Josué Torres: Va, que va bien. Entonces, tenemos eh de acuerdo a lo que habíamos mapeado anteriormente, eh la entrada para atención a clientes. Sí, el cliente ingresa por canales activos. Estos son tres que tenemos identificados, WhatsApp, Chat Web y el formulario de la UNE, ¿no? Que es el que está en el apartado de más información hasta debajo de la página. Eh, el cliente escribe en los canales de entrada. Aquí la lógica sería la siguiente. Adelante, adelante.
+Monific: Perdóname, perdón que interrumpo.
+Josué Torres: No, no, no. Adelante, adelante.
+Monific: A ver,
+Josué Torres: Con confianza.
+Monific: adicional a esos canales, hay dos canales más que no, o sea, no son tan activos, pero sí están activos. Eh, no sé si puedo compartirles pantalla para enseñárselos.
+Josué Torres: Sí, por favor, por favor. Claro que
+Monific: Este, igual vienen en el proceso ass,
+Josué Torres: sí.
+Monific: pero se los quiero enseñar para que los vean, porque es un formulario externo, pero pues sí, sí llegan leads de ahí o llegan clientes. Este es uno aquí que, por ejemplo, yo dejo mi correo y ahorita les enseño qué pasa.
+
+00:05:15
+
+Monific: dice, "Gracias, un especialista te contactará, pero literalmente el call to action es te interesa un plan de inversión a la medida. Ese es el code to action y se deja el correo y automáticamente a mí me llega esto. Entonces, la acción es que se le tiene que mandar un correo a esa persona. No sé si a esos también hay que ponerlos en ese service o ese sería para ventas más
+Josué Torres: Sí. Bueno, a excepción de que el equipo opine lo contrario,
+Monific: bien.
+Josué Torres: yo pienso que ese ingreso sería eh tendría que estar mapeado en el de inversionistas, en el comercial. Ahí llegaría justo como como un lit.
+Monific: Y también está en el asis, este,
+Josué Torres: Okay.
+Monific: el del plan a la medida que les digo está en el asis todo eso, pero llena eso y también llega así el el ID así el formulario. Entonces, por si lo quieren revisar, pero ya ahora sí
+Josué Torres: Sí, sí, sí.
+Monific: ya.
+Josué Torres: Okay, entonces eso los vamos a considerar para eh bueno, el otro para ver si aplica aquí o se va directo igual al de comercial, que por lo que veo como es plana medida y todo el y toda esa parte, sí sería la parte comercial de
+Monific: Sí, generalmente es un gancho, ¿eh?
+Josué Torres: de Ajá.
+
+00:06:37
+
+Monific: O sea, no es ningún plano a la medida, o sea, solamente lo hacemos para que lleguen
+Josué Torres: Okay. Okay. Justo pues es como tema de captación,
+Monific: leads.
+Josué Torres: ¿no? Okay. Antes antes de avanzar, si quieres te comento, te platico los tipos de tickets que estamos considerando, ¿va?
+Monific: Venga.
+Josué Torres: Ajá. Entonces, por ejemplo, tenemos un tipo A, que es un problema técnico. El cliente reporta un error, no puede ingresar a su cuenta o tiene un fallo en este en la adelante
+Ricardo Gomez: Perdón que te interrumpa, José, eh, dejaste de compartir pantalla.
+Josué Torres: Ay, muchas gracias. Con razón, con razón. Solo yo me entiendo. Gracias, gracias, Rich. Ahí estamos. Sí, lo estaba viendo de aquí. Digo, me estoy adelantando un poquito, pero pero creo que vale la pena. Va.
+Monific: Está perfecto.
+Josué Torres: Tipo A, problema técnico. El cliente reporta un error, no puede ingresar a su cuenta, tiene un fallo en la app, ¿no? Tipo B. información o dudas sobre inversión. El cliente tiene preguntas generales sobre monificos o rendimientos, ¿no?
+
+00:07:46
+
+Josué Torres: Oye, este, ¿quién me avala esto? ¿Están regulados? Cosas de ese tipo, ¿no? Este, tipo C, solicitante. El sistema detecta que se trata de un posible solicitante y bueno, para eso tenemos un flujo también que vamos aquí lo que vamos a hacer es redireccionar a este ticket hacia un tema de pipeline comercial.
+Monific: Sí, ya con menos.
+Josué Torres: Mm. Tipo D, queja, inconformidad. El cliente expresa insatisfacción, reclamo o inconformidad con el servicio, ¿no? Aquí es ese e está muy relacionado al tipo E que es la reclamación formal este ante la UNE, ¿no? El cliente quiere explícitamente activar el proceso de reclamación formal ante la UNE, ¿no? Estos dos, tipo D y tipo E van a tener una interacción este que pienso que es la interacción que nos va a generar mucho, mucho valor en este en este pipeline, porque el aquí vamos a estar cubriendo lo que platicábamos la la vez del mapeo, que justo las quejas vamos a tratar de que no lleguen hasta la une, ¿no? O sea, sin bloquear nada y siendo muy transparentes, pero tratando de dar solución desde antes, ¿no?
+Monific: Claro.
+
+00:08:59
+
+Josué Torres: Entonces, eso es lo que vamos a intentar con el con las automatizaciones y el pipeline que vamos a ver en este momento, ¿no? Pero esos son los tipos de tickets que estaríamos considerando cuando, por ejemplo, este tenemos el caso de un inversionista dormido. Bueno, esa sería una automatización para los temas de este de ventas, ¿no? a la reactivación de de inversionista, que que era lo que ya habíamos visto en el pipeline de comercial,
+Monific: Correcto.
+Josué Torres: ¿no? Entonces, es como ir este clasificando este los tipos de atención y seguimientos para que no se nos haga también un pipeline muy revuelto y se enfoque en los tickets como tal.
+Monific: Lo veo excelente.
+Josué Torres: Va que va bien. Entonces aquí la lógica sería que el cliente va a escribir en cualquiera de esos canales de entrada y eh la interacción sería de esta manera. se le va a pedir el nombre, el correo y vamos a a clasificar el tipo de solicitud, tal vez con una pregunta ahí de que en qué te podemos ayudar y algún desplegable, ¿no? Este, de preguntas frecuentes y demás agrupados según la base de conocimientos monificaste que estaban construyendo.
+Monific: Correcto. ¿Te refieres al centro de ayuda?
+Josué Torres: Ah, exactamente,
+Monific: Ah, sí.
+
+00:10:20
+
+Josué Torres: justo.
+Monific: Es que en Hotspot le llaman base de conocimientos.
+Josué Torres: Sí,
+Monific: Ya.
+Josué Torres: eso.
+Monific: Sí, está correcto.
+Josué Torres: Okay. Va. Entonces,
+Monific: Sí.
+Josué Torres: aquí la idea es desde el principio identificar quién es el cliente, qué es lo que está buscando,
+Monific: Dime una cosa, Josué. Este, hay cosas que la base de conocimientos no tiene,
+Josué Torres: ¿no?
+Monific: este, como tal, pero que sí tienen mis fragmentos. Eso va a generar un problema y me recomiendas que la base de conocimientos lo tenga en alguna forma, aunque no lo publiquemos. O sea, ustedes conocen más esa parte.
+Josué Torres: Bueno, aquí lo que te diría, te puedo hablar acerca de la lógica que tiene el flujograma sobre la cual vamos a estar mapeando. Este, la lógica es la siguiente. Si por ejemplo, oye, ¿sabes qué? No, no, este, no puedo ver mis inversiones y demás, ¿no? Entonces este lo que se haría es desplegar uno de tipo este tipo A, ¿no? Problema técnico. Oye, este no eh no me llegó completo mi mis fondos, etcétera. Pues entonces tipo de es un tipo de queja, ¿no?
+
+00:11:35
+
+Josué Torres: más que desplegarles todo el centro de o las posibles preguntas y este dudas frecuentes sería como desplegarle este tipo de cosas para que el cliente elija, ¿no? Ah, tal vez es un problema técnico, es un problema de este tipo, etcétera, ¿no? No sé si con esto puedo pude dar un poquito más de respuesta.
+Monific: Okay. O sea, que el cliente este seleccione el tipo de opción de acuerdo a las que tú me diste. Obviamente les vamos a llamar un poquito este más lógicas para que no se vaya directo a hacer una reclamación.
+Josué Torres: Sí, sí, sí. Bien. Entonces, de aquí este Hostpot va a recibir este pues este mensaje,
+Monific: Okay.
+Josué Torres: esta información y va a empezar con una validación. La primera validación es si el contacto se encuentra registrado. Si el contacto se identifica, Hospot va a asociar esa conversación con el contacto que identificó y en caso de que no se identifique, entonces Hospot va a crear un nuevo contacto. Va. De ahí este Hospot va a identificar el tipo de consulta, que es lo que platicábamos hace un momento. y ya que identificó quién es y si no estaba identificado, ya creó el registro de quién es, ya identificó qué es lo que está buscando, entonces sí haríamos una creación de ticket y este asignación al ejecutivo.
+
+00:13:06
+
+Josué Torres: Eh, esta asignación sería por round robin y según el horario activo, ¿no? Que es lo que nos comentabas, hay una persona de lunes a viernes y una persona en fines de semana, ¿no? E igual si en algún punto hubieran dos personas en fines de semana o dos en lunes a viernes,
+Monific: Correcto.
+Josué Torres: pues el la asignación es este uno uno, ¿no? Te toca uno, luego a ti, luego a ti, luego a ti. Round ro va.
+Monific: Perfecto.
+Josué Torres: Hostpot notifica al ejecutivo en turno acerca de nuevo ticket y aquí se empieza a etiquetar este o actualizar estatus de este ticket, ¿no? Aquí sería como nuevo, ¿sí? Esto tenerlo en cuenta para nuestro pipeline, nuestro máster de este pipeline, ¿sí? que la primera etapa sería esta nuevo nuevo ticket, ¿no? Hostpot inicia cronómetro de SL de primera atención. Una de las cosas que este que se busca mucho en la atención de clientes es justo la inmediatez para que el cliente pues que ya muchas veces ya trae una inconformidad pues no se vaya con otra, ¿no? Entonces aquí es la propuesta, no sé si a ti te parece bien, que una vez que el ejecutivo ya tiene asignado este ticket, tiene un máximo de 15 minutos para iniciar la atención.
+
+00:14:23
+
+Josué Torres: Tal vez no para dar todo el la solución, pero para comenzar con la atención.
+Monific: Okay, aquí y yo sé que es muy diferente un ticket que una conversación, pero yo nunca he trabajado con tickets. Entonces, ustedes ahí me van a ir explicando. Yo en las conversaciones con la gente en la bandeja de entrada, eh con mis agentes, mínimo soy muy estricta en la conversación. Pido un SL mínimo menor a 5 minutos para la primera respuesta, no para la solución. No sé si en las en los tickets este las se abre una conversación o cómo funciona con el cliente y entiendo que si sería a través de correos electrónicos, o sea, realmente no sé cómo funcionan los tickets.
+Josué Torres: Okay. Bien, ahí lo que te puedo comentar es que justo ese SL que acabas de mencionar de 5 minutos es totalmente eh yo lo veo muy viable, ¿no? Ahora para la parte ahí este David o o Rich, perdón, si me pudieran apoyar a comentar un poquito más de la manera técnica cómo funcionan los tickets. se crea el ticket, después este le llega una notificación al al este al ejecutivo,
+David Ochoa: Yeah.
+Josué Torres: etcétera.
+David Ochoa: Claro. Mira, mira, justamente como para hacer una analogía, Raquel, la conversación en sí, una persona que se comunique, yo, David, me comunico con Monific, este acto hace una conversación para Hotspot.
+
+00:15:52
+
+Monific: Mhm.
+David Ochoa: La conversación es donde estás comunicando, donde envías los mensajes, envía las plantillas y demás. No obstante, en paralelo con esta creación de esta conversación se crea, digámoslo así, para Hotpot un apartado especial como una tabla de Excel, llámolo así, como un registro de Excel, donde se guarda toda esa información, digámoslo así, de propiedades, de campos, que es lo que vamos a ver en el máster, sobre esa conversación. Dichos campos como pueden ser de fecha, opciones múltiples, etcétera, etcétera, se pueden traer a reportes. Por lo cual, en resumen, yo, David, me comunico con Monific, se crea una conversación en paralelo con host se crea lo que aquí llaman un ticket y este ticket es donde se va a ir capturando cierta información y también el ticket va a capturar cierta información automática. ¿Cómo lo sería? ¿En qué momento se lo dimos al asesor? en qué momento respondió, cuál fue su última respuesta, cuándo lo cerró, cuándo lo cambió entre etapas, etcétera, ¿no? Y toda esa información que se va capturando tanto manual como automática, lo podemos bajar en un reporte
+Monific: Okay.
+David Ochoa: visual.
+Monific: Pero entonces en este caso eh la gente sí podría llegar a recibir un ticket, digamos, si eh las el cliente lo escribe por WhatsApp el ticket o abre su ticket por WhatsApp y la gente sí lo puede recibir por medio de WhatsApp ese ticket en Hotspot.
+
+00:17:25
+
+David Ochoa: Es correcto. El medio de conversación no va a cambiar. Si lo escribió por WhatsApp, va a ser WhatsApp. Si lo escribió, por ejemplo, un desplegable en la página web, un chatbot en la página web, también lo va a recibir y la conversación en sí no cambia, va a seguir siendo lo que tienen ahorita. Lo que se añadiría de cierta manera es este apartado extra de hotspot para estar haciendo el registro de las actividades, ¿no? Como te decía, ¿no? La asignación, respuesta, cierres y demás.
+Monific: Perfecto, ya con eso me respondes. Entonces, el SL que ponen en la primera está enorme. Yo pongo como un SL máximo 5 minutos. Soy un poco estricta, pero no llegan muchas y realmente sí creo que la primera respuesta es un hola, te voy a
+Josué Torres: Va, que va. Sí,
+Monific: atender.
+Josué Torres: justo, justo. Ya. Entonces lo lo ajustamos y este ya quedaría en 5 minutos. Va. Sí, sí. Aquí depende mucho del de tu operación. Si tú lo ves que este de los 5 minutos es viable, nosotros nos adaptamos. Va, va que va. Entonces, ¿qué es lo que sucede?
+
+00:18:38
+
+Josué Torres: Bueno, aquí pues ya está marcado el SL y Hotspot va a iniciar desde que se asigna el ejecutivo, inicia el cronómetro, ¿no? Entonces aquí ya nos vamos a ir a la parte del ejecutivo, recibe la información del ticket y da inicio con la atención. Sí, además de contestar, eh, ya te estoy atendiendo o o me presento, soy soy tal persona y te voy a apoyar, dime que que te puedo ayudar, etcétera. Además de eso, este el ejecutivo tiene que irse a hotpot y actualizar este manualmente el estatus. Sí, teníamos un estatus como nuevo y tiene 5 minutos para ponerlo en atención.
+Monific: Okay, perfecto.
+Josué Torres: Si él es
+Monific: Perdón, ahí el ejecutivo tiene que cambiar el estatus automáticamente a en atención o no se puede que cuando le responde
+Josué Torres: A,
+Monific: el estatus se cambia en atención.
+Josué Torres: digo, aquí lo bajé con la lógica del proceso. Este, David, no sé si esto se pueda llegar a conectar o sería bueno este dejarlo como para por validar.
+David Ochoa: No, no, sí se podría hacer de que en el momento que envía una respuesta va a cambiar de estado
+Josué Torres: Sí.
+David Ochoa: automáticamente. Solo tomemos en cuenta ahí Josué como comentario que si hay campos que capturar como en sí
+Josué Torres: Mhm.
+
+00:19:58
+
+David Ochoa: es una acción automática que no como digámoslo así que cuando tú envías un mensaje no Hostpot no te pide que mira tienes que llenar esto para enviar el mensaje. Tú envías nada más el mensaje.
+Josué Torres: Hm.
+David Ochoa: Hotpot interpreta de, mira, enviaste el mensaje, entonces cambio el estado. Pero al hacer ese cambio automático, no hay forma de decir a J, oye, fíjate que también tienes que capturar las propiedades. Así que entonces si hay propiedades que se capturan, campos que se tienen que registrar en paralelo con el mensaje, habría que agregar o una pequeña notificación de que no se olviden o incluso una etiqueta, ¿no?, de datos pendientes. Esto no lo ve el cliente,
+Monific: Ok.
+David Ochoa: o sea, eso sería más interno y simplemente para que llenen esos datos.
+Josué Torres: Sí, que que bueno aquí en realidad eh esa captura de de datos e ya la hizo el cliente previa, o sea, antes de iniciar el chat, o sea, das tu información y con eso inicia tu tu pues sí, tu proceso, ¿no?
+David Ochoa: Per
+Josué Torres: Ajá. Hostpod hace la validación y demás y entonces se crea el ticket, lo asigna un ejecutivo. Cuando el ejecutivo contesta, "¿Qué tal es? Buen día, soy tal persona", en automático se actualiza el estatus. No,
+
+00:21:15
+
+Josué Torres: ya no, en teoría ya no tendrían que registrar ninguna otra información hasta que ya estén pero dentro de la atención del ticket.
+David Ochoa: Okay, okay. Si es ese caso, entonces no hay problema.
+Josué Torres: Okay, va que va. Sí, sí, sí. Okay. Bien. Si cuando esto suceda el SL ya se superó, no sé, porque a lo mejor pasaron 20 minutos y no lo no lo vieron y cuando le dieron iniciar, o sea, ya estaba fuera del del rango que está establecido, Hostpot va a pier una notificación a dirección comercial para dar seguimiento a la atención del ticket. Aquí en este caso, pues Raquel recibe la notificación y tiene que dar ese seguimiento puntual,
+Monific: No.
+Josué Torres: ¿no? Oye, ¿qué pasó con este ticket? me llegó que no se atendió, este, hay que hay que dar este solución, ¿no? Y pues el ejecutivo recibe el apoyo por parte de dirección para continuar con la atención, ¿no? Este es más como un un candado para pues sí estamos en atención al cliente, entonces tratar de de brindar el mejor servicio posible, ¿no? Eh, si el SLI no fue superado, pues no ocurre nada de eso. Únicamente ya aquí validamos el tipo de ticket.
+
+00:22:33
+
+Josué Torres: Sí. Y aquí tenemos los tipos que habíamos platicado. Y si les les parece bien, nos vamos de arriba hacia abajo,
+Monific: Venga.
+Josué Torres: va bien. El problema eh tipo A, ¿no? El ticket tipo A, que es un problema técnico. El ejecutivo analiza la información para dar la solución al ticket. Esta información la va a recibir a través de este de hotspot, ¿no? Y aquí tenemos una primera validación. Ejecutivo puede solucionar el ticket. Si sí lo puede solucionar, el ejecutivo atiende y resuelve la solicitud del cliente.
+Monific: No.
+Josué Torres: Y aquí hacemos otra validación. ¿La solución fue efectiva? Si sí fue efectiva, entonces pues tenemos un flujo muy simple, muy sencillo, ¿no? El ejecutivo cierra el ticket como resuelto y documenta los motivos. Estatus del ticket resuelto. Sí, ahí tendríamos esa ese primer flujo muy muy simple. Oye, este, ¿cómo era que tenía que ingresar a la app? Ah, pues es muy fácil, ¿no? Este, te mando el link, eh, valido que puedas ingresar. Ya ingresaste, perfecto, cierro como resuelto. Va.
+
+00:23:45
+
+Josué Torres: Entonces, ¿qué pasa con con temas, por ejemplo, aquí? Hm. A ver, déjenme porque me fui para abajo. Acá ejecutivo atiende y resuelve la solicitud del cliente. No,
+Monific: Mhm.
+Josué Torres: la solicitud fue efectiva, perdón, la solución fue efectiva. Si no fue efectiva, entonces sí vamos a escalar este ticket a ti vía notion. Sí, mismo caso que si de un inicio el ejecutivo no puede solucionar este ticket porque es algo un poco más complejo, etcétera. Entonces escalamos esta esta notificación, enviamos esta notificación de ticket eh a ti vía notion, ¿no? Y aquí la comunicación empieza a a este a ser en ambos sentidos. Ojo, esto no significa que estoy mapeando que Notion va a estar en hotpot y así, sino que el ejecutivo atención a clientes, tiene que interactuar con hotpot y con Notion en este
+Monific: Correcto.
+Josué Torres: punto.
+Monific: Sí, como lo hacemos hoy en día nuestra
+Josué Torres: ¿Correcto?
+Monific: operación.
+Josué Torres: Sí, totalmente. Bien, aquí te iba a recibir la información y va a iniciar el proceso de atención interna. Aquí tenemos un un inicio de proceso alterno y un fin de proceso alterno, que es el proceso de solución que va a dar TI.
+
+00:25:05
+
+Josué Torres: Mm. Durante todo este proceso de solución, a lo mejor van a tener mucha conversación con el cliente Ti a través de correo o se hay situaciones más complicadas que otras, ¿no? ¿Qué es lo que va lo que va a suceder aquí? Lo que tiene que suceder es que el ejecutivo no va a soltar este ticket. No es porque ya se lo mandé a ti, ti lo soluciona y listo. No, no. El ejecutivo tiene que estar brindando información al cliente durante el proceso para mantener contacto. La comunicación del seguimiento pues es realizado a través de correo electrónico o WhatsApp, que es lo que platicábamos hace un momento, ¿no? si entró por el este el chat de la página, entonces obviamente no es como que si vamos a hacer un supuesto, el problema ya se tiene que demorar uno o dos días por alguna situación de de TI, ¿no? Entonces ya al ya no es práctico continuar la conversación en el chat, sino brindar toda la información ahí para irnos a un correo electrónico y ahí le damos
+Monific: Correcto.
+Josué Torres: seguimiento, ¿no? Hasta el cierre del del ticket, ¿no? Si fue por WhatsApp, misma situación, nada más que cambia el canal, ¿no? Cuando ti ya da fin a este proceso de solución, el ejecutivo de atención va a recibir la información de solución por parte de TI y tiene que validar con cliente que la solución haya sido efectiva.
+
+00:26:29
+
+Josué Torres: Si la solución no fue efectiva, se tiene que volver a comunicar con TI y tenemos que darle solución sí o sí.
+Monific: Perfecto, me gusta.
+Josué Torres: Ah.
+Monific: Ahí hay forma también de tener un reporte para que lo pongamos en nota de más o menos cuánto tiempo nos tarda el equipo eh de ti en tener soluciones a tickets.
+Josué Torres: Ah, sí, de hecho, eh, lo voy a anotar
+Monific: O sea, estaría bueno,
+Josué Torres: acá.
+Monific: o sea, no solamente el las soluciones a los tickets, sino también, o sea, porque les voy a explicar por qué quiero ese reporte. el tipo de ticket que le subimos y el tiempo, porque si un ticket yo le subo cada más de tres veces, maybe hay una cosa que podemos automatizar para ya no estar subiéndosela y si no cambiar un proceso. O sea, por ejemplo, si yo le pido que me cambien el correo más de tres veces de unos clientes, mejor que me lo pongan en el admin para yo poderlo cambiar. Ya me entendieron cómo ese tipo de cosas me va a ayudar a mí a poder saber eso.
+Josué Torres: Okay. Sí. Ejemplo, que no sé que el ejecutivo pueda ya realizar, no sé si ahora se hace así, ¿no? Pero que el ejecutivo pueda aplicar cambios de contraseña de no.
+Monific: Ajá.
+
+00:27:46
+
+Monific: Cosas de ese estilo, obviamente que estén bien, o sea, revisadas por la ley, pero sí, cosas de ese estilo. O sea,
+Josué Torres: Ok.
+Monific: a través de métricas que sí veamos cuánto se cuánto volumen generan y cuánto tiempo pasan para que los clientes estén contentos.
+Josué Torres: Va, que va. Sí, lo voy a agregar acá si te parece bien, que este este sería como el proceso de de esta tensión. Adelante David.
+David Ochoa: Igual solo como comentario adicional, Josué, me imagino que debe estar integrado en el máster, pero sí incluir una una opción que sea como categoría, ¿no? Donde podamos ir tipificando las categorías, bueno, sí, comunes que existen para que ya luego cuando bajemos en un reporte podamos ver ejemplo en la descripción un reporte visual, ¿no?, de barras donde veamos el tipo de incidencia que se está reportando y cuánto tiempo tardó el ticket desde que se creó hasta que se cerró. De esa manera, Raquel puede ver de cada ejemplo, los tickets de cambio de contraseña en promedio tardan en resolverse 5 horas, mientras que los que tienen que cambiar algún dato más delicado pueden tardar hasta 12 horas en promedio, ¿no?
+Monific: Buení.
+David Ochoa: Así queía tener eso.
+Monific: Perfecto.
+Josué Torres: Sí, justo.
+
+00:29:09
+
+Josué Torres: Va que va, va que va.
+Ricardo Gomez: Ahí me voy a adelantar un poquito. Eh, Raquel, ahorita estoy desactualizado con esa información, pero tal vez nos pudiste haber compartido en el pasado justamente esa lista o posible categorización al menos de estos tickets hacia ti, porque si la respuesta es no, yo creo que nos puedes ir apoyando con con eso, ¿sabes? Es una pequeña lista general de oye, ¿cuáles son mis top 10 o cantidad de incidencias más recurrentes?
+Monific: Sí, o sea,
+Ricardo Gomez: No,
+Monific: de hecho,
+Ricardo Gomez: que pudiera
+Monific: ahorita puedo hacer una, voy a descargar todos e los de Notion,
+Ricardo Gomez: bajar.
+Monific: los títulos y voy a pedir a la inteligencia artificial que me los catalogue para que pueda bajar las categorías, si les parece y ya lo
+Ricardo Gomez: Justo está perfectísimo.
+Monific: segmentos.
+Ricardo Gomez: Okay, vale, gracias.
+David Ochoa: Igual como comentario Raquel, si dado el caso se presenta igual las subcategorías, no sé, por ejemplo, la categoría general sea e problema de cambio de contraseña, no estoy inventando algo, ¿no? Pero a su vez estos cambios de contraseña se pueden ver desde que la aplicación no funciona en este momento, desde que el dispositivo no es compatible o no tiene la última versión,
+Ricardo Gomez: Tam.
+David Ochoa: etcétera.
+
+00:30:21
+
+David Ochoa: Si es necesario entonces subcategorizar igual se le puede decir ahí a la IA que te dé categorías como subcategorías y eso si te puede integrar en hotpot si es que quisieras un análisis un poco más profundo.
+Ricardo Gomez: M.
+Monific: Okay.
+David Ochoa: Y no, con las categorías es suficiente.
+Monific: No, sí, sí. O sea, justo esas cosas sí nos llegan a pasar. Entonces sí, yo creo que va va a generar ayuda esa.
+David Ochoa: Va perfecto.
+Monific: Venga.
+Josué Torres: que va excelente, excelente. Muchas gracias. Sí. Y bueno, igual ya lo tengo aquí considerado, va, que justo este recuadro en el máster va a tener mucho peso porque es un es una actividad de seguimiento, ¿no?, por parte del ejecutivo. Como les mencionaba, el ejecutivo no puede soltar el ticket, o sea, lo tiene que gestionar hasta que se cierre, ¿no? Y bueno, justo es lo que tenemos de este lado. La solución fue efectiva. Ay, a ver. Ahí está. Si no lo fue, pues bueno, tenemos que volver a ti y hacer el ciclo nuevamente hasta que la solucionemos. Si sí fue efectiva la solución, entonces el ejecutivo cierra ticket como resuelto, documenta los motivos. Va,
+
+00:31:35
+
+Monific: Perfecto.
+Josué Torres: esto respecto a TEI, o sea, todo el tema de este problemas técnicos, ¿va? Ahora, tipo B, información o dudas, ¿no? Eh, el ejecutivo eh realiza contacto con cliente para dar respuesta puntual acerca de su solicitud. ¿Qué tipos de solicitudes? Ejemplo, oye, este, no sé,
+Monific: M.
+Josué Torres: Monific tiene alguna regulación por parte del del estado. Entonces, esas son como preguntas que esas también se pueden sacar del, ¿me recuerdas el nombre de la base de conocimientos que estaban?
+Monific: Ayuda, pero sí.
+Josué Torres: Exactamente.
+Monific: Ya.
+Josué Torres: Justamente esa información incluso de los fragmentos igual las pueden tomar para dar respuesta, ¿no?
+Monific: Ok.
+Josué Torres: Y aquí eh eh pues es un poquito más sencillo eh pero pues se tiene que hacer la validación. se resolvió la solicitud o la duda del cliente. Si no se resolvió, hay que también, o sea, hay que empujar a dar una solución porque estamos ante probablemente un, o sea, no sabemos si es un posible o un potencial este inversionista o un potencial solicitante, no lo sabemos, ¿no? Entonces tiene esa duda y que especifica sobre monific, sobre cómo a lo mejor cómo se pagan rendimientos, etcétera.
+
+00:32:51
+
+Josué Torres: Y todo esto pues nos es información importante para darle al cliente, ¿no? Si se resolvió la solicitud, entonces pues se cierra como resuelto, ¿no? Como los anteriores que habíamos platicado. Y si no, pues vamos a a estar interactuando con el cliente hasta que lo logremos este resolver su duda, ¿no?
+Monific: Correcto.
+Josué Torres: Bien,
+Monific: Ok.
+Josué Torres: otro tipo de ticket sería tipo C en el caso de un nuevo solicitante, aquí este es como que oye, necesito cómo puedo acceder a un financiamiento, ¿no? El ejecutivo va a dar respuesta al cliente, va a compartir la metodología para su registro como solicitante, ¿no? Aquí pues tiene que enviar la liga de la página web, formulario de registro de solicitante, dale una orientación previa, ¿no? para poder este registrarse como un solicitante, ¿va? Esta parte de acá tiene que conectar con la parte de los del pipeline de solicitantes, donde ya tendríamos un nuevo este pues si aplica, si hace todo su proceso y si es un candidato a a solicitante, pues ya lo incluiríamos dentro del pipeline de este de ventas de solicitante, ¿no? Por eso aquí es más una orientación, o sea, es atenderlo, eh, orientarlo hacia donde queremos que se dirija y una vez que eso suceda, pues cerramos el ticket como resuelto, ¿no?
+
+00:34:25
+
+Josué Torres: Ya en el pipeline de ventas se determinará si es candidato, si no lo es y en caso de que no lo sea ahí en ese mismo pipeline, si si recuerdan bien este todos también está la parte de que si no es apto para solicitantes se le ofrece un producto de inversionista, ¿no? Adelante, adelante,
+Monific: Perdón,
+Josué Torres: Raquel.
+Monific: siento que ahí este podemos simplificar un poquito más esa parte eh Josué y en vez de mandárselo a un ejecutivo de atención a clientes ya enviárselo directo a Memo,
+Josué Torres: Mhm.
+Monific: o sea, Memo igual va a estar en en hotspot, va a tener una licencia a menos que Ah, no, porque se requiere que Memo también tuviera la de service, ¿verdad?
+Josué Torres: Ahí. No sé este, David, si podemos este asignar a alguien aquí, aunque no tenga la licencia de service.
+David Ochoa: Idealmente si debería de tener la licencia de service y va a estar operando o haciendo modificaciones.
+Monific: O sea, si solo tiene sales, no va a poderles responder a estas personas, este, solamente teniendo service, ¿correcto?
+David Ochoa: Exactamente. Idealmente, sí, si no estoy mal igual puedo revisar, sí va a poder contestar, pero por ejemplo si quisieran cambiar el tema del estado al cierre o quisiera hacer alguna modificación de los campos, por ejemplo, agregar más notas en la incidencia o en la descripción, no lo podría hacer.
+
+00:35:52
+
+David Ochoa: El tema de respuestas,
+Josué Torres: Sí.
+David Ochoa: si no estoy mal, sí, pero si te parece, dame oportunidad de revisar con una licencia de ventas y te confirmo.
+Monific: Okay, igual si no saben qué, o sea, sí lo voy a poner en service porque sí siento que es una tontería que lo que lo pasemos a un ejecutivo de atención a clientes cuando es esa chamba ya le toca toca a Memo y si ya se va a ir igual directo al al pipeline de solicitantes para que lo estamos este canalizando con un ejecutivo de atención a clientes.
+Josué Torres: Aquí tengo una duda, es es más pregunta de este lado, ¿no? Ya con lo que estoy escuchando ahora, a lo mejor no sé si valdría la pena que como tal el ticket lo reciba el ejecutivo de atención y oriente no al cliente, sino al ticket, ¿no? que lo lleve a cierre y que ese cierre a lo mejor detone un envío de esta información del lead hacia hacia Memo ya para que lo ingrese al pipeline de ventas.
+Monific: Okay, okay. Eso también puede pasar, o sea, es nada más yo hacer buenos fragmentos para este para mi equipo. O sea, okay, lo dejamos así en caso de que sujeto a lo que Dave me me pueda investigar y si no se puede, ya lo dejamos para mi equipo y listo.
+Josué Torres: Bueno, ahí este no sé si les parece bien que deje una nota este David, justo que de lo que tú nos resuelvas podemos hacer la mejor derivación de este de este ingreso de de información de ticket, ¿no?
+
+00:37:35
+
+David Ochoa: Claro, claro. Igual ya lo estoy revisando. Yo creo que en unos 5 minutitos tengo una respuesta exacta, pero adelante continuar.
+Josué Torres: Okay, va que va bien.
+Monific: H
+Josué Torres: Estos primeros eh tres tipos de tickets están como muy relacionados. son e son tickets que vamos a buscar que sí o sí tengan una respuesta satisfactoria para el para el cliente, ¿no? En tanto la parte de problemas técnicos, las dudas y la parte de nuevo solicitante, ¿no? Ahora nos vamos a la parte de el de estos dos tipos de tickets, ¿no? Queja o inconformidad, ¿va? ¿Cómo sería una queja? El cliente ingresa al chat de la página web. Este, oye, ¿sabes qué? No sé, no he recibido mis fondos o los o yo los recibí incompleto, ¿no? Esa es mi percepción como cliente, ¿no? Aquí le llegaría la el ticket al ejecutivo de atención, va a recibir la información y va a gestionar la atención inmediata con el fin de darle una solución rápida, ¿no? Este, eh, y bueno, aquí vamos a lo siguiente. Lo que va a hacer entonces el ejecutivo es validar si la queja del cliente procede si o no.
+
+00:38:59
+
+Josué Torres: No. Si sí va a dar resolución a su incidencia y cerramos el ticket como resuelto. Va. Si la queja del cliente no procede y el cliente en la siguiente validación desea formalizar esa queja, entonces el ejecutivo tiene que marcar el ticket con la etiqueta une y ahí es donde vamos a empezar a relacionar cosas, ¿va? en el caso de que no la desea formalizar, pues aquí el el ejecutivo intentará dar una solución y este y pues ahí va a depender mucho de cómo vaya evolucionando esa solución del ticket, ¿no? Si llega un punto en que la en que la queja pues ya este sí procede y demás y se atiende y se da solución, entonces pues se cierra el ticket, ¿no? O sea, ya depende mucho de del tipo de solución que se vayan dando, que igual comento en algún en un futuro con una base de datos mucho más robusta de de qué pasa con esto y cómo se solucionó, etcétera, igual ya se podrían hacer como como algunos tal vez este filtros, ¿no? Para tales situaciones. Ya sabemos que esto no automatizamos tal cosa, ¿no? Pero para el día de hoy que estamos haciendo la implementación, si este si veo viable esta parte, a excepción de que ustedes me comenten otra cosa, de que se hagan estas dos validaciones por el momento, si la queja procede o no, si el cliente desea formalizar o no y de ahí pues nos vayamos una a una atención y a un cierre del ticket.
+
+00:40:36
+
+Josué Torres: ¿Sí? Bueno, de aquí, ¿qué es qué es lo que sucede? Este, esta es la vía rápida de atención, ¿no? La que habíamos platicado en el mapeo. El otro tipo de ticket se va a generar como una reclamación formal ante la UNE. Es decir, el cliente entró a la página y el cliente está buscando, o sea, el cliente tiene una inconformidad y él quiere reportar su queja, ¿no? Eh, adelante,
+Monific: esta última opción, o sea,
+Josué Torres: adelante.
+Monific: está bien que exista, pero no va a existir en las categorías afuera cuando el cliente suba un ticket, pues sí va a existir.
+Josué Torres: No, según la lógica, este, no.
+Monific: O sea, solamente y en caso de pasar a la penúltima, ya se podría abrir la última y solo si la quiere formalizar.
+Josué Torres: Ah, exactamente. Sí. A ver, voy a a compartir aquí. Aquí está mi pantalla. No sé si no, ¿verdad? Solo ven el el flujograma.
+Monific: Correcto.
+Josué Torres: A ver, déjenme un momento, por favor.
+David Ochoa: En lo que compartes pantalla, Josué, solo para confirmarte, Raquel, si es posible que una persona con licencia sales pueda estar utilizando el centro de ayuda.
+
+00:41:57
+
+David Ochoa: único comentario que hay que agregar es que es de manera limitada, es decir, normalmente las licencias de service van a tener muchas más cualidades dentro del centro de ayuda, pero los que tienen licencia sals pueden contestar, recibir y hacer algunas modificaciones.
+Monific: Okay. O sea, te refieres a que tipo no van a poder no va a poder estar cambiando algunas propiedades, por así decirlo.
+David Ochoa: es correcto y por ejemplo acceder a algunas vistas personalizadas que creemos en el centro de ayuda.
+Monific: Okay, no hay tema.
+David Ochoa: Si no son cositas que luego podemos hacer ahí algunas modificaciones para adaptarse, pero no representan un impedimento a nivel técnico de que el lo pueda utilizar.
+Monific: Vale.
+Josué Torres: Perdona ahí este David, eh justo entonces no sería posible a lo mejor eliminar este tipo de ticket y hacer que desde que se registre el cliente, si su tipo de solicitud es porque está pensando en algo como de solicitante o tiene una propiedad, quiere un financiamiento o algo, en automático se se derive una notificación en host. Hotpot de un nuevo lead a Guillermo.
+David Ochoa: Podríamos hacerlo igual se podría hacer alguna automatización si está desde el inicio en la categoría, aunque esto, por supuesto, no aplicaría de pronto a los que entren sin esos datos previos, ¿no? Ejemplo, WhatsApp. Yo envío un WhatsApp,
+Josué Torres: Mhm.
+David Ochoa: el WhatsApp como tal me contacta directamente a Monific,
+
+00:43:30
+
+Josué Torres: Ok.
+David Ochoa: no me pide datos antes de de hablar con la persona y sería ese tipo de casos que sí se tendría que tipificar, pero si se tipifica por el asesor igual lo anclamos a la automatización y le llega la notificación a Guillermo.
+Josué Torres: Ah, okay,
+David Ochoa: Se podría, ¿no? Sería un detallito,
+Josué Torres: okay.
+David Ochoa: un pasito extra, pero no tampoco representaría un problema a nivel técnico.
+Josué Torres: Sí, sí, pregunto, ¿no? Porque porque si vamos a llegar hasta esta parte, ¿no? De donde ya se porque aquí si este si recordamos ya se le ya se le asignó el ticket a un ejecutivo, ¿no? Entonces, aquí nada más el ejecutivo haría el traspaso de de ticket hacia el hacia Guillermo y Guillermo pudiera dar cierra ese ticket, ¿no? No sé si me expliqué ahí.
+David Ochoa: Es, perdóname, ¿me repites ahí la pregunta?
+Josué Torres: Sí, es que a este punto cuando llegamos acá, o sea, lo digo para saber cómo cómo voy a a terminar de bajar este flujo de tipo C de ticket tipo C,
+David Ochoa: Okay.
+Josué Torres: ¿no? A este punto,
+David Ochoa: Sí.
+Josué Torres: Hospot ya hizo una validación de los datos,
+David Ochoa: Mm.
+
+00:44:47
+
+Josué Torres: ya ya creó el ticket, ya lo asignó y ya le inició incluso un cronómetro de primera atención al
+David Ochoa: Correcto.
+Josué Torres: ejecutivo, ¿no?
+David Ochoa: Correcto.
+Josué Torres: El ejecutivo ya le llegó la información y de acuerdo al tipo de ticket va a ser una acción, ¿no?
+David Ochoa: Correct.
+Josué Torres: Si el tipo de ticket es un tipo C que es para un nuevo solicitante, aquí la acción que veo lógica sería que el ejecutivo haga el traspaso del ticket a Guillermo y ya Guillermo realice la atención y le dé cierre el ticket.
+David Ochoa: Sí, correcto. Eso se podría
+Josué Torres: Ah, okay,
+David Ochoa: realizar.
+Josué Torres: okay. No sé si eso igual este Raquel Ricardo les hace sentido que funciona de esa forma. Lo ven de otra manera.
+Monific: Sí. A ver, a mí me hace sentido y no quitaría la opción C. Les voy a decir por qué. O sea, una persona que se está metiendo al chat o cualquier cosa y quiere hablar con un ejecutivo para seguimiento de financiamiento, es porque tiene dudas previas a llenar un formulario. Entonces, sí está bien que hable antes con una persona y no la quitaría esa opción. Entonces, si lo quieren dejar, ya sea con el caso que acabas de plantear o con Guillermo directamente o con el agente de atención a clientes, cualquiera sirve, yo me acomodo.
+
+00:46:07
+
+Josué Torres: Okay, va que va bien. Entonces, eh bueno, aquí ya sé cómo lo vamos a terminar de bajar. Se me queda pendiente. Y nada más aquí abajo con el tipo E reclamación ante la une. Aquí estamos en el supuesto de que el cliente ingresó aquí, ¿no?,
+Monific: Mhm.
+Josué Torres: a la página de Monific. Ah. Y bueno, aquí este dice, "Bueno, yo quiero hacer mi queja formal y todo." Y entonces la opción que le vamos a dar es que en lugar de que se haga una que queja formal aquí en el chat, le vamos a dar, "Oye, mira, te vamos a dar esta información, tienes que saber que para una queja formal los periodos son largos y demás, pero también tienes la opción de que sea rápida, ¿no? Si el cliente acepta que sea rápida, nos vamos a ir a la solución inmediata, que es el tipo de si es este de aquí arriba.
+Monific: Okay. Nos
+Josué Torres: Ajá. Este de aquí arriba va.
+Monific: regresamos.
+Josué Torres: Ahora, si el cliente por x o y ya ingresó a la página y si ya se dio cuenta, o sea, y sabe qué que es esta parte de de une hasta abajo, dice, "No, yo lo que quiero hacer mi reclamación, ¿no?" Y le pica.
+
+00:47:31
+
+Josué Torres: Entonces, la idea aquí y aquí, este, ojo, esta es propuesta por por de parte de este lado, es que el cliente pueda ingresar primero a una parte como informativa, ¿no? Y la misma situación, oye, el proceso es tardado, etcétera, tienes todas estas este consideraciones, pero también te podemos atender rápidamente. Da clic aquí, si le da click, lo regresamos otra vez a la parte rápida, ¿no? para que no meta esta de una. Digo, suena feo como es que es un bloqueo porque en realidad no se puede hacer, ¿no? Por como por parte oficial no se puede hacer como un bloqueo si el cliente puede hacer su solicitud ante la UNE si quiere, pero si ya le pica, ¿sabes qué? Sí, sí, quiero hacer este registro. Entonces sí se le descarga el formulario y hacemos el el proceso que está aquí, ¿no? No sé cómo lo
+Monific: O sea,
+Josué Torres: ven.
+Monific: tú estás proponiendo que adentro de la página hagamos ese procesito,
+Josué Torres: menos que tenga el el click aquí
+Monific: ¿no? Eso sí, adentro de la página por rey no se puede. O sea,
+Josué Torres: para
+Monific: en el en el flujo de de lo que propones tú internamente, sí.
+
+00:48:47
+
+Monific: Igual mis correos y todo ya, o sea, abarcan también un poquito de protección como ya se los había enseñado, pero dentro de la página si yo pongo eso, nos metemos en una multa con las NB
+Josué Torres: Okay, okay, okay, okay. Bueno, entonces aquí este te explico cómo está de este lado, ¿va? Cuando llega a este punto, cliente prefiere solución rápida. Si sí, lo mandamos para arriba. Si no, o sea, quiere formalizar, entonces el ejecutivo va a marcar en hotspot el ticket con la etiqueta une y hotpot va a enviar un correo electrónico al cliente solicitando llenar el formato de queja.
+Monific: Okay.
+Josué Torres: Cliente recibe el formato y realiza el envío de información. Y esta información va a llegar de nuevo al este al ejecutivo. Recibe el la información y marca el estatus de queja une como iniciado en hotspot. Y aquí van a van a suceder varias cosas, ¿no? De entrada, Hostpot va a notificar al cliente la atención que el inicio de atención formal de su queja, ¿no? Por correo. Esa información le va a llegar al cliente, que es esta salida que tenemos por aquí. cliente recibe notificación y continúa la espera de cierre.
+Monific: M.
+
+00:50:14
+
+Josué Torres: Y por este otro lado, este Hospot va a detonar una notificación a dirección comercial para que comience con la rectación de información del ticket. Sí, esto porque ya se generó un, si recordamos la parte de los folios que hoy por hoy se se generan, este, como que tú nos comentabas que ponías un número y después ponías el número de su cuenta y demás. De aquí ya podemos tomar el folio del ticket y esta información ya la puedes ir ya la vas a poder ir visualizando por si necesitas ir armando tu este tu reporte trimestral.
+Monific: Buenísimo.
+Josué Torres: No, esas serían esas dos cosas, o sea, se le va a notificar al cliente y se te notifica a ti de que esto ya de que este ticket ya se inició. Sí, o sea, ya se inició el Exactamente.
+Monific: Sí, ya que tenemos tanto para resolverle y así todo lo que ya funciona, pero lo único lo único diferente es que el folio ya genera, o sea, se genera por hotspot y no lo hago yo automático.
+Josué Torres: Justamente si no es procedente la queja que comentabas en el mapeo que es es en la mayoría de las de los casos Hospod envió una notificación a a dirección comercial para notificar al cliente, recibe la notificación y se hace un envío de dictamen no procedente, no por correo.
+
+00:51:39
+
+Monific: Acá este la a partir de que pasa la UNE,
+Josué Torres: Ok.
+Monific: yo soy la que atiende estas personas, o sea, no es el asesor de atención al cliente y no me gustaría que ellos tomen esa parte porque es un poco más delicado, o sea, son formatos que llevan eh temas legales y que van ligados a los contratos de los inversionistas.
+Josué Torres: Ok.
+Monific: Entonces, me está encantando todo el flujo, pero ya a partir de que el cliente, por así decirlo, llena la solicitud, ya todo, o sea, el las notificaciones tienen que ser a dirección comercial o al correo de un @monific, que es mi correo.
+Josué Torres: Okay.
+Monific: O sea, ya el ahora sí que se reasigna por round robin a
+Josué Torres: Sí. Ah, justo no abrir una resignación a dirección comercial.
+Monific: Exactamente. Exacto,
+Josué Torres: Sí. Todo todo esto de acá lo vamos a reasignar.
+Monific: exacto.
+Josué Torres: Sí. ¿Qué sería desde?
+Monific: Desde que se llena el folio, ya la una es la que contesta.
+Josué Torres: Ajá. Se envía el correo electrónico para que llene el formato de queja. El cliente lo llena y nos regresa aquí ya para dirección
+Monific: Exacto. Y si no lo llena,
+Josué Torres: comercial.
+
+00:52:56
+
+Monific: ya se cierra, o sea, se cierra el ticket.
+Josué Torres: Okay, va que va bien. Entonces voy a modificar esta parte que marqué en rojito. Nada más vamos a como a terminar el flujo, ¿va?
+Monific: Venga.
+Josué Torres: Si no, pues envía un dictamen no procedente vía correo electrónico. Este, bueno, aquí puse esta parte que me gustaría que me me validaras también, este, Raquel, la parte de que el cliente acepta el dictamen. No sé si eso ocurre, es decir, okay, a mí no me parece, este, voy a otra instancia
+Monific: O sea, a ver, puede llegar a pasar que no lo acepte.
+Josué Torres: Oh.
+Monific: Puede llegar a pasar que no lo acepte y pueden ir a reclamar a la CONDUCEF, que es la otra instancia y nos pueden eh reportar con la CONDUF. Nos ha pasado una sola vez y no, ¿cómo te explico? no aplica porque realmente el contrato está está ligado a que no aplique, pero sí podría llegar a pasar, pero independientemente ahí, o sea, si está bien lo que estás
+Josué Torres: Okay,
+Monific: poniendo,
+Josué Torres: aquí mi pregunta es esta, ¿no? Una vez que se envíe el dictamen, nosotros tenemos algo más que hacer. O sea, ya no.
+
+00:54:10
+
+Monific: o sea,
+Josué Torres: Okay.
+Monific: normalmente no me dan respuesta los clientes cuando les mando su dictamen.
+Josué Torres: Ah, okay. Okay. O sea, ahí terminaría nuestra responsabilidad como tal, ¿no? Ya, ya revisé tu situación, este, ya voy a cargar también tu queja ante este la autoridad. Em, pues no no procedió, ¿no? Tu queja. Entonces, te envío la información y de ahí si tú quieres ir a otra instancia, pues ya es cosa aparte, ¿no?
+Monific: Exactamente.
+Josué Torres: Okay, va bien. Si eso ocurre, pues entonces aquí dirección comercial va a cerrar el ticket como este, bueno, aquí está como cerrado negativo en el caso de que el cliente no acepta, pero dices que no tienen respuesta, entonces el solo se va a cerrar el ticket,
+Monific: Sí, o sea,
+Josué Torres: ¿va?
+Monific: es un cierre, ni negativo ni positivo.
+Josué Torres: Ajá.
+Monific: O sea, o sea,
+Josué Torres: Exactamente.
+Monific: lo que puedes hacer es que te voy a explicar, yo creo que ya vi más o más bien lo que va tu pregunta. Pueden haber dos tipos de dictamen. Puede haber el dictamen favorable porque sí podría ha un error de MIFIC.
+
+00:55:16
+
+Monific: Hoy no ha pasado,
+Josué Torres: Okay.
+Monific: pero sí puede haber un dictamen favorable a a favor del cliente o puede haber un dictamen que no es favorable,
+Josué Torres: Mhm.
+Monific: que son los que hoy han pasado, que aquí sí tengo las categorías o y subcategorías, por ejemplo, como lo lo que vamos a hacer en en el reporte TI para medir trimestralmente qué es lo que más este por lo que más se queja la gente,
+Josué Torres: Aha.
+Monific: que los únicos reportes trimest estrales que he este tenido que hacer ante la UNE es porque la gente se queja de que no puede vender su participación en el mercado secundario. Ahora sí que yo no tengo la culpa,
+Josué Torres: Ah,
+Monific: mi rey. O sea,
+Josué Torres: okay.
+Monific: no la puedes vender, baja el precio.
+Josué Torres: Eh, ahí pregunta, ¿te gustaría que esa parte de las categorías y demás podamos tener alguna identificador aquí en host?
+Monific: Sí. Y te voy a decir por qué. porque eventualmente eso me va a ayudar, o sea, me gustaría que se pueda medir la categoría y subcategoría. Eso yo se los paso el
+Josué Torres: Okay.
+Monific: link al dictamen, o sea, porque yo los voy a subir en una carpeta de drive y el importe reclamado. Esto me va a ayudar a mí a medir de forma trimestral el volumen y cada cuánto está subiendo.
+
+00:56:48
+
+Monific: Eh, y también si, por ejemplo, más adelante llegar a una nueva solicitud o si llegara a una solicitud de las que son iguales, nada más tengo que hacer una duplicación de de lo que ya tengo y cambiar los datos del cliente y la fecha.
+Josué Torres: Ah,
+Monific: Entonces,
+Josué Torres: Okay,
+Monific: para mí es más fácil operar de esa forma. Por eso está está bien que se enlacen esos documentos según la categoría y
+Josué Torres: okay,
+Monific: también
+Josué Torres: okay. Va que va bien.
+Monific: así.
+Josué Torres: Entonces aquí pues enviaría el dictamen,
+Josue's Fathom Notetaker: Yeah.
+Josué Torres: eh, y ya nos iríamos a un cierre, ¿no?
+Monific: Sí. Si eres favorable para el cliente o no favorable. que te digo, hoy no ha pasado que estén favorables, hoy solo ha pasado que son los del mercado secundario.
+Josué Torres: Okay.
+Monific: Esa es mi categoría principal.
+Josué Torres: En el caso de que la queja sí sea procedente, aquí este pues analizarías la situación y emitirías el también un dictamen, ¿no?, que sería el dictamen favorable donde vendrían las condiciones y demás.
+Monific: Ajá. Se regresaron los recursos reclamados.
+Josué Torres: Okay. Okay. Esa esa devolución de recursos ocurre como o sea se hace con el adminif, se le pide a alguien más que lo
+
+00:58:11
+
+Monific: A ver,
+Josué Torres: haga.
+Monific: nunca me ha pasado este he visto cómo funciona en otros eh procesos que en otros bancos y el deber ser es eh revisarlo con el equipo legal y el de el de PLD, el oficial de cumplimiento. Una vez que ellos dos aprueban, le pido al equipo de TI que haga el movimiento a la cuenta del usuario de MIFIC para que el usuario MONIC pueda disponer de esos recursos a su cuenta asociada.
+Josué Torres: Okay. Entonces, cuando eso ya ocurre, ya tendríamos un cierre, ¿no?,
+Monific: Correcto.
+Josué Torres: del ticket. Okay.
+Monific: Exacto. O sea, primero se le manda el dictamen,
+Josué Torres: Back.
+Monific: pero hasta que el cliente no tenga los recursos en su cuenta, este está como pendiente. Pero ya, o sea, yo desde que le mando el dictamen y que ya mandamos el este, que en paralelo debería de ser en el mismo momento que ya se le mandó el dictamen, que ya está en los recursos, ya se podría tomar como cerrar.
+Josué Torres: Okay, va que va bien. E esa era toda mi pregunta y con eso cerraríamos el flujo, ¿no?, de todo esto. Digo, es un es un flujo un poco este pequeño si lo comparamos con los anteriores, pero no sé qué te pareció.
+
+00:59:21
+
+Josué Torres: ¿Tienes alguna duda, comentario
+Monific: No,
+Josué Torres: general?
+Monific: está super bien. De hecho, lo veo muy bien. Obviamente al final del camino más adelante, como como les dije en la reunión pasada, yo creo que este es un MVP y seguramente el siguiente año o quién sabe en cuánto tiempo los estaremos buscando para hacer un nuevo proyecto, pero yo creo que con esto para arrancar está perfecto.
+Josué Torres: Okay. Y bueno, ahí tengo un punto, pero no sé si eh David y este Rich tienen alguna otra reunión. Digo, por temas de tiempo. Creo que Rich sí tenía. Sí, sí tenía. aquí me comentó, no sé si por temas de tiempo, este, si se quieren bajar, pues digo adelante. Solo tengo una pregunta muy puntual, este la hago de una vez aquí, Raquel, digo, no, este, no, si tú te das cuenta, no está considerado, ni siquiera en las conversaciones de mapeo consideramos envíos de encuestas de satisfacción. E, ¿por qué no lo tengo aquí mapeado? Sí, lo tengo en el radar y demás, pero no sé si de primera instancia quisieras que funcione todo esto y para un segundo MVP las encuestas de satisfacción o tú me dices, "¿Sabes qué? agrégalas y las vamos elaborando y etcétera,
+
+01:00:35
+
+Monific: lo que ustedes me recomienden. Ahora sí que eso sí se, o sea, nunca en mi vida he mandado encuestas de satisfacción.
+Josué Torres: No.
+Monific: La verdad soy mucho más de la idea de hacer cosas de un poquito más de calidad en cuanto a, a ver, mi Google Review es muy bajo, o sea, nuestros Google reviews están como en 3.9 nueve y creo que ahí este valdría la pena en vez de enviar una encuesta de satisfacción, enviar el día de pago de rendimientos un CTA para ver si nos suben los este reviews eh para la gente que tiene pagos de rendimientos, más cosas como de ese estilo que un surv de qué tal vas, pero no sé.
+Josué Torres: Sí, digo ahí si tú consideras Yeah.
+David Ochoa: De pronto podríamos bajar. Sí,
+Josué Torres: Ah.
+David Ochoa: sería recomendable de pronto en agregar una encuesta al final. Puede ser una encuesta sencilleta, ¿no? Por encuesta nos referimos a 10, 20, 30 preguntas. Pues algo muy sencillito de qué tan de acuerdo o qué tan satisfecho está la persona con la resolución de su caso, ¿no? Y normalmente pues eso te puede igual ayudar a tener otra estadística sumado a que igual en los correos de marketing se me ocurre podríamos integrar ese call to action que comentas para llevar a las personas a la web y que también puedan dejar su comentario, ¿no? Que no necesariamente está relacionado con una encuesta. Esto puede ser un poquito antes o incluso después o en alguna campaña aislada.
+Monific: Okay, va, va. Pues entonces sí lo lo integramos uno como dice Dave, que no esté tan invasivo, pero que nosa un indicador, o sea, también no solamente de cómo están satisfechos con la resolución, con el trato de del equipo.
+Josué Torres: Okay, va que va. Entonces se anexan también. Va bien. Hasta aquí. ¿Alguna duda, comentario? digo, por mi parte estoy bien con esto que que hemos platicado hasta hoy. E ya nada más queda pendiente de aplico estos
+Monific: Y yo de mandarles el mapeo este de tecnológico de la una es muy pequeño,
+Josué Torres: ajustes.
+Monific: pero ya se lo subo en la carpeta de tareas y pues mando el link por correo.
+Josué Torres: Okay. Ah, okay, okay. Muchas gracias. Va, que va. Pues yo estoy listo, equipo.
+David Ochoa: Muchas gracias, equipo.
+
+La transcripción finalizó después de 01:03:03
+
+Esta transcripción editable se ha generado por ordenador y puede contener errores. Los usuarios también pueden cambiar el texto después de que se haya generado.

@@ -1,0 +1,361 @@
+=== ID: D160 ===
+=== SOURCE: Wiki Monific\drive-download-20260807T143807Z-1-001\Previa sesión Monific - Integración_ 2026_05_04 16_29 GMT-05_00 - Notas de Gemini.docx ===
+=== MODIFIED: 2026-08-07 ===
+
+📝 Las notas
+may 4, 2026
+Previa sesión Monific - Integración
+Invitado David Ochoa Caroline Bersot Jazmín Córdova
+Archivos adjuntos Previa sesión Monific - Integración
+Registros de la reunión Transcripción Grabación
+
+Resumen
+Validación de integración unidireccional de datos entre Monific y Hubspot para optimizar registros de clientes.
+
+Objetivos y casos uso
+La sesión definió la migración de datos de inversionistas y solicitantes de Monific a Hubspot. Se identificó la necesidad de consolidar reglas de actualización para mejorar registros existentes.
+
+Reglas y niveles registro
+Se establecieron 4 niveles de registro para inversionistas y se acordó realizar consultas periódicas cada 5 minutos. La decisión principal fue implementar consultas sincronizadas periódicamente en lugar de tiempo real.
+
+Preparación técnica próxima
+Se solicitó documentación técnica de la API para validar campos en la próxima sesión. La integración previa desincronizada requiere revisión del código y del lenguaje de desarrollo.
+
+Próximos pasos
+[David Ochoa] Agregar Comentarios: Agregar los detalles de los niveles de registro (1, 2, 3, 4) como comentarios en el documento.
+[David Ochoa] Compartir Documentación: Compartir toda la documentación existente del proyecto Monific. Incluir archivos, enlaces e información relevante antes de la sesión del miércoles.
+[Caroline Bersot] Solicitar Acceso: Preguntar por la confirmación del uso de Zapier. Solicitar acceso a la herramienta si es necesario para la integración.
+[David Ochoa] Enviar Entornos: Compartir el documento que contiene los enlaces y los detalles de los ambientes de prueba.
+[David Ochoa] Crear Hoja: Agregar una nueva hoja de cálculo nombrada accesos/documentación. Pegar todos los enlaces y recursos necesarios en esta sección.
+[David Ochoa] Etiquetar Reglas: Etiquetar las reglas del objeto Tickets con la nota nuevas reglas a integrar.
+[Jazmín Córdova] Revisar Documentación: Revisar la documentación compartida del proyecto Monific antes de la sesión del miércoles.
+
+Detalles
+Objetivo de la Integración Unidireccional Monific a Hubspot: La sesión se programó para validar los campos necesarios para una integración unidireccional de la API de Monific a Hubspot, aunque el equipo técnico de Monific pospuso su asistencia. El objetivo es traer información de la aplicación (APP) de Monific, que funciona como su propio sistema de planificación de recursos empresariales (ERP), a Hubspot para sus segmentos de inversionistas y solicitantes (00:00:00).
+Casos de Uso y Segmentos de Clientes: Los dos segmentos principales a considerar son inversionistas, quienes invierten fondos en bienes raíces a través de la aplicación, y solicitantes, quienes buscan financiamiento a través de Monific para proyectos de construcción o reestructuración de activos (00:01:26). Aunque los registros iniciales de inversionistas llegan a Hubspot, se ha identificado que no se están registrando correctamente, lo que requiere la verificación de reglas específicas, mientras que el proceso de solicitantes se realiza actualmente a través de un documento de Google que debería migrarse a Hubspot (00:03:00).
+Reglas de Creación y Actualización de Contactos para Inversionistas: Para la creación de un contacto inversionista, se deben registrar el nombre y el teléfono, y el registro en Hubspot se debe crear en tiempo real si el correo electrónico no existe, tipificando el motivo de interés como "invertir en proyectos" (00:03:00). Una segunda regla importante es la actualización de los datos de "nivel uno", que implica registrar información personal como el CUR o RFC y la dirección, lo cual actualiza el contacto en Hubspot utilizando su correo electrónico (00:04:25).
+Mapeo de Propiedades y Alcance de Reglas: La integración implica la transferencia de datos desde los valores internos de Monific a las propiedades correspondientes de Hubspot. Se identificaron cuatro objetos de trabajo, siendo "cobranza" un objeto de *ticket*, con un total de 20 reglas, aunque se sugirió que varias reglas (como las de la 4 a la 7, relacionadas con la actualización del contacto) podrían consolidarse en una sola para actualizar el registro del contacto si existe algún cambio (00:05:46).
+Revisión del Tiempo de Ejecución de la Integración: David Ochoa solicitó que la ejecución para la creación y actualización de contactos se realizara en tiempo real, pero Jazmín Córdova aclaró que esto no es posible si se consulta el *endpoint* de Monific (00:06:46). Se acordó que la consulta de la información de Monific a Hubspot se realizará periódicamente, como cada 5 minutos, para verificar actualizaciones y nuevos registros, lo cual permitiría a las personas avanzar en su "nivel de registro" hacia una inversión (00:07:51).
+Niveles de Registro para Inversionistas: Se detallaron los niveles de registro para los inversionistas: el nivel 1 es el registro simple, el nivel 2 es el "perfil en proceso" donde se registra la información básica, el nivel 3 es cuando ya tienen su cuenta STP (para transferencias), y el nivel 4 es cuando son un "inversionista activo" después de haber realizado una inversión (00:08:54). Se mencionó la necesidad de sincronizar al representante legal y asociarlo a la empresa una vez que la información esté completa, lo cual sucede al solicitar financiamiento (00:10:07).
+Preparación para la Sesión del Miércoles y Campos Faltantes: El objetivo de la reunión programada para el miércoles es validar con Monific la disponibilidad y el nombre de los campos necesarios en Hubspot, especialmente para las reglas de *tickets*, ya que Monific había sido reacio a compartir campos previamente (00:11:21) (00:22:09). Jazmín Córdova solicitó a David Ochoa que compartiera toda la documentación, incluidos los enlaces a los ambientes de prueba y los recursos generales, para prepararse para la sesión (00:15:41) (00:23:17).
+Estado y Localización de la Integración Existente: Existe una integración previa que se encuentra actualmente desincronizada, lo que impide que los inversionistas avancen en sus niveles de registro después del primer registro (00:11:21) (00:16:37). Caroline Bersot y David Ochoa indicaron que la integración podría estar alojada en Zapier, aunque Jazmín Córdova expresó dudas sobre que fuera una solución nativa y solicitó el código y el lenguaje de desarrollo de la integración para poder modificarla (00:12:45) (00:21:03).
+Metodología de la Reunión con Monific: Para la reunión del miércoles, el equipo presentará el mapeo de propiedades y las reglas/funcionalidades extraídas de la documentación para que Monific corrobore su precisión (00:21:03). Las reglas de *tickets* se presentarán como nuevas reglas a integrar, ya que no estaban desarrolladas previamente (00:22:09).
+Documentación y Recursos Solicitados: Jazmín Córdova solicitó una hoja de cálculo con los enlaces de "accesos/documentación" para consolidar los ambientes de prueba y recursos para inversionistas y solicitantes (00:16:37) (00:23:17). Se confirmó que la documentación compartida es principalmente funcional y que aún no se tiene la documentación técnica de la API de Monific, la cual es necesaria (00:18:52).
+
+Revisa las notas de Gemini para asegurarte de que sean precisas. Obtén sugerencias y descubre cómo Gemini toma notas
+Cómo es la calidad de estas notas específicas? Responde una breve encuesta para darnos tu opinión; por ejemplo, cuán útiles te resultaron las notas.
+📖 Transcripción
+4 may 2026
+Previa sesión Monific - Integración - Transcripción
+00:00:00
+
+Caroline Bersot: de de la integración con la API Monific. No, creo que ya no sé si ya está compartido directamente contigo.
+Jazmín Córdova: Mhm.
+Caroline Bersot: Creo que sí. Y la idea de la sesión que no va a ser más en esta hora de la recurrente porque el equipo técnico de ellos no pudieron entrar, va a ser un poquito más tarde, como hora y como hora y media o media hora más tarde, es para validar con ellos si estos campos que está en los en el Excel, Dave, no sé si tú puedes compartir, por favor,
+David Ochoa: Claro,
+Caroline Bersot: que está en el Excel son son digamos que ya los
+David Ochoa: claro.
+Caroline Bersot: correctos para hacer la integración de ambas plataformas que va a ser una integración unidirecional, ¿no? Desde la API monitor hasta Hubspot. De no sé si tú quieres complementar con algo
+David Ochoa: Correcto,
+Caroline Bersot: más.
+David Ochoa: ¿no? Dale. Justamente ya es el objetivo, el caso de uso puntual es traernos información desde su app de Monific hacia hotspot. SUAD Monif, básicamente es como su RP de ellos propio desarrollado, no es un sistema que hayan alquilado tipo host por algo así, sino es un sistema que han desarrollado desde cero, en el cual se registran todas las eh los movimientos que prácticamente existen dentro de de su app, ¿no?
+
+00:01:26
+
+David Ochoa: Movimientos pueden ser compras, como pueden ser ventas, como pueden ser pagos y demás, ¿no? O sea, todos esos conceptos los registran actualmente en ese sistema y la idea sería irse
+Jazmín Córdova: No.
+David Ochoa: trayendo esa información a Hotspot para sus dos segmentos principales. Sus dos segmentos actuales son inversionistas y solicitantes. inversionistas serían tal cual personas comunes que vamos, tenemos 1000 pesos que nos sobran, lo queremos invertir en las bienes raíces, lo metemos en la cuenta y compramos ahí un pedacito de esas e empresa o esa construcción que se está haciendo, ¿no? Los solicitantes serían lo inverso, personas que llegan a MIFIC para solicitar dinero para poder terminar su construcción o para poder hacer reestructuración de activos, cosas así un poquito más estratégicas a nivel de costos y por eso recurren pues a Moni, que les resulta más barato que pues justamente tener que pagar otra deuda con bancos o cosas así. Entonces, estos dos casos de uso son los que puntualmente se van a tener. OSP y aquí los campos que hemos identificado, campos que son relativamente sencillos por lo que entendemos que serían para el caso de inversionistas de dónde llega y cómo más, ya que aquí en Monifi ellos no tienen integrado y no van a tener integrado en que la fuente de adquisición caiga directamente en hotpot, sino que tal cual un inversionista entra a la aplicación de la web, deja sus datos básicos y se registra.
+
+00:03:00
+
+David Ochoa: Y este registro a la fecha de hoy sí cae en hotspot, no obstante ellos identificaron que no se está registrando como se espera y ahorita voy a entrar un poquito más a detalle con eso, pero en resumir las cuentas no se está registrando como se espera y entonces entre las reglas que tenemos está la verificación de esos registros en base a condiciones específicas. Y en el caso de solicitantes, este sí actualmente lo hacen mediante un doc de Google y la idea es que esto sí lo cambian a Hotspot y ya luego ellos registran de manera, por lo que entiendo, manual, salvo que Car diga lo contrario, ya en la app de Munific, ya que por el momento no se prevé que sea bidireccional esta integración. Ahora bien, en el tema ya de reglas específicas, teniendo en cuenta estos campos y las opciones que se tienen disponibles, tenemos las que corresponden al contacto que seren esos inversionistas, como la creación de dicho inversionista en el momento que ellos llenen la información aquí mínima indispensable, que es tal cual nombre y teléfono, no prevemos que traiga contraseña o algo más y bueno, si tiene un código de referir o integrarlo, pero si no trae esa información lo que debe de hacer es crear el registro en Hotpot busca buscando el correo electrónico y tipificando su motivo de interés como invertir en proyectos. En esta ejecución debe ser hecho en tiempo real y hotpot va a ser el lugar de destino, no va a devolver información a modificar.
+
+00:04:25
+
+David Ochoa: De ahí la segunda regla es actualizar el tema de los datos de nivel uno, ya que bueno, tú te puedes registrar en la app de Monific, pero este primer registro no es todas las acciones que tienes que hacer para ya poder invertir, sino que tienes que dar datos propios como lo sería la CUR, tienes que dar datos de ubicación como tu dirección y aparte pues tienes que al final invertir. Estos tres puntos importantes los tienen desglosados mediante una propiedad especial que se le conoce como nivel de de registro. Ya una vez que se ha insertado el primer contacto y que ya empieza a cargar su información, el primer tipo de registro que hace o el nivel uno es que tenga el usuario registrado su CUR o RFC y datos personales. De ahí mediante el correo electrónico lo vaot y lo va a actualizar.
+Jazmín Córdova: Antes de continuar,
+David Ochoa: Adelante.
+Jazmín Córdova: D, una pregunta. Estamos diciendo que la integración es de Monific hacia hotpot.
+David Ochoa: Así es.
+Jazmín Córdova: Nada más estoy viendo que el mapeo, tú ya tienes el mapeo de hotpot, tiene que ser al revés, ¿no? Porque ya está una un desarrollo que tienen ellos. Entonces, tenemos como que hacer el match con lo que ya tienen ellos, ¿no?
+David Ochoa: Tenemos este documento de aquí que nos compartieron.
+
+00:05:46
+
+Jazmín Córdova: Ajá. Ahí ya vienen como los valores internos del lado de
+David Ochoa: Ajá.
+Jazmín Córdova: ellos.
+David Ochoa: Justo aquí tienen el cómo lo tienen
+Jazmín Córdova: Okay. Entonces ahí faltaría en el mapeo de las propiedades que esté justo el match de estas
+David Ochoa: actualmente.
+Jazmín Córdova: propiedades. Son las que van a ser de host de monific hacia hosp, ¿no? Ejemplo, tengo el nombre, ¿okay? Cuando tenga nombre se me va a ir a fierce name. Tengo teléfono, se me va a ir a font. Tengo esto y esto. Porque estoy viendo que tienen muchísimas reglas. Estoy viendo 20 reglas aquí,
+David Ochoa: Mhm. Mhm.
+Jazmín Córdova: pero la mayoría eh yo la pudiera dejar en una, que es la actualizar el registro del contacto, ¿no? Si existe algún cambio en ese contacto, va y se actualiza en hotspot, que son prácticamente del cuatro al siete. Después tenemos otro que es, okay, aquí vamos a tener 1 2 3 tres objetos. El último, el 14, porque hay una línea en el 14. Ahí va.
+
+00:06:46
+
+Jazmín Córdova: Piensan
+David Ochoa: Ah, es el objeto de tickets. Perdóname,
+Jazmín Córdova: hacer.
+David Ochoa: hay objeto de ticket. Te lo separé para que no se conjunan. El objeto nosotros lo llamamos cobranza, pero es un objeto de
+Jazmín Córdova: Okay. Entonces,
+David Ochoa: ticket.
+Jazmín Córdova: vamos a hacer cuatro un vamos a estar trabajando con cuatro con cuatro objetos y nosotros vamos a estar consultando la información de Monific, ¿verdad? ellos ya end points a los cuales nosotros tengamos que estar consultando esta
+David Ochoa: Correcto.
+Jazmín Córdova: información.
+David Ochoa: Sí, ya tienen ese desarrollo
+Jazmín Córdova: Okay. Eh,
+David Ochoa: hecho.
+Jazmín Córdova: comentas acá en el en el tiempo de ejecución que tiene que ser en tiempo real.
+David Ochoa: Sí.
+Jazmín Córdova: Pudiera ser en tiempo real siempre y cuando ellos manden la información. De lo contrario, aquí no se puede hacer. ¿Por qué? Porque nosotros estamos consultando al lado de ellos. Entonces nosotros cada 5,
+David Ochoa: Ok.
+Jazmín Córdova: 10, 15, una hora, cada 24 horas, ya dependiendo de cómo lo vayamos a a definir, vamos y consultamos al al endpoint de ellos para ver si no hay una actualización o no hay un nuevo registro.
+
+00:07:51
+
+Jazmín Córdova: Si lo detectamos, venimos y y agregamos a Hotspot, pero esto no puede ser en tiempo real.
+David Ochoa: Okay. Okay. Pero se podría, no sé, tipo cada 5 minutos.
+Jazmín Córdova: Sí, cada 5 minutos. Sí. un
+David Ochoa: Sí, porque si tienen la idea, porque el objetivo de esta primera parte del registro es que tal cual la persona llegue a una
+Jazmín Córdova: tema
+David Ochoa: inversión. Este, digamos que se va a conectar a un piline mediante automatización, que esto viene en las otras reglas de negocio, pero aquí el objetivo es que conforme avance la persona tiene que ir subiendo su nivel de registro, que aquí por ejemplo todos van a iniciar en uno, ¿no? En el momento que se crea va a ser el número uno, que el uno corresponde a, ahorita te indico, ah, no lo puse acá, pero justamente el uno corresponde a nuevo registro, el dos corresponde a que ya cargó su información de datos básicos, el tres es que ya tiene una clave especial que le permite poder invertir. Es como tipo clave del banco que a esa para que hagas transferencias.
+Jazmín Córdova: Eso, déjamelo ahí como comentario, por favor. Este de Ya. Ah,
+David Ochoa: Aquí está nivel uno es esto.
+
+00:08:54
+
+Jazmín Córdova: perfecto.
+David Ochoa: Nivel dos cuenta con ST y ya el nivel 4 es un inversionista activo.
+Jazmín Córdova: Okay.
+David Ochoa: Aquí está.
+Jazmín Córdova: Dos y tres es cuenta
+David Ochoa: Sí, justo ahorita lo tengo aquí.
+Jazmín Córdova: STP.
+David Ochoa: A ver, nivel de registro. Contacto, nivel de registro, tipo de campo. Aquí está. Registro simple, que es el el de que todos entran, perfil en proceso, que es cuando registran su información. Déjame lo agrego rápido.
+Jazmín Córdova: Sí, porfa.
+David Ochoa: Ah, okay. Nivel dos. Listo. En el perfil nivel tres ya es cuando tienes su cuenta STP, que te digo, es la cuenta para transferencias y el nivel cuatro es cuando ya hicieron una inversión, que esto desencadena un negocio, que eso vienen las reglitas de negocios.
+Jazmín Córdova: Okay. Va, va, va. Entonces, a ver, nada más para entender un poquito, eh, Monific hace el registro de un contacto, solamente trae tres campos,
+David Ochoa: Sí,
+Jazmín Córdova: que es email, phone y motivo de interés. Después, cuando haya una actualización de cualquier dato del contacto,
+David Ochoa: sí.
+
+00:10:07
+
+Jazmín Córdova: vamos y actualizamos en hotspot. Y una vez que está actualizado el contacto en hotspot, eh sincronización de representante legal, ¿en qué momento se va se va a sincronizar con o se va a asociar a la empresa cuando está toda la información completa?
+David Ochoa: Sí, cuando está toda la información completa de que tenemos aquí se relaciona y cuando viene de solicitar financiamiento, que eso vendría Ya.
+Jazmín Córdova: Eso, ¿dónde lo veo en esta regla? ¿En dónde lo pusiste? Servidor interno. Ejecución de ENP.
+David Ochoa: Déjame verificar ese
+Jazmín Córdova: Usu usuarios que sean representantes. Crear o actualizar contacto. Aquí dice crear o actualizar contacto y asociar a empresa.
+David Ochoa: Ah,
+Jazmín Córdova: Hotpot. Okay. Los datos. Contacto creado, actualizado, el objeto de empresa mediante compan contact. Okay, necesito revisar bien todo esto que me están poniendo a detalle. Sí, había visto que estaban agregando, no me habían eh comentado que que ya lo tenían para revisión. Y entonces la reunión que está pactada para ¿Cuándo la pusieron? ¿Cuándo era?
+
+00:11:21
+
+Jazmín Córdova: el miércoles, ¿cuál es el objetivo de esa sesión y en qué
+David Ochoa: validar validar si tienen todos estos campos disponibles,
+Jazmín Córdova: lo
+David Ochoa: porque hay nuevos campos que no existen, como principalmente van a ser los de tickets. estos campos con Monific está un poquito raro el la la ejecución jazz
+Jazmín Córdova: Ok.
+David Ochoa: porque ellos nos dijeron que no nos querían compartir prácticamente los campos porque con su anterior proveedor que tuvieron que no salió bien, les habían compartido toda la información y que al final no no supieron explotarla y todo y prefieren ellos intentar ahora que nosotros les digamos cuáles son los campos que necesitamos del lado de hotspot, de lo que nosotros necesitamos para que funcione y ellos validen internamente si lo pueden realizar o si ya existe y cuál es su nombre.
+Jazmín Córdova: Okay, va. Sí, todavía no hay tema. Ahora, este proyecto ya está eh trabajado, ¿verdad? Ya tienen un avance. Eh, ¿es modificarlo o cuál es el objetivo?
+David Ochoa: Sí,
+Jazmín Córdova: ¿Empezarlo de cero o modificar lo que ya tienen?
+David Ochoa: actualmente de lo que tenemos aquí de la documentación es verificar por qué razón no se está sincronizando. Actualmente nos dijeron que está hecha, pero desconocen que le hayan movido, que no está sincronizando como lo indica aquí la documentación, que son las reglas que tenemos aquí.
+
+00:12:45
+
+David Ochoa: principalmente con los inversionistas. Por ejemplo, me regreso un poquito más acá arriba, no no quiero saltar aquí, pero por ejemplo con los inversionistas, cuando la persona registra su demás información, que era lo que tenemos ahí,
+Jazmín Córdova: Mhm.
+David Ochoa: no salta al nivel dos de registro que ya tiene como que un perfil prehecho y cuando ya tiene su clave no salta al nivel tres de que ya tiene su clave y cuando hace su inversión no salta al nivel cuatro y de hecho su inversión como que no se está registrando.
+Jazmín Córdova: Okay. ¿Dónde dónde está almacenada esta
+David Ochoa: Estuve viendo dónde está
+Jazmín Córdova: integración?
+David Ochoa: almacenada. No estoy
+Jazmín Córdova: Ya tenemos el código de ellos.
+Caroline Bersot: Si si no si no me falla la memoria está en Zapier.
+David Ochoa: seguro.
+Caroline Bersot: Si no me falla la memoria.
+Jazmín Córdova: Tenemos acceso a Sapiel.
+Caroline Bersot: No, no Tenemos
+David Ochoa: No, a ver, déjame revisar cómo lo tienen acá. Según, a ver, déjame ver cuáles son las aplicaciones privadas en aplicaciones conectadas. Aquí está aplicaciones conectadas.
+Jazmín Córdova: No creo que tengan algo nativo.
+David Ochoa: Marcador colpick, migración de Mifix. Estoy casi seguro que es este. O trama monific.
+
+00:14:05
+
+David Ochoa: Bueno, aquí está igual. Sapier. Sapier. ¿Cuántas llamadas trae? Saps integrados. Mm, no me marca.
+Jazmín Córdova: No, no creo que sea algo nativo, tiene que ser algo personalizado.
+David Ochoa: Okay. A ver, déjame reviso la documentación porque aquel creo que no lo dice.
+Jazmín Córdova: No.
+David Ochoa: Integración sobre cinco áreas entorno. Todo es en producción. Lab de monificos de hotspot los timelights. No, no lo menciono. No, no hace referencia, pero podemos tocar base con eso para verificar.
+Jazmín Córdova: Sí.
+David Ochoa: Yo quiero creer que sí es en un desarrollo propio, pero no tampoco te podría decir al 100%.
+Jazmín Córdova: Esa documentación ya la tengo yo, chicos.
+David Ochoa: Sí, sí, sí. Un y no. A ver, déjame revisar, déjame verifico en destacados. Si no, igual ahorita te lo envío, pero si no estoy mal, debe estar en la carpetita de Mific. M. Aquí está Monific 2026 Bost recursos generales. A ver, integraciones y accesos. Aquí está. Ah, mapa accesos. Este es el entorno de pruebas, igual para si requieres hacer pruebas.
+
+00:15:41
+
+David Ochoa: Y aquí lo menciona. Y app de inversionistas monif. Bueno, es sobre la No, creo que no lo tienes. Ya igual ahorita te lo envío para que lo
+Jazmín Córdova: Sí, porfa, compártanme todo lo que tengan ustedes de la de este proyecto porque si este si vamos
+David Ochoa: traigas.
+Jazmín Córdova: a entrar a la sesión no quiero entrar así como que ay es que no sé nada,
+David Ochoa: Dale. Sí, sí, sí, sin problema.
+Jazmín Córdova: No,
+David Ochoa: Ahorita te lo comparto. Dale. Va buenísimo. Yas. ¿Requieres algo de nuestro lado adicional?
+Jazmín Córdova: no, por lo pronto no. Necesito revisar todo lo que lo que me vas a compartir y ya si tengo dudas pues ya les les
+David Ochoa: Ok.
+Jazmín Córdova: comento. Pero sí ando s super ocupada, tengo está full esta semana,
+Caroline Bersot: Ya,
+Jazmín Córdova: entonces no estoy tan segura de llegar preparada para la sesión que pusieron el miércoles.
+Caroline Bersot: una duda,
+Jazmín Córdova: Perdón,
+Caroline Bersot: eh, una duda.
+Jazmín Córdova: Caro.
+Caroline Bersot: ¿Tú para cuándo ibas a necesitar la el acceso a Sapier?
+
+00:16:37
+
+David Ochoa: Ok.
+Caroline Bersot: Porque justo pregunté aquí para confirmar si es con Sapier y ahí le pido.
+Jazmín Córdova: Eh, pues lo más pronto que puedan o no sé ustedes para cuándo quieren que yo arranque, o sea, es una integración que ya está trabajada.
+Caroline Bersot: Listo.
+Jazmín Córdova: Entonces, primero necesito revisar qué es lo que tienen, validar cómo está desarrollado y ya más o menos conocer qué es lo que tengo que modificar.
+David Ochoa: Sí, justo porque actualmente la integración que tienen ya sí, o sea, nivel funcional sí funcionaba,
+Caroline Bersot: Listo.
+David Ochoa: pero desconocen realmente que fue lo que se les movió y ya no funciona como debes. Sí registra el primer registro cuando tú envías, por ejemplo, el formulario, pero ya de ahí en fuera se queda congelado. Ya no avanzas y así ya no saben qué pasó con esta
+Jazmín Córdova: Okay, David,
+David Ochoa: persona.
+Jazmín Córdova: compárteme también porfa eso que que comentabas ahorita de un Excel que o un s*** que abriste, que decías que ahí estaban los ambientes, que sí quería hacer pruebas.
+David Ochoa: Ah, sí, es correcto. Ahorita te lo estoy
+Jazmín Córdova: Sí, compárteme todo porfa.
+David Ochoa: enviando.
+Jazmín Córdova: Y no estoy segura porque están teniendo ambientes, no estoy segura que sea pier.
+
+00:17:49
+
+Jazmín Córdova: A ver, compárteme otra vez pantalla, porf de ese
+David Ochoa: Claro, claro. Buenísimo.
+Jazmín Córdova: sheet.
+David Ochoa: Sí. Eh, cuando nosotros entramos a eso no no hemos hecho, bueno, puntualmente yo no he hecho la prueba, pero por ejemplo,
+Jazmín Córdova: Ajá.
+David Ochoa: cuando entramos es prácticamente la misma vista que se tiene, pero pues en un link diferente, o sea, la vista se
+Jazmín Córdova: Ah, ya. No es un ambiente de prueba de la integración,
+David Ochoa: mantiene
+Jazmín Córdova: sino más bien es un ambiente para hacer pruebas, no es tanto como el API. Okay.
+David Ochoa: aquí está y aquí está el link.
+Jazmín Córdova: Sí, sí, es como un acceso, es como el sandbox de hotpot, por decirlo así.
+David Ochoa: Ah, okay, okay. Va, buenísimo. nos dijeron que está para pruebas de aquí de accionistas y solicitantes y ya si necesitamos ir cambiando aquí se puede nosotros le informamos a nuestra mapas
+Jazmín Córdova: A ver, el mapa de herramientas y objetivos que tienes los
+David Ochoa: de herramientas aquí está empujar datos o hosp por
+Jazmín Córdova: cielos.
+David Ochoa: API.
+Jazmín Córdova: ¿Puedes bajar tantito porfis?
+
+00:18:52
+
+David Ochoa: Sí,
+Jazmín Córdova: Pues no veo nada de sapier ahí. Y tienes la documentación de su API de
+David Ochoa: de su documentación de su API,
+Jazmín Córdova: ellos.
+David Ochoa: no, solo tenemos esta parte aquí.
+Caroline Bersot: Pero déjame ver si Raquel. Él no nos envió esto.
+Jazmín Córdova: Este ya me lo compartiste,
+David Ochoa: Ya, ya te lo envié. Sí,
+Jazmín Córdova: ¿verdad?
+David Ochoa: ya lo tienes ahí. Igual, déjame, bueno,
+Caroline Bersot: So
+David Ochoa: si igual si me confirmas ya que lo tienes y no lo envía de nuevo.
+Jazmín Córdova: Ya lo tengo. Ya lo tengo. Sí,
+David Ochoa: Listo,
+Jazmín Córdova: gracias.
+David Ochoa: listo. Gracias. Sí, porque de lo que nos compartió el cliente integraciones está también esto que es el mapeo de Bueno, ya esto es más funcional, no es tanto de código, pero sí de cómo funciona su aplicación. No sé si esto igual te pueda llegar a servir just cual
+Jazmín Córdova: Sí, todo me sirve.
+David Ochoa: de cómo funciona para
+Jazmín Córdova: Sí, sí, sí. Todo,
+David Ochoa: inversionistas.
+Jazmín Córdova: todo lo que tengas,
+
+00:19:51
+
+Caroline Bersot: Ah, no,
+Jazmín Córdova: porque como no conocemos nada de Mific ni
+Caroline Bersot: el No,
+Jazmín Córdova: nada,
+Caroline Bersot: el documento es el es el mismo que te está mostrando del
+David Ochoa: Igual este que
+Jazmín Córdova: la documentación que tienen es más como una documentación funcional del cómo debería,
+Caroline Bersot: Elic
+David Ochoa: est
+Jazmín Córdova: pero no tenemos una documentación técnica como tal de que diga, "Ah, no, pues se conecta hasta Endpoint o usamos esta forma o esta arquitectura de
+Caroline Bersot: estás abriendo, Daily, es esta que yo puse aquí en el chat,
+Jazmín Córdova: de
+Caroline Bersot: ¿cierto?
+David Ochoa: a ver, a ver,
+Caroline Bersot: No, esta,
+David Ochoa: a Dame un
+Caroline Bersot: pero la anterior, pero no también no es como la la técnica es la misma que tú
+David Ochoa: minuto. No es la misma, solo que en
+Caroline Bersot: estás sí Raquel solamente envió
+David Ochoa: versión.
+Jazmín Córdova: Mira, dice sincronizar desarrolladores, servidor interno. ¿Cuándo se ejecuta propiedades? No, pero es que no dice nada.
+David Ochoa: No, no lo mencionas. Es funciona. Sí, porque aquí tenemos igual los procesos, pero esto es más documentación de de lo que hace, no es tanto de la API.
+
+00:21:03
+
+Jazmín Córdova: Sí, yo creo que sí hay que ver dónde tienen esa integración que ellos trabajaron o las que le trabajaron más bien y chun chun chun
+David Ochoa: Okay,
+Jazmín Córdova: y si necesitamos acceso al código La vamos a modificar.
+David Ochoa: okay. De de este ladoas.
+Jazmín Córdova: Necesitamos código.
+David Ochoa: Adelante, adelante.
+Jazmín Córdova: Perdóname tú,
+David Ochoa: Perdón.
+Jazmín Córdova: a mí te decía que si vamos a modificarla si necesitamos acceso al código. Entonces, ya teniendo el código, teniendo un poquito ya más contexto con la documentación que me compartieron, estas estas reglas que entiendo que estas reglas son parte de la documentación que me pasaste, ¿no? Nada más las pasaste para acá.
+David Ochoa: Exacto. Son parte de la
+Jazmín Córdova: Okay. Entonces,
+David Ochoa: documentación.
+Jazmín Córdova: la sesión con ellos el miércoles. Entonces, para ir alineados vamos a mostrarle el mapeo de las propiedades. Vamos a decirles que bajamos esas eh reglas o funcionalidades que tienen en la documentación que nos pasaron a aquí para que aquí vayamos validando al final que sí está funcionando, que nada más nos ayuden a corroborar que es correcto tal cual como está aquí y así es como debe de funcionar.
+
+00:22:09
+
+Jazmín Córdova: Sí,
+David Ochoa: Correcto.
+Jazmín Córdova: son muchas las que tienes, pero pues así hay que dejarlas para que ellos tengan como mayor visibilidad de lo que va a estar haciendo, pero probablemente en algunas pues a mí sea una una un solo este una sola
+David Ochoa: una sola regla.
+Jazmín Córdova: discusión. Exactamente. Y ya al final, por ejemplo, eh dale a la derecha, porfa.
+David Ochoa: Okay.
+Jazmín Córdova: Todo hasta el final. Acá cuando hagamos pruebas, pues justo vamos a ir poniendo acá si funciona, eh, pues la ponemos. Si no, pues hacemos como el ajuste y ya vamos viendo.
+David Ochoa: Dale. Okay. Dale.
+Jazmín Córdova: Va.
+David Ochoa: Las que sí van a ser nuevas son las de tickets. De tickets actualmente no existe porque ellos no utilizaban el objeto.
+Jazmín Córdova: Okay, justo ahí.
+David Ochoa: Estas son nuevas.
+Jazmín Córdova: Okay, justo. Entonces ahí ponme tickets, eh, ponme entre paréntesis, ponle eh ajá nuevas, ponle nuevas reglas a integrar para que sepa que esto no está
+David Ochoa: Sí, estas no existen.
+Jazmín Córdova: no está este eh eh desarrollado y las demás ya las tiene, nada más hay que validar porque no están funcionando, ¿correcto?
+
+00:23:17
+
+David Ochoa: Es correcto. Sí, no están funcionando y no están registrando. Igual está ahí mi contacto de prueba para cuando hagas pruebas. Ahí sí puedes utilizar. Yo sí soy usuario de Monif, que si puedes usar mi contacto como Gen
+Jazmín Córdova: Okay, aquí agrégame porfa una nueva carpeta,
+David Ochoa: Real.
+Jazmín Córdova: según yo ya la había una nueva hoja, perdón. Y ahí no seas malito. De ahí, ponle accesos eh documenta slash documentación y todo aquí los enlaces
+David Ochoa: y te pego todo lo que te acabo de dale.
+Jazmín Córdova: que voy a ocupar. Exactamente.
+David Ochoa: Sí, me
+Jazmín Córdova: Órale. Listo, chicos. Pues entonces ya reviso mañana en el transcurso del día ver una chance que tenga que
+David Ochoa: encargo.
+Jazmín Córdova: este qué es lo que me bueno, más bien a ver qué alcanzo a ver y ya cualquier duda pues lo comentamos el miércoles. Pero entonces sí el miércoles el objetivo es que ellos validen esto, que vean que está bien.
+David Ochoa: Hm.
+Jazmín Córdova: Vamos a revisar con ellos dónde está este alojada esta integración que trabajaron, si cuentan con documentación de su API también para que no la compartan y chun chun chun y que nos digan en qué está desarrollada esta integración, en qué lenguaje va.
+David Ochoa: Sí,
+Caroline Bersot: Sí, gracias.
+Jazmín Córdova: Nombre, gracias a ustedes.
+Caroline Bersot: Bye bye.
+Jazmín Córdova: Bonita tarde.
+David Ochoa: Luego Yes.
+
+La transcripción finalizó después de 00:24:37
+
+Esta transcripción editable se ha generado por ordenador y puede contener errores. Los usuarios también pueden cambiar el texto después de que se haya generado.

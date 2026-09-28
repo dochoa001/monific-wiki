@@ -1,7 +1,0 @@
-=== ID: D146 ===
-=== SOURCE: Wiki Monific\drive-download-20260807T143807Z-1-001\Mapeo propiedades integración Monific - Interna - 2026_03_11 10_59 GMT-05_00 - Chat.txt ===
-=== MODIFIED: 2026-08-07 ===
-
-00:27:08.845,00:27:11.845
-Josué Torres: team me dan unos minutos porfa
-

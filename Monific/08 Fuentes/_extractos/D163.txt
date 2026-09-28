@@ -1,0 +1,315 @@
+=== ID: D163 ===
+=== SOURCE: Wiki Monific\drive-download-20260807T143807Z-1-001\Recurrente Monific_ 2026_05_06 10_58 GMT-05_00 - Notas de Gemini.docx ===
+=== MODIFIED: 2026-08-07 ===
+
+📝 Las notas
+may 6, 2026
+Recurrente Monific
+Invitado David Ochoa Caroline Bersot Monific Eduardo Solís
+Archivos adjuntos Recurrente Monific
+Registros de la reunión Transcripción Grabación
+
+Resumen
+La reunión revisó los flujos de trabajo de CRM y definió las estructuras de automatización requeridas.
+
+Optimización de pipelines CRM
+Se decidió eliminar los pipelines de cobranza y órdenes de pago en desuso. Los nuevos flujos de Cobranza Monific y Servicio al Cliente fueron presentados e integrados formalmente.
+
+Configuración de procesos
+El sistema automatizará la carga de datos mediante integraciones mientras se definieron propiedades específicas para cada etapa. La entrada manual quedó restringida exclusivamente a procesos dependientes de gestión humana.
+
+Coordinación y visualización
+Se detalló la visibilidad de tickets en el portal del cliente y se establecieron requisitos técnicos. Se confirmó la necesidad de coordinar sesiones técnicas para validar la integración API.
+
+Próximos pasos
+[Caroline Bersot] Eliminar Pipelines: Proceder a eliminar los pipelines de cobranza original y órdenes de pago para evitar confusiones.
+[Caroline Bersot] Enviar Grabación: Compartir acceso a la carpeta con las grabaciones de la sesión. Proveer el enlace directo para enviar al equipo.
+[Monific] Compartir Video: Compartir el video de la sesión con Vianei y el equipo de Cobranza. Recopilar y enviar comentarios adicionales del equipo.
+[Monific] Coordinar TI: Enviar los nombres de los técnicos de TI para crear la propiedad desplegable. Confirmar si Vianei asistirá a la reunión de automatización la próxima semana o agendar un nuevo horario.
+
+Detalles
+Revisión de los "Pipelines" (Tuberías) de Tickets del CRM: El objetivo de la reunión fue revisar los dos *pipelines* de tickets relacionados con el servicio, específicamente los de cobranza y servicio al cliente. Se determinó que los *pipelines* de "cobranzas original" y "órdenes de pago" no se están utilizando y se procederá a eliminarlos para evitar confusiones. Los nuevos *pipelines* implementados son "Cobranza Monific" y "Servicio al Cliente", los cuales se mostraron a los asistentes (00:00:00).
+Demostración del Proceso en el "Pipeline" de Cobranza Monific: Se revisaron las etapas del *pipeline* de cobranza, que incluyen "Nuevo registro", "Cobranza activa", "Refinanciamiento", "Ejecución de garantía", "Cierre por refinanciamiento", "Campaña liquidada" y "Cierre por incumplimiento". Para la creación manual de un ticket de cobranza, se mostraron los campos obligatorios como el historial de pago, el monto total y el plazo en meses, además de la asociación con un contacto y la compañía (00:01:29). También se mencionó que una nueva propiedad, "Proyecto", se vinculará a la cobranza para indicar el proyecto al que pertenece, con la información proveniente de la aplicación Monific (00:04:39).
+Transición de Etapas en el "Pipeline" de Cobranza: El sistema requiere llenar propiedades específicas al pasar de una etapa a otra dentro del *pipeline* de cobranza (00:04:39). Por ejemplo, para pasar a "Cobranza activa" se deben registrar los días de mora y el semáforo del proyecto (00:06:26). Las etapas de cierre incluyen "Cierre por refinanciamiento" (que no requiere propiedades adicionales), "Campaña liquidada" (que pide la fecha de liquidación, historial de pago y estado de crédito final) y "Cierre por incumplimiento" (que requiere la fecha de cierre) (00:07:50).
+Validación de la Automatización y Rol del Equipo de Cobranza: La mayoría de la información de los tickets será llenada automáticamente por el sistema mediante la integración (00:10:40). El equipo de cobranza, específicamente Vianei y su personal, revisará los procesos y proporcionará una verificación final sobre los flujos de trabajo presentados (00:09:17). Se aclaró que la entrada manual de datos se reserva para situaciones que dependen de "cosas humanas", como la ejecución de una garantía (00:10:40).
+Coordinación de la Sesión de Automatización con Vianei: Se solicitó a Monific que invite a Vianei a la sesión de presentación sobre la automatización para los procesos de cobranza y servicio, que está programada para la próxima semana (00:10:40). Si Vianei tiene un conflicto de agenda, Monific deberá informar a Caroline Bersot para coordinar un espacio alternativo (00:12:07).
+Revisión del "Pipeline" de Servicio al Cliente y Pendientes de TI: El *pipeline* de servicio al cliente es más simple, con etapas de "Nuevo ticket", "Ticket en atención", "Escalar a TI" y "Cerrado". Caroline Bersot solicitó los nombres de los técnicos de TI para crear una lista desplegable que facilitará la asignación (00:12:07). También hay pendientes con Ricardo sobre la categoría y subcategoría del ticket que se deben integrar (00:14:04).
+Creación de un Ticket en el "Pipeline" de Servicio al Cliente: Durante la creación manual de un nuevo ticket de servicio, la información obligatoria incluye el tipo de ticket, como "problema técnico" o "reclamación formal UNE" (00:15:27). Se mencionó que el sistema puede asignar la fecha de creación de forma predeterminada si no se ingresa. La asociación con un proyecto no es obligatoria en este *pipeline* ya que no se aplica al servicio al cliente (00:16:39).
+Avance en el Flujo del Ticket de Servicio y Escalada a TI: Para pasar un ticket a "en atención", se requiere una resolución detallada y responder si existe un proceso UNE activo. Al escalar a TI, el sistema solicitará el folio del ticket, la fecha y hora de escalamiento y el estado del ticket de TI (iniciado, en proceso o resuelto) (00:18:23). Se explicó que al pasar a cerrado, se vuelve a solicitar el tipo de ticket para asegurar que la información esté completa, especialmente si el ticket se creó directamente en la etapa "en atención" (00:20:05).
+Aclaración sobre la Visualización de Tickets por Parte del Cliente: David Ochoa confirmó que los clientes pueden ver el estado de sus tickets en el portal de ayuda o portal del cliente (00:20:05). Los tickets también se pueden levantar por correo o WhatsApp, donde el cliente seguirá su conversación. El portal del cliente se puede personalizar para mostrar solo la información esencial del ticket (00:21:27).
+Distinción entre Centro de Ayuda y Objeto "Tickets": El centro de ayuda es una extensión del objeto "Tickets", que es donde se origina toda la información de raíz. El centro de ayuda permite al asesor ver solo los tickets que están en curso o cerrados, lo que facilita la gestión operativa (00:22:34). Los tickets normalmente provienen de una conversación por chat, correo o un formulario (00:24:06).
+Resumen de Tareas Pendientes y Problemas de Documentación API: Monific enviará los nombres de las personas de TI para la lista desplegable y confirmará la asistencia de Vianei a la próxima reunión (00:26:45). David Ochoa señaló que en la próxima sesión técnica con el equipo de Monific (Jesús y Jaz), la desarrolladora hará preguntas específicas sobre el acceso actual, el lenguaje de construcción y el método de conexión, dado que la documentación API inicial no es completamente explícita (00:27:57).
+Comprobación del Estado General del Proyecto: Eduardo Solís se unió a la reunión para hacer un seguimiento del proyecto y obtener la perspectiva de Monific sobre los avances. Monific expresó su satisfacción con el equipo y el progreso logrado (00:29:09). La próxima reunión técnica se enfocará en proporcionar a la desarrolladora las herramientas para validar las reglas y ajustar los campos disponibles para la integración (00:30:16).
+
+Revisa las notas de Gemini para asegurarte de que sean precisas. Obtén sugerencias y descubre cómo Gemini toma notas
+Cómo es la calidad de estas notas específicas? Responde una breve encuesta para darnos tu opinión; por ejemplo, cuán útiles te resultaron las notas.
+📖 Transcripción
+6 may 2026
+Recurrente Monific - Transcripción
+00:00:00
+
+Caroline Bersot: Listo, Raquel. Entonces, hoy, ¿qué vamos a ver? Hoy vamos a ver, Hola, Da. Hoy vamos a ver los dos pipelines relacionados a
+David Ochoa: M.
+Caroline Bersot: servicio, que son el de cobranza y el de servicio al cliente. ¿Va? Entonces, vamos a ver aquí cómo está,
+Monific: Bueno,
+Caroline Bersot: cómo se va a mover, las etapas, cómo hicimos con con negocios. Entonces voy a preparar para compartir pantalla. Listo. Bueno, entonces, ¿cómo estamos? Aquí estamos en CRM Tickets, ¿va? Entonces, nos sale aquí y aquí tenemos eh el pipeline de cobranzas original de ustedes que ustedes están utilizando. Entonces, ese no movemos absolutamente nada.
+Monific: No lo estamos usando.
+Caroline Bersot: Y lo puede borrar.
+Monific: Si quieren borrarlo, lo pueden borrar.
+Caroline Bersot: Okay. Órdenes de pago tampoco están utilizando o si están utilizando
+Monific: No estamos usando ninguno. No sirvieron
+Caroline Bersot: uno.
+Monific: nunca.
+Caroline Bersot: Okay. Entonces, esos son los nuevos con esta implementación que es cobranza monific. Entonces voy a proceder a eliminar este y este va a quedar cobranza y este servicio al cliente. Entonces estos dos van a desaparecer eh más tarde.
+
+00:01:29
+
+Monific: Sí, para que nadie se haga bolas.
+Caroline Bersot: ¿Cómo?
+Monific: Sí, hay que borrar esos dos de arriba para que nadie se
+Caroline Bersot: Sí.
+Monific: revuelva.
+Caroline Bersot: Entonces ahí vamos a quedar estos dos. Entonces vamos a empezar por cobranza, por ejemplo, como estamos. Aquí tenemos las etapas. Nuevo registro, como está en nuestro mapeo, nuevo registro, cobranza activa, refinanciamiento, ejecución de garantía, siere por refinanciamiento, campaña liquidada, siere por incumplimiento. Aquí yo ya había hecho una prueba, pero vamos a a ver aquí cómo sería el día a día, ¿no? Entonces, vengo en agregar ticket, vengo en crear nuevo y cuando yo escoja cobranza monific, que aquí ya está, ya me va a pedir algunas propiedades dependientes relacionado al estado de ticket nuevo registro. Entonces, selecciono pipeline conificado del ticket nuevo registro y voy a proceder, voy a poner si el estorial de pago cómo está, el moto total, el plazo en meses, todo que está en asteriscos es obligatorio. Voy a poner, por ejemplo, cuando fue el primer pago, cuando fue el último pago, voy a poner el número de cuotas totales y aquí la tabla completa de cotas que yo la puedo copiar y pegar aquí. Entonces, voy a poner aquí cualquier cosita, ¿va?
+
+00:03:11
+
+Caroline Bersot: La descripción de ticket que está como opcional, la fuente de dónde vine. Entonces, por ejemplo, eso la idea es que sea cuando venga un ticket de manera automática. esto se va a hacer automático, pero si estoy creando manualmente como estoy haciendo aquí, entonces por ejemplo voy a poner que es teléfono porque no sé, recibí una llamada de Copic, por ejemplo. Entonces aquí pongo teléfono, pongo la prioridad, la fecha de creación, pongo el día de hoy, asocio el ticket con un contacto. Voy a poner aquí, déjame ver si tengo a mí misma de contacto aquí. Creo que no.
+Monific: Pero ponme a mí si quieres.
+Caroline Bersot: Vamos. Sí, aquí puede poner cualquier persona. ¿Porque porque no? Tú estás con tú estás con cuál correo?
+Monific: Raquel,
+Caroline Bersot: @monifique.
+Monific: sí, o sea, hay muchos ahí. Raquel@ifraquel.
+Caroline Bersot: Va, no hay problema. Yo voy a poner esta primera Raquel porque realmente no se va a ninguna comunicación, es solamente para que podamos ver. Y voy a asociar también aquí con alguna empresa. Y bueno, aquí todavía no me deja crear. Ah, va, porque tengo que asociar con un Ah, no, mentira.
+
+00:04:39
+
+Caroline Bersot: Déjame ver qué me dejó aquí. ¿Qué me faltó aquí? El nombre del ticket. Entonces, lo más importante, prueba dos BNO. Entonces, ahora sí que tengo todo lo que es obligatorio, si me deja crear y aquí es el está como proyecto porque una de las cosas que se va a estar linkqueado con la cobranza es claro de cuál proyecto esta cobranza va a pertenecer. Por eso que aquí está este nuevo vigjeto proyecto que ahora no vamos a poner solamente por fines aquí de prueba, pero esto también va a estar que es la información que va a venir asociada de la de la app monific para que se asocie al ticket como tal de cobranza. Bueno, entonces aquí vamos en crear y aquí nos creó el ticket, ¿va? Entonces aquí, como ya vimos, tenemos el resumen en contacto asociado, la empresa, si tengo algún negocio, etcétera, y aquí acerca el del ticket y el estatus del ticket. Y aquí yo puedo cambiar o aquí o en el pipeline de una etapa de un estatus a otro, porque cuando vamos pasando de un estatus a otro nos va a pedir ciertas informaciones a medida que vamos avanzando en este pipeline. Entonces, por ejemplo, cuando yo paso de nuevo registro a la cobranza activa, me va a preguntar los días de mora que yo estoy, que estoy obligado a poner, cuál es el semáforo del proyecto.
+
+00:06:26
+
+Caroline Bersot: Entonces, por ejemplo, el proyecto está en riesgo. La fecha de del último pago registrado, voy a poner que fue anteayer y el último contacto de cobranza, por ejemplo, que fue, no sé, el viernes, el estatus de la cobranza, si está el corriente, mora temprana, mora moderada, mora grave o bloqueado, ¿no? Conforme vimos ahí en el mapeo. Entonces, aquí, por ejemplo, guardo y ahí sí puedo pasar eh a cobranza activa. para pasar de cobranza activa a refinanciamiento. Yo también vengo aquí y me va a pedir el la fecha de inicio de esta reestructura de ese refinanciamiento. Entonces, vamos a decir que yo hablé con el cliente hoy. Al día de hoy se firmó, no sé, un nuevo contrato. y pongo aquí que fue justo al día de hoy y guardo para pasar a la siguiente etapa que es la ejecución de garantía, ¿no? En caso de que pase algo, aquí yo tengo que poner la fecha que se envió la garantía. Entonces vamos a decir que envíen el 30 de abril, ¿no? Semáforo del proyecto en riesgo. Aquí se puede mantener en riesgo o se puede poner en críptico, por ejemplo, ya que estamos en esta etapa, ¿no?
+
+00:07:50
+
+Caroline Bersot: Eh, la mora se puede cambiar, se puede venir, por ejemplo, a mora grave, ¿no? Porque estamos entrando en, no sé, en el proceso de ejecución. Y aquí el estatus del proceso jurídico, si iniciado, si en proceso o si está concluido. Y también guardamos para pasar a esta etapa cuando pasamos en cierre por refinanciamiento. Claro que aquí es importante que no necesariamente yo tengo que pasar de refinanciamiento a ejecución. A veces no se va a pasar la ejecución. Claro. Entonces aquí yo puedo venir directo al cierre por refinanciamiento. Yo estoy pasando una a una para que tú puedas ver lo que hay en cada en cada etapa. Ah, entonces si por refinanciamiento, esta sí no nos pide ninguna ninguna propiedad, no debemos llenar ningún campo porque lo que es necesario ya llenamos antes de esta etapa. Y aquí sería el primer cierre, ¿no?, que se cerró por refinanciamiento y hicimos el refinanciamiento de ese determinado cliente. Aquí cuando pasamos, por ejemplo, para la campaña liquidada, me va a pedir la fecha de la liquidación, me va a poner, me va a pedir el historial de pago, que puede ser o limpio o como hora resuelta, y el estado de crédito final que va a ser activo o activo con historial y yo lo guardo.
+
+00:09:17
+
+Caroline Bersot: Y aquí también finalizaría, ¿no? si por refinanciamiento, campaña liquidada o siere por incumplimiento. Son las tres etapas cerradas del ticket de cobranza que tengo. Y en el cierre por incumplimiento también me va a pedir la fecha de cierre por incumplimiento y yo guardo. Entonces ese va a ser, digamos, el día a día de las personas que van a eh trabajar con la parte de cobranza en este pipeline. Y bueno, quisiera saber si desde aquí hay alguna pregunta. No, no voy a al centro de ayuda ahora. Deja el centro de ayuda para después. Eh, y sí, quisiera saber si tienes alguna pregunta. Eh, ¿cómo lo
+Monific: A ver,
+Caroline Bersot: ves?
+Monific: este realmente es más área de Vianei y de y de las personas de cobranza. Yo en esta parte la verdad es que te puedo decir que lo veo increíble y ellos me pueden decir falta esto o de lo que vimos falta el otro. Entonces yo prefiero en esta parte que con el video y la y lo que ya tenemos en hotspot este me compartan el videío cuando acabemos. Yo se los comparta a ellos para que de un último check por cualquier cosita y listo. Pero a ver,
+Caroline Bersot: Perfecto.
+
+00:10:40
+
+Monific: o sea, a grandes rasgos me hace sentido, o sea, me hace sentido que estén las etapas, me hace sentido el incumplimiento. Obviamente aquí solamente para recapitular, o sea, que algo que también me dijiste tú es, se supone que en teoría hay cosas que o bueno, más bien la mayoría de las cosas el sistema las va a llenar, que es el
+Caroline Bersot: por la integración.
+Monific: correcto.
+Caroline Bersot: Sí.
+Monific: Obviamente lo que se llena mensual es cosas más que sean tipo cuando ya está en una ejecución de
+Caroline Bersot: Correcto.
+Monific: garantía y todo eso que ya depende más de cosas humanas que pues el sistema no sabe. O sea, por ejemplo, si está en una cosa de garantía o algo así, pues el sistema no sabe y nosotros tenemos que alimentar a Hobs para que sepa. ¿Correcto?
+Caroline Bersot: Exactamente, exactamente esto, Raquel. Ahora, una cosa que quería preguntarte, pero no no es en este de cobranza, es en el de es en el de servicio que vamos a ver. Pero antes de eso, ¿qué te iba qué te iba a comentar? para la para la sesión que vamos a tener de la presentación de la parte de la automación para cobranza y para servicio, si pudiera estar vía sería super chévere para que nos pudiera
+Monific: Esa
+Caroline Bersot: acompañar,
+
+00:12:07
+
+Monific: es.
+Caroline Bersot: ¿no? Esta es la va a ser la próxima semana.
+Monific: Okay. Para la siguiente semana decirle a Diana que se
+Caroline Bersot: Sí, exacto.
+Monific: una.
+Caroline Bersot: En caso de que ella no tenga espacio, no tenga tenga conflicto de agenda, me hace saber que cuadramos un otro espacio entre todos, excepcionalmente para que ella pueda ver esta parte de la de la implementación con el con la con la automación, ¿va?
+Monific: De
+Caroline Bersot: Porque eso sí, ella con el video va a cachar bien,
+Monific: acuerdo.
+Caroline Bersot: pero la otra sería chévere porque en caso de que tenga alguna pregunta en vivo nos puede hacer.
+Monific: Sí, obvio, 100%.
+Caroline Bersot: Listo.
+Monific: Aparte ya solo se tiene que echar la primera parte del video porque supongo que la otra ya es más enfocada en service.
+Caroline Bersot: Sí. Bueno, entonces pasamos eh a tickets,
+Monific: Yes.
+Caroline Bersot: pero ahora sí al servicio al cliente. Entonces aquí voy a pasar para mostrarte el pipeline vacío. Este sí es bastante sencillo, ¿va? Entonces, nuevo ticket, ticket atención. Si yo no necesito escalar a ti de en atención, yo lo paso a cerrado. Y si yo lo tengo que escalar a ti, vengo aquí a escalar a ti y qué te iba a pedir, que es una de las propiedades que está aquí, que yo no lo no la creé todavía porque está para que se pueda escribir, pero creo que sería más chévere un menú indespegable que es eh los nombres de los técnicos asignados, de los técnicos de TI, si tú me lo puedes dar para que yo pueda crear esta propiedad porque ahí es solamente escoger y no
+
+00:14:04
+
+Caroline Bersot: es necesario escribir, es más fácil para la persona. ¿Va? Entonces ahí entonces son tres cosas que aquí no vamos a ver qué son. Va, que ahí también estoy esperando respuesta de Ricardo, que es esto que quería pedírselo a ti por el nombre de las personas y también la parte de categoría de tickete y subcategoría. Eh, por algún motivo no estoy aquí con el despegable, entonces comenté con Ricardo. Entonces, esas son las tres cosas que no vamos a ver aquí, pero una vez esté, yo hago un lo para enviarte.
+Monific: Buenísimo.
+Caroline Bersot: Va
+Monific: Pero si entiendo que eso es nada más para medir la eficiencia de cuando se pasa a Noion, cuánto tiempo me tarda mi equipo en trabajármelo y quién está tardando más de Yo
+Caroline Bersot: también. Y exactamente,
+Monific: te lo mando.
+Caroline Bersot: con eso se puede sacar los reportes. Exacto. Las fechas incluso para hacer esto ya están aquí y ahí sería con el nombre de la persona que se pueda reportear con esto. ¿Va? Entonces, bueno, aquí sí vamos a crear un ticket 100% nuevo para este pipeline. No lo había creado. Entonces, aquí ya me sale. Voy a poner prueba BNO, servicio al cliente, estatus nuevo ticket.
+
+00:15:27
+
+Caroline Bersot: Y aquí me va a pedir también algunas informaciones. ¿Cuál es el tipo de ticket? si es un problema técnico, si es información o duda sobre inversión, si es relacionado a solicitantes, si es queja o inconformidad o si es una reclamación formal une. Voy a poner este para molestarte. Entonces voy a poner que es una reclamación formal une.
+Monific: literal.
+Caroline Bersot: Si hay te estoy bromeando. Si hay alguna referencia al ticket anterior, aquí se puede poner el número del ticket. Raquel, ¿me escuchas? porque creo que te veo como me escucha.
+Monific: Sí, te escucho.
+Caroline Bersot: Ah, es que yo te veo como un poco bloqueada.
+Monific: Sí,
+Caroline Bersot: ¿Usted me escucha bien?
+Monific: s
+Caroline Bersot: Perfecto. Entonces, aquí si hay alguna referencia al ticket anterior, se puede poner el número de ticket. O también una otra manera de hacer es relaciono un tickete a otro. Esto también se puede hacer. Entonces, se puede hacer de las dos maneras. La descripción, la fuente, lo mismo, ¿no? En caso de que yo esté haciendo así de una manera manual. Prioridad, fecha de creación. Fecha de creación.
+
+00:16:39
+
+Caroline Bersot: Si yo no pongo nada aquí, el sistema me lo va a poner en el día de hoy, eh, de manera default, ¿va? Entonces, aquí el contacto asociado, aquí la empresa asociada y aquí en este caso, aunque este proyecto aquí porque no se puede hacer un cambio de cuáles objetos se va a pedir en cada pipeline de tickets, por eso que no ponemos esto como obligatorio, pero aquí, claro, proyectos para el pipeline de servicio al cliente no se aplicaría. Entonces, aquí yo voy en crear. Y bueno, aquí te voy a mostrar de una otra manera, ya que vimos aquí, bueno, aquí lo mismo, ¿no? Acerca del ticket, estatus del ticket, eh contactos de empresas, negocios y también puedo poner aquí ticket para ver los tickets asociados a este en caso de que yo quiera crear de esta manera. Entonces aquí, déjame regresar a tickets para que podamos mover desde aquí y también tener esta otra, mostrar esta otra este otro tipo de movimiento para Banile. Entonces aquí estoy con nuevo ticket y paso para inatción. Me va a pedir aquí cuál es la resolución detallada, o sea, me va a pedir básicamente eh por qué esta persona entró. Entonces estoy con problemas con Monific y quiero hacer queja formal. Te voy a te voy a bromear de que no queja formal.
+
+00:18:23
+
+Caroline Bersot: Por eso que está como reclamación formal. si tengo un proceso une activo con esta persona, si sí o si no, y si hay alguna nota de consulta legal, aquí voy a poner cualquier cosa y eso, claro, esto no es obligatorio, ninguno de estos, o sea, obviamente cuanto más información mejor, pero los obligatorios son estos dos primeros y bueno, y aquí yo logro pasar para en la atención. Si no es un problema técnico que tengo que escalar a TI, me lo paso cerrado. Vamos a pasar a escalado Ati para que podamos ver. Aquí en escalado ti me va a pedir algunas informaciones y aquí también me va eh eso se me va a cambiar, va a entrar tres más, que es la categoría, la subcategoría del TI y el nombre de los técnicos. es solamente esto que va a tener de nuevo cuando cuando yo tenga contigo esa información y también esto con con Ricardo. Entonces, aquí voy a poner el folio del ticket, voy a poner aquí cualquier cosa, la fecha de escalamiento y la hora. Estamos poniendo ambos, ¿va? Entonces voy a poner que fue, por ejemplo, escalado el día de ayer a las 2 de la tarde, por ejemplo, aplico. Hay que aplicar, si no no nos deja. descripción del problema técnico que yo tengo, el estatus de ticket de ti, si está iniciado en proceso o resuelto, porque no sé, a veces yo paso a esta yo hablo primero con el equipo de TI que está que está pasando.
+
+00:20:05
+
+Caroline Bersot: El equipo, por ejemplo, ya empieza a resolver, ya empieza a trabajar y yo no pongo en el mismo momento. Entonces, cuando yo pongo, ya está, por ejemplo, en proceso. Entonces, aquí yo tengo esta opción. por eso y nota de seguimiento eh de ti en caso de que lo tenga. Si no no es obligatorio, yo lo dejo y aquí aplico y aquí yo puedo pasar a cerrado y me va a pedir el tipo de ticket de nuevo. ¿Por qué nos pide aquí de nuevo? Porque en caso de que se cree el ticket en atención, no se va a pedir esta información. Entonces para cerrar sí, por lo menos necesitamos saber el tipo de ticket. Entonces por eso que está aquí también. Y este sería el de servicio. Es bastante más sencillo que el de cobranza, por ejemplo. Y bueno, y ahí te cedo la palabra
+Monific: Pero a ver, una cosita acá que no entiendo. El de servicio se supondría que la persona lo va a ver afuera, ¿correcto?
+Caroline Bersot: en el portal.
+Monific: O sea, como en el chat, por así decirlo.
+Caroline Bersot: Eh, sí, es el portal que se llama, ¿cierto, David? El portal del cliente que se puede ver los estatus de los tickets,
+
+00:21:27
+
+David Ochoa: Sí, correcto. Se puede ver allá, pero igual en sí,
+Caroline Bersot: ¿cierto?
+David Ochoa: dependiendo de dónde levante el ticket, por ejemplo, si lo levanta por correo o por WhatsApp, pues realmente la persona va a estar viendo desde ahí su propia conversación, ¿no? Pero el portal de ayuda o el portal de cliente sirve como otro medio para ver la información.
+Caroline Bersot: Él pone el nombre del ticket y de los estatus,
+Monific: Okay.
+Caroline Bersot: ¿cierto?
+David Ochoa: Sí, sale con los datos de del ticket como su nombre,
+Caroline Bersot: Sí.
+David Ochoa: cuándo fue creado y bueno, se puede personalizar también, ¿no? Agregar, por ejemplo, qué categoría es o incluso quién lo está llevando. O sea, se puede ir personalizando en el portal o incluso quitarle toda la información y solo dejarle lo básico, cuándo, cuál es su nombre, cuándo se abrió y cuál es su estatus.
+Monific: Okay. O sea,
+Caroline Bersot: Gracias.
+Monific: pero esto no se abre tipo en conversaciones normales de tipo chat,
+David Ochoa: Correcto.
+Monific: en un formulario del chat que sea el chat con hopot. No sé si me
+Caroline Bersot: Se podría también se podría en caso de que sea que se requiera,
+Monific: explico.
+Caroline Bersot: si no no se puede abrir de alguna otra manera,
+David Ochoa: No.
+
+00:22:34
+
+Monific: Okay.
+Caroline Bersot: ¿va? O sea, si puede ser o desde el chat o puede ser desde un formulario que ustedes puedan pasar al cliente o puede ser solamente quiero que sea manual por teléfono, que el cliente llame para reportar una determinada situación. También lo puede ser.
+Monific: Okay. No sabes que estoy, o sea, como me, o sea, lo había entendido era de que tipo entraba a la conversación y ahí se abría en el centro de ayuda los tickets. O sea, eso era lo que yo entendía, que este es el centro de ayuda, ¿correcto? O
+Caroline Bersot: No, el caso de ayuda yo no te
+David Ochoa: Sí, sí, justo el de hecho,
+Caroline Bersot: mostré.
+David Ochoa: Raquel, el centro de ayuda, eso lo podemos ver incluso ahorita,
+Monific: sea,
+David Ochoa: pero digamos que el centro de ayuda es una extensión de los tickets.
+Caroline Bersot: Exacto.
+David Ochoa: Realmente el asesor de atención a clientes tiene que tener noción de que son los tickets porque al final digamos que es el objeto con el que tú secal las reportes, pero ya en la parte operativa de de ejecución se hace directamente desde el centro de ayuda. Ahí van a tener su bandeja como lo tienen actualmente, pero ya no van a tener esos 2700 tickets abiertos, sino que como ya tenemos etapas definidas, que son las que nos presenta Caro, eventualmente tú en todos tus tickets abiertos únicamente vas a ver los tickets que realmente están atendiendo ahorita y también vas a tener otra sección que ya son los tickets cerrados que son los que realmente pues ya se terminó de atender, ¿no?
+
+00:24:06
+
+David Ochoa: O sea, es lo que vas a ver a nivel visual y también lo que vería un operativo, o sea, un asesor de atención a clientes a manera de visual, pero el objeto en sí raíz o de donde viene toda la información es tickets, que era lo que mostraba Caro hace un
+Caroline Bersot: Exacto.
+Monific: Ya entendí que les digo,
+David Ochoa: momento.
+Monific: ahorita están puros correos que no entiendo absolutamente nada porque nunca que eso es lo que hay que
+Caroline Bersot: Sí,
+Monific: borrar.
+David Ochoa: Claro. De hecho, si le das te das cuenta,
+Caroline Bersot: aquí.
+David Ochoa: ya justamente lo mostraba caro, ahí hay una opción que se llama Peline y si le da clic a esto de Peline,
+Caroline Bersot: Sí, eso,
+David Ochoa: ahí aparece los que acaba de mostrar,
+Caroline Bersot: eso es
+David Ochoa: ¿no? El de cobranza y el de servicio,
+Monific: Ok.
+David Ochoa: que sería algo así como lo vería el asesor de atención,
+Caroline Bersot: Sí,
+David Ochoa: ten su piline de cobranza o su piline de servicio y ahí pueden gestionar también comunicación. Yeah.
+Caroline Bersot: sí. Aquí, Raquel, el centro de ayuda es, digamos que un misto entre la conversación y el ticket, porque normalmente los tickets van a provenir o de una conversación por chat o de un correo, como tú ves aquí, o eh o de un formulario, por ejemplo.
+
+00:25:13
+
+Caroline Bersot: Entonces, te voy a dar un ejemplo. Cuando vamos aquí a servicio al cliente para que no nos para que no nos salga tod. Ah, es porque ya está, no, porque ya está cerrado ahí realmente no va a mostrar aquí. Déjame poner, no sé, el de cobranzas. Vamos a hacer aquí un cheque con el de cobranzas. Sí,
+Monific: No, pero es
+Caroline Bersot: porque sí,
+Monific: cobranzas.
+Caroline Bersot: no es que eh los otros dos como están cerrados ya no nos va a mostrar aquí. Hay que ser tickets abiertos. Por eso aquí puse cobrances por por ejemplo. Entonces aquí me va a salir por cuál canal llegó este ticket, cuál es el nombre, quién es el contacto asociado, quién es la empresa asociada, cuándo se creó, estado a tiempo, prioridad, etcétera, etcétera. Va. Y aquí cuando esté asignado, vamos a decir que yo soy de del equipo de cobranzas, yo llego a mi día a día, abro mi centro de ayuda y yo voy a ver todos los que van a estar asignados a mí. Los que van a estar asignados a mí, yo voy a tener aquí toda una lista para empezar a trabajar en estos tickets. Entonces, esto es más para facilitar la gestión de la gente, que no es necesario venir en el CRM, tickets, poner el propietario como yo mismo, entonces es más para facilitar, pero lo que se ve aquí también se ve allá y junto con la conversación en caso de que
+
+00:26:45
+
+Caroline Bersot: yo tenga una conversación en el aente por chat,
+Monific: Okay,
+Caroline Bersot: ¿va?
+Monific: ya. Perfecto.
+Caroline Bersot: S. Raquel, no sé si tú tienes más una alguna duda,
+Monific: Va.
+Caroline Bersot: porque realmente hoy lo que les lo que estamos preparados para mostrarte era eh los dos pipelines de tickets que te mostramos.
+Monific: No, les agradecería si me pueden mandar el videíto caro para compartírselo al equipo. Yo me encargo de que en caso de que tengan algún comentario adicional,
+Caroline Bersot: Sí,
+Monific: como se los pasé la vez pasada, este, te los hago llegar luego luego. Adicional a esto de las tareas que me diste, te paso yo los nombres de las personas de ti para la lista desplegable y me encargo de ver si bien
+Caroline Bersot: perfecto.
+Monific: puede entrar la siguiente semana a la reunión y si no agendamos en un horario que le quede a todos. ¿Te parece?
+Caroline Bersot: Sí, perfecto, perfecto. Te comento, hoy de la integración yo tengo un conflicto de agenda, no voy a poder entrar, pero David y Jaz, que es de nuestro equipo técnico, van a estar ahí junto con Jesús. ¿Y qué te iba a a a pedir
+Monific: Pidieron algo de la documentación,
+Caroline Bersot: para cómo?
+
+00:27:57
+
+Monific: API. ¿Ustedes vieron algo ustedes de la documentación API?
+Caroline Bersot: Esto que te iba a pedir no tenemos.
+Monific: Pero a ver, yo estoy segura, estoy hablando por mi equipo de TI, pero chance estoy hablando mal, pero estoy segura de que ellos no tienen documentación API por cómo conozco a mi equipo.
+Caroline Bersot: Pero, pero,
+Monific: Entonces ahí va a ser trabajo.
+Caroline Bersot: pero
+David Ochoa: Okay, igual eh no te preocupes, Raquel. Justamente en esta sesión ya nuestra desarrolladora va a hacer preguntas un poquito más puntuales a
+Monific: Okay.
+David Ochoa: nivel técnico, ¿no? Por ejemplo, ¿cuáles son sus accesos actuales? eh cosas un poquito más técnicas, cómo tienen construido, en qué lenguaje, justamente, cuál es la forma en la que se conectan y demás cositas que de hecho en la documentación que nos habían compartido inicialmente no viene siempre explícito, no se entiende de cierta manera, pero ella va a confirmar justamente algunos datos y nosotros les vamos a
+Monific: que lo convierten porque incluso yo tengo dudas,
+David Ochoa: presentar.
+Monific: o sea, a veces es angular por J, a veces es entonces sí está bien que lo confirmen con Jesús.
+David Ochoa: Dale.
+Caroline Bersot: S. Hola, Lalo.
+Eduardo Solís: Hola, ¿cómo están? Perdón, ahí me me sumé tarde,
+Caroline Bersot: Viene cuentan.
+
+00:29:09
+
+Eduardo Solís: eh, porque pues se me cruzó ahí con una con una llamada también que me agendaron,
+Monific: Ha.
+Eduardo Solís: pero nada, venía a esta reunión justamente nada más pues hacer eh pues un un pues una un pequeño checkup, ¿no? Más que nada para ver cómo va el seguimiento del proyecto, ¿no?
+Monific: Ah.
+Eduardo Solís: Entender un poquito Raquel desde tu perspectiva también el los avances, ¿no? Veo que pues láicamente ya desarrollaron una dinámica de trabajo pues bastante fluida, ¿no? lo que alcancé a escuchar en la en la en la llamada, pero pues básicamente es eso, ¿no? Estamos ya eh en un momento importante de pues del proyecto, ¿no? Está hablando de integración, etcétera. Entonces venía justamente nada más a eso. Digo, me hubiera gustado llegar un poquito más temprano, pero pues bueno, ya si no en la siguiente sesión me invitan y ya me meteré también para tener un poquito más de de contexto y viendo pues cómo vamos dando nuestros siguientes pasos.
+Monific: Sí, mil gracias. Sí, la verdad es que me diste un super equipo. Yo estoy super contenta con todos. Espero que sea mutuo porque ya saben que tengo esquizofrenia por acá mi equipo de
+Caroline Bersot: mutuo que quiero traer la parte de marketing para acá,
+
+00:30:16
+
+Monific: trabajo,
+Caroline Bersot: oíste van a hacer con
+Monific: pero sí así va a ser Dios.
+Caroline Bersot: nosotros.
+Monific: Y pues a ver, a ver qué ondita, pero estoy segura que vamos a construir cosas grandes. Pues bueno, entonces nos conectamos 11:30 de eh y a ver a ver qué sacamos con el equipo de Jesús.
+David Ochoa: Dale. Sí, buenísimo. Igual es una junta, te digo, algo técnica, justamente con el objetivo de de darle las herramientas a nuestra desarrolladora para que pueda hacer la revisión interna, validemos reglas, que las deciden un lenguaje, digámoslo sencillo y justamente es validar si tienen esos campos disponibles y no para ir ajustando.
+Monific: Venga,
+David Ochoa: Lo que trata, pero buenísimo. de este equipo.
+Monific: s,
+Caroline Bersot: Super
+Monific: pues quedo pendiente el videito,
+Caroline Bersot: cho.
+Monific: les mando los pendientes y les escribo en el grupo si sí puede viar. Mil
+Caroline Bersot: Gracias, Raquel.
+Monific: gracias
+Caroline Bersot: Así que se me tenga la grabación, yo te yo to te paso acceso a la carpeta con todas las grabaciones ahí
+Monific: como siempre.
+Caroline Bersot: y con
+Monific: Sí, pero el indirecto estaría buenísimo ya para mandarles
+Caroline Bersot: Vale, perfecto.
+Monific: eso.
+Caroline Bersot: Sí, digo, esta es la fecha de hoy para que no se pierdan. Super muy bien.
+Monific: Gracias.
+Eduardo Solís: Un abrazo.
+
+La transcripción finalizó después de 00:31:51
+
+Esta transcripción editable se ha generado por ordenador y puede contener errores. Los usuarios también pueden cambiar el texto después de que se haya generado.

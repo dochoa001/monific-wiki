@@ -1,0 +1,270 @@
+=== ID: D169 ===
+=== SOURCE: Wiki Monific\drive-download-20260807T144042Z-1-001\10. Jueves 19 de marzo.docx ===
+=== MODIFIED: 2026-08-07 ===
+
+MINUTA DE REUNIÓN
+Presentación del Máster de Implementación — Proceso de Servicio / Atención a Clientes
+1. Datos Generales
+Fecha
+ | 19 de marzo de 2026
+ |
+Modalidad
+ | Videoconferencia
+ |
+Plataforma
+ | HubSpot (implementación en curso)
+ |
+Tipo de sesión
+ | Presentación de Máster — Pipeline de Servicio al Cliente
+ |
+Duración aproximada
+ | 2 horas
+ |
+Facilitador / Consultor
+ | José (consultor de implementación HubSpot)
+ |
+Participantes
+ | Caro (directora de proyecto / consultora), Raquel (Directora Comercial / responsable UNE, Monific), David (consultor técnico HubSpot), participante adicional (acceso tardío)
+ |
+
+2. Antecedentes y Contexto
+Esta sesión forma parte del proceso de implementación de HubSpot en Monific. En reuniones previas se presentaron los Másters de Cobranza y Ventas. En esta sesión se presentó el Máster de Servicio / Atención a Clientes, el cual es el más compacto de los tres.
+Se confirmó que los Másters de Cobranza y Ventas ya fueron entregados al equipo de Monific y que la implementación de los tres pipelines está programada para iniciar la semana siguiente a esta reunión, sujeto a aprobación formal por correo.
+Raquel comentó que ya realizó una prueba básica del plan Enterprise de HubSpot (14 días de prueba) para crear un workflow de correos automáticos, y que planea adquirir el plan Enterprise antes del día 23 del mes en curso para no perder continuidad en la implementación.
+
+3. Pipeline de Servicio al Cliente — Estructura General
+El pipeline de servicio opera con objetos de tipo ticket dentro de HubSpot. Su objetivo es gestionar la atención proactiva de clientes (inversionistas activos). No se incluyen en este pipeline inversionistas dormidos o sin actividad, ya que estos se manejan con secuencias en la parte comercial.
+3.1 Etapas del Pipeline
+El pipeline consta de cuatro etapas:
+Nuevo Ticket
+En Atención
+Escalado a TI
+Cerrado
+
+3.2 Etapa 1 — Nuevo Ticket
+Objetivo: Recibir, identificar y clasificar toda interacción entrante, crear el ticket en HubSpot y asignarlo al ejecutivo de atención de turno en un máximo de 5 minutos.
+Canales de entrada y su lógica de clasificación:
+Chat Web: Al inicio del chat solicita nombre, correo electrónico y tipo de solicitud (menú desplegable orientado al tipo de duda, no al tipo de ticket). HubSpot clasifica automáticamente el tipo de ticket (A-E).
+WhatsApp: Se crea el ticket automáticamente al recibir el mensaje, pero la tipificación la realiza el ejecutivo en la primera interacción.
+Correo Electrónico: Ticket creado automáticamente al recibir el correo; tipificación manual por el ejecutivo. Correo de soporte: soporte@monific.com.
+Llamadas: Creación y tipificación manual por el agente durante la llamada.
+
+Clasificación de tipos de ticket:
+Tipo
+ | Categoría
+ | Descripción
+ |
+A
+ | Problema técnico
+ | Error de acceso a plataforma, fallos, etc. Se escala a TI si no se resuelve en primer nivel.
+ |
+B
+ | Información / Dudas
+ | Preguntas sobre inversión, proyectos, rendimientos, información general de Monific.
+ |
+C
+ | Solicitante
+ | Sistema detecta posible solicitante (palabras clave en chat o identificación en interacción). Se asigna a Guillermo (especialista en relaciones con solicitantes).
+ |
+D
+ | Queja
+ | Inconformidad, insatisfacción, reclamo sobre el servicio.
+ |
+E
+ | Reclamación formal UNE
+ | Queja formal que requiere apertura de expediente ante la autoridad (CNBV).
+ |
+
+Workflows en esta etapa:
+Al entrar, se establece la propiedad Estatus de Ticket = Nuevo.
+Si el canal es chat o formulario, se clasifica el tipo de ticket automáticamente.
+Se asigna el ticket al ejecutivo de atención de turno por Round Robin.
+Se inicia cronómetro SLA de primera atención: máximo 5 minutos.
+Si el SLA se supera, se escala al personal superior.
+Al realizar la primera interacción, el ejecutivo marca Estatus de Ticket = En Atención y se detiene el cronómetro.
+Nota sobre el chatbot:
+Raquel solicitó que el chatbot mantenga su lógica de autoservicio actual: el menú ofrece tres opciones (Quiero invertir / Quiero financiamiento / Hablar con un agente). El ticket y la recopilación de datos solo se activan cuando el usuario elige 'Hablar con un agente'.
+
+3.3 Etapa 2 — En Atención
+Objetivo: Gestionar activamente la consulta según su tipo hasta su resolución, con documentación completa de cada acción.
+Gestión por tipo de ticket:
+Tipo A (técnico): El ejecutivo analiza y da solución. Si no puede resolver en primer nivel, escala a TI marcando la propiedad Estatus de Ticket = Escalado TI. Se notifica a TI a través de Notion (plataforma actual de tickets de TI, que no se modifica). El ejecutivo da seguimiento cada 8 horas y mantiene comunicación proactiva con el cliente. Al confirmar la solución con el cliente, se avanza a Cerrado.
+Tipo B (información): El ejecutivo responde apoyándose en el Centro de Ayuda (base de conocimientos en HubSpot) y en los fragmentos de respuesta rápida disponibles en HubSpot.
+Tipo C (solicitante): HubSpot asigna el ticket directamente a Guillermo. Él analiza el contexto, brinda atención y, si detecta un potencial solicitante, genera el intento en el pipeline de ventas y cierra el ticket. SLA: 1 hora (ajuste acordado; se sustituye el SLA previo de 24h). Si se supera el SLA, se envía notificación a Karen (o en su defecto a Raquel).
+Tipo D (queja): El ejecutivo gestiona la queja. Si se resuelve directamente, avanza a Cerrado.
+Tipo E (reclamación formal UNE): Se marca la propiedad Proceso UNE Activo = Sí, se cierra el ticket en el pipeline de servicio y se abre un registro en el mini-pipeline UNE.
+
+3.4 Etapa 3 — Escalado a TI
+El ticket se mueve a esta etapa cuando el tipo A no puede resolverse en primer nivel. El ejecutivo interactúa tanto en HubSpot (para trazabilidad y seguimiento) como en Notion (para gestión interna de TI).
+El folio de ticket se genera automáticamente con el formato: año-mes-número consecutivo.
+Las propiedades de categoría y subcategoría de TI se basan en la tabla compartida previamente por Raquel y se llenan de forma manual por el ejecutivo. Jesús (responsable de TI) definirá qué integrante de su equipo atiende cada categoría, para que el equipo de atención pueda asignar al responsable correcto.
+
+3.5 Etapa 4 — Cerrado
+Etapa terminal donde convergen todos los tipos de ticket. HubSpot registra automáticamente el tiempo de primera respuesta y el tiempo de resolución total (mediante reportes de tiempo en etapa, sin necesidad de propiedades calculadas adicionales).
+Tipos de cierre:
+Tipo A resuelto en primer nivel por ejecutivo.
+Tipo A resuelto por TI con confirmación del cliente.
+Tipo B aceptado y cerrado por ejecutivo.
+Tipo C derivado a especialista (Guillermo cierra el ticket).
+Tipo D resuelto por vía rápida.
+Tipo E orientado a proceso formal UNE (ejecutivo cierra ticket y genera el registro UNE).
+
+4. Mini-Pipeline UNE
+Propósito: Concentrar y contabilizar las reclamaciones formales ante la CNBV para facilitar los reportes trimestrales de Raquel. Este pipeline tiene únicamente dos etapas: Abierto y Cerrado.
+4.1 Flujo del Proceso UNE
+El inversionista descarga el formulario PDF de la página de Monific, lo llena manualmente, lo escanea y lo envía al correo une@Monific.com (o equivalente).
+Al recibir el correo con el PDF, HubSpot crea automáticamente un ticket en el pipeline UNE.
+Raquel llena manualmente las propiedades del ticket en HubSpot y adjunta el PDF para trazabilidad.
+Al crearse el ticket, HubSpot envía automáticamente al reclamante un correo de acuse con el folio asignado y el plazo máximo de 30 días hábiles para recibir el dictamen.
+Se crea automáticamente una tarea para Raquel con SLA de 10 días para emitir y enviar el dictamen. HubSpot enviará recordatorios el día 5 y el día 8.
+Raquel emite el dictamen en Canva (formato formal), lo adjunta en HubSpot y lo envía al cliente junto con la resolución.
+Al cierre, el ticket queda disponible para reportes y métricas internas y para el reporte trimestral a la CNBV.
+Nota: Los tickets cerrados en este pipeline no se reabren. Ante una nueva reclamación, el reclamante debe presentar un nuevo formulario.
+4.2 Propiedades del Pipeline UNE
+Propiedad
+ | Tipo de llenado
+ | Notas
+ |
+Folio UNE
+ | Automático
+ | Generado al crear el ticket
+ |
+Fecha de recepción
+ | Automático
+ | Fecha de creación del ticket
+ |
+Fecha límite de dictamen
+ | Automático (calculado)
+ | Fecha de recepción + 30 días hábiles
+ |
+Trimestre de reporte CNBV
+ | Automático
+ | Calculado según fecha de recepción
+ |
+Propietario
+ | Automático
+ | Asignado a Raquel
+ |
+Canal de entrada
+ | Automático
+ | Correo electrónico
+ |
+Nombre del reclamante
+ | Manual por Raquel
+ | Se asocia al contacto en HubSpot si existe
+ |
+Correo electrónico
+ | Manual por Raquel
+ |
+ |
+Número de teléfono
+ | Manual por Raquel
+ |
+ |
+Descripción de la reclamación
+ | Manual por Raquel
+ |
+ |
+Monto en disputa
+ | Manual por Raquel
+ |
+ |
+Producto(s) involucrado(s)
+ | Manual por Raquel
+ |
+ |
+Resultado del dictamen
+ | Manual por Raquel
+ | Al cierre
+ |
+Dictamen (archivo adjunto)
+ | Manual por Raquel
+ | PDF generado en Canva
+ |
+Estatus del ticket
+ | Automático
+ | Abierto / Cerrado
+ |
+Notas / consulta legal
+ | Manual — opcional
+ |
+ |
+Documentos de soporte adicionales
+ | Manual — opcional
+ |
+ |
+
+5. Acuerdos y Compromisos
+#
+ | Acuerdo / Acción
+ | Responsable
+ | Fecha límite
+ |
+1
+ | Enviar correo con los tres Másters (Cobranza, Ventas, Servicio) en versión condensada para aprobación formal. Incluir flujogramas (links de Miro) en el mismo correo.
+ | Caro
+ | 19/03/2026
+ |
+2
+ | Añadir pestaña 'Flujograma' en cada Máster de Excel, con el link de Miro correspondiente, para que todo quede condensado en un solo archivo.
+ | José
+ | 19/03/2026
+ |
+3
+ | Los directores de equipo de Monific deben revisar y aprobar los tres Másters vía correo. Si hay observaciones, indicarlas en los comentarios del mismo correo.
+ | Directores Monific
+ | Antes del 23/03
+ |
+4
+ | Adquirir el plan Enterprise de HubSpot antes del día 23 de marzo para asegurar continuidad en la implementación.
+ | Raquel
+ | 23/03/2026
+ |
+5
+ | Crear las plantillas de WhatsApp en Meta para sincronización automática con HubSpot. El equipo consultor orientará sobre el proceso de alta.
+ | Raquel + Consultoría
+ | Por definir
+ |
+6
+ | Ajustar el SLA de atención para tickets tipo C (solicitante) de 24 horas a 1 hora en el workflow de HubSpot.
+ | José / David
+ | En implementación
+ |
+7
+ | Configurar notificación automática por correo a Karen (o a Raquel como respaldo) cuando se supere el SLA de 1 hora en tickets tipo C.
+ | José / David
+ | En implementación
+ |
+8
+ | Coordinar con Jesús (TI) la definición de categorías/subcategorías de tickets TI y la asignación de responsables por tipo, para configurarlo en HubSpot.
+ | Raquel + Jesús
+ | Próxima semana
+ |
+9
+ | Configurar el correo de soporte (soporte@ic.com) y el correo de UNE como cajas de entrada en HubSpot para la creación automática de tickets.
+ | Consultoría
+ | En implementación
+ |
+10
+ | Definir de qué correo(s) saldrán las comunicaciones automatizadas (secuencias de ventas, cobranza, notificaciones UNE), según el origen correcto de cada flujo.
+ | Raquel + Caro
+ | Previo a implementar workflows
+ |
+11
+ | Realizar una prueba del formulario UNE en HubSpot para validar el flujo: creación de ticket, envío automático de acuse con folio, creación de tarea para Raquel.
+ | Consultoría + Raquel
+ | En implementación
+ |
+
+6. Temas Abiertos / Pendientes de Definición
+Validar si Karen puede recibir notificaciones de HubSpot como usuario gratuito o si se gestionan exclusivamente vía correo externo.
+Confirmar el correo exacto que se asociará al pipeline UNE para la recepción automática de reclamaciones.
+Definir el correo remitente de cada flujo de automatización (ventas, cobranza, servicio, UNE) antes del inicio de la implementación.
+El reporte trimestral de la CNBV se gestionará desde los reportes nativos de HubSpot en el mini-pipeline UNE; no se generará un workflow específico para este fin.
+
+7. Próximos Pasos
+Semana del 24 de marzo: Inicio de implementación de los tres pipelines en HubSpot, sujeto a aprobación formal de los Másters.
+Antes del 23 de marzo: Adquisición del plan Enterprise por parte de Monific.
+En curso: Configuración de workflows, SLAs, cajas de entrada, plantillas de WhatsApp y pipeline UNE.
+
+Minuta elaborada con base en la grabación / transcripción de la sesión del 19 de marzo de 2026.

@@ -1,0 +1,282 @@
+=== ID: X019 ===
+=== SOURCE: Wiki Monific\drive-download-20260807T143934Z-1-001\Gantt - Monific (1).xlsx ===
+=== TYPE: EXCEL ===
+
+
+## SHEET: Fase 1
+(dims used: 334 rows x 103 cols; showing 334 x 40)
+ |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  Fase de Rollout a división motos
+ |  |  | Fase de arramque y Sprint 1 con Crazy Motors |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | KTM |  |  |  |  |  |  |  |  |  |  |  | Moto Max
+ |  | Fase 1 | Mes 1 |  |  |  | Mes 2 |  |  |  | Mes 3 |  |  |  | Mes 4 |  |  |  | Mes 5 |  |  |  | Mes 6 |  |  |  | Mes 7 |  |  |  | Mes 8 |  |  |  | Mes 9 |  |  |  | Mes 10
+ |  |  | S1 | S2 | S3 | S4 | S5 | S6 | S7 | S8 | S9 | S10 | S11 | S12 | S13 | S14 | S15 | S16 | S17 | S18 | S19 | S20 | S21 | S22 | S23 | S24 | S25 | S26 | S27 | S28 | S29 | S30 | S31 | S32 | S33 | S34 | S35 | S36 | S37
+ | 1.1 | Fase de arranque y sprint 1 división motos
+ |  | Sesiones de descubrimiento en profundidad con los equipos clave de división motos para entender sus procesos comerciales y de postventa
+ |  | Mapeo de procesos As Is Comercial y postventa
+ |  | Definición de procesos To Be estandarizados y Crazy Motors
+ |  | Definición de campos y estructura central de base de datos para todas las marcas
+ |  | Definición de conexiones de marketing y plan de lanzamiento de HubSpot Marketing.
+ |  | ⁠Llenado de master de implementación estandarizado y para Crazy Motors
+ |  | Levantamiento de información para Agent AI de WhatsApp
+ |  | Creación de documento de base de conocimiento para Agent AI de WhatsApp
+ |  | Definición de intenciones para Agent AI en ATOM
+ |  | Configuración de Agent AI en ATOM
+ |  | ⁠Implementación de proceso comercial y postventa para Crazy Motors
+ |  | Creación de sistema central de tickets
+ |  | Entrenamiento en vivo de walkthrough del proceso a primeras 2 agencias
+ |  | Go Live Crazy Motors con 2 agencias
+ |  | Construcción de base de conocimientos
+ |  | Sesiónes de Q&A con primeras 2 agencias
+ |  | Construcción de reportes a primeras 2 agencias
+ |  | Periodo de pruebas y ajustes
+ |  |  Explicación general de los procesos a las demás agencias
+ |  | Entrenamiento y entrega de la base de conocimiento a las demás agencias
+ |  | Go Live de las demás agencias
+ |  | Entrega de reportes construidos a las demás agencias
+ |  | Sesiones de Q&A con las demás agencias
+ | 1.2 | Fas de rollout (KTM)
+ |  | Sesiónes de entendimiento para adecuación del proceso To-Be y máster de implementación
+ |  | Definición de proceso To Be KTM
+ |  | ⁠Llenado de master de implementación para KTM
+ |  | Levantamiento de información para Agent AI de WhatsApp
+ |  | Creación de documento de base de conocimiento para Agent AI de WhatsApp
+ |  | Definición de intenciones para Agent AI en ATOM
+ |  | Configuración de Agent AI en ATOM
+ |  | ⁠Implementación de proceso comercial y postventa para KTM
+ |  | Entrenamiento en vivo de walkthrough del proceso para primeras 2 agencias
+ |  | Go Live KTM con primeras 2 agencias
+ |  | Construcción de base de conocimientos
+ |  | Sesiónes de Q&A con primeras 2 agencias
+ |  | Construcción de reportes a priemeras 2 agencias
+ |  | Periodo de pruebas y ajustes
+ |  |  Explicación general de los procesos a las demás agencias
+ |  | Entrenamiento y entrega de la base de conocimiento a las demás agencias
+ |  | Go Live de las demás agencias
+ |  | Entrega de reportes construidos a las demás agencias
+ |  | Sesiones de Q&A con las demás agencias
+ | 1.2 | Fas de rollout (Moto Max)
+ |  | Sesiónes de entendimiento para adecuación del proceso To-Be y máster de implementación
+ |  | Definición de proceso To Be Moto Max
+ |  | ⁠Llenado de master de implementación para Moto Max
+ |  | Levantamiento de información para Agent AI de WhatsApp
+ |  | Creación de documento de base de conocimiento para Agent AI de WhatsApp
+ |  | Definición de intenciones para Agent AI en ATOM
+ |  | Configuración de Agent AI en ATOM
+ |  | ⁠Implementación de proceso comercial y postventa para Moto Maxm
+ |  | Entrenamiento en vivo de walkthrough del proceso para primeras 2 agencias
+ |  | Go Live KTM con primeras 2 agencias
+ |  | Construcción de base de conocimientos
+ |  | Sesiónes de Q&A con primeras 2 agencias
+ |  | Construcción de reportes a priemeras 2 agencias
+ |  | Periodo de pruebas y ajustes
+ |  |  Explicación general de los procesos a las demás agencias
+ |  | Entrenamiento y entrega de la base de conocimiento a las demás agencias
+ |  | Go Live de las demás agencias
+ |  | Entrega de reportes construidos a las demás agencias
+ |  | Sesiones de Q&A con las demás agencias
+ | 1.2 | Fas de rollout (Royal Enfield)
+ |  | Sesiónes de entendimiento para adecuación del proceso To-Be y máster de implementación
+ |  | Definición de proceso To Be Royal Enfield
+ |  | ⁠Llenado de master de implementación para Royal Enfield
+ |  | Levantamiento de información para Agent AI de WhatsApp
+ |  | Creación de documento de base de conocimiento para Agent AI de WhatsApp
+ |  | Definición de intenciones para Agent AI en ATOM
+ |  | Configuración de Agent AI en ATOM
+ |  | ⁠Implementación de proceso comercial y postventa para Royal Enfield
+ |  | Entrenamiento en vivo de walkthrough del proceso para primeras 2 agencias
+ |  | Go Live Royal Enfield con primeras 2 agencias
+ |  | Construcción de base de conocimientos
+ |  | Sesiónes de Q&A con primeras 2 agencias
+ |  | Construcción de reportes a priemeras 2 agencias
+ |  | Periodo de pruebas y ajustes
+ |  |  Explicación general de los procesos a las demás agencias
+ |  | Entrenamiento y entrega de la base de conocimiento a las demás agencias
+ |  | Go Live de las demás agencias
+ |  | Entrega de reportes construidos a las demás agencias
+ |  | Sesiones de Q&A con las demás agencias
+ | 1.2 | Fase de arranque y sprint 1 división maquinaria
+ |  | Sesiones de descubrimiento en profundidad con los equipos clave de división motos para entender sus procesos comerciales y de postventa
+ |  | Mapeo de procesos As Is Comercial y postventa
+ |  | Definición de procesos To Be estandarizados y Fortex
+ |  | Definición de campos y estructura central de base de datos para todas las marcas
+ |  | Definición de conexiones de marketing y plan de lanzamiento de HubSpot Marketing.
+ |  | ⁠Llenado de master de implementación estandarizado y para Fortex
+ |  | Levantamiento de información para Agent AI de WhatsApp
+ |  | Creación de documento de base de conocimiento para Agent AI de WhatsApp
+ |  | Definición de intenciones para Agent AI en ATOM
+ |  | Configuración de Agent AI en ATOM
+ |  | ⁠Implementación de proceso comercial y postventa para Fortex
+ |  | Entrenamiento en vivo de walkthrough del proceso a primeras 2 agencias
+ |  | Go Live Fortex con 2 agencias
+ |  | Construcción de base de conocimientos
+ |  | Sesiónes de Q&A con primeras 2 agencias
+ |  | Construcción de reportes a primeras 2 agencias
+ |  | Periodo de pruebas y ajustes
+ |  |  Explicación general de los procesos a las demás agencias
+ |  | Entrenamiento y entrega de la base de conocimiento a las demás agencias
+ |  | Go Live de las demás agencias
+ |  | Entrega de reportes construidos a las demás agencias
+ |  | Sesiones de Q&A con las demás agencias
+ | 1.2 | Fas de rollout (ENAGRI)
+ |  | Sesiónes de entendimiento para adecuación del proceso To-Be y máster de implementación
+ |  | Definición de proceso To Be ENAGRI
+ |  | ⁠Llenado de master de implementación para ENAGRI
+ |  | Levantamiento de información para Agent AI de WhatsApp
+ |  | Creación de documento de base de conocimiento para Agent AI de WhatsApp
+ |  | Definición de intenciones para Agent AI en ATOM
+ |  | Configuración de Agent AI en ATOM
+ |  | ⁠Implementación de proceso comercial y postventa para ENAGRI
+ |  | Entrenamiento en vivo de walkthrough del proceso para primeras 2 agencias
+ |  | Go Live ENAGRI con primeras 2 agencias
+ |  | Construcción de base de conocimientos
+ |  | Sesiónes de Q&A con primeras 2 agencias
+ |  | Construcción de reportes a priemeras 2 agencias
+ |  | Periodo de pruebas y ajustes
+ |  |  Explicación general de los procesos a las demás agencias
+ |  | Entrenamiento y entrega de la base de conocimiento a las demás agencias
+ |  | Go Live de las demás agencias
+ |  | Entrega de reportes construidos a las demás agencias
+ |  | Sesiones de Q&A con las demás agencias
+ | 1.6 | Soporte
+ | 1.6.1 | Soporte
+
+## SHEET: Habi rollout 3 desarrollos
+(dims used: 1000 rows x 19 cols; showing 400 x 19)
+ |  |  | Implementación MVP 1 |  |  |  |  |  |  |  | Soporte
+ |  | Fases | Mes 1 |  |  |  | Mes 2 |  |  |  | Mes 3 |  |  |  | Mes 4
+ |  |  | S1 | S2 | S3 | S4 | S5 | S6 | S7 | S8 | S9 | S10 | S11 | S12 | S13 | S14 | S15 | S16
+ | 1 | Rollout con 3 desarrollos
+ | 1.1 |  Explicación general de los procesos a 3 desarrollos
+ | 1.3 | ⁠Implementación del proceso para 3 desarrollos a manera de replica
+ |  | Habilitación de integración de Enkontrol
+ | 1.4 | Entrenamiento y entrega de la base de conocimiento para 3 desarrollos
+ | 1.5 | Entrega de reportes construidos para 3 desarrollos
+ | 1.6 | Go Live 
+ | 5.1 | Sesiones de Q&A con 3 desarrollos
+
+## SHEET: Proyección 1
+(dims used: 1000 rows x 37 cols; showing 400 x 37)
+ |  | Fases | Mes 1 |  |  |  | Mes 2 |  |  |  | Mes 3 |  |  |  | Mes 4 |  |  |  | Mes 5 |  |  |  | Mes 6 |  |  |  | Mes 7 |  |  |  | Mes 8
+ |  |  | S5 | S6 | S7 | S8 | S9 | S10 | S11 | S12 | S13 | S14 | S15 | S16 | S17 | S18 | S19 | S20 | S21 | S22 | S23 | S24 | S24 | S26 | S27 | S28 | S29 | S30 | S31 | S32 | S33 | S34 | S35 | S36 | S37 | S38
+ | 1 | LEARN
+ | 1.1 | Kickoff general y entendimiento del ecosistema Monific.
+ | 1.2 | Auditoría técnica del portal HubSpot actual y sus integraciones activas.
+ | 1.3 | Recolección de documentación de procesos, flujos y estructuras de datos.
+ | 1.4 | Mapeo de procesos As Is y definición de To Be (Inversionistas, Solicitantes, Cobranza).
+ | 1.5 | Diseño de arquitectura de pipelines, propiedades y objetos personalizados.
+ | 1.6 | Mapeo de integraciones actuales (App Monific, Singular).
+ | 1.7 | Elaboración del Blueprint de Implementación (Master de Proyecto).
+ | 1.8 | Validación y aprobación del Blueprint con stakeholders clave.
+ | 2 | DO
+ | 2.1 | Reconfiguración de portal HubSpot (propiedades, pipelines, tickets y roles).
+ | 2.2 | Implementación de workflows comerciales y de cobranza.
+ | 2.3 | Creación de dashboards y reportes ejecutivos por área (ventas, cobranza, inversión).
+ | 2.4 | Optimización de Integración técnica con sistemas clave (ej: App Monific)
+ | 2.5 | Configuración de bandejas de entrada, WhatsApp Business y correos.
+ | 2.6 | Pruebas funcionales y validación de flujos entre equipos.
+ | 2.7 | Ajustes de automatización y segmentación de contactos en BDD actual.
+ | 2.8 | Go Live del MVP comercial y operativo.
+ | 3 | TEACH
+ | 3.1 | Capacitaciones online en vivo por rol (ventas, cobranza, marketing).
+ | 3.2 | Sesiones de Q&A con equipos operativos.
+ | 3.3 | Construcción de guías rápidas y recursos del centro de entrenamiento digital.
+ | 3.4 | Evaluación de adopción por usuario y seguimiento de incidencias.
+ | 4 | REPEAT
+ | 4.1 | Recopilación de feedback y análisis de métricas de adopción.
+ | 4.2 | Ajustes de procesos y workflows según uso real.
+ | 4.2.1 | Creación de dashboards avanzados y métricas de desempeño global.
+
+## SHEET: Proyección 2
+(dims used: 1000 rows x 34 cols; showing 400 x 34)
+ |  | Fases | Mes 1 |  |  |  | Mes 2 |  |  |  | Mes 3 |  |  |  | Mes 4 |  |  |  | Mes 5 |  |  |  | Mes 6 |  |  |  | Mes 7 |  |  |  | Mes 8
+ |  |  | S5 | S6 | S7 | S8 | S9 | S10 | S11 | S12 | S13 | S14 | S15 | S16 | S17 | S18 | S19 | S20 | S21 | S22 | S23 | S24 | S25 | S26 | S27 | S28 | S29 | S30 | S31 | S32 | S33 | S34 | S35
+ | 1 | LEARN
+ | 1.1 | Kickoff general y entendimiento del ecosistema Monific.
+ | 1.2 | Auditoría técnica del portal HubSpot actual y sus integraciones activas.
+ | 1.3 | Recolección de documentación de procesos, flujos y estructuras de datos.
+ | 1.4 | Mapeo de procesos As Is y definición de To Be (Inversionistas, Solicitantes, Cobranza).
+ | 1.5 | Diseño de arquitectura de pipelines, propiedades y objetos personalizados.
+ | 1.6 | Mapeo de integraciones actuales (App Monific, Singular).
+ | 1.7 | Elaboración del Blueprint de Implementación (Master de Proyecto).
+ | 1.8 | Validación y aprobación del Blueprint con stakeholders clave.
+ | 2 | DO
+ | 2.1 | Reconfiguración de portal HubSpot (propiedades, pipelines, tickets y roles).
+ | 2.2 | Implementación de workflows comerciales y de cobranza.
+ | 2.3 | Creación de dashboards y reportes ejecutivos por área (ventas, cobranza, inversión).
+ | 2.4 | Optimización de Integración técnica con sistemas clave (ej: App Monific)
+ | 2.5 | Configuración de bandejas de entrada, WhatsApp Business y correos.
+ | 2.6 | Pruebas funcionales y validación de flujos entre equipos.
+ | 2.7 | Ajustes de automatización y segmentación de contactos en BDD actual.
+ | 2.8 | Go Live del MVP comercial y operativo.
+ | 3 | TEACH
+ | 3.1 | Capacitaciones online en vivo por rol (ventas, cobranza, marketing).
+ | 3.2 | Sesiones de Q&A con equipos operativos.
+ | 3.3 | Construcción de guías rápidas y recursos del centro de entrenamiento digital.
+ | 3.4 | Evaluación de adopción por usuario y seguimiento de incidencias.
+ | 4 | REPEAT
+ | 4.1 | Recopilación de feedback y análisis de métricas de adopción.
+ | 4.2 | Ajustes de procesos y workflows según uso real.
+ | 4.2.1 | Creación de dashboards avanzados y métricas de desempeño global.
+
+## SHEET: GANTT
+(dims used: 1000 rows x 27 cols; showing 400 x 27)
+ |  | Fases | Mes 1 |  |  |  | Mes 2 |  |  |  | Mes 3 |  |  |  | Mes 4 |  |  |  | Mes 5 |  |  |  | Mes 6
+ |  |  | S5 | S6 | S7 | S8 | S9 | S10 | S11 | S12 | S13 | S14 | S15 | S16 | S17 | S18 | S19 | S20 | S21 | S22 | S23 | S24 | S24 | S26 | S27 | S28
+ | 1 | LEARN
+ | 1.1 | Kickoff general y entendimiento del ecosistema Monific.
+ | 1.2 | Auditoría técnica del portal HubSpot actual y sus integraciones activas.
+ | 1.3 | Recolección de documentación de procesos, flujos y estructuras de datos.
+ | 1.4 | Mapeo de procesos As Is y definición de To Be (Inversionistas, Solicitantes, Cobranza).
+ | 1.5 | Diseño de arquitectura de pipelines, propiedades y objetos personalizados.
+ | 1.6 | Mapeo de integraciones actuales (App Monific, Singular).
+ | 1.7 | Elaboración del Blueprint de Implementación (Master de Proyecto).
+ | 1.8 | Validación y aprobación del Blueprint con stakeholders clave.
+ | 2 | DO
+ | 2.1 | Reconfiguración de portal HubSpot (propiedades, pipelines, tickets y roles).
+ | 2.2 | Implementación de workflows comerciales y de cobranza.
+ | 2.3 | Creación de dashboards y reportes ejecutivos por área (ventas, cobranza, inversión).
+ | 2.4 | Optimización de Integración técnica con sistemas clave (ej: App Monific)
+ | 2.5 | Configuración de bandejas de entrada, WhatsApp Business y correos.
+ | 2.6 | Pruebas funcionales y validación de flujos entre equipos.
+ | 2.7 | Ajustes de automatización y segmentación de contactos en BDD actual.
+ | 2.8 | Go Live del MVP comercial y operativo.
+ | 3 | TEACH
+ | 3.1 | Capacitaciones online en vivo por rol (ventas, cobranza, marketing).
+ | 3.2 | Sesiones de Q&A con equipos operativos.
+ | 3.3 | Construcción de guías rápidas y recursos del centro de entrenamiento digital.
+ | 3.4 | Evaluación de adopción por usuario y seguimiento de incidencias.
+ | 4 | REPEAT
+ | 4.1 | Recopilación de feedback y análisis de métricas de adopción.
+ | 4.2 | Ajustes de procesos y workflows según uso real.
+ | 4.2.1 | Creación de dashboards avanzados y métricas de desempeño global.
+
+## SHEET: Gantt 1
+(dims used: 1000 rows x 35 cols; showing 400 x 35)
+ |  | Fases | Mes 1 |  |  |  | Mes 2 |  |  |  | Mes 3 |  |  |  | Mes 4 |  |  |  | Mes 5 |  |  |  | Mes 6 |  |  |  | Mes 7 |  |  |  | Mes 8
+ |  |  | S5 | S6 | S7 | S8 | S9 | S10 | S11 | S12 | S13 | S14 | S15 | S16 | S17 | S18 | S19 | S20 | S21 | S22 | S23 | S24 | S25 | S26 | S27 | S28 | S29 | S30 | S31 | S32 | S33 | S34 | S35 | S36
+ | 1 | LEARN
+ | 1.1 | Kickoff general y entendimiento del ecosistema Monific.
+ | 1.2 | Auditoría técnica del portal HubSpot actual y sus integraciones activas.
+ | 1.3 | Recolección de documentación de procesos, flujos y estructuras de datos.
+ | 1.4 | Mapeo de procesos As Is y definición de To Be (Inversionistas, Solicitantes, Cobranza).
+ | 1.5 | Diseño de arquitectura de pipelines, propiedades y objetos personalizados.
+ | 1.6 | Mapeo de integraciones actuales (App Monific, Singular).
+ | 1.7 | Elaboración del Blueprint de Implementación (Master de Proyecto).
+ | 1.8 | Validación y aprobación del Blueprint con stakeholders clave.
+ | 2 | DO
+ | 2.1 | Reconfiguración de portal HubSpot (propiedades, pipelines, tickets y roles).
+ | 2.2 | Implementación de workflows comerciales y de cobranza.
+ | 2.3 | Creación de dashboards y reportes ejecutivos por área (ventas, cobranza, inversión).
+ | 2.4 | Optimización de Integración técnica con sistemas clave (ej: App Monific)
+ | 2.5 | Configuración de bandejas de entrada, WhatsApp Business y correos.
+ | 2.6 | Pruebas funcionales y validación de flujos entre equipos.
+ | 2.7 | Ajustes de automatización y segmentación de contactos en BDD actual.
+ | 2.8 | Go Live del MVP comercial y operativo.
+ | 3 | TEACH
+ | 3.1 | Capacitaciones online en vivo por rol (ventas, cobranza, marketing).
+ | 3.2 | Sesiones de Q&A con equipos operativos.
+ | 3.3 | Construcción de guías rápidas y recursos del centro de entrenamiento digital.
+ | 3.4 | Evaluación de adopción por usuario y seguimiento de incidencias.
+ | 4 | REPEAT
+ | 4.1 | Recopilación de feedback y análisis de métricas de adopción.
+ | 4.2 | Ajustes de procesos y workflows según uso real.
+ | 4.2.1 | Creación de dashboards avanzados y métricas de desempeño global.

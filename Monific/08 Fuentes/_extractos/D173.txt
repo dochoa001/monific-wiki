@@ -1,0 +1,97 @@
+=== ID: D173 ===
+=== SOURCE: Wiki Monific\drive-download-20260807T144042Z-1-001\14. Viernes 8 de Mayo.docx ===
+=== MODIFIED: 2026-08-07 ===
+
+
+MINUTA DE REUNIÓN
+Integración HubSpot — Monific & Black and Orange
+ |
+
+Fecha:
+ | Viernes 8 de mayo de 2026
+ | Proyecto:
+ | Implementación HubSpot
+ |
+Participantes:
+ | Raquel (Monific) · Caro/Key (Black & Orange)
+ |
+Referencia:
+ | Correo de seguimiento: David Ochoa (dochoa@black-n-orange.com) — 7 mayo 2026
+ |
+1. Integración HubSpot — Documentación y Acceso
+Raquel tiene la documentación de la primera integración (hecha inhouse); necesita confirmar con Jesús que sea la versión correcta antes de compartirla.
+Caro indicó que Jazz (Jesús) necesita acceso al admin de Monific para revisar cómo está construido el sistema y cómo fluye la información hacia HubSpot.
+Quedó pendiente pasarle a Jazz la documentación que estaba en GitHub. Usuario de GitHub de B&O: @BNO-Proyectos.
+Monific debe proporcionar acceso a entornos de desarrollo, QA y preproducción, así como cualquier documentación adicional de reglas o lineamientos técnicos internos.
+ACCIÓN — Raquel: Hablar con Jesús hoy mismo para (a) confirmar la documentación y (b) crearle un usuario en el admin de Monific o darle acceso directo. Confirmar proceso para otorgar acceso al repositorio GitHub.
+
+2. Bandeja de Entrada — Número de WhatsApp
+El número de WhatsApp conectado actualmente NO se cambia. Confirmado.
+
+3. Tickets Históricos en Cobranzas
+Propuesta de Carola: mover vía workflow los tickets anteriores al 1° de enero de 2026 al pipeline de Servicio al Cliente como tickets cerrados, antes de eliminar los pipelines existentes.
+El objetivo es preservar la trazabilidad e historial de conversaciones con clientes.
+Raquel aprobó el criterio.
+ACCIÓN — Black & Orange: Configurar el workflow de cierre de tickets históricos.
+
+4. Nivel del Equipo en HubSpot / Entrenamiento
+El equipo a entrenar se clasifica como nivel básico, incluyendo a Raquel.
+Carola está ajustando el plan del proyecto a tiempos más realistas: arranque retrasado ~3-4 semanas post-kickoff por la firma del contrato.
+
+5. Advertencia sobre Tiempos y Costos
+Si la integración se retrasa, muy probablemente será necesario cotizar semanas adicionales.
+Carola solicitó al menos 2 horas del tiempo de Jesús para arrancar con la integración lo antes posible.
+Por requerimiento interno de Monific (revisión con área de Gobierno), el tema de API queda en pausa temporal. Se retoma el 22 de mayo.
+
+6. Seguimiento por Correo — David Ochoa (B&O) · 7 mayo 2026
+Correo enviado por David Ochoa (dochoa@black-n-orange.com) a Raquel y Jesús Torres, con copia a Carola y Jazmín Córdova de B&O.
+Recursos de la sesión (disponibles en los siguientes enlaces):
+Grabación de la reunión — Ver grabación en Google Drive — consulta completa de la sesión.
+Notas de la reunión — Ver documento en Google Docs — resumen de temas, dudas y acuerdos.
+Recursos adicionales (mapeo y reglas) — Ver hoja de cálculo en Google Sheets — documentación técnica de reglas, mapeo de propiedades e integración.
+Próximos pasos por parte de B&O (responsable técnico: Jazmín Córdova · jcordova@black-n-orange.com):
+Revisar a profundidad las reglas actuales de integración.
+Validar los flujos que hoy no están actualizando correctamente la información.
+Analizar el código de integración una vez que se cuenten con los accesos necesarios.
+Documentar hallazgos técnicos y recomendaciones para los ajustes requeridos.
+Reanudar la revisión del tema de API a partir del 22 de mayo, una vez que Monific concluya su revisión interna con el área de Gobierno.
+Próximos pasos por parte de Monific (confirmados en el correo):
+Compartir accesos a entornos (desarrollo, QA y preproducción) a Jazmín (Jaz) de B&O.
+Confirmar proceso interno para otorgar acceso al repositorio GitHub. Usuario B&O: @BNO-Proyectos.
+Compartir documentación adicional de reglas, restricciones técnicas o lineamientos internos.
+
+Próximos Pasos — Resumen Consolidado
+
+Responsable
+ | Acción
+ | Fecha
+ |
+Raquel / Jesús
+ | Confirmar documentación de integración y darle acceso al admin de Monific a Jazz (B&O)
+ | Hoy
+ |
+Monific (Jesús)
+ | Otorgar acceso a entornos (dev, QA, preproducción) y al repositorio GitHub (@BNO-Proyectos)
+ | Esta semana
+ |
+Monific
+ | Compartir documentación adicional de reglas y lineamientos técnicos internos
+ | Esta semana
+ |
+Black & Orange (Jaz)
+ | Revisar código de integración, validar flujos con errores y documentar hallazgos técnicos
+ | Al recibir accesos
+ |
+Black & Orange
+ | Configurar workflow de cierre de tickets históricos de Cobranzas (antes del 1° ene 2026)
+ | Por definir
+ |
+Black & Orange
+ | Compartir cronograma actualizado del proyecto con fechas realistas
+ | Por definir
+ |
+Ambos equipos
+ | Retomar revisión del tema de API
+ | 22 de mayo
+ |
+

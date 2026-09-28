@@ -1,0 +1,396 @@
+=== ID: D180 ===
+=== SOURCE: Wiki Monific\drive-download-20260807T144042Z-1-001\20. Lunes 27 de julio 2026.docx ===
+=== MODIFIED: 2026-08-07 ===
+
+MINUTA DE REUNIÓN
+Alineación de proyecto Monific / B&O
+Revisión de auditoría, másteres, integración HubSpot–Admin y cobranza
+Fecha
+ | Lunes 27 de julio de 2026
+ |
+Duración
+ | 00:00 a 33:58 (aprox. 34 minutos)
+ |
+Participantes identificados
+ | Raquel / Monific, David Ochoa y Emmanuel Chulin
+ |
+Fuente
+ | Transcripción: “Alienación de proyecto - Monific / B&O”
+ |
+1. Objetivo de la reunión
+Cerrar los puntos abiertos de la auditoría y alinear los criterios funcionales y técnicos necesarios para concluir la homologación de los másteres e iniciar la integración entre HubSpot y el Admin de Monific, con énfasis en el flujo de solicitantes, el objeto Proyecto, la cobranza y las automatizaciones.
+2. Resumen ejecutivo
+El primer MVP no utilizará una calificación numérica de lead scoring para solicitantes. La clasificación inicial se simplificará a viable o no viable con base en la existencia de un inmueble que pueda quedar en garantía; el criterio de parcialmente viable será determinado posteriormente por el asesor con información adicional.
+El formulario actual de Google Forms deberá ser sustituido por un formulario en HubSpot e insertado en la página de Monific cuando esté listo.
+Se utilizará un objeto especial denominado Proyecto como punto de conexión entre el Admin de Monific y HubSpot. El ID único del proyecto en el Admin permitirá asociar negocio, cobranza, inversiones e inversionistas.
+El Admin de Monific será la fuente de verdad para información de pagos, fechas, montos e historial de cobranza; estos datos deberán alimentar HubSpot mediante la integración.
+Las automatizaciones recurrentes de cobranza requieren una licencia adicional de HubSpot Data Hub si se implementan de forma nativa. Como alternativa inicial, se evaluará que el Admin envíe por API las fechas y propiedades necesarias para activar recordatorios y flujos en HubSpot.
+Los puntos pendientes no detendrán la integración: la homologación restante y el trabajo de Swimlane podrán avanzar en paralelo una vez revisados los másteres.
+3. Acuerdos y decisiones
+Tema
+ | Acuerdo / decisión
+ |
+Lead scoring del MVP
+ | No se implementará un score numérico en esta primera etapa. Se conservarán estados operativos, pero la evaluación inicial automática se limitará principalmente a validar si el solicitante cuenta con un inmueble para garantía.
+ |
+Criterio de viabilidad inicial
+ | Con inmueble disponible para garantía: viable para continuar el flujo. Sin inmueble: no viable como solicitante y posible canalización al flujo de inversionista. La clasificación parcialmente viable quedará a cargo del asesor después de revisar avalúo, monto solicitado y capacidad de pago.
+ |
+Formulario de solicitantes
+ | El formulario definido en los entregables sustituirá al formulario actual de Google Forms. Una vez construido en HubSpot, Monific deberá insertarlo en su sitio web.
+ |
+Objeto Proyecto
+ | Se confirma el uso de un objeto Proyecto en HubSpot como réplica/intermediario de los proyectos del Admin. El ID único del Admin será la llave de asociación para negocio, cobranza, inversiones e inversionistas.
+ |
+Avance entre etapas
+ | La documentación completa en la carpeta de Google Drive será una condición para avanzar. Las decisiones del comité y los datos del proyecto deberán capturarse para habilitar formalización y firma.
+ |
+Cobranza y fuente de verdad
+ | El Admin será la fuente de verdad de historial de pago, último pago, siguiente pago, montos y demás datos de cobranza; HubSpot recibirá esta información mediante la integración.
+ |
+Mora y ejecución de garantía
+ | Los workflows se activarán según el tiempo de mora. Al alcanzar 60 días de atraso, el ticket deberá pasar a la etapa de ejecución de garantía/alerta. La salida de esa etapa será manual o por cierre derivado del incumplimiento; si el proyecto se regulariza, podrá regresar a cobranza activa.
+ |
+Asignación de tareas
+ | Cuando HubSpot obligue a asignar tareas a una persona y no a un equipo, los flujos deberán quedar claramente mapeados. B&O propondrá un skill o mecanismo para identificar y actualizar asignaciones cuando haya movimientos de personal. Este punto no bloqueará el avance.
+ |
+4. Compromisos, responsables y fechas
+Responsable
+ | Compromiso
+ | Fecha
+ | Estado
+ |
+B&O
+ | Compartir o confirmar los links de los másteres homologados.
+ | Al cierre de la reunión / inmediato
+ | Pendiente de confirmación
+ |
+B&O
+ | Agregar en la documentación el comentario sobre la licencia Data Hub y la alternativa de integración.
+ | Después de la reunión
+ | Pendiente
+ |
+B&O
+ | Compartir el mapeo de propiedades requerido para que Jesús y Daniel evalúen la integración.
+ | Después de la reunión
+ | Pendiente
+ |
+Monific / Raquel
+ | Revisar los másteres homologados y recabar comentarios del equipo interno.
+ | Hasta el jueves 30 de julio de 2026
+ | Pendiente
+ |
+Monific / Raquel
+ | Consolidar y entregar comentarios a B&O.
+ | Viernes 31 de julio de 2026
+ | Pendiente
+ |
+Monific / Jesús y Daniel
+ | Validar la viabilidad técnica de enviar desde el Admin las fechas y propiedades necesarias para las notificaciones de cobranza.
+ | Durante la revisión interna
+ | Pendiente
+ |
+B&O
+ | Proponer o construir un skill para mapear y actualizar flujos asignados a usuarios cuando haya altas o bajas de personal.
+ | Sin fecha cerrada
+ | Pendiente / no bloqueante
+ |
+B&O / Yasmin / Monific
+ | Reservar espacio y procurar la primera sesión de integración.
+ | Propuesta: lunes 3 de agosto de 2026
+ | Sujeto a cierre de comentarios
+ |
+5. Pendientes y riesgos a validar
+Definir si la solución de cobranza se implementará con HubSpot Data Hub o mediante propiedades alimentadas por API desde el Admin.
+Confirmar la lista final de propiedades que el Admin debe enviar para fechas de pago, mora, recordatorios y cambios de etapa.
+Validar el comportamiento de proyectos con atrasos prolongados o historiales de pago irregulares.
+Concluir la revisión y aprobación interna de los másteres homologados.
+Documentar claramente los workflows que deban asignarse a usuarios específicos para reducir el riesgo operativo ante cambios de personal.
+6. Próximo hito
+Monific concentrará la revisión interna hasta el jueves 30 de julio de 2026 y enviará comentarios el viernes 31 de julio. Con esa retroalimentación, se buscará celebrar la primera sesión de integración el lunes 3 de agosto de 2026.
+
+Nota: la sección siguiente reproduce la transcripción exactamente como fue entregada, incluidos posibles errores, repeticiones o fragmentos propios del reconocimiento automático.
+ |
+
+ANEXO — TRANSCRIPCIÓN ÍNTEGRA, SIN EDICIÓN
+Alienación de proyecto - Monific / B&O
+lun, 27 jul 2026
+
+0:00 - David Ochoa
+de los másteres.
+
+0:01 - Emmanuel Chulin
+Bueno, revisemos los puntos abiertos de la de la auditoría. Ok, dale, dame un momento entonces. Igual en lo que va compartiendo David, te voy actualizando, que ya estamos trabajando en la homologación de los másteres, ya están terminando los últimos, teníamos ahí pendientes, y esos son los que van a estar definiendo o nuestros habilitadores para iniciar la integración. Entonces, es importante que ya todos los puntos que tengamos abiertos, pues, podamos cerrarlos o llegar a un acuerdo para que no demoremos más con esto, ¿no?
+
+0:41 - Monific
+Correcto, sí, que supongo que ya la integración es parte de lo que ustedes van a decirle a Jesús y a Daniel que tienen que hacer, entonces, es eso.
+
+0:53 - Emmanuel Chulin
+Es correcto, en sus sesiones de líder de desarrollo web, para que obviamente estén en el mismo entendido técnico. Pero sí, lo que nos pide Jazz es que antes de meternos a esa parte, que ya esté todo revisado y planchado y acordados con respecto a los masters.
+
+1:21 - David Ochoa
+Perfecto. Listo. Listo. Voy revisando, entonces. Igual, corrígeme, Emmanuel, si hay algo que luego no necesariamente salga acá. Pero listo. Entonces, Raquel, esos máster, como decía Emmanuel, aquí están justamente. Te los compartimos igual por correo.
+
+1:35 - Orador no identificado
+Ya sería el de Comercio Identificado, Cobranza, Servicio.
+
+1:39 - David Ochoa
+Y también el documento API. Dentro de cada documento, el comportamiento, más bien las columnas que se traen, son exactamente iguales en los casos. Habíamos visto cuando se habían hecho los mapeos, y solo algunas correcciones que se estuvieron realizando en el tema de automatizaciones y algunos comentarios adicionales que dejamos. Al igual que también la relación de Workflow, propiedades y demás. Aquí hay algunos comentarios para que de pronto quede justamente esa trazabilidad. Y el que nos interesa más es el documento API, ya que ese es el que tiene las propiedades específicas que se van a estar tomando en cuenta. Lo que está marcado en color verde serían prácticamente propiedades que ya hemos detectado que existen, algunas más que justamente se han estado observando. Y más que nada, las que están en color blanco serían las que nos interesan estar integrando específicamente las que están relacionadas con el tema de tickets, que sería hablar del tema de cobranza. Al igual que para el tema de los contactos, que sería más que nada traerse cierta información, no de categoría sensible, para justamente pues tener un poco más de trazabilidad y hotspot como última sesión, monto invertido y demás. Llegar a datos sensibles. Al igual que por la integración de este objeto especial, que lo llamaríamos proyecto, para el tema de las asociaciones y que, pues, todos los objetos convivan dentro de Jostro. Igual está aquí este detalle específico, para no meterme tanto en el detalle. Y nada, ¿no? Ahora, en temas de bloqueos específicos, uno de los importantes que teníamos, que creo que justamente Emmanuel Fletcher pasó, es el tema el Lit Sport, creo que ahí me gustaría justamente estar empezando por esa parte, ya que al hacer justamente las pruebas, prácticamente es esa parte la que nos quedaba pendiente, ¿no? ¿Cuáles serían las variables que se estarían utilizando para este tema y cómo se estaría ejecutando? Ahí, Emmanuel, no sé si quieras comentar un poquito más.
+
+3:32 - Monific
+Sí, lo que les había platicado es que, no sé si recuerdas, David, pero esa parte con lo que me había dicho Karola en la última vez, lo íbamos a descartar en este primer MVP y ya en caso de que veamos que ya está hablando más, más adelante lo íbamos a meter, o sea, porque el lead score, por lo que yo les había entendido ustedes con base a sus, este, asesorías, es que sí es, este, se puede medir siempre y cuando tengamos sustento para medirlo y la parte de los solicitantes ahorita es como una etapa de prueba, lo que vamos a hacer.
+
+4:08 - Emmanuel Chulin
+Listo, entonces si llegáramos a omitir esta variable, disparadores y todo lo que esté en flujos asociados, ¿Cierto? No hay ninguna equivalencia per se, solamente lo omitimos como tal.
+
+4:20 - Monific
+Sí, o sea, el estatus sí puede quedar como parcialmente viable, viable y no bien, para que no se afecte todo el lujo sin que tenga un score. No sé si me explico.
+
+4:34 - Orador no identificado
+Sí, entiendo.
+
+4:34 - Emmanuel Chulin
+Es decir, no tener una calificación numérica per se, pero sí tener en estos tres niveles, si es viable, parcialmente viable o no viable, ¿cierto?
+
+4:45 - Monific
+Y ya a partir de eso, según lo que vaya en el mundo de documentación, que eso depende del asesor de atención al solicitante, irlo mapeando, pues avanzando de acuerdo a la página.
+
+4:59 - Emmanuel Chulin
+Entiendo. ¿Tenemos claro, David, cuáles son los factores para determinar si es viable, no viable o parcialmente viable?
+
+5:08 - David Ochoa
+No completamente, Emmanuel, porque es, me voy al tema de la página. Justamente, tome en cuenta, por ejemplo, la página, Raquel. Ahorita, si una persona trata de registrar el solicitante específicamente, entendería que las variables que vamos a estar utilizando de hostboard, igual, por ejemplo, si no es así, serían las que se tienen en este formulario de Google Docs, ¿no? Estas serían nuestras variables iniciales que vamos a tener sí o sí cuando se está iniciando un primer contacto. Voy a poner.
+
+5:37 - Monific
+Estamos ahí, ya estamos en el primer error. Te acuerdas que uno de los documentos que fue el que ustedes me hicieron entregar fue el de entregarle del 2026? Si quieres, vete a la carpeta de Spot Compartida y te voy a decir exactamente cuál es.
+
+5:58 - David Ochoa
+Ok. Ok, ok, ok. Pueden ser. Pero tengo aquí conexión.
+
+6:04 - Orador no identificado
+No. Si no.
+
+6:07 - Monific
+Y no, no, no.
+
+6:11 - David Ochoa
+Ahorita la localizamos directamente.
+
+6:15 - Monific
+Aquí la tengo en la carpetita.
+
+6:20 - Orador no identificado
+Es el regalete. Monique.
+
+6:24 - David Ochoa
+OK, regales. Entregables de munición.
+
+6:29 - Monific
+Sí, evidencia munici.
+
+6:33 - Orador no identificado
+Ok.
+
+6:34 - Monific
+Y te vas a ir a un segundo. Sube un poco.
+
+6:44 - Orador no identificado
+En.
+
+6:45 - Monific
+Definiciones y specs en el 0 9. Ok. Trégales el 26 de enero, que fue uno de los las tareas que faltaba definir, cómo iba a quedar el formulario del solicitante.
+
+7:10 - Orador no identificado
+Se te va a abrir seguramente por pestañas.
+
+7:14 - David Ochoa
+Ah, ya está ahí.
+
+7:17 - Monific
+Si tú vas viendo, ahí está el formulario, si le das clic directo. Puedes ver la construcción que dice paso uno, no sé qué era. Justo también de donde me había dado cuenta yo qué onda, que por qué no había, por qué todavía no estaba esa, y ahí fue cuando ya empecé a hacer yo lo de las auditorías, porque me habían dado asustar que el formulario todavía no estaba. Mi propuesta con esto, que fue lo que yo le dije a Caroline al inicio, es, yo lo veo así, los lead scoring, parcialmente viable, viable y no viable. Al final, no sé por qué se fue Caroline, Y no voy a indagar en eso porque sé que no se trata la junta de hoy. Pero si ustedes consideran que el hit con si se puede hacer con esa parte de parcialmente viable o no viable, ahí están las métricas, porque si las metí en su momento.
+
+8:14 - David Ochoa
+Ok. Ok, ok, ok. Y aquí, por ejemplo, por lo que veo solo para no obviar Raquel, estas serían las preguntas que se tienen que hacer a un solicitante, que sería la sustitución de este formulario actual, no?
+
+8:27 - Monific
+Exactamente. Y una vez que ya esté el formulario en Hotspot, entiendo que nosotros tenemos que hacer una inserción en la página web de Money Feed para que a partir de ahí ya esté reemplazado en vez del que tenemos de Google Forms con el Results.
+
+8:42 - David Ochoa
+OK. Perfecto. Listo. Estoy viendo. Entonces tenemos cuatro de estos datos, pues no los considerarían necesarios para el tema de esta viabilidad, ya que al final estos datos no nos están diciendo nada más que datos de contacto.
+
+8:55 - Monific
+No. Sobre la garantía es cuando nos interesa. Justo por este.
+
+9:00 - David Ochoa
+Mande. Creo que es un poco más abajo, no? Correcto.
+
+9:05 - Emmanuel Chulin
+Sobre la.
+
+9:05 - David Ochoa
+Y sobre la garantía que está cuentas con muy bien y dice Disclaim este formato tiene fines exclusivos, ok? Si tienen un inmueble, ese es nuestro factor de decisión.
+
+9:18 - Monific
+Si, si lo tienen perfectísimos, pasan al flujo. Si no lo tienen, se descarga.
+
+9:25 - Orador no identificado
+Perfecto.
+
+9:25 - David Ochoa
+Perfecto. Porque justamente aquí, Raquel, lo que estoy pensando es cuando llenan este formulario de solicitantes, hacen la creación de un negocio en el piling de solicitantes, como lo mostraba acá. Y viable serían, yo entendería así, corréjeme si no es así, viable sería una persona que solicita entre esta cantidad, no superior a los 60 millones que Que se menciona mencionan que tiene cualquiera de estas usos que le daría para el financiamiento, exceptuando el otro, ya que no nos da información suficiente y que cuenta con un inmueble que podría quedar en garantía. Si se cumplen esos tres criterios, lo entenderíamos como viable, ¿no? Porque esos son los datos iniciales. Sé que van a obtener muchos datos más conforme se haga el contacto, por eso serían los primeros tres que tendríamos a la creación.
+
+10:16 - Monific
+Tu único dato, te explicas perfecto, pero el único dato que tú tienes que obtener, a ver si yo me explico mejor, es si tiene un inmueble como garantía que te conteste que sí, yo lo demás me encargo como FIC de responderlo. Lo demás, si te responde que no a esa pregunta, lo podemos candalizar como inversionista, que ahí abajo se ponen todas las comunicaciones que están iguales, son las mismas que las de la matriz de comunicación. ¿Por qué? Porque no, o sea, que son el envío de correo postformulario. O sea, no me sirve una persona que no, o sea, que no va a contestar lo que es. Listo.
+
+10:54 - Emmanuel Chulin
+Entonces, con esta garantía, ponemos, lo ponemos como viable. Si nos dice que no lo tiene, es no viable.
+
+11:00 - Monific
+Sí, y ahí le dices a la persona, haz tu carpeta de drag, que la persona es el asesor de atención solicitante. Claro. En qué escenario es parcialmente viable aquel?
+
+11:11 - Emmanuel Chulin
+Eso ya le toca al asesor entender que es parcialmente viable, pero te lo pongo muy fácil.
+
+11:17 - Monific
+Tiene el inmueble, que eso es la respuesta número uno. El inmueble vale menos de 60 millones, como bien lo dijo, pero nosotros lo podemos comprobar con un avalúo de la propiedad y está pidiendo menos de la la mitad de ese valor. Ejemplo, si tú tienes un inmueble que vale sesenta millones como máximo, tú pides treinta millones, o un inmueble que vale ciento veinte millones, pides hasta sesenta millones, eso sí se vale. Y no puedes comprobar que tienes el dinero para pagarlo. Ahí ya es viable. Entiendo.
+
+11:49 - Emmanuel Chulin
+Entonces nosotros nos vamos a quedar nada más en categorizar con base a la propiedad de garantía si es viable o no. Y el asesor ya se va a hacer cargo de esta, si es parcialmente viable o se puede definir este último. Listo.
+
+12:04 - Monific
+Sí, por eso recuerdo que Caroline me había dicho que ahorita el scoring estaba medio complicado, que lo podíamos ahorita no meter y en un segundo trabajo, si los volvemos a contratar, ya veamos la forma de hacer un, este, ya un scoring tanto para inversionistas como para solicitantes. Si se requiere que yo haga modificaciones en ese flujo antes de que ustedes lo pasen a producción en tengo ningún tema, lo trabajo. ¿A qué me refiero con modificaciones? A las comunicaciones de hacia abajo.
+
+12:35 - Orador no identificado
+O sea, yo no tengo tema.
+
+12:37 - Emmanuel Chulin
+No, sí, creo que no va a haber ningún bloquear con respecto a eso. De todos modos, cualquier cosa, te echamos un grito de acuerdo. ¿Vale? Listo. Perfecto.
+
+12:49 - Monific
+Esto ya quedó aclarado.
+
+12:50 - David Ochoa
+Perfecto. Listo, seguimos entonces. Ya de ahí voy avanzando un poquito más. En cuenta lo que debe de pasar dentro del lado de negocios, que es en base a los ajustes que sucedieron. Y es una persona de ventas. Entonces, en este caso, vincula el link de la carpeta Drive, que sería una URL que agregaría acá, que es en la que va a estar conectándose a las comunicaciones por correo y automatizada. Sería una de esas condiciones que se tiene dentro de lo documentado. Y de igual manera, la opción de poder vincular aquí en Google Drive la URL específica. Los demuestra el mío, puesto que hizo el ejercicio con el mío. Pero aquí la persona únicamente agrega la URL de interés, que sería la carpeta, no el archivo en sí. Y tendría aquí también el Google Drive, justamente disponible para utilizar. Ya a su vez, lo que va a determinar el avance de etapas es que toda la documentación que debe de estar en el Google Drive esté completa. Si esa condición se cumple, ya en automático el negocio ya va a poder pasar a la siguiente etapa, que sería ya una evasión. Voy a hacer un pasaje manual únicamente por efectos prácticos. Y ya nos desbloquearía la segunda tarjetita de evaluación, que es la que se está habilitando aquí. Envía notificación interna a todas las áreas, ya no de manera condicional como lo teníamos por equipos y fueron por usuarios, sino ya por equipos. Aquí entonces se ubica las áreas. Estas áreas no tienen en sí el acceso para poder escribir en justo para a tenerlo únicamente por visualización. Y ya el asesor de ventas, algo que me corrija, en el contrario, es el que tipificaría que se haya hecho esas decisiones del comité. Que el comité haya aprobado o rechazado esta solicitud del solicitante. Al igual, llenar toda la información, que eso sí es un requisito, ya que el Jóstobo no lo va a poder adivinar. Llenar qué tipo de rendimiento es. También, pues, cuál es la resolución del comité. En caso de que sea aprobado junto con la demás documentación que se pide, eso sería la condición que permitiría que pueda avanzar a formalización.
+
+14:59 - Orador no identificado
+Ahorita lo estoy haciendo de manera un poquito simplificada, solo para mostrar justamente.
+
+15:04 - David Ochoa
+Y esto, por supuesto, está pensado completamente en automático. Y, de hecho, así funciona. Es únicamente para esta ejercicio. Aprobación del comité y plazo. Tasa anual, y instrumento que sería hipotecario y garantía estructurada. Voy a agregar aquí. Entonces, avanzar de esta manera, que igual tienen condiciones manuales para no poder avanzar. Y aquí, en este punto, Raquel, es donde justamente en la formalización tenemos previsto que se integre el tema de este objeto de proyectos. Ya que al tema de las conexiones API, digamos que directamente Hotspot te al Monific, se tienen que comunicar por medio de un intermediario. O sea, se podría comunicar directamente el API hacia Hoso, pero tendría que tener una condición específico. Por ejemplo, un ID específico dentro del negocio y demás que se tendría que pegar al momento de dar de alta en el admin de Monific. O la opción igual más viable es del proyecto agregar ese ID único que se tiene del admin Monific que es es el ID que nos va a estar sirviendo para conectar todo lo demás del proyecto. Por eso, justamente, lo agregamos como una condición que, igual, dentro de la documentación API que estaba mostrando aquí hace un momento, se mencionan cuáles serían estas propiedades que se van a tener del lado de proyectos. A su vez, ya siendo el cargado de este objeto de proyectos, no es necesario estar entrando en detalles. Es el que también serviría para el tema de gestionar la cobranza. Iría también para entender las inversiones. En este caso, cualquier inversión que esté entrando, que ya es del lado de inversionistas, se estaría asociando con este objeto previamente creado. OK.
+
+16:49 - Monific
+O sea, nada más, supongamos que formalización ya se cerró el proyecto, pero yo lo tengo que cargar en mi admin de Monific. Tengo que nada más agregarlo ahí como el ID PROY0058, si es el que toca, y ya una vez que esté esté en la API conectada en el momento en el que Jale y yo suba el proyecto 58, ¿se va a asociar al proyecto 58? Exacto. Justo.
+
+17:16 - David Ochoa
+Va a tomar en cuenta el proyecto. Porque el admin se estaría conectando idealmente a este proyecto, que sería, digamos, el punto de conexión. Y que estaría retroalimentando todo lo demás. Retroalimentaría el negocio si es aplicable, pero principalmente retroalimentaría a la cobranza, que es donde se va estar recopilando. Este va a ser, digamos, nuestro intermediario y que también nos va a servir para el tema de los inversionistas. Porque algo que comentabas justamente dentro de la documentación es el negocio padre y el negocio hijo. Si bien es posible hacer, digamos, que tengamos un negocio padre y que también tuviéramos el negocio hijo que serían estos solicitantes, la realidad es que es un poquito más complicado luego estar buscando información. Porque un negocio puede estar vinculado a n cantidad de negocio. Y si te metes aquí, pues luego es un poquito más complicado buscar el negocio de origen. Mientras que con esta idea, justamente los proyectos serían una réplica de lo que ustedes tienen en el admin. O sea, todos los proyectos que tienen el admin serían los proyectos de aquí de Hotspot. Y el negocio serviría más como el tema comercial, como el tema de toda la gestión de documentación y demás que se hace. En el caso de cobranza, serían toda esta parte de gestión de cobranza, moras, demás, que igual sería retroalimentada por proyectos, que estaría interconectada con esto. Y todos los inversionistas que realicen inversiones y que se carguen también en el área de negocios, se estarían asociando a este proyecto. De esa manera, digamos que tenemos ese visual de cuántos proyectos se tienen y qué es lo que tienen vinculados.
+
+18:56 - Monific
+OK, perfecto. Súper claro.
+
+18:59 - David Ochoa
+Buenísimo. Entonces, justamente es esa parte que se tiene. Llenarla de más información que se solicita aquí. En este caso, igual, llenando el link del material que se estaría cargando. ¿Cuál es la aplicación? Creo que ustedes utilizaban Canva, si no estoy mal, para el tema de la documentación de la visual. Aquí se tipifica si el material está listo, cuál es el tipo de rendimiento fijo o variable, tipo de proyecto. Y en el caso de que se tipifica aquí justamente rendimiento o fijo, se habilita una nueva tarjeta, que son esto de los datos adicionales, plazo de financiamiento, tipo de instrumento y demás. Para que igual pueda ser ya, si es rendimiento variable, se mantiene también la tarjetita, no hay problema. Tipo de proyecto, aquí está, sólido estándar, obligados solidarios y estatus de la formalización. Que aquí igual, estatus de la formalización, tenemos estos 2 estados que son en curso y ya cerrado, liquidado, perdón. Que aquí igual. Se hizo el pequeño cambio de palabras porque estaba un poquito diferente al máster. Están iguales. Todos Y los esto es lo que permitiría poder avanzar hacia el cierre pero aún hacia el proceso de firma, que sería la siguiente etapa que sigue. De igual manera, si una persona trata de pasar de forma rígida, podría realizarlo. No hay una condición que no lo permita. En todo caso, igual se puede limitar. Y ya en proceso de firma son únicamente si el contrato está firmado o no, cuándo fue la fecha de la firma y ese link de contrato debería estar idealmente en el Google Drive.
+
+20:34 - Orador no identificado
+Perfecto.
+
+20:35 - David Ochoa
+Listo, entonces vamos a hacer aquí en caso este cierre rápido. Estoy aquí aquí saltando un poquito rápido el tema de las notificaciones y demás. Raquel, esas van a suceder de acuerdo a lo que ya tenemos documentado y esto sería ya de manera un poquito más rápida. Todo este proceso a Ahora bien, ya cuando se hace el cierre de este negocio, este va a desencadenar la creación del ticket de cobranza. El asesor de ventas no tiene que estar entrando aquí para hacer la creación, sino directamente empezarse la creación y la asignación a la persona que corresponde.
+
+21:07 - Monific
+De acuerdo, si ya eso con teoría, en teoría con la conexión de API ya se va a hacer.
+
+21:14 - David Ochoa
+Justo, y por eso es que justamente lo tenemos aquí dividido por el proyecto, porque el proyecto es el que también va a viajar a este ticket de cobranza. Y así justamente, pues ya se sigue con la parte de cobranza. Aquí, antes de entrar ahí, ¿Hay alguna duda o pregunta? No, todo claro.
+
+21:34 - Orador no identificado
+Va buenísimo.
+
+21:35 - David Ochoa
+De tu lado, ¿hay algún comentario igual que quisieras complementar o algo? Adelante, Dick. Buenísimo. Entonces, seguimos con el tema de curancia. Aquí, en este caso, para no ensuciar nada, me lo signo a mí. Y en este caso, esta información que dice aquí, historial de pago, monto, fecha de primero, de último. Y todo esto es lo que debe de ser alimentado por medio del admin. El admin es el final que tiene la última voz de la verdad respecto a esta información. Que, a su vez, es conectada por medio de ese proyecto que tenemos como intermediario. Aquí viene lo importante, Raquel, era justamente uno de los comentarios que teníamos en el tema de la auditoría. Hotspot no cuenta con la cualidad, lo podríamos decir así, de poder poder hacer workflow recurrentes. Por ejemplo, que el workflow que envíe el día primero, que envíe el día 5, que envíe el día 15. Esa funcionalidad, si bien sí existe, o sea, no te estoy diciendo que no existen, pero sí existe, está condicionada a una licencia especial que se llama el Data Hub. En este caso, yo no consideraría tan necesario escalar a esa licencia de Data Hub, ya que sí es un aumento considerable. Y lo que yo aquí empujaría, que justamente lo tenía ahí comentado, es de que el admin nos pueda ir pasando estas fechas. Y ya con las propiedades de Hotspot sencillitas, poder hacer los cálculos. Por ejemplo, si la fecha de primer pago fue el primero, pues ya con Hotspot podemos ir haciendo cálculos con una propiedad que es terrestre. La fecha del primer, perdón, la fecha del primer pago menos la fecha de hoy. Ahí ya tengamos una fecha específica. O que incluso el admin, si es posible, que pueda pasarnos a sabir la fecha de el 15. Puede ir rotando cada vez y que las vaya aquí pegando y ya sería su desencadenante para poder hacer el envío de esa comunicación. Esa sería la manera que podríamos sugerir para saltarnos ese tema de la licencia, ya que como te decía, nativamente no lo podría hacer, pero por esa AP y si se podría, sería un trabajito adicional. Que se tendrían que incluir, que está aquí en la documentación, pero permitiría que pudiéramos lograr esas notificaciones. Si me doy tener y explicar. Si no, por qué no?
+
+23:58 - Monific
+Por qué no? Porque no estoy entendiendo al 100 por ciento. O sea, déjame traducirte lo que yo entendí. Me dice si sí, lo entendí bien. O sea, lo que estoy entendiendo es para poder tener notificaciones recurrentes, es decir, unos días antes y unos días después, en caso de que no haya pagado el solicitante. Necesitamos una licencia que cuesta más que hasta ahí muy bien.
+
+24:20 - David Ochoa
+Correcto, si lo queremos hacer nativamente.
+
+24:22 - Monific
+Pero en caso de que el admin le pase unos datos al a la plataforma de Hotspot, si se podría hacer. Pero lo único que no estoy entendiendo ahí es en donde te voy a decir no es este que. Qué tan frecuente entonces se podría hacer la comunicación? Ahí te va, porque o sea, ponte que el admin le pasa a Hotspot el dato de que la última fecha de pago del solicitante fue el 15 de junio del 2026 y la siguiente fecha es el 15 de julio del 2026, máximo. Entonces ahí tú la condición que le vas a poner es que tiene, o sea que tiene que recordarle ahí adentro en el periodo de ese mes y está perfecto, vamos perfecto, ¿estamos de acuerdo? Sí, correcto, hasta ahí estamos bien.
+
+25:10 - David Ochoa
+Ok, ¿qué vamos a hacer?
+
+25:12 - Monific
+en el caso de un proyecto como el que tengo de Villa Maracuyá, que lleva un año sin pagar, ¿cómo el admin le avisa eso? El último pago fue el 14 de agosto y su siguiente pago es el 15 de junio. O sea, no sé si me explico cuál es la fecha que le tiene que avisar el admin. O en otro caso, tengo el proyecto que el último pago fue el 14 de abril y el siguiente, o sea, no sé si me Sí, no, no, sí, súper bien.
+
+25:42 - David Ochoa
+Justo por eso es lo que nos va a servir, porque las notificaciones que tenemos conectadas están en base a ese tiempo de mora. Justamente en base al tiempo de mora es que se van a ir activando. En este caso, cuando ya la admin nos envíe, cuándo es la fecha de último pago y cuándo es la fecha del siguiente pago, la fecha del siguiente pago nos va a servir para poder decirle a Hotspot que días antes tiene que notificar a la persona de que está próxima a vencer. En este caso, con una fórmula sencilla, por ejemplo, son los 15, le restamos los días del 15. Bueno, restamos el día de hoy a los días del 15 para que nos dé una propiedad numérica. Y esa propiedad numérica es la que nos va a servir para la notificación. Suponiendo que, por supuesto, no hay atrasos. En el caso de atrasos, es cuando el ad, pero cuando Hotspot va a estar notificando al asesor y también al solicitante de que ya se encuentre Ahora, y de acuerdo a lo que tenemos documentado en esta parte, cuando se alcance un tiempo de 60 días de mora, Cospot lo que va a hacer es pasar esta campaña a pasar este ticket de cobranza a la parte de ejecución de garantía, que sería esta etapa ya de alerta cuando estamos por encima de los 60 días. Esta etapa, la única manera en la que se pueda salir es de manera manual, justamente de acuerdo a lo que tenemos, o en su defecto que se ejecute la garantía y se caiga en un cierre por incumplimiento. Cada uno con sus propiedades específicas que se tienen que recopilar. Pero esa sería la dinámica que se tiene para restrenar la mora. Y ya si una persona regresa otra vez a cobranza activa porque se regularizó y demás, si vuelve a caer en lo mismo, vuelven a activarse los workflows. O sea, esa prácticamente sería la reinscripción hasta se finalice el pago y se haga la devolución íntegra de lo prestado. Que ya ahí si cae, estaríamos en una campaña liquidada o en su defecto, dependiendo de qué es lo que suceda a un refinanciamiento. Esas serían las etapas subsecuentes. Si me voy explicando ahí, Raquel, lo que tú comentas es completamente válido y si de hecho se tiene contemplado, pero ahí es cuando Jospo entraría en el tema de la mora, en el tema de la exclusión de garantía o en el caso de refinanciamiento. Ya es un pasaje manual y se van llenando los campos que se necesiten. Pero aquí lo importante que quería decirte es que todas.
+
+28:13 - Orador no identificado
+Al. Y no te perdí.
+
+28:16 - Monific
+Te perdí. Sí, sí, sí, te lo explicaste bien a mí. O sea, lo que.
+
+28:24 - Emmanuel Chulin
+David tiene problemas con su conexión. Sí, ¿verdad?
+
+28:27 - Monific
+Sí, yo sí te escucho bien. Ok, este, bueno, a ver, si les parece bien, no sé si David me escucha bien también, pero la parte de la cobranza activa supongo que igual al finalizar esta sesión me van a mandar cuando terminen los másteres homologados. Me la llevo de tarea y supongo que ahí también viene el comentario, la licencia que se requiere y también me van a pasar las propiedades que se van a requerir por parte de Jesús y de Daniel, entonces yo ahí también lo puedo pelotear con ellos y que me digan. Yo creo que sí va a ser viable que nos manden esa última, esas últimas propiedades, pero nada más para pelotearlo con ellos y que no sean caos, porque pues justo una de las partes más importantes de esta contratación es la, el calendario de cobranza a los solicitantes, entonces. Sí, de acuerdo.
+
+29:18 - Emmanuel Chulin
+Sí, los másteres y otros, pero compartimos y añadimos el comentario con respecto a la licencia.
+
+29:24 - Orador no identificado
+Ese probablemente no lo tengas, pero saliendo de la reunión lo añadimos.
+
+29:29 - Emmanuel Chulin
+Y también el mapeo de propiedades para tu equipo. Igual ya está listo para que lo revisen.
+
+29:36 - Orador no identificado
+Perfecto.
+
+29:36 - Monific
+Entonces yo con eso ya me pongo manos a la obra en revisar eso. Y no sé si me querían enseñar alguna otra cosa adicional.
+
+29:46 - Emmanuel Chulin
+Principalmente es esto. Creo que tenemos un la conexión, nos podría dar más detalles. Tenemos un dependiente con respecto a que las se asignan. Tareas En que una parte de la auditoría mencionabas que se tenían que asignar por equipo y no por individuo, ¿cierto? Bueno, ahí tenemos al imitante con Hotspot de que éstas se tendrían que sí o sí asignar un individuo en particular. ¿De qué manera sería lo ideal para que esto se ejecutara? Me comentaba David que uno de los principales blockers que tienen es que la entrada y salida del equipo tiende a ser variante. Entonces de pronto corregir todos los flujos puede ser un tema de operación. De edición. ¿Eso es así o cuál crees? Entre ellos sí.
+
+30:37 - Monific
+O sea, fue uno de los puntos que le comentaba yo a David y por eso me dijo, no te preocupes por justo el tema de los que van a estar configurados por equipo, sino por usuarios. A ver, los que no se puedan configurar de esa forma, estaría bien además tenerlos bien mapeados para justamente el día de mañana. Si alguien sale, no sé, o si tú tienes alguna otra propuesta.
+
+31:01 - Emmanuel Chulin
+Pues fíjate que he visto que utilizan muy, muy bien el tema de Cloth. Igual lo que podríamos hacer, y eso es aparte obviamente de lo que estamos mapeando aquí, ¿no? Y su injerencia directa con HubSpot, es programarles o construirles algún skill que permita ya tener identificados los flujos en los cuales se tiene que tener este ajuste. Y cuando alguien salga o entre, haga esa configuración. Eso podría ser algo que les sirva. ¿Cómo ves?
+
+31:29 - Monific
+Bueno, sí, lo que que haya mayor tema, o sea, si el tema va por los permisos que se pueden o no se pueden en HubSpot, no voy a detenerlo por esa parte, o sea, encontrarlo.
+
+31:41 - Emmanuel Chulin
+Listo, podemos armarte entonces este skill, que lo compartimos para que lo vayan evaluando y por lo pronto no nos detenemos con esa parte. Listo, ya tienes entonces esa documentación, ya hablamos de todos los blockers que teníamos en medio y eso obviamente va a desencadenar a los temas de la integración. Lo que nos falta de nuestro lado es nada más la homologación a partir de los masters que revisen, la homologación en el Simlane, pero tampoco queremos que eso no se tenga. Entonces, eso lo podemos trabajar en paralelo conforme se vaya trabajando la integración con nuestro equipo, este equipo de team.
+
+32:19 - Orador no identificado
+Perfecto.
+
+32:19 - Monific
+Entonces, de mi parte, ya para poder cerrar, que cuando digo de mi parte hablo en parte de todo el masters homologados que en teoría ya los tengo compartidos en caso que no los encuentre te pido por whatsapp los links para revisarlos la tarea está de la parte de cobranza para no contestar algo que no dé pena de mí y que una vez que estén revisados y aprobados por el equipo que les voy a dar a más tardar fecha mejor ustedes díganme la fecha para que a partir de esa fecha se pueda agendar ya la primera sesión correcto este no sé si les parece bien o si ya me estoy atrasando mucho yo que el tengan de
+
+33:02 - Emmanuel Chulin
+hoy lunes hasta el viernes vamos a tardar para comentarios el equipo de monifico interno mira te voy a ser muy honesto Raquel de nuestro lado este obviamente ya hay un atraso en ese sentido pero si esto garantiza que va a quedar y ahora vamos a ser bien planchado yo voy guardando espacio en la agenda de Yasmin para la próxima semana y nos vamos Super.
+
+33:24 - Monific
+A ver, yo lo voy a revisar hoy, por si por mi fuera hoy mismo te doy comentario, pero no quiero darle a la gente una fecha que no, o sea, que no sé si vayan a cumplir por otras tareas, va.
+
+33:37 - Emmanuel Chulin
+Listo, lo entiendo.
+
+33:38 - Orador no identificado
+Perfecto.
+
+33:38 - Monific
+No, pues. No, mil gracias a los dos. Voy revisando uno de los comentarios de todos. Mejor les doy hasta el jueves más bien para revisarlo. Y el viernes yo les entrego comentarios a ustedes que tengan margen de trabajo y el lunes poder agendar reunión, si les parece bien, ya conté esto así.
+
+33:56 - Emmanuel Chulin
+Quedamos así entonces, ¿no?
+
+33:58 - Monific
+Gracias, que estén bien. Que tengas buen día.

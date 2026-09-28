@@ -1,0 +1,170 @@
+=== ID: D145 ===
+=== SOURCE: Wiki Monific\drive-download-20260807T143807Z-1-001\Kickoff interno - Monific (Rodrigo Yeo)_ 2025_12_08 16_57 GMT-05_00 - Notas de Gemini.docx ===
+=== MODIFIED: 2026-08-07 ===
+
+📝 Notas
+8 dic 2025
+Kickoff interno - Monific (Rodrigo Yeo)
+Invitados rodrigo.yeo@arkode.io Caroline Bersot David Ochoa
+Archivos adjuntos Kickoff interno - Monific (Rodrigo Yeo)
+Registros de la reunión Transcripción Grabación
+
+Resumen
+Caroline Bersot describió a Monific como una plataforma de crowdfunding inmobiliario que enfrenta desafíos de información dispersa y falta de trazabilidad en Hubspot, debido a la gestión desorganizada entre sus diferentes herramientas. Los objetivos del proyecto se centran en unificar y aprovechar la base de datos en Hubspot, priorizando el área de cobranza para la cual David Ochoa explicó que se requiere migrar su gestión de tickets a negocios y automatizar notificaciones de impagos para acelerar la recuperación de pagos. Caroline sugirió mapear los flujos del inversionista y del desarrollador, además del proceso de cobranza, esperando resultados funcionales entre la semana 8 y 10; Rodrigo Yeo se comprometió a gestionar el proyecto con Ricardo y sugirió preparar documentación de Monific y un brief para el cliente, mientras que David confirmó que la integración de sistemas es un alcance principal.
+
+Detalles
+Longitud de las notas: Estándar
+Contexto del cliente Monific y sus problemas Caroline Bersot presentó a Monific como una plataforma de crowdfunding inmobiliario con dos flujos: inversionistas y solicitantes de financiamiento, quienes operan con un sitio web, una aplicación móvil y herramientas externas como Google Forms, WhatsApp y Hubspot (00:00:00). Los problemas de Monific se centran en el uso inadecuado de Hubspot, lo que resulta en información dispersa y poca trazabilidad entre marketing, ventas, operación y cobranza. La información está repartida entre Hubspot, su aplicación y Expediente Azul, y aunque Expediente Azul se utiliza para el manejo de documentos, no hay conexión con Hubspot (00:01:34).
+Objetivos del Proyecto y Prioridades Los objetivos del proyecto se centran en visibilidad, trazabilidad, unificación y aprovechamiento de la base de datos, con la meta de centralizar todo en Hubspot (00:04:36). La prioridad número uno es el área de cobranza, ya que Monific está perdiendo dinero debido a que los desarrolladores no pagan y los usuarios abren cuentas pero no realizan su primera inversión. David Ochoa explicó que la cobranza se gestiona actualmente en el apartado de tickets y carece de automatizaciones para notificar los impagos, lo que genera retrasos (00:06:39). Las metas de negocio son acelerar la recuperación de pagos y la primera inversión después de que el inversionista abre la cuenta (00:09:43).
+Procesos a Mapear y Duración del Proyecto Caroline sugirió que los procesos a mapear en la primera fase son: el flujo de usuario inversionista (desde el registro hasta la retención), el flujo del desarrollador (solicitud de financiamiento, análisis y seguimiento de pagos) y el proceso de cobranza (00:09:43). Caroline sugirió cambiar el proceso de cobranza de tickets a negocios para mejorar los reportes monetarios. El proyecto está planeado para 6 meses, y el cliente espera ver algo funcional entre la semana 8 y 10, especialmente en lo relacionado con el pipeline de cobranza y la llegada de datos críticos de Expediente Azul a Hubspot (00:11:41). David indicó que el mapeo debe finalizar tentativamente en la semana 6, si todo procede correctamente (00:16:22).
+Planificación y Recursos para el Mapeo Rodrigo Yeo se comprometió a trabajar con Ricardo para gestionar el proyecto, señalando que necesitarán documentación de Monific, como presentaciones de procesos o ideas, para empezar a estudiar (00:13:40). Rodrigo también sugirió enviarles un brief para que el cliente lo llene y se cuestione cosas durante su etapa de planeación interna (00:15:14). Caroline acordó solicitar a Lalo presentarles al cliente y compartir el documento de Rodrigo. Se decidió que en la sesión kickoff se programarían al menos tres sesiones con el cliente, utilizando un Excel de sugerencias de sesiones que luego el cliente revisaría para confirmar horarios (00:17:30). David mencionó que el reto principal es conectar los sistemas y buscar la propiedad o campo que permita la identificación en todas las aplicaciones, y confirmó que el proyecto tiene alcance de integración (00:18:51). Rodrigo sugirió tener una sesión con "Jaz" (probablemente la encargada de integración) más avanzada la parte del proyecto (00:20:05).
+
+Pasos siguientes recomendados
+Caroline Bersot se encargará de compartir la grabación de la reunión y las notas de Géminile o Géminis con Rodrigo Yeo.
+Rodrigo Yeo trabajará con Ricardo para asegurar que el proyecto se gestione de manera clara.
+Rodrigo Yeo compartirá un brief para procesos comerciales con el cliente Monific para que puedan irlo llenando.
+Caroline Bersot preguntará a Lalo si puede presentar al cliente por correo y luego le compartirá el plan de trabajo y el documento de Rodrigo Yeo.
+Caroline Bersot confirmará con Lalo la posibilidad de compartir la presentación del proyecto con Rodrigo Yeo y Ricardo.
+
+Revisa las notas de Gemini para asegurarte de que sean correctas. Obtén consejos y descubre cómo toma notas Gemini
+Danos tu opinión sobre el uso de Gemini para tomar notas en una breve encuesta.
+📖 Transcripción
+8 dic 2025
+Kickoff interno - Monific (Rodrigo Yeo) - Transcripción
+00:00:00
+
+Rodrigo Yeo: hotspot, pero la neta no me gusta, pues porque no lo puedo compartir, pero ya con esto sale listo.
+Caroline Bersot: Ah, ya. No, no hay problema. Yo grabo aquí y te paso la grabación y las notas de de Géminile o Géminis, no sé cómo que se dice esto, pero bueno, dale, no hay problema.
+Rodrigo Yeo: Voy a apagar la cámara porque voy a estar comiendo mientras lo escucho. Okay. digo, para que me vean comer.
+Caroline Bersot: Dale. Entonces, contexto rápido de Monific, que es una plataforma de crowdfunding inmobiliario con dos flujos, ¿no? Uno, el flujo de los inversionistas, que somos David, yo, que eh cuando ellos tienen un proyecto, entramos, compramos una cantidad de acciones, por lo menos aquí en en Colombia se maneja así con acciones. que modifique también, ¿cierto? ¿cierto? y los solicitantes, ¿no?, que son quien piden lo el financiamiento para sus proyectos, ¿no?
+David Ochoa: Ya está.
+Caroline Bersot: Ellos hoy operan con la página web con la API móvil de Monific y utilizan algunas herramientas externas como por ejemplo Google Forms, WhatsApp, expediente azul singular, eh la API propia y Hubspot parcialmente. Qué spoiler, ellos contrataron a nosotros.
+
+00:01:34
+
+Caroline Bersot: justamente porque no utilizan Hubspot de la manera que deben utilizar, ¿no? Y bueno, eso resulta en información totalmente dispersa y poca trazabilidad entre marketing, ventas, operación y principalmente cobranza. Dale. No sé si tienes alguna pregunta hasta acá, Rodrigo.
+Rodrigo Yeo: No, no, está perfecto.
+Caroline Bersot: Súper. Entonces, algunos problemas que ellos están enfrentando hoy, que es importante considerar para la parte del mapeo de procesos, ellos contrataron el mapeo de procesos elite. Dale, para que tú sepas cuál fue el paquete. Bueno, ellos cuando compraron Hubspot hace un tiempo, ellos no hicieron la implementación, o sea, mejor dicho, hizo la hicieron la implementación, pero con el onboarding de Hubspot como tal, no no hubo un mapeo de proceso antes. tuvieron las integraciones, pero fueron mal planeadas, o sea, no se sabían bien qué información se debería pasar y de dónde para dónde. Entonces, hoy ellos tienen esos datos repartidos entre Hubspot, la app de ellos y expediente azul, eh, que es justamente cosas que necesitamos e mapear ahí propiedades para porque hay algunas horas de integración con esas apps, principalmente Expediente Azul. David me corrija si yo estoy mal, pero principalmente con expediente por la parte de cobranza tiene una baja adopción.
+
+00:03:32
+
+David Ochoa: Sí, justo expediente azul más que nada lo tienen para el tema de recomund drive, lo tienen tipo como el Drive, como si tuviéramos un Google Drive o un Microsoft OneDrive y ahí están depositando toda la información. Pero, ¿qué sucede? que actualmente pues lo tienen que realizar pues de manera manual, es decir, tienen que descargar los archivos, subirlos ahí y aunque lo suban, no existe una manera de poder saber si este expediente azul corresponde a algún registro de hospod, es decir, están las dos e digamos desconectadas, ¿no? Justamente ahí.
+Rodrigo Yeo: Okay.
+David Ochoa: M.
+Rodrigo Yeo: Mm.
+Caroline Bersot: S. Y con eso la baja adopción del CRM. Eh, falta de visibilidad real desde CAC, funil, cobranza. Aquí es muy importante también mapear, o sea, mapear que yo digo es que tú tenga la consideración que la champion del proyecto se llama Raquel. Raquel, eh, es que yo dije en portugués o Rodrigo, es que yo soy brasilera. Vivo en Bogotá hace muchos años, pero soy brasilera. Portugués es mi lengua más.
+Rodrigo Yeo: Wow, qué cool.
+Caroline Bersot: Sí. Eh, y Raquel es directora de marketing, entonces para que tú sepas con quién está lidiando y de cuál departamento, es directora de marketing, que es nuestra champion.
+
+00:04:36
+
+Rodrigo Yeo: Ok.
+Caroline Bersot: Eh, y el, o sea, no tienen eh visibilidad real del CACFIL cobranza y tiene un riesgo de seguir quemando plata por eh falta de seguimiento, ¿no? Entonces, eh objetivos del proyecto, ¿no?
+Rodrigo Yeo: ¿Ya
+Caroline Bersot: O sea, entonces ahí lo que tenemos que empezar a tener en la cabeza para este mapeo. El éxodo del proyecto está básicamente en visibilidad, trazabilidad, unificación y aprovech aprovechamiento de la base de datos. ¿Vale? Entonces, en concreto, lo que Raquel está buscando es centralizar todo en Hubspot. Por eso que el mapeo de esas propiedades de la integración va a ser muy importantes y ella quiere poder ver quién abrió una cuenta y nunca invirtió. Eh, ¿quién debe dinero eh eh a ellos que aún no han pagado? ¿Y qué tipo de inversiones haces ha excelente pregunta ellos ese proyecto va a empezar efectivamente en enero?
+Rodrigo Yeo: tienen hoy por perdón por el momento ya tienen algún proceso o es algo que se tiene que definir cero?
+Caroline Bersot: O sea, teóricamente están utilizando el mes de diciembre para alinear sus procesos internos, pero contestando tu pregunta no lo tienen, no lo tienen.
+Rodrigo Yeo: Okay, está la en cabeza de alguien y habrá que mapearlo.
+Caroline Bersot: Eh, y también qué tipo de inversión está haciendo cada usuario.
+
+00:06:39
+
+Rodrigo Yeo: Ok.
+Caroline Bersot: e y también para poder con esa data poder seguimentar y hacer campañas, ¿no? Entonces, por ejemplo, a los que tienen más inversiones, no sé, son propiedades que son en la playa, entonces voy a a concentrar eh más esfuerzos aquí, ¿no? Para traer más inversionistas. Bueno, prioridad digamos que número uno para eh Monific porque tenemos de marketing, ventas, no sé qué es el área de cobranza. Esa es la prioridad número uno. Eh, ellos están perdiendo dinero porque los desarrolladores no pagan y porque los usuarios abren cuenta, pero nunca abren nunca hacen su primera inversión. O sea, abren la cuenta, pero no se ponen ni un proyecto ahí para invertir en nada, ¿no? Más como mm, yo no creo que habíamos preguntado eso a a L.
+Rodrigo Yeo: tien y tienen hipótesis de qué puede ser o cuál es el motivo. should
+David Ochoa: Cosa, Rodrigo, perdóname. ¿Me repites?
+Rodrigo Yeo: que si tiene alguna hipótesis de por qué está sucediendo eso.
+David Ochoa: Yo entendí más que nada, infiero que por el proceso que actualmente traen. Digamos que la cobranza la llevan en el apartado de tickets, actualmente la tienen configurada en los tickets y lo que sucede es que no existen automatizaciones por lo que recuerdo o por lo que entiendo, este, en que les estén notificando de que mira, esta persona no ha pagado.
+
+00:08:27
+
+David Ochoa: Debido a eso mismo, que como no están conectados los sistemas entre sí correctamente, esa información no llega al final en Hotpot y por eso se traspapela. Digamos que en su appada, es decir, la app de Monific porque tiene su aplicación, tienen conectados ciertas cosas a Hotspot, sí, pero no toda esa información, por ejemplo, de cobranza, que es específicamente para lo que necesitan, digamos que para unificar ese apartado y pues agregar las automatizaciones necesarias de recordatorio a los desarrolladores, porque pues como lo mencionó Caro, ellos tienen dos públicos, desarrolladores e inversores. inversores, los que dan dinero y pues le retribuyen un su dinero y su rendimiento y los desarrolladores que van y piden dinero, pero a cambio de ese dinero pues tienen que pagar una tasa y entonces ahí viene el problema principal, le expresan el dinero, pero al momento de que tienen que pagar pues incurren en retrasos, pues de cierta manera MIFIC tiene que absorber para pagarle a los inversionistas y esto genera que pues la cobranza se atrase. Es eso lo que puntualmente quieren o el dolor principal que nos ha externado el cliente. Bueno, que nos extend ventas de parte del cliente.
+Caroline Bersot: Sí, sí, sí, sí, sí. Ahora que me refresqueó la memoria. Sí, exacto. Y por eso que la prioridad número uno es justo la parte de cobranza, Rodrigo.
+
+00:09:43
+
+Rodrigo Yeo: Va perfecto.
+Caroline Bersot: Dale.
+Rodrigo Yeo: Listo.
+Caroline Bersot: Bueno, y ahí yo yo voy a decir eso, pero en otras palabras que la meta de negocio es justamente esa, acelerar la recuperación de pagos y acelerar la primera inversión después que el inversionista abre la cuenta. son eh digamos que dos las esas dos metas de negocio, ¿no? Entonces ahí aquí es más digamos que una sugerencia principal eh de procesos a a ser enmapeados en esta primer fase, ¿no? que sería, digamos, el uno, el flujo de usuario inversionista, o sea, el registro en la plataforma, validación inicial, o sea, la documentación básica, validación bancaria, el onboarding, la activación, la primera inversión y reinversiones y retención. Ellos también están buscando eh eh validar eso de la retención. validar, no validar, no es la palabra, eh tener trazabilidad de la retención. Dos, el flujo del desarrollador, eh, que es la parte de crédito fondeo, ¿no? La solicitud de el financiamiento, eh análisis y evaluación, aprobación o rechazo de un determinado proyecto y el seguimiento de pagos relacionado a la cobranza, que es una una de las cosas más críticas. el proceso de cobranza, que es el proceso de tickets, como habíamos mencionado, que es uso de ticket para pagos programados, pagos por vencer, recordatorios automáticos y estatus pagado, en conciliación, vencido, etcétera.
+
+00:11:41
+
+Caroline Bersot: Aquí solamente eh abro un paréntesis. No sé si el proceso de cobranza sería mejor en tickets o en negocios. En mi experiencia creo que sería mejor en negocios que en tickets, hasta para poder después eh lograr hacer reportes relacionado a la parte monetaria. Pero eso es algo que podemos conversar con el cliente, pero yo considero que eso necesitaría mudar para negocios. Eh, bueno.
+Rodrigo Yeo: Okay. Y no más rapidísimo de pregunta, esto a nivel de de tiempos, ¿no? Digo, creo que me está quedando muy claro el proyecto y ya por dónde va. Digo, hay preguntas que ahí luego me gustaría recibir a nivel de documentación de ellos. A lo mejor no la pudieran incluso ir compartiendo en diciembre, pero tiempos, el proyecto, ¿cuántas semanas son? Ok.
+Caroline Bersot: Excelente pregunta. Bueno, ese proyecto no está por, o sea, está para 6 meses. Él no está como como los onboardings, los las implementaciones de 10, 12 semanas. Es son 6 meses de proyecto, pero el cliente digamos que ya espera ver algo funcionando entre la semana 8 y 10, o sea, entre esta semana ya necesitaríamos estar con algo implementado, eh, principalmente relacionado a la parte de cobranza, de pronto un panel de reportes o que esté funcionando ya ese pipeline, o sea, de tickets, o sea, de negocio, pero el pipeline de cobranza como tal, que los datos eh críticos de expediente azul ya estén llegando dentro de Hubspot.
+
+00:13:40
+
+Caroline Bersot: Entonces, y ahí eso que yo te iba a preguntar, eh, normalmente un mapeo así eh se da más o menos con cuánto tiempo.
+Rodrigo Yeo: Okay, va listo. Perdón, me agaron con pleno bocado en la boca, creo. Sí, listo. Bueno, entonces eso para yo trabajarlo con Ricardo y tenerlo claro que se tiene que gestionar el proyecto. Digo, de alguna manera para nosotros, ¿no?, o sea, no no no no será difícil manejarnos así, ¿vale?
+Caroline Bersot: Listo. Bueno, ¿ustedes creen que en el primer mes ya logren tener ese proceso? Porque si no estoy mal es que yo no estoy aquí con la yo no estoy aquí con el mapeo élite abierto, pero si no estoy mal, son hasta tres procesos, ¿cierto?
+Rodrigo Yeo: Este, si si creo que son tres. Tendré que checar, pero creo que sí son creo que son hasta tres.
+Caroline Bersot: Yo creo que son tres procesos.
+Rodrigo Yeo: Sí, correcto. Ahora los tres, o sea, uno sin sin temas, ¿no? Tal vez dos. Todo depende del ride, del ritmo que nos pueda dar para las primeras para la primera semana de sesiones, que si queremos ir rápido tenemos que meter la intensidad y él tiene que meter intensidad, va, eh, para programar las sesiones ahí con Ricardo y que eh pues podamos empezar a mapear, ¿no?
+
+00:15:14
+
+Rodrigo Yeo: Eso será el punto número uno. Y el punto número dos, creo que ahorita que estamos, digamos, como en un periodo de arranque, que lo que puedan tener y no lo puedan ir compartiendo mejor, porque así también lo podemos ir estudiando. Y sobre todo, ¿qué me refiero de esto? documentación como si es que tienen en algún lado una presentación con sus procesos, eh, o en algún lado tienen un documento de alguna idea, porque digo, tal vez la la respuesta es que no nos tienen documentados y está bien, pero lo que más nos gustaría es cualquier cosa que nos dé como una idea de esto que me estás platicando, pero tal vez un poquito más a detalle, ¿no? Y que ábrele de los problemas. Y lo otro que creo que diría es podemos ir, sobre todo si el cliente va a estar en una etapa de planeación, podemos mandarles un brief que tenemos nosotros, sobre todo para procesos comerciales y que puedan irlo llenando e incluso al cliente le sirva ahorita para cuestionarse cosas, va, eso yo sugeriría, eso se los puedo compartir, digo, hablo con Ricardo, se los puedo compartir esta semana y adaptar ya no más para el cliente, No.
+Caroline Bersot: Perfecto. Sií, David, yo creo que tú vas a preguntar algo, decir algo.
+David Ochoa: Sí, solo no, no solo en complemento.
+
+00:16:22
+
+Caroline Bersot: Ha.
+David Ochoa: De acuerdo al timeline que se le había presentado al cliente eh Rodrigo, el mapeo debería de estar finalizando tentativamente, tomando en consideración que todo estará de manera correcta en la semana 6, es decir, al mes y medio debería de estar finalizando el tema de el mapeo. Por supuesto, entiendo que eso depende mucho del cliente, los tiempos, pero tentativamente, tentativamente deberían ser 6 semanas.
+Rodrigo Yeo: para tres, sí, para para los tres procesos, ¿verdad? Okay.
+David Ochoa: Ok.
+Rodrigo Yeo: Okay.
+Caroline Bersot: Ya voy a hacer lo siguiente.
+Rodrigo Yeo: Me imagino que también Pero me imagino que también hay presentación de esto, ¿no? Un poquito como para mandársela a Ricardo y que también luego la podéis estar viendo, ¿no?
+David Ochoa: Claro, ahí Caro si puedo compartir la presentación de Alexis, ¿no?
+Caroline Bersot: Eh, sí, sí, de de Lalo.
+Rodrigo Yeo: Sí, digo, bueno, si quieren, pero normalmente siempre le me las manda.
+Caroline Bersot: Sí, sí, sí, sí, sí.
+David Ochoa: Ah, perdón.
+Rodrigo Yeo: de lado.
+Caroline Bersot: Eh, listo. Yo voy a hacer entonces lo siguiente. Voy a preguntar a Lalo eh si me puede eh presentar ya al cliente por correo y le explico eso y le paso, Rodrigo, el documento que tú me vas a pasar.
+
+00:17:30
+
+Caroline Bersot: Dale, para que el cliente pueda ir adelantando esto. Eh, te paso el plan de trabajo. Dale, te paso el plan de trabajo para que tú puedas ver. Eh, ¿y qué? Yo yo iba a preguntar algo que se me olvidó. Ah, ya no, ya me acorté. Bueno, y aquí ahora más en la parte práctica y pregunto como que a Ricardo, ya que es quien va a estar con el mapeo, le gusta trabajar a él en este mismo día de la kickof. Eh, ¿ya quieren salir con un par de reuniones ya agendadas o quieren ya quieren salir con con reuniones agendadas?
+Rodrigo Yeo: Sí, sí, normalmente como lo hacemos, por lo menos con las primeras tres, como lo hacemos es hacemos un Excel con las sugerencias de sesiones para que el cliente la revise y el día de la sesión confirmamos horarios.
+Caroline Bersot: ¿Cuántas?
+Rodrigo Yeo: Entonces, por ejemplo, decimos, la sesión uno vamos a hacer levantamientos generales, luego la sesión dos va a ser para este proceso, la sesión tres va a ser para entender la parte de cobranza y y de cada proceso ya definimos una sugerencia de día y ya que el cliente nos diga hora, o sea, la idea es que ese día salgamos por lo menos con tres sesiones ya programadas.
+Caroline Bersot: Pero Perfecto, perfecto.
+
+00:18:51
+
+Caroline Bersot: Entonces ahí eh en esto que es más al final, yo les abro el espacio para que puedan coordinar y nos pueda también invitar a a David y a mí también en este proceso, eh, para que estemos ahí con ustedes también. Eh, ¿y qué más?
+Rodrigo Yeo: 100%
+Caroline Bersot: Bueno, no sé si tú tienes alguna pregunta porque básicamente el contexto del cliente sería esto. Dave, no sé si tú tienes algo más para agregar también, que de pronto yo se me olvidó, pero yo creo que no.
+David Ochoa: es eso, no es algo complicado como lo podría llegar a haber sido un GDC porque tampoco tiene tantos procesos, pero sí este vamos el reto es conectar los sistemas, buscar cuál va a ser eh la propiedad o el
+Caroline Bersot: Sí.
+David Ochoa: campo que nos va a permitir identificar entre todos los objetos que bueno, pero todas las aplicaciones que se tienen es digamos que lo principal, ¿no?
+Rodrigo Yeo: Mhm.
+David Ochoa: porque quieren tener esa homologación de información.
+Rodrigo Yeo: en este proyecto va a participar ya o no. Ok.
+David Ochoa: Sí, si no estoy mal, sí tiene alcance de horas, así que si requiere Sí, correcto, tiene alcance de integración, así que de ese lado, Rodrigo, si requieres algo más técnico ya en temas un poquito más de app y
+Caroline Bersot: Sí, tiene alcance de integración.
+
+00:20:05
+
+Caroline Bersot: Es ya también integración, ¿cierto? Entonces sí.
+Rodrigo Yeo: Sí, ya luego nos podemos organizar, pero sobre todo lo que hemos hecho es antes de que sacara el proyecto tener una sesión con jazz, sobre todo para la parte de integración y lo que ella haya estudiado, revisado, lo
+David Ochoa: demás. de
+Rodrigo Yeo: comparemos con lo que nosotros estamos proponiendo y saber que vaya a empatar, ¿no?, en la solución. Entonces, pero digo, creo que se lo pondré como nota para más avanzado el proyecto y por el momento no digo ya nada más eh digo, estoy seguro que todo lo l va a decir que sí porque siempre nos compan las presentaciones. Hm. Pero si quieres para que esté más de de tu lado caro, hm cuando se confirmen alo si nos pueden compartir la presentación a mí y a Ricardo.
+Caroline Bersot: Mm.
+Rodrigo Yeo: Hm. Les llego aquí rápido los los correos, ¿no? Que sería Rica. Ay.
+Caroline Bersot: Sí, por favor. El tu correo yo creo que ya lo tengo aquí porque fue este que de la invitación y solamente del Ricardo.
+Rodrigo Yeo: por la invitación.
+Caroline Bersot: Déjame que lo voy a poner aquí en mis notas.
+Rodrigo Yeo: Aquí ya ya te lo dejé aquí y listo. mandamos esta sesión y no me queda perfecto más bien agradecerles por la explicación y la introducción del proyecto
+Caroline Bersot: Súper. Entonces, ya voy a pedir eso a Lalo y también preguntar sobre la presentación solamente para que él me dé ahí su okay y listo. Dale.
+Rodrigo Yeo: dale.
+Caroline Bersot: S.
+David Ochoa: Nie
+
+La transcripción finalizó después de 00:22:08
+
+Esta transcripción editable se ha generado por ordenador y puede contener errores. Los usuarios también pueden cambiar el texto después de que se haya generado.

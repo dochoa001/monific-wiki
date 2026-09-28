@@ -1,0 +1,382 @@
+=== ID: D181 ===
+=== SOURCE: Wiki Monific\drive-download-20260807T144042Z-1-001\21. Martes  4 de agosto 2026.docx ===
+=== MODIFIED: 2026-08-07 ===
+
+
+MINUTA EJECUTIVA
+Integración Monific - HubSpot
+Acuerdos, decisiones, riesgos, próximos pasos y transcripción completa depurada
+ |
+Fecha de la reunión: No indicada en la grabación
+Fecha de elaboración: 4 de agosto de 2026
+Equipos participantes: Monific y Black and Orange
+Clasificación: Documento interno de trabajo
+
+ |
+
+Documento preparado a partir de la transcripción proporcionada. Se corrigieron errores evidentes del reconocimiento de voz y se eliminaron repeticiones sin alterar el sentido de las intervenciones.
+
+1  Ficha de la reunión
+Asunto
+ | Revisión técnico-funcional de la integración entre el Admin de Monific y HubSpot.
+ |
+Objetivo
+ | Alinear el modelo de datos, objetos, propiedades, reglas de sincronización, limitaciones técnicas y esquema de seguimiento para concluir la integración.
+ |
+Alcance
+ | Procesos comercial y de cobranza; contactos, empresas, negocios, tickets y proyectos; asociaciones, pagos, saldos, campañas y recordatorios.
+ |
+Dirección del flujo
+ | Unidireccional en la fase inicial: Admin de Monific → HubSpot.
+ |
+Equipos
+ | Monific y Black and Orange.
+ |
+Duración
+ | No indicada.
+ |
+Estatus al cierre
+ | Monific inicia validación e implementación; soporte técnico de Black and Orange disponible; seguimiento recurrente por definir.
+ |
+1.1  Participantes identificados
+Monific: Raquel, Emanuel, Daniel y Jesús.
+Black and Orange: Manuel Chulín (Gerente de Operaciones), David (implementación), Jazmín/Jaz (Tecnología) y Ricardo (soporte técnico de integración).
+Nota: La identificación de algunas voces se realizó por contexto. Cuando la intervención no permite atribución individual segura, en la transcripción se utiliza “Equipo Monific” o “Equipo Black and Orange”.
+2  Resumen ejecutivo
+Resultado principal
+Los equipos confirmaron el modelo de integración inicial, los objetos involucrados y la necesidad de validar el catálogo de propiedades antes de continuar el desarrollo. Monific comenzará la implementación con base en el documento maestro; Black and Orange dará soporte técnico y podrá facilitar sesiones especializadas cuando surjan bloqueos.
+ |
+
+La integración mantendrá los objetos ya utilizados —Contactos, Empresas y Negocios— e incorporará Tickets y Projects/Proyectos como objetos adicionales de HubSpot.
+La fase inicial será unidireccional: el Admin de Monific alimentará HubSpot. No se contempla, por ahora, que HubSpot actualice el Admin de Monific.
+El documento maestro concentra dos capas: mapeo de propiedades y opciones internas, y reglas de negocio/sincronización por objeto.
+Los nombres internos, IDs y valores internos de las propiedades desplegables deben coincidir entre ambos sistemas; una vez creada una propiedad, su nombre interno no debe tratarse como editable.
+La actualización de saldos y métricas de cuenta se plantea como una sincronización recurrente diaria, inicialmente alrededor de la 1:00 a. m., sujeta a validación técnica de Monific.
+Según lo expuesto, la suscripción actual de HubSpot no ofrece un entorno para ejecutar la lógica avanzada requerida, por lo que cálculos, código y orquestación deberán resolverse externamente.
+Se propuso establecer sesiones breves y recurrentes de seguimiento, aproximadamente de 15 a 20 minutos, cuya frecuencia quedará pendiente de confirmación por parte de Raquel, Daniel y Jesús.
+3  Alcance funcional y técnico acordado
+3.1  Objetos del modelo de datos
+Objeto
+ | Estatus
+ | Uso señalado
+ | Asociaciones relevantes
+ |
+Contactos
+ | Existente
+ | Registro de usuarios/solicitantes; correo como criterio de búsqueda; saldos y métricas de cuenta.
+ | Empresas, negocios, proyectos y tickets según corresponda.
+ |
+Empresas
+ | Existente
+ | Información corporativa y sincronización de representante legal.
+ | Contactos, negocios, proyectos y tickets.
+ |
+Negocios
+ | Existente
+ | Proceso comercial ya implementado; se recomienda conservar estructura y datos actuales.
+ | Contactos, empresas, proyectos y tickets.
+ |
+Tickets
+ | Nuevo en la integración
+ | Seguimiento de campaña y cobranza: pagos parciales/completos, cierre exitoso y cierre por financiamiento.
+ | Campaña/proyecto mediante ID; contactos, empresas y negocios.
+ |
+Projects / Proyectos
+ | Nuevo en la integración
+ | Entidad central para creación, asociación y recordatorios relacionados con el proyecto.
+ | Contactos, empresas, negocios y tickets.
+ |
+3.2  Propiedades y nomenclatura
+El “nombre de CRM” corresponde a la etiqueta visible para los usuarios de HubSpot.
+El “nombre interno” es el identificador técnico que consumirá la integración. Debe validarse antes de crear propiedades nuevas y conservarse estable.
+Para propiedades tipo dropdown o selección múltiple, la integración deberá utilizar exactamente los valores internos definidos en el mapeo, no únicamente las etiquetas visibles.
+Las propiedades nuevas se identifican en el documento maestro; varias propiedades existentes se mantienen como referencia para no romper las reglas ya implementadas.
+Entre las propiedades mencionadas se encuentran código de referido, desarrollador, estado de pago, saldo invertido, saldo disponible, valor de la cuenta, dinero ganado y representante legal.
+3.3  Reglas de sincronización
+Ámbito
+ | Origen
+ | Desencadenante / frecuencia
+ | Acción esperada
+ | Destino
+ |
+Contactos
+ | Admin Monific
+ | Cambio de datos y/o ejecución recurrente diaria.
+ | Buscar contacto por correo y actualizar saldos, valor de cuenta, dinero invertido y dinero ganado.
+ | Propiedades de contacto en HubSpot.
+ |
+Empresas
+ | Admin Monific
+ | Cambio de información corporativa.
+ | Actualizar, entre otros datos, el representante legal.
+ | Propiedades de empresa en HubSpot.
+ |
+Negocios
+ | Flujo existente
+ | Conforme a reglas ya operativas.
+ | Conservar la estructura actual; integrar nuevas relaciones sin alterar innecesariamente el modelo vigente.
+ | Negocios en HubSpot.
+ |
+Tickets
+ | Admin Monific / cobranza
+ | Pago parcial o completo; cierre de campaña o financiamiento.
+ | Crear o actualizar el ticket asociado mediante identificadores consistentes.
+ | Tickets en HubSpot.
+ |
+Proyectos
+ | Admin Monific
+ | Creación/actualización del proyecto y eventos relacionados.
+ | Crear, asociar y programar recordatorios; mantener vínculo con contactos, empresas, negocios y tickets.
+ | Projects/Proyectos en HubSpot.
+ |
+3.4  Criterios técnicos destacados
+Cada regla debe documentar: nombre, sistema origen, desencadenante, condiciones, acción, sistema afectado, momento de ejecución, resultado esperado y manejo de errores.
+La búsqueda de contactos se realizará, de acuerdo con lo explicado, mediante el correo electrónico como llave de localización.
+Las asociaciones de tickets y proyectos requerirán IDs consistentes y compartidos entre sistemas.
+La frecuencia puede ser en tiempo real, por lotes, en horario específico o mediante una secuencia, según la regla.
+La propuesta de actualización diaria a la 1:00 a. m. busca evitar saturación de llamadas API; Monific podrá proponer otro horario o periodicidad si resulta técnicamente más conveniente.
+La implementación de cálculos o código avanzado deberá realizarse fuera de HubSpot, conforme a las limitaciones de la suscripción comentadas en la reunión.
+4  Decisiones y acuerdos
+ID
+ | Decisión / acuerdo
+ | Impacto
+ | Estatus
+ |
+D-01
+ | Mantener Contactos, Empresas y Negocios, e incorporar Tickets y Projects/Proyectos.
+ | Amplía el modelo de datos y requiere ajustes en el código de integración.
+ | Acordado
+ |
+D-02
+ | Implementar inicialmente un flujo unidireccional desde el Admin de Monific hacia HubSpot.
+ | Reduce complejidad inicial; cualquier bidireccionalidad futura será una fase adicional.
+ | Acordado
+ |
+D-03
+ | Utilizar el documento maestro como fuente de referencia para propiedades y reglas.
+ | Centraliza nomenclaturas, IDs, valores internos y comportamiento esperado.
+ | Acordado
+ |
+D-04
+ | Validar propiedades existentes y detectar duplicados antes de crear o modificar.
+ | Evita inconsistencias, duplicidad de datos y fallas por nombres internos distintos.
+ | Pendiente de ejecución
+ |
+D-05
+ | Conservar el modelo de Negocios ya implementado salvo necesidad técnica comprobada.
+ | Minimiza regresiones en el proceso comercial existente.
+ | Acordado
+ |
+D-06
+ | Resolver externamente la lógica avanzada que HubSpot no pueda ejecutar con la suscripción actual.
+ | Requiere infraestructura/código fuera de HubSpot y definición de monitoreo de errores.
+ | Acordado
+ |
+D-07
+ | Canalizar bloqueos técnicos por medio de Raquel y, cuando corresponda, convocar una sesión especializada con Ricardo/Jazmín.
+ | Define la ruta de escalamiento y soporte.
+ | Acordado
+ |
+D-08
+ | Evaluar reuniones recurrentes breves de seguimiento.
+ | Mejora alineación y detección temprana de bloqueos.
+ | Frecuencia por confirmar
+ |
+5  Plan de acción
+ID
+ | Responsable
+ | Actividad
+ | Entregable / evidencia
+ | Fecha
+ | Estatus
+ |
+A-01
+ | Raquel
+ | Compartir con Daniel y Jesús el enlace al documento maestro alojado en la carpeta del proyecto.
+ | Confirmación de acceso al archivo.
+ | Inmediata / por confirmar
+ | Pendiente
+ |
+A-02
+ | Daniel y Jesús / Equipo Monific
+ | Revisar el mapeo y confirmar que cada propiedad exista en el Admin de Monific, aunque utilice una nomenclatura distinta.
+ | Matriz validada con equivalencias, faltantes y observaciones.
+ | Por definir
+ | Pendiente
+ |
+A-03
+ | Equipo Monific
+ | Identificar propiedades repetidas o duplicadas y definir cuál será la fuente/identificador válido.
+ | Listado de duplicados y decisión de depuración.
+ | Por definir
+ | Pendiente
+ |
+A-04
+ | Equipo Monific
+ | Iniciar la implementación de los nuevos objetos, IDs, asociaciones y reglas descritas.
+ | Avance técnico documentado y pruebas iniciales.
+ | Por definir
+ | Pendiente
+ |
+A-05
+ | Black and Orange / Ricardo y Jazmín
+ | Atender dudas técnicas y apoyar en la resolución de bloqueos de integración.
+ | Respuestas técnicas, sesión especializada o ajustes al documento.
+ | Según necesidad
+ | Disponible
+ |
+A-06
+ | Ambos equipos
+ | Validar el horario y periodicidad de las sincronizaciones masivas, especialmente saldos y métricas de cuenta.
+ | Frecuencia definitiva y criterio de reintentos.
+ | Por definir
+ | Pendiente
+ |
+A-07
+ | Raquel con Daniel y Jesús
+ | Definir si habrá sesiones recurrentes de 15–20 minutos y con qué frecuencia.
+ | Calendario de seguimiento y agenda estándar.
+ | Por confirmar por WhatsApp
+ | Pendiente
+ |
+A-08
+ | Ambos equipos
+ | Mantener actualizaciones de avance en el canal de comunicación acordado.
+ | Registro de avances, dudas y bloqueos.
+ | Continuo
+ | En curso
+ |
+6  Riesgos, dependencias y controles
+Riesgo / dependencia
+ | Prob.
+ | Impacto
+ | Control propuesto
+ | Responsable
+ |
+Nombres internos o valores dropdown distintos entre sistemas.
+ | Media
+ | Alto
+ | Validar matriz de equivalencias antes del desarrollo; congelar identificadores aprobados.
+ | Monific + Black and Orange
+ |
+Propiedades duplicadas o históricas con usos distintos.
+ | Alta
+ | Alto
+ | Inventario, propietario de dato y regla de consolidación antes de sincronizar.
+ | Monific
+ |
+Asociaciones incorrectas por IDs de proyecto, campaña o ticket.
+ | Media
+ | Alto
+ | Definir llaves únicas, pruebas de asociación y validaciones de existencia.
+ | Equipo técnico
+ |
+Carga excesiva o límites de API en sincronizaciones masivas.
+ | Media
+ | Medio/Alto
+ | Procesamiento por lotes, horario de baja demanda, reintentos y registro de errores.
+ | Equipo técnico
+ |
+Ausencia de entorno de código dentro de HubSpot.
+ | Confirmada
+ | Alto
+ | Implementar lógica externa con monitoreo, trazabilidad y manejo de credenciales.
+ | Monific / desarrollo
+ |
+Reglas comerciales o de cobranza no totalmente comprendidas por desarrollo.
+ | Media
+ | Alto
+ | Compartir videos/diagramas de proceso y realizar sesión funcional cuando sea necesario.
+ | Black and Orange
+ |
+Falta de cadencia de seguimiento.
+ | Media
+ | Medio
+ | Definir reunión corta recurrente y canal único de bloqueos/decisiones.
+ | Raquel + ambos equipos
+ |
+7  Puntos abiertos para la siguiente sesión
+Confirmar la versión final del catálogo de propiedades, sus nombres internos, tipos de dato y valores internos de dropdown.
+Definir la llave única de cada objeto y la estrategia de asociación entre proyecto, campaña, ticket, negocio, empresa y contacto.
+Acordar frecuencia, horario y volumen de las sincronizaciones masivas; validar límites de API y mecanismo de reintentos.
+Precisar la infraestructura externa que ejecutará la lógica, así como autenticación, bitácoras, alertas y responsables operativos.
+Confirmar el comportamiento ante correo no localizado, registros duplicados, datos incompletos o errores parciales de actualización.
+Acordar ambientes y datos de prueba, criterios de aceptación, pruebas de regresión y proceso de liberación a producción.
+Definir periodicidad y asistentes de la sesión recurrente de seguimiento.
+7.1  Agenda sugerida para el próximo seguimiento
+Avance contra actividades A-01 a A-08.
+Propiedades faltantes, duplicadas o con nomenclatura diferente.
+Validación de IDs y asociaciones de los objetos nuevos.
+Primeros bloqueos técnicos y decisiones requeridas.
+Pruebas realizadas y resultados.
+Ajustes al documento maestro y fechas de siguientes entregables.
+8  Transcripción completa depurada
+Criterio editorial
+Se corrigieron nombres evidentes (Monific, HubSpot, Black and Orange), errores de reconocimiento de voz, concordancia y puntuación. Se eliminaron muletillas y repeticiones que no aportaban contenido. No se añadieron acuerdos que no estuvieran presentes en la conversación. En intervenciones ambiguas se identifica al equipo, no a una persona específica.
+ |
+
+Participantes: Hola, buenas tardes. ¿Cómo están?
+Participante: Hola, Jazmín. Buenas tardes.
+Participante: Buenas tardes. Déjenme revisar con Emanuel para confirmar si ya está conectado. Ah, ya llegó Ema. Gracias.
+Participantes: Hola. Buenas tardes a todos.
+Equipo Monific: Hola, equipo. Buenas tardes.
+Equipo Black and Orange: Nada más déjenme enviarle un mensaje a David, por si del lado técnico necesitamos soporte. Dos minutos y comenzamos.
+Equipo Black and Orange: Listo, ahora sí, ya estamos todos.
+Manuel Chulín: Muy bien, Emanuel, Daniel y Jesús, qué gusto conocerlos.
+Equipo Monific: ¿Qué tal, Emanuel?
+Manuel Chulín: Listo. Ya estamos aquí para revisar en conjunto los temas relacionados con la integración entre Monific y HubSpot. De nuestro lado me presento: soy Manuel Chulín, gerente de Operaciones en Black and Orange, y estoy acompañando la conclusión de este proyecto junto con David, quien ha estado a cargo de la implementación desde el inicio. Nos acompaña Jaz, nuestra líder de Tecnología, y Ricardo, quien nos apoyará directamente con la integración. Habiendo presentado al equipo, tenemos claro de dónde partimos y qué se necesita. Jaz, si quieres dar una breve introducción.
+Jazmín: Yo creo que, como revisamos en la sesión interna pasada, el objetivo es que nosotros revisemos el mapeo que tiene David y qué está pendiente del lado de la integración, para que el equipo de Monific pueda apoyarnos. Si surge alguna duda, la resolvemos en esta sesión.
+Equipo Black and Orange: En este documento les voy a mostrar —y después se los haremos llegar junto con los demás documentos— todas las propiedades requeridas para el proceso comercial y también para el proceso de cobranza, que es donde principalmente se necesita esta integración.
+Equipo Black and Orange: Cabe mencionar que varias de estas propiedades ya las tienen integradas desde antes. Aquí aparecen como referencia: ya existen en HubSpot, pero se mantienen dentro de las reglas generales.
+Equipo Black and Orange: Este pequeño maestro de implementación lo dividimos en dos secciones: por un lado, las propiedades que tenemos en HubSpot, con sus opciones desplegables y demás configuraciones; por el otro, las propiedades que estamos tomando en cuenta dentro de Mi Monific.
+Equipo Black and Orange: Después ustedes podrán indicarnos si alguna propiedad no puede desarrollarse o si de su lado se maneja con un nombre distinto al que tenemos. El objetivo es que ambos sistemas tengan exactamente la misma información, los mismos IDs y la misma nomenclatura, para no generar confusión.
+Equipo Black and Orange: El documento está dividido por cada uno de los objetos que vamos a necesitar. En Contactos, ustedes ya integraron en su momento Contactos, Empresas y Negocios. Esos tres objetos se van a mantener y se seguirán utilizando.
+Equipo Black and Orange: Adicionalmente, se van a incorporar dos objetos especiales. Antes de entrar a cada propiedad, les explico cuáles son: el objeto Tickets, que es un objeto predeterminado de HubSpot —no es un objeto creado a la medida—, y otro objeto llamado Projects o Proyectos, que también es predeterminado. Este último no estaba activado anteriormente; se activó recientemente y almacenará un tipo específico de información.
+Equipo Black and Orange: Como estos objetos no participaban antes en la integración, es posible que el código tenga que cambiar un poco para tomarlos en cuenta. Antes de continuar: ¿su equipo ve algún inconveniente con la creación e integración de estos nuevos objetos? Todavía no entramos al detalle de las propiedades; me refiero únicamente a los objetos.
+Equipo Monific: No vemos ningún problema con los objetos que nos muestras en pantalla ni con los que se van a crear.
+Equipo Black and Orange: Perfecto. Partiendo de eso, las propiedades a integrar son algunas más de las que ya tenían. Cuando hicimos el mapeo, identificamos como nuevas las que aparecen marcadas en blanco; por ejemplo, código de referido en Contactos, desarrollador y otras.
+Equipo Black and Orange: Podríamos analizar cada propiedad una por una, pero el objetivo de esta sesión no es revisar el detalle individual, sino entender cuáles son, dónde se encuentran y cómo se debe leer el documento.
+Equipo Black and Orange: El “nombre de CRM” es el nombre visible de la propiedad; es lo que verán los usuarios finales que utilicen el proceso. El “nombre interno” es el identificador técnico que les servirá a ustedes. Ese nombre ya no se puede modificar una vez creada la propiedad.
+Equipo Black and Orange: Por eso es muy importante que, si detectan que alguna propiedad no tiene el nombre adecuado o ustedes la manejan con una nomenclatura distinta, nos lo indiquen. Se puede conservar su nomenclatura; no hay problema, siempre que quede correctamente mapeada.
+Equipo Black and Orange: Lo mismo aplica a las opciones desplegables. Las propiedades que no son texto o número, sino dropdown, tienen aquí definidos sus nombres internos para no volver compleja la integración. Muchas ya están integradas y otras serán nuevas. Por ejemplo, en Tickets está la propiedad “estado de pago” con sus opciones.
+Equipo Black and Orange: Hasta aquí se muestran las propiedades y objetos considerados. Las reglas específicas están en el segundo documento: ahí se indica qué propiedades se utilizan para cada proceso y qué reglas se aplican.
+Equipo Black and Orange: Varias reglas ya habían sido creadas por ustedes y se dejaron únicamente como referencia, como la creación de un contacto con base en su registro y demás información. Las nuevas reglas incluyen saldo invertido, saldo disponible, valor de la cuenta, dinero ganado y otras actualizaciones relacionadas con Contactos.
+Equipo Black and Orange: El documento de reglas se lee de la siguiente forma: nombre de la regla, sistema del que proviene la información o que la alimenta, desencadenante del evento, condiciones requeridas, acción que debe suceder, sistema afectado, propiedades específicas, momento de ejecución, resultado esperado de la llamada API, manejo de errores y notas técnicas.
+Equipo Black and Orange: Equipo de desarrollo: por el momento toda esta implementación está pensada de manera unidireccional. El Admin de Monific alimentará a HubSpot. En esta fase no prevemos que HubSpot alimente al Admin de Monific. En el futuro puede cambiar y volverse más compleja, pero la dimensión inicial es únicamente Admin de Monific hacia HubSpot.
+Equipo Black and Orange: En las propiedades de opción múltiple, el mapeo incluye los valores internos. También se documenta el tipo y momento de ejecución: tiempo real, proceso masivo en una hora específica, evento determinado o secuencia específica. Se incluye el resultado esperado, el manejo de errores y posibles limitaciones técnicas.
+Equipo Black and Orange: Hay una consideración importante: por el tipo de suscripción actual, HubSpot no cuenta con un entorno en el que podamos desarrollar código dentro de la plataforma. El sistema no tiene habilitado el apartado que permitiría hacer cálculos, código u operaciones avanzadas, por lo que esa parte de la implementación deberá hacerse por fuera.
+Equipo Black and Orange: ¿Hasta aquí vamos bien? ¿Alguna duda o pregunta, Jesús, Daniel?
+Equipo Monific: No, ninguna.
+Equipo Black and Orange: Entonces, entrando un poco más al detalle de las reglas: las primeras, hasta aproximadamente la número diez, están en la base de Contactos. En el documento se indica si cada regla corresponde a Contacto, Empresa o a un objeto adicional.
+Equipo Black and Orange: En Contactos, las nuevas reglas recuperarán saldos, dinero invertido, valor de la cuenta y dinero ganado. El Admin de Monific alimenta o actualiza una propiedad; la integración busca al contacto específico en HubSpot por medio del correo y actualiza la propiedad correspondiente.
+Equipo Black and Orange: Se prevé que estas actualizaciones se ejecuten a la 1:00 de la mañana, con el fin de no saturar las llamadas API y procesarlas de manera global. Ustedes pueden cambiarlo o indicarnos si es más viable al final del día, cada dos días o una vez por semana. Nuestra propuesta es que sea diaria.
+Equipo Black and Orange: En cada regla se describe el resultado esperado y el manejo de errores. En este caso se trata de una sincronización recurrente, porque los saldos y métricas de cuenta no son estáticos y seguirán actualizándose.
+Equipo Black and Orange: Para Empresas no hay tanta diferencia, salvo la sincronización del representante legal y otras actualizaciones que se realizarán del lado de HubSpot.
+Equipo Black and Orange: En Negocios entendemos que esa parte ya está desarrollada. Revisamos uno de los negocios y sus datos. Recomendamos no cambiar esa estructura; puede mantenerse. Las reglas nuevas se relacionan con la sincronización de Proyectos, que es el nuevo objeto incorporado.
+Equipo Black and Orange: En Tickets sí hablamos de un objeto nuevo que no existía en la integración. Aquí está la vinculación de la campaña. Estamos considerando que el vínculo pueda realizarse directamente sobre el ticket mediante un ID que también se copie desde el Proyecto y permita asociar y actualizar la información.
+Equipo Black and Orange: Entre los eventos del ticket están: vinculación, registro de pago ordinario parcial, actualización cuando el solicitante haga un pago parcial o completo, cierre exitoso de campaña y cierre por financiamiento. En el documento están las reglas y lo que HubSpot necesita para cerrar cada proceso.
+Equipo Black and Orange: Si encuentran alguna duda, pueden indicárnosla para ajustar o revisar a mayor detalle.
+Equipo Black and Orange: Finalmente, en Proyectos están las reglas de creación y asociación. En el modelo de datos tendremos, por un lado, Proyectos; por otro, Contactos, Empresas, Negocios y Tickets. El Proyecto quedará asociado a todos esos objetos.
+Equipo Black and Orange: Tres de esos objetos ya existen en su integración; los nuevos son Tickets y Proyectos. Las reglas de esta sección cubren las asociaciones y la programación de recordatorios.
+Equipo Black and Orange: Estas son las reglas que estamos considerando para el Admin de Monific. Durante la implementación puede ocurrir que alguna propiedad se capture de forma distinta de su lado. Por eso les pediríamos que validen si todas estas propiedades existen en su sistema con los mismos nombres o con nombres diferentes. No hay problema si el nombre cambia; lo importante es que existan y queden correctamente vinculadas para que HubSpot funcione.
+Equipo Black and Orange: ¿Hasta aquí tienen alguna duda o pregunta?
+Equipo Monific: No, ninguna por el momento. Todo está bien ubicado. Estamos grabando y anotando el detalle, sobre todo de los nuevos IDs que tenemos que implementar. En principio, todo se entiende.
+Equipo Black and Orange: Perfecto. Esto está completamente basado en el proceso comercial, y por eso son esas las propiedades que se integran.
+Equipo Black and Orange: Si llegan a requerir algún video del proceso comercial fragmentado, Jesús o Daniel, nos lo indican. Podemos compartirlo para que vean en qué punto se conecta cada dato.
+Equipo Black and Orange: Por ejemplo, el correo nos sirve para el proceso de solicitantes: una persona envía un formulario, se crea el registro en HubSpot, el formulario trae el correo y esa es la llave que ustedes utilizarán para las demás reglas. Lo mismo aplica al resto de la información.
+Equipo Black and Orange: Eso es lo que teníamos dentro del documento. Emanuel, Jazmín, ¿hay algún punto importante que debamos compartir al equipo de TI además de esto?
+Jazmín / Equipo Black and Orange: Creo que esto es lo más importante, salvo que Ricardo opine lo contrario.
+Equipo Black and Orange: Lo único adicional es mencionarles que, si necesitan ayuda con cualquier tema técnico, Ricardo y Jazmín los estarán apoyando. Si fuera necesario, podemos organizar una reunión mucho más especializada, reservar el espacio y ayudarlos para que la integración se desarrolle de manera exitosa.
+Equipo Monific: Claro que sí. Tomaremos en cuenta el apoyo que nos mencionan. Vamos a empezar a revisar el documento y a trabajar con las propiedades, incluyendo el problema que comentaban de las propiedades repetidas.
+Equipo Monific: Con eso tendremos mayor claridad y prioridad. Si encontramos algún detalle o nos atoramos, nos contactaremos por medio de Raquel para organizar una sesión más técnica y revisar puntualmente el problema.
+Equipo Black and Orange: Buenísimo. También quisiera proponer que tengamos una sesión recurrente para hacer un breve seguimiento de cómo va todo. Ya tenemos abiertos los canales de comunicación, pero podríamos tener una reunión de quince o veinte minutos para tocar base.
+Equipo Black and Orange: Tampoco queremos invadir su agenda. Dígannos cómo se adaptan mejor y qué necesitan.
+Raquel: Si les parece bien, lo coordino con Daniel y Jesús al terminar la reunión, porque no sé cómo estén con los otros proyectos y sé que están con bastante carga. Les confirmo por WhatsApp, de manera un poco más informal, si la agendamos, con qué frecuencia y qué puntos podemos tocar para no perder la línea.
+Equipo Black and Orange: Justamente nos interesan esas dos cosas: mantenernos siempre alineados y que ustedes puedan desarrollar sin bloqueos, pero también respetar mucho su agenda y sus tiempos. Raquel, tú nos dices y nosotros nos ajustamos.
+Raquel: Súper, muchas gracias. El documento ya está dentro de la carpeta. Ahora me encargo de pasarles el enlace a Daniel y Jesús, y por el grupo les confirmamos el tema de las sesiones. ¿Quieren revisar algo más ahora o sería todo?
+Equipo Monific: Por el momento, con esto estamos. Ya nos llevamos tarea para trabajar, de acuerdo con lo que habíamos hablado anteriormente por el canal acordado. Les iremos dando actualizaciones en paralelo.
+Raquel / Equipo Black and Orange: Muchas gracias.
+Equipo Black and Orange: Perfecto. Gracias, equipo. Que tengan excelente día.
+Participantes: Igualmente. Muchas gracias.
+
+Fin de la transcripción depurada

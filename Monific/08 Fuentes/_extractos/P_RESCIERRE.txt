@@ -1,0 +1,222 @@
+Resumen ejecutivo — Cierre Monific × B&O 
+Black & Orange · Emmanuel Chulin 
+Cierre Monific — Resumen ejecutivo · 3 de agosto de 2026 
+Resumen ejecutivo · Confidencial
+Cierre documental y técnico Monific × Black & Orange
+Corte: 3 de agosto de 2026 · Sesión: lunes 3 de agosto, 15:00 h 
+Alcance: Solicitantes · Inversionistas · Servicio/ATC · Cobranza · UNE 
+Preparado por: Emmanuel Chulin — Black & Orange
+01 Situación
+Monific consolidó todos los pendientes en una estructura documental única y pide una respuesta con evidencia
+verificable por punto, sin abrir otra ronda de auditoría. Revisamos las 70 fichas del maestro operativo
+y las 81 comunicaciones de la matriz. El diagnóstico es distinto al que sugiere el conteo de semáforos:
+de los 29 puntos en rojo, alrededor de 10 son defectos de configuración atribuibles a B&O. 
+El resto es limitación de plataforma, definición pendiente de Monific, alcance nuevo o hallazgo sin defecto
+acreditado.
+70
+Fichas evaluadas 64 workflows + 6 UNE
+29
+En rojo ninguna en verde
+10
+Defectos reales de configuración
+81
+Comunicaciones 77 por crear
+02 Los cuatro hallazgos que cambian la conversación
+1 29 puntos en rojo no equivalen a 29 errores nuestros
+Seis rojos no acreditan defecto. WF-051 , WF-052 y WF-060 están marcados
+porque la auditoría “no los localizó”, no porque tengan un problema. WF-035 lleva en su propio rastro
+“la auditoría indica que se eliminó el duplicado” — ya está resuelto. WF-039 dice
+“configuración aceptada, activación aún pendiente” , lo que contradice el texto de su misma ficha. Y tres
+hallazgos están marcados literalmente “(tentativo)” .
+2 Dos fichas comparten un mismo ID de HubSpot en estados opuestos
+WF-054 y WF-055 apuntan al mismo workflow ( 1820860318 ): el documento
+reporta uno apagado y el otro encendido . Un mismo objeto no puede estar en ambos estados. La lectura
+correcta es que WF-055 no tiene workflow propio en el portal . Requiere resolución conjunta.
+3 La matriz de comunicación desbloquea el copy, pero no cierra el bloque
+Aporta texto listo para las 81 piezas, plantilla con bloque regulatorio CNBV fijo, reglas de supresión y
+la cadena completa del despacho ARI — que cerraba una omisión del maestro. Pero no contiene ni un solo
+identificador WF-xxx ni un ID de asset de HubSpot , y contradice cuatro decisiones canónicas del
+31 de julio.
+4 El diccionario de propiedades es el cuello de botella real
+Casi todas las fichas de Solicitantes e Inversionistas dicen [nombre interno pendiente de contrato
+técnico] . Sin esos nombres confirmados, ~14 tokens del copy nuevo no resuelven y una parte del inventario
+no es programable. Es la dependencia que gobierna el calendario de cierre.
+03 Naturaleza real de los 70 pendientes
+Un semáforo rojo agrupa hoy nueve tipos de problema con esfuerzo de corrección radicalmente distinto.
+Separarlos es lo que permite un criterio de cierre verificable para cada grupo.
+Bloqueado por definición o aprobación de Monific
+15
+Configuración correcta; falta evidencia o prueba
+14
+Construcción nueva no contemplada en el alcance
+12
+Corrección de configuración atribuible a B&O 
+10
+Limitación de plataforma (licencia / sin Data Hub)
+9
+Marcado en rojo sin defecto probado
+6
+Homologación de nombres (cosmético)
+4
+Clasificación elaborada por B&O sobre las 70 fichas, sujeta a validación conjunta en la sesión. 
+Servicio / ATC es el único proceso sin rojos: 9 fichas en amarillo y observaciones exclusivamente preventivas.
+Es el bloque que se puede cerrar con evidencia primero y sirve para demostrar el método antes de entrar a Cobranza.
+Los 10 defectos de configuración a corregir
+Workflow
+Defecto
+Naturaleza
+WF-056 
+Etapa destino equivocada: debe mover a Campaña Liquidada y mueve a Cierre por refinanciamiento
+Funcional
+WF-039 
+Usa contrato_firmado , folio_inscripcion y link_del_expediente — campos de Solicitantes — dentro de Inversionistas
+Funcional
+WF-061 
+Nombres personales fijos en las notificaciones; deben ser roles o equipos
+Configuración
+WF-050 
+Asigna el propietario al equipo equivocado (Atención en lugar de Cobranza)
+Configuración
+WF-058 
+Notificación de decisión de refinanciamiento sin destinatarios
+Configuración
+WF-057 
+Ejecuta garantía por tiempo en etapa, sin la autorización documentada que exige la regla
+Lógica
+WF-054 
+Réplica de WF-053 
+Duplicado
+WF-028 · WF-037 
+Encendidos debiendo permanecer apagados
+Estado
+WF-010 · WF-011 
+Comunicaciones internas activas sin copy, remitente ni destinatario aprobados
+Estado
+Lo que pesa más que los bugs
+Los 6 flujos UNE no existen — las seis fichas declaran que no se acreditó correspondencia en el portal
+ni existe workflow en el máster fuente. A eso se suman el formulario definitivo de Solicitantes, el Ticket por
+campaña asociado a Proyecto y 32 workflows del portal sin mapear a ningún máster (96 existentes contra
+64 canónicos). No se corrigen: se construyen o se archivan.
+04 La matriz de comunicación: qué desbloquea y qué no
+81 comunicaciones — Cobranza 33, Solicitantes 22, Inversionistas 15, ATC 7, PDF institucional 4. 45 piezas
+incluyen email y 11 incluyen WhatsApp, cifra que cuadra con las 11 plantillas que exige el Control Único.
+El propio documento declara 77 de 81 en estado “Crear” : es la especificación para construirlas, no la
+evidencia de haberlas construido.
+Requisito del Control Único
+Estado
+Detalle verificado
+Copy aprobado por comunicación
+Cubierto 
+Asunto, preheader, cuerpo, CTA y variante B en las 81 piezas
+Trigger y destinatario explícitos
+Cubierto 
+Los 81
+Bloque regulatorio CNBV no editable
+Cubierto 
+Plantilla con leyenda de institución autorizada y de no garantía del Gobierno Federal, más versión de texto plano obligatoria
+Cadena del despacho ARI
+Cubierto 
+COB-030 a COB-033 en días 15 / 16 / 30 / 61 — resuelve la contradicción de cadencia del maestro
+Reglas de supresión y frecuencia
+Cubierto 
+10 reglas, horario 8:00–19:00 CDMX, máximo 1 pieza por objetivo cada 24 h
+Remitente por dominio operativo
+Parcial 
+Solo 2 alias. Cobranza, garantía y jurídico quedan bajo el alias de Solicitantes; ATC sin remitente
+Vínculo comunicación → workflow
+Ausente 
+Cero apariciones de WF- en 602 líneas
+URL o ID del asset publicado
+Ausente 
+Cero apariciones de “publicado”. Los 81 códigos son internos de la matriz
+Consentimiento y tipos de suscripción
+Ausente 
+La palabra no aparece nunca. whatsapp_opt_in y compliance_aprobado se mencionan una vez cada uno y no están en los bundles de propiedades
+Comunicaciones UNE
+Ausente 
+Solo 2 menciones incidentales; ninguna pieza UNE definida
+Defectos internos de la matriz, corregibles antes del lunes
+Defecto
+Evidencia
+Triggers corridos una fila 
+De INV-008 a INV-014 la matriz resumen y la tabla de detalle se contradicen, y la sección de Flujos críticos repite la versión equivocada: el error está en 2 de 3 lugares. Ejemplo: “Reactivación 90 días” aparece disparada por solicitud de retiro 
+Canal inconsistente 
+Seis piezas de Inversionistas son Email en una tabla y WhatsApp en la otra; INV-005 es “Crear” en una y “Mantener interno” en la otra
+~14 tokens inexistentes 
+app.* , payment.* , investment.amount y withdrawal.amount no existen en HubSpot: requieren propiedades alimentadas por Admin. Más tres tablas dinámicas que HubSpot no genera sin contenido programable. Los module.* sí son válidos
+Convención mixta 
+Nombres internos en español e inglés en el mismo bundle, ninguno confirmado
+Cuatro conflictos con las decisiones canónicas del 31 de julio
+Tema
+Decisión vigente
+Qué dice la matriz
+Retiros
+Retiros y UNE quedan fuera del ciclo de Inversionistas
+Conserva withdrawal.amount y un trigger de solicitud de retiro
+Contactos de marketing
+Solicitantes + Inversionistas, tope de 7,000, desclasificar cada alta al mes siguiente
+Cero menciones, con 45 piezas de email
+nivel_registro 
+Niveles 1 a 4; el 4 solo por primera compra confirmada
+Usa el valor registro_simple 
+Reactivación 30/90/180/360
+Sin Data Hub, HubSpot no calcula ni transforma valores
+Depende de days_since_last_investment , un campo calculado
+05 Ruta de cierre
+Antes de la sesión — 11 correcciones que dejamos incorporadas
+Corregir el corrimiento de triggers de INV-008 a INV-014 y eliminar el trigger de retiro de la matriz.
+Homologar los cuatro nombres de workflow desalineados e identificar el quinto que el documento declara pero no documenta.
+Apagar WF-010 , WF-011 , WF-028 y WF-037 , con evidencia antes y después.
+Reemplazar los nombres personales de WF-061 por roles o equipos.
+Agregar destinatarios a la notificación de WF-058 .
+Corregir la etapa destino de WF-056 a Campaña Liquidada.
+Eliminar de WF-039 los tres campos heredados de Solicitantes.
+Corregir la asignación de equipo de WF-050 .
+Cerrar el bloque completo de Servicio con evidencia de sus 9 fichas.
+Agregar la columna WF-xxx a las cuatro tablas de workflows de la matriz de comunicación.
+Entregar como requerimiento formal la lista de los ~14 tokens que dependen de Admin.
+En la sesión — 8 definiciones que requieren decisión de Monific
+Punto
+Por qué no se resuelve antes
+Deal vs. Proyecto como objeto madre de campaña
+Decisión de arquitectura; bloquea todo el ciclo de Inversionistas
+Diccionario de propiedades con nombres internos confirmados
+Sin esto no hay nada programable ni tokens resolubles
+Catálogo de valores de proyecto admitidos por la API
+Explica los 741 rechazos concentrados en una sola causa, de 766 errores en 16,279 llamadas
+Contradicción de ID entre WF-054 y WF-055
+El documento reporta el mismo workflow en dos estados opuestos
+Los 3 rojos no localizados por la auditoría
+Sin defecto acreditado no existe criterio de cierre posible
+Alcance de los 6 flujos UNE y sus comunicaciones
+Es construcción nueva, no corrección
+Control de 7,000 contactos de marketing
+Definición de negocio previa al diseño
+Los 32 workflows sin mapear del portal
+Requiere decisión: adoptar, archivar o eliminar
+06 Respuesta a las cuatro confirmaciones solicitadas
+#
+Solicitud
+Respuesta
+1
+Recepción y acceso a la estructura
+Confirmado. Estructura recibida y revisada de punta a punta: 00_LEER_PRIMERO, maestro operativo 03, Control Único 05 y matriz de comunicación
+2
+Trabajar sobre estas versiones sin crear una matriz adicional
+Confirmado. No se generará ninguna matriz nueva. Las respuestas se harán sobre los mismos másteres y el Control Único, en la carpeta 02_RESPUESTA_BNO, con el formato de siete campos de evidencia solicitado
+3
+Sesión del lunes a las 15:00 h
+Confirmada , con agenda acotada a las 8 definiciones de arriba. Los puntos ya corregidos se entregan documentados antes, para no reconstruir contexto en la reunión
+4
+Correcciones incorporadas antes de la reunión
+Las 11 acciones listadas, cada una con qué se corrigió, qué versión sustituye, URL o ID de configuración, evidencia antes y después, caso de prueba, resultado esperado y real, y fecha de ejecución
+Punto a plantear en la sesión
+De las 70 fichas, 15 están bloqueadas por definición o aprobación de Monific y 12 corresponden a
+construcción nueva no contemplada en el alcance original. Conviene que la sesión los separe explícitamente
+de los 10 defectos de configuración: cada grupo necesita un criterio de cierre distinto, y mezclarlos es lo que
+ha hecho que los mismos temas vuelvan a revisión.
+Alcance de esta revisión. El análisis se realizó sobre los archivos entregados por Monific. No incluye
+verificación en vivo del portal de HubSpot: los estados “encendido / apagado al corte” son los declarados por el
+maestro operativo y se reconfirmarán en el portal al ejecutar cada corrección, junto con la captura de evidencia
+antes y después. El detalle completo, ficha por ficha, está en el documento de historial y contexto que acompaña
+a este resumen.

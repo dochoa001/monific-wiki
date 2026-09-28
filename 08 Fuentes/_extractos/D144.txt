@@ -1,7 +1,0 @@
-=== ID: D144 ===
-=== SOURCE: Wiki Monific\drive-download-20260807T143807Z-1-001\Kickoff interno - Monific (Rodrigo Yeo) - 2025_12_08 16_57 GMT-05_00 - Chat.txt ===
-=== MODIFIED: 2026-08-07 ===
-
-00:21:08.017,00:21:11.017
-Rodrigo Yeo: Ricardo@arkode.io
-

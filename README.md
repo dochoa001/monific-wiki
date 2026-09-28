@@ -1,99 +1,45 @@
-# Cómo usar la Wiki Monific
+# Monific — carpeta de cuenta de Black & Orange
 
-Guía para humanos. Si eres un LLM, tu documento es [`CLAUDE.md`](./CLAUDE.md).
+Espejo **privado y de uso interno** de la carpeta `50. Monific/` de la bóveda de Black & Orange (B&O).
+Contiene todo lo que la agencia tiene sobre el proyecto **BOOST** (implementación de HubSpot para Monific),
+incluido lo que salió mal y cómo se corrigió. **No es material para el cliente.**
 
----
+## Por dónde empezar
 
-## Qué es esto
+1. `AGENTS.md` — enruta a la wiki y explica las carpetas.
+2. `Monific/AGENTS.md` — el contrato de trabajo: reglas no negociables, marcadores de confianza y vocabulario.
+3. `Monific/cliente.yaml` — datos canónicos: portal `48427391`, objetos, cifras de avance.
+4. `Monific/index.md` — mapa de todas las páginas, una línea por página.
+5. `Monific/00 Inicio/Resumen Ejecutivo.md` — el contexto en 5 minutos.
+6. `Monific/log.md` — qué cambió y por qué, lo más reciente arriba.
 
-Una base de conocimiento en Markdown sobre el proyecto **BOOST** (Monific × Black & Orange). Sustituye la consulta de ~100 documentos dispersos: minutas, masters de implementación, auditorías, contratos y correos.
+Antes de configurar nada en el portal, lee `Monific/07 Estado/Contradicciones y Verificaciones.md` y
+`Monific/07 Estado/Pendientes Criticos.md`. Regla que gobierna la cuenta: **configurado ≠ verificado**.
 
-Está pensada para dos usos:
+## Qué hay en cada carpeta
 
-1. **Contexto de IA.** Pegar una página (o la wiki entera) en cualquier LLM para que entienda el proyecto sin explicárselo.
-2. **Consulta humana en Obsidian.** Navegar por enlaces, ver el grafo, encontrar la respuesta rápido.
-
----
-
-## Cómo abrirla en Obsidian
-
-1. Obsidian → **Abrir carpeta como bóveda** → selecciona `Wiki Monific`.
-2. Empieza por **[[Mapa General]]** (`00 Inicio/`).
-3. Activa la **vista de grafo** para ver cómo se conecta todo.
-
-### Plugins recomendados
-
-| Plugin | Para qué |
+| Carpeta | Qué es |
 |---|---|
-| **Dataview** | Tablas dinámicas a partir del frontmatter (`estado`, `area`, `actualizado`). Ver ejemplos en [[Mapa General]]. |
-| **Templater** o Plantillas nativas | Usar `99 Plantillas/` al crear páginas. |
-| **Mermaid** (nativo) | Los diagramas de flujo ya se renderizan sin instalar nada. |
+| `Monific/` | **La wiki**, el cerebro de la cuenta: 82 archivos Markdown con fuentes citadas, más 108 extractos de texto de los documentos originales en `08 Fuentes/_extractos/`. |
+| `01. Adicionales/` | Fuentes originales tal como llegaron: masters de implementación, matrices de comunicación, auditorías. No se editan. |
+| `02. Trabajo interno/` | Material de trabajo que no se entrega: scripts, secuencias de trabajo con agentes, conflictos de Drive resueltos. |
+| `03. Entregables/` | Lo que el cliente podría recibir. `_historico/` guarda entregables viejos de Claude y Codex: manuales, mapas, deck de capacitación. |
+| `outputs/` | Salidas de trabajo con agentes: unificación de masters, relación de propiedades, evidencias de workflows en PNG. |
+| `scripts/`, `tools/` | Utilidades puntuales: generadores de deck y de la relación de propiedades. |
 
----
+## Cómo se mantiene
 
-## Por dónde empezar según lo que necesites
+- **La fuente de verdad es la carpeta local en el Google Drive de B&O.** Este repositorio es un espejo de un
+  solo sentido que se publica con `02. Trabajo interno/03. Scripts/publicar-github.ps1`. Si editas aquí,
+  avisa: esos cambios hay que llevarlos a la carpeta a mano.
+- **Sin `.git` dentro de la carpeta**, por regla de la wiki (`Monific/AGENTS.md` §3, regla 11): el historial
+  vive fuera de Drive. Detalle en `Monific/MANTENIMIENTO.md` §6.
+- **Cero credenciales.** Las claves del portal viven cifradas fuera del repositorio y se usan por un proxy
+  local; ver `02. Trabajo interno/_claves-retiradas/LEEME-claves.md`. Nada de tokens en páginas ni commits.
+- **Wikilinks.** Las páginas enlazan con `[[Página]]` y GitHub no los resuelve. Para navegar con enlaces y
+  grafo, clona el repositorio y abre su raíz en Obsidian como bóveda: los enlaces cortos resuelven; los que
+  apuntan a otras wikis de B&O quedan rotos porque no viajan aquí.
+- **Las reglas de agencia** (`AGENTS.md` de la raíz de la bóveda y `Wiki general/`) no viajan en este
+  repositorio; las que aplican a esta cuenta están en `Monific/AGENTS.md` §3.
 
-| Necesito… | Ve a |
-|---|---|
-| Entender el proyecto en 5 minutos | [[Resumen Ejecutivo]] |
-| Ver todo lo que hay | [[index]] |
-| Saber qué es Monific y cómo gana dinero | [[Monific]] · [[Modelo de Negocio]] |
-| Entender un proceso de negocio | `04 Procesos/` |
-| Saber qué está construido en HubSpot | `05 HubSpot/` |
-| Entender la integración con el Admin | [[Integracion Admin Monific HubSpot]] |
-| Saber en qué punto está el proyecto | [[Estado Actual]] · [[Pendientes Criticos]] |
-| Entender el conflicto con el cliente | [[Conflicto Contractual]] |
-| Saber quién es quién | [[Directorio de Contactos]] |
-| Ver qué datos no son de fiar | [[Contradicciones y Verificaciones]] |
-| Encontrar el documento original de algo | [[Indice de Fuentes]] |
-
----
-
-## Cómo se mantiene viva
-
-La wiki la escribe la IA; tú la diriges. Tres operaciones:
-
-### 1. Ingesta — llegó un documento nuevo
-
-Deja el archivo en la carpeta y dile al agente:
-
-> «Ingesta este documento a la wiki: <ruta>. Sigue el flujo de CLAUDE.md §6.1.»
-
-El agente extrae el texto, lo lee, actualiza las páginas afectadas, registra contradicciones nuevas y anota en `log.md`.
-
-### 2. Consulta — tienes una pregunta
-
-> «Según la wiki, ¿cuál es el estado real de los workflows de cobranza y qué falta para cerrarlos?»
-
-Si la respuesta es valiosa, pídele que la archive:
-
-> «Guarda eso como página nueva en 07 Estado/.»
-
-### 3. Lint — revisión de salud
-
-Cada pocas semanas:
-
-> «Corre un lint de la wiki según CLAUDE.md §6.3.»
-
-Devuelve enlaces rotos, páginas huérfanas, contenido rancio, contradicciones sin registrar y conceptos que merecen su propia página.
-
----
-
-## Reglas que conviene que conozcas
-
-- **Las fuentes crudas no se tocan.** Los `drive-download-*`, los `.xlsx`, los `.pdf` y los `08 Fuentes/_extractos/*.txt` son inmutables. La IA solo lee de ahí.
-- **Configurado ≠ verificado.** La wiki hereda el criterio del proyecto: que algo exista en HubSpot no prueba que funcione.
-- **Mucha documentación original se hizo con IA** y contiene datos alucinados. Por eso cada afirmación lleva marcador de confianza (✅ 🟡 🔴 ⚠️ ❓) y su fuente.
-- **Cada página cita sus fuentes** con IDs (`D167`, `X020`, `P_CONTRATO`) que resuelves en [[Indice de Fuentes]].
-
----
-
-## Sugerencia de orden (opcional)
-
-Las carpetas `drive-download-*` en la raíz funcionan pero ensucian la bóveda. Si quieres, puedes moverlas todas a una sola carpeta `_originales/`. La wiki no depende de esas rutas: los extractos de texto ya viven en `08 Fuentes/_extractos/`, y [[Indice de Fuentes]] documenta el mapeo. Si haces el movimiento, avisa al agente para que actualice [[Indice de Fuentes]].
-
----
-
-## Control de versiones
-
-La carpeta está dentro de un repositorio git. Cada tanda de cambios se puede commitear y así tienes historial completo de cómo evolucionó el conocimiento del proyecto.
+Responsable: David Ochoa (dochoa@black-n-orange.com). Espejo creado el 2026-09-28.

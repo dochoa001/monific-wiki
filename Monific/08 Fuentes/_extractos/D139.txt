@@ -1,0 +1,343 @@
+=== ID: D139 ===
+=== SOURCE: Wiki Monific\drive-download-20260807T143807Z-1-001\Integración Monific - Validación final de campos_ 2026_05_06 12_30 GMT-05_00 - Notas de Gemini.docx ===
+=== MODIFIED: 2026-08-07 ===
+
+📝 Las notas
+may 6, 2026
+Integración Monific - Validación final de campos
+Invitado David Ochoa Caroline Bersot Jazmín Córdova Jesus Torres Hernandez Monific
+Archivos adjuntos Integración Monific - Validación final de campos
+Registros de la reunión Transcripción Grabación
+
+Resumen
+La reunión estableció la guía de integración Monific con Hotspot para optimizar procesos y mejorar trazabilidad financiera.
+
+Alineación de integración técnica
+Se presentó la estructura de integración entre Monific y Hotspot para automatizar el flujo de datos. Se confirmó que la aplicación inyectará información de manera unidireccional hacia Hotspot.
+
+Acceso a repositorio código
+El equipo técnico acordó otorgar acceso al repositorio en GitHub y a los entornos de pruebas. Se requiere verificar los protocolos de seguridad debido a regulaciones vigentes.
+
+Definición de reglas negocio
+Se revisaron reglas de actualización de niveles de contacto y la sincronización de transacciones financieras. Se decidió evaluar ajustes técnicos en el manejo de decimales y tipos de datos.
+
+Próximos pasos
+[Ehdrei Aramburo] Gestionar Acceso: Verificar proceso para solicitar acceso al código con Jesús. Coordinar la entrega de credenciales técnicas requeridas.
+[David Ochoa] Enviar Correo: Enviar correo para confirmar detalles de acceso a GitHub.
+[Jazmín Córdova] Compartir Usuario: Compartir usuario de GitHub Black and Orange.
+[Ehdrei Aramburo] Compartir Accesos: Proveer credenciales de acceso para ambientes de desarrollo, QA y preproducción.
+[Ehdrei Aramburo] Ejecutar Pruebas: Realizar pruebas end to end para verificar la sincronización entre objetos Empresa y Contacto.
+[Ehdrei Aramburo] Confirmar Creación: Revisar y confirmar si la compra de acciones desencadena 1 o múltiples negocios en Hotspot.
+[Jesús] Revisar Reglas: Jesús debe revisar el documento de reglas de integración existentes y nuevas.
+[Monific] Confirmar Asistencia: Confirmar disponibilidad de Jesús para la reunión de mañana a las 2 PM para revisar nuevas reglas.
+[David Ochoa] Compartir Documento: Compartir documento de reglas de integración existentes y nuevas.
+
+Detalles
+Objetivo de la Reunión y Estructura del Documento Guía: David Ochoa explicó que el objetivo de la reunión es alinear la integración. Se presentó un documento que servirá como guía para optimizar la integración y crear nuevos vínculos con la aplicación Monific. El documento se divide en tres secciones: mapeo de propiedades (campos por objeto), *checklists* (reglas específicas) y accesos y documentación (00:00:00). Se clarificó que la aplicación Monific inyectará información a Hotspot, pero la bidireccionalidad (Hotspot enviando información) no está contemplada en este momento (00:01:27).
+Reglas de Contacto para Inversionistas Existentes: La primera regla se enfoca en la creación de contactos inversionistas, donde la aplicación Monific valida que el correo electrónico no exista; si existe, asocia y actualiza la información como correo, número de teléfono y motivo de interés. La segunda regla se desencadena cuando la persona completa su CURP y datos personales, lo que permite a la aplicación buscar el correo en la base de datos de Hotspot y actualizar campos como nombre, apellido, teléfono, ID de Monific y nivel de registro (00:02:51).
+Reglas de Actualización de Nivel de Avance del Contacto: Se identificaron reglas adicionales (tercera, cuarta y quinta) enfocadas en actualizar la propiedad de "nivel de registro" del contacto, lo que permite la trazabilidad. El Nivel 2 se actualiza si la persona proporciona una dirección completa y es residente en México. El Nivel 3 se aplica al obtener la clave STP del usuario, y el cuarto movimiento se realiza cuando se efectúa la primera compra de participaciones. Ehdrei Aramburo confirmó que el flujo descrito coincide con el documento base, pero señaló que estas reglas no estaban aplicando correctamente, lo que causaba que las personas se quedaran en el Nivel 1 (00:04:19).
+Requisitos Técnicos y Acceso al Código de Integración: Jazmín Córdova solicitó información sobre el código de la integración, específicamente si cuentan con él y dónde reside. Ehdrei Aramburo indicó que el código está alojado en sus repositorios y utiliza el SDK de Hotspot, con el *backend* desarrollado en Nest, que es parte de Node (00:06:04). Jazmín Córdova enfatizó que, para revisar los flujos que no funcionan y agregar reglas nuevas, necesitarán acceso al código (00:08:22).
+Proceso para Compartir Acceso al Código y Entorno de Producción: El equipo de Monific (incluyendo a Ehdrei Aramburo y Monific) señaló que, debido a que son una plataforma regulada, deben verificar con Jesús si existe un proceso formal para otorgar acceso a terceros (posiblemente con un NDA o formulario) (00:08:22). Monific confirmó que sí pueden otorgar acceso al código de la integración de Monific a Hotspot (00:10:43). Ehdrei Aramburo precisó que el repositorio está en GitHub, y solicitó el usuario de GitHub de Jazmín Córdova para facilitar el acceso. La integración en producción está alojada en AWS (00:11:54), y cuentan con ambientes de desarrollo, QA y preproducción, para los cuales compartirán usuarios de prueba (00:12:44).
+Reglas Propuestas para Trazabilidad Financiera de Inversionistas: Se propusieron reglas nuevas para obtener información financiera de los inversionistas en Hotspot, como el saldo disponible, el dinero invertido, el valor total de la cuenta y el monto ganado (00:09:27). Monific confirmó que traer esta información a Hotspot no presenta un problema regulatorio (00:10:43). David Ochoa detalló que estas reglas funcionarán con un contacto existente en Hotspot, buscando que el saldo o el dinero invertido sea igual o mayor a cero, con llamadas a la API realizadas de forma recurrente por lotes (batch) (00:12:44).
+Sincronización de Contactos y Empresas Solicitantes: David Ochoa expresó una duda sobre la regla de creación inicial de contactos de empresas solicitantes, la cual vincula un contacto a una empresa. Aunque la documentación menciona la sincronización de contactos de representantes legales, la revisión de la base de datos de Monific no mostró contactos de tipo empresa vinculados a un contacto (00:13:53). Ehdrei Aramburo señaló que esta regla debería estar implementada, pero que se debe revisar si hay fallas en la integración (00:15:17). David Ochoa recomendó mantener las propiedades del representante legal dentro de la empresa, pero asegurar una vinculación con el contacto para facilitar la comunicación y el rastreo de estadísticas (00:17:32).
+Regla de Negocios para Compra en el Mercado Primario (Monto como String): La primera regla de negocios concierne la compra en el mercado primario, que desencadena el envío de un *deal* (negocio) con información a Hotspot, asociado a un contacto existente. David Ochoa preguntó por qué el monto se envía actualmente como *string* en lugar de como número. Ehdrei Aramburo explicó que esto se debe a un problema con los decimales en la base de datos y una regla de redondeo interna que ajusta los decimales a dos (00:19:02). Jazmín Córdova solicitó revisar el código antes de emitir una opinión sobre la optimización de esta implementación (00:20:26).
+Regla de Negocios para Reinversión Masiva y Acciones Vendidas: Respecto a la funcionalidad de reinversión masiva, David Ochoa preguntó si la compra de múltiples acciones del mismo tipo desencadena un negocio por cada acción o solo uno por la transacción completa (00:20:26). Ehdrei Aramburo recordó que se crea un negocio por cada elemento, pero estos se ligan al negocio principal (00:22:00). En el caso de la venta de una inversión en el mercado secundario, se confirmó que si una persona vende una parte de sus acciones (p. ej., 3 de 100), se crea un negocio de venta, y el negocio principal se actualiza para reflejar el restante de acciones (p. ej., 97) (00:23:03).
+Sincronización de Campañas de Fondeo de Solicitantes: David Ochoa solicitó una aclaración sobre la regla de sincronización de campañas de fondeo, preguntando si las propiedades como las participaciones o el monto fondeado se actualizan regularmente hasta que la campaña está fondeada o liquidada (00:25:59). Ehdrei Aramburo aclaró que la sincronización se realiza en ambos sentidos, actualizando los cambios detectados de un lado al otro (00:27:16).
+Próximos Pasos y Revisión de Nuevas Reglas: Monific indicó que Jesús debe revisar el documento de reglas detallado antes de confirmar si hay omisiones (00:27:16). David Ochoa se comprometió a compartir el documento. Se agendó un seguimiento, tentativamente para mañana a las 2:00 p. m., para revisar las reglas nuevas que integran el objeto de cobranza y el objeto de proyecto. Monific acordó confirmar la disponibilidad de Jesús en el chat (00:28:29).
+
+Revisa las notas de Gemini para asegurarte de que sean precisas. Obtén sugerencias y descubre cómo Gemini toma notas
+Cómo es la calidad de estas notas específicas? Responde una breve encuesta para darnos tu opinión; por ejemplo, cuán útiles te resultaron las notas.
+📖 Transcripción
+6 may 2026
+Integración Monific - Validación final de campos - Transcripción
+00:00:00
+
+David Ochoa: Did es justamente tiene como objetivo poder hacer esta alineación con el tema de lo que se va a estar realizando para la integración. Ahora por este, ahorita les empiezo a compartir pantalla, pero ahorita les voy a estar compartiendo cuáles son estos campos y más que nada las reglas específicas que tenemos en consideración en base a la documentación que nos habían compartido, ya que aquí Yasmín igual les va a hacer algunas preguntas técnicas como cómo tienen construido el desarrollo, tema de accesos y demás, pero más que nada lo que queremos validar es que los campos que vamos a presentar desde ahorita y las reglas que se tienen les hagan sentido, ya que digamos que este documento momento va a ser la guía para poder realizar la optimización de la integración al igual que la generación de estos nuevos vínculos con la aplicación de monas, ¿va? Entonces, teniendo esto en consideración, igual les voy a estar compartiendo pantalla y este documento también se les va a ser compartido para que puedan revisar a detalle. El funcionamiento de este documento es bastante sencillo, teniendo en cuenta que vamos a tener tres apartados puntuales. El primer apartado va a ser el mapeo de propiedades, es decir, todos los campos que vamos a estar utilizando divididos por objeto de la plataforma, si es el objeto contacto, si es el objeto empresa, si es el objeto negocio, etcétera. El apartado de checklists va a ser justamente todo lo relacionado a las reglas específicas.
+
+00:01:27
+
+David Ochoa: que se van a tener, teniendo en cuenta que una regla vendría a ser una acción que en este caso la demonific tiene que realizar, ya que en este primer apartado estamos viendo que la aplicación de MIFIC va a ser la que inyecte la información. De momento no vemos la bidireccionalidad, es decir, que Hospot envía información, si no vemos más de que la app de Monific va a estar alimentando a Hotspot con la información. Y finalmente el apartado de accesos y documentación, cualquier tipo de acceso adicional, documento adicional generado en documentación que ustedes tengan, carpetas en máster, etcétera, etcétera, las podemos ir alojando aquí que nos puedan ayudar a facilitar dicha integración. Ahora bien, continuando con el tema de la integración, igual permítame un momento, conecto esto. A ver, permítame un momento. Listo. Enton, con la integración, a ver, déjenme ver que se haya configurado correctamente. Si me escuchan, correcto. Ya.
+Ehdrei Aramburo: Sí,
+Monific: Sí.
+Ehdrei Aramburo: sí se escucha.
+David Ochoa: Ah, perfecto. Listo. Entonces, la primera regla que tenemos en cuenta, estas reglas vienen justamente del documento que nos habían compartido. Este documento que tenemos aquí con todas las descripción es, digamos, la guía que nos está sirviendo para luego que Jas pueda hacer la validación de estas reglas.
+
+00:02:51
+
+David Ochoa: El primer tipo de regla que tenemos va enfocada al tema de contactos, donde va a hacerse una creación sencilla del contacto en base a la creación que el usuario realiza directamente en la app, donde lo que va a hacer esta regla es validar que el correo electrónico no exista. Y si existe, pues hacer la asociación e inyectar esta información que sería el correo, el número de teléfono y el motivo de interés como invertir en proyectos. Esta sería la primera creación que sería para inversionistas. Seguido de eso, si algo no estoy diciendo correctamente, igual siéntanse con la libertad de interrumpirme. Seguido de eso, tenemos la segunda regla, que sería el tema de la integración ya de los datos adicionales de la persona, donde nuestro desencadenante principal va a ser que esta persona haga el llenado de su CURP y de sus datos personales para que posteriormente la app de MIFIC pueda buscar la información en la base de datos de Hotspot por medio del correo electrónico y hacer la actualización de estos campos como lo son correo para localizar, nombre, apellido, teléfono, el ID de Monific único para actualización, tipo de cliente que sea individual, cuál es su nivel de registro que todos entrarían con este nivel número uno. Código de referido se aplica. ¿Quién lo refirió? Teniendo en cuenta que este referido iba a ser por correo electrónico, motivo de interés y pues lo que les decía del correo electrónico.
+
+00:04:19
+
+David Ochoa: Básicamente esta sería la segunda regla que tenemos. Ya de ahí la tercera, cuarta y quinta regla van a ir en razón de solo actualizar este nivel de avance, esta propiedad de nivel de registro donde en el caso de la segunda regla, perdón, de la tercera regla se va a actualizar en el momento de que esta persona nos proporcione una dirección completa y sea una persona residente en México. El nivel 3 se va a aplicar en el momento que se tenga la clave STP del usuario y el cuarto movimiento se haría en el momento que hace su primera compra de participaciones. Hasta aquí. Estas reglas iniciales sí coinciden con lo que actualmente tienen en de su lado.
+Ehdrei Aramburo: Este sí creo que creo que digo es que estaba la verdad no no me acuerdo,
+David Ochoa: Ha.
+Ehdrei Aramburo: estaba viendo el el documento, pero sí sí este digo, si todo esto fue basado en el documento, de hecho creo que en la parte de sí, donde viene la parte de las relaciones con la sincronización de datos y todo eso, eh, sí, así viene el el
+David Ochoa: Correcto. Justo del lado de JZ lo que va a realizar es verificar estas reglas,
+Ehdrei Aramburo: flujo.
+David Ochoa: ya que algo que nos comentaban al inicio del proyecto es que por algún motivo ya estas reglas no estaban aplicando y ya cuando inyectaban la información normalmente las personas se quedan en el nivel uno, pierden esta trazabilidad a partir de nivel dos y tres.
+
+00:06:04
+
+David Ochoa: Así que del lado de pues haría la revisión de qué es lo que está sucediendo. Por eso más que nada confirmar con ustedes si este es el resultado
+Ehdrei Aramburo: Ajá. Sí, se supone que Ajá. que así está el flujo,
+David Ochoa: esperado.
+Ehdrei Aramburo: pero a lo mejor hace falta ahí este a lo mejor hay algunos temas de sincronización o o algo, ¿no? sería revisar más a más a detalle,
+David Ochoa: Eso detalle. Claro. Buenísimo. Listo. Hasta este punto, ya, teniendo en cuenta estas primeras reglas, ¿hay alguna duda o pregunta técnica que te gustaría realizar al equipo
+Jazmín Córdova: pues más que nada de las reglas,
+David Ochoa: Munific?
+Jazmín Córdova: porque eso no no lo puedo ahorita tener como claro, sino más bien son más dudas de si ustedes cuentan con el código de esta integración que les desarrollaron y dónde está viviendo este código.
+Ehdrei Aramburo: Eh, pues todo el código lo tenemos alojado en nuestros eh repositorios, este, porque realmente estamos usando el SDK de Stripe,
+Jazmín Córdova: Ok.
+Ehdrei Aramburo: que diga de Hopsforot, perdón. Este eh todo es con el con el SDK, o sea, no usamos eh plugins ni nada de eso, ¿no?
+
+00:07:14
+
+Ehdrei Aramburo: Este, entonces todo está con el SDK.
+Jazmín Córdova: Mhm.
+Ehdrei Aramburo: Entonces, pues prácticamente todo el desarrollo eh pues es basado en en las APIs, ¿no?, que que se tienen. Entonces, este, bueno, justo por eso decía, si hay algo que se esté eh perdiendo eh a lo mejor pues eh lo podemos este revisar para ajustarlo, ¿no? O sea, si es que se es de nuestro lado o o ver si a lo mejor algún endp o algo de del lado de Hotspot eh no no sirve, ¿no? para para poder hacer el ajuste eh necesario,
+David Ochoa: Gracias.
+Ehdrei Aramburo: ¿no?
+Jazmín Córdova: Oh. Okay. ¿Y en qué lenguaje está desarrollado esta esta integración?
+Ehdrei Aramburo: Todo el backend está hecho en eh nest nest y eh que es parte de de node,
+Jazmín Córdova: Okay. Sí.
+Ehdrei Aramburo: ¿no?
+Jazmín Córdova: y nos pueden dar acceso a este código
+Ehdrei Aramburo: Eh, sí, sí, supongo que sí. No, Raquel, no habría tema.
+Jazmín Córdova: porque entiendo, David, que nosotros nos vamos a encargar de determinar la integración,
+
+00:08:22
+
+Monific: La verdad ahí no sabría
+Jazmín Córdova: ¿no? De de revisar por qué no está funcionando ciertos flujos y agregar las las siguientes
+Ehdrei Aramburo: No.
+David Ochoa: Correcto.
+Jazmín Córdova: este reglas que no están contempladas.
+David Ochoa: reglas, ¿correcto? Aquí es primero validar las reglas existentes en el caso de estas y integrar otras que ahorita vamos a ver. Pero adelante. Creo que ibas a comentar algo, Raquel o Yase.
+Monific: Es que a ver, en lo que dijo este Drake, supongo que sí me pregunta a mí. Yo no sé las reglas que tiene el equipo de TI en esa parte en cuanto a accesos, precisamente porque somos una plataforma regulada, no sé los accesos que se pueden. parte. Sí, dependeríamos de Jesús, que es el C.
+Ehdrei Aramburo: Justo también por eso preguntaba, porque bajado por esta parte de las regulaciones y eso, dar acceso a a terceros, no sé este como como se maneje. digo, a lo mejor sí se puede, pero sí igual también me lo llevo con Jesús y le le pregunto si a lo mejor hay un proceso para pedir acceso, a llenar un formulario, no sé, un NDA, algo, no sé.
+Jazmín Córdova: Sí, porque sin el acceso al código no hay manera de que nosotros podamos revisar qué qué es lo que puede estar pasando.
+
+00:09:27
+
+Ehdrei Aramburo: Ok.
+Jazmín Córdova: Y ya teniendo teniendo eh dentro en nuestras manos esta información, pues ya podemos ahora sí validar,
+David Ochoa: Gracias.
+Jazmín Córdova: ¿okay? cómo cómo está desarrollado el código, cómo lo estructuraron y ver por qué no está funcionando ciertas reglas que ya les estaban funcionando
+Ehdrei Aramburo: Ok.
+Jazmín Córdova: anteriormente.
+David Ochoa: Va, perfecto. Entonces, continuando con esto de las reglas, no sé si igual Jas tengas alguna otra pregunta a nivel técnico antes de
+Jazmín Córdova: No, David,
+David Ochoa: continuar.
+Jazmín Córdova: ahorita solamente no tengo como digamos el material como para poder externar
+David Ochoa: Verificar.
+Jazmín Córdova: las dudas. Exactamente.
+David Ochoa: Okay, entiendo. Va, buenísimo. Entonces, vamos a ir igual verificando reglas para ir haciendo ajustes. Ahora bien, en el caso de la siguientes reglas que tenemos, van a estas reglas por de acuerdo a la documentación no existen, pero serían reglas que nosotros consideramos ideal e integral. Estas reglas van enfocadas al tema de inversionistas para conocer justamente cuáles son los saldos que tienen disponibles en su aplicación. La primera regla corresponde a obtención del saldo disponible de su cuenta Monific. La segunda corresponde al tema de cuánto dinero tienen invertido.
+
+00:10:43
+
+David Ochoa: Tercera, en cuánto es el valor total de su cuenta y finalmente, cuánto es el monto ganado. Antes de entrar en detalle con estas reglas que realmente manejan un funcionamiento relativamente similar, duda aquí, Raquel, y duda aquí igual equipo. tema regulatorio, no hay problema en que se traiga esta información a Hotpot,
+Monific: No, no hay problema. En la parte que estaban mencionando arriba del código,
+David Ochoa: ¿no?
+Monific: se refieren al código que nosotros tenemos con la integración de Hotspot hacia, o sea, de bonifica hacia hotspot.
+David Ochoa: Sí, sí se refiere al cómo lo tienen desarrollado a nivel
+Monific: Ah, sí, en eso sí pueden sí pueden darles acceso.
+David Ochoa: técnico.
+Monific: Al final igual tienen acceso a nuestro hotspot, o sea, en ya está firmado.
+David Ochoa: Ah, okay, perfecto. Entonces igual lo dejamos por sentado solo para verificación de Jesús, pero okay, entendemos
+Monific: Nada más hay que pedir el acceso y listo. O sea,
+David Ochoa: que
+Monific: que no sé cómo funciona y no sé quién, o sea, cómo se los tienen que dar. Esa parte ya es más técnica, pero Ed porf la coordinas.
+David Ochoa: Okay,
+Ehdrei Aramburo: Sí,
+David Ochoa: claro. Sí,
+Ehdrei Aramburo: yo lo yo lo checo.
+David Ochoa: yo les mando un correo.
+
+00:11:54
+
+Ehdrei Aramburo: Jesús.
+David Ochoa: Adelante.
+Ehdrei Aramburo: Sí, perdón.
+David Ochoa: No, no, no. Adelante. Estabas
+Ehdrei Aramburo: Ah, sí que justo yo lo checo con Jesús. Digo, el repositorio lo usamos con todo está en GitHub.
+David Ochoa: comentando
+Ehdrei Aramburo: Entonces, no sé si Yasmín tenga su usuario de de GitHub, eso sería igual a lo mejor lo único que que necesitaríamos de tu lado para darte acceso, ¿no? Es
+Jazmín Córdova: Sí, sí tengo eh repositorio.
+Ehdrei Aramburo: que
+Jazmín Córdova: Ahorita te paso el de Black and Orange y Okay. Para que me den acceso ahí.
+Ehdrei Aramburo: vale
+Jazmín Córdova: Okay, pero ese es el repositorio. Pero, ¿dónde está viviendo ahorita la integración en en producción?
+Ehdrei Aramburo: en producción está alojado en AW.
+Jazmín Córdova: ¿Tienen un servidor?
+Ehdrei Aramburo: Ajá.
+Jazmín Córdova: Está en WS.
+Ehdrei Aramburo: Sí.
+Jazmín Córdova: Okay, listo. Cuentan con un ambiente de
+Ehdrei Aramburo: Sí,
+
+00:12:44
+
+Jazmín Córdova: pruebas.
+Ehdrei Aramburo: tenemos ambiente de desarrollo, eh, CA, bueno, ¿qué es CUA? Está y y pre, o sea, son dos. Y pre tiene homologado algunas cosas de producción, no todo por los datos,
+Jazmín Córdova: Okay.
+Ehdrei Aramburo: no, pero hay algunas cosas
+Jazmín Córdova: Va,
+Ehdrei Aramburo: homologadas.
+Jazmín Córdova: igual también para que nos compartan esos accesos para que nosotros podamos estar haciendo las pruebas en un momento en que vayamos a a empezar a modificar este este desarrollo. Y chun chun chun.
+Ehdrei Aramburo: Sí,
+Jazmín Córdova: Y creo que ya.
+Ehdrei Aramburo: igual te podríamos dar usuarios de de prueba de cada ambiente.
+Jazmín Córdova: Ajá. Sí, está
+Ehdrei Aramburo: Sí.
+David Ochoa: Listo. Estoy tomando acá una nota para tener en cuenta. Listo. Entonces, continuando con las reglas, estas reglas vienen en razón de tener justamente un contacto existente en hotpot por medio de el correo electrónico y que en el caso, por ejemplo, de obtener saldo, su saldo disponible sea igual o mayor a cero. En el caso de obtener dinero invertido, igual igual o mayor a cero en cuestión de de esa inversión y en valor descuenta, que debe ser mayor a cero.
+
+00:13:53
+
+David Ochoa: más que nada para irle reduciendo la la carga justamente a las llamadas API, ya que dichas llamadas se van a estar realizando de manera recurrente por medio de batch idealmente pues en la madrugada como para tener esa información al día inmediato siguiente. Bien, hasta ahí.
+Monific: Correcto.
+David Ochoa: Buenísimo. Listo. Entonces, déjenme igual lo hago un poquito más grande que salgo chico. Ya, finalmente, la última regla que tenemos es en el caso de creación inicial del contacto de empresas solicitante. De acuerdo a la documentación, aquí me corrigen el equipo técnico de ustedes Monipic, pero aquí justamente de acuerdo a la integración, si no me equivoco, a ver, déjenme verifico en cuál apartado estaba. Si no estoy mal, creo que era el 5.2 o el 5. A ver, permítame, verifico rápidamente. Aquí está. Sincronización de desarrolladores. Aquí, justamente haciendo la revisión, aquí está 11.3, tres comentaban de que actualmente se tiene esta sincronización de contactos de los representantes legales. Al hacer una revisión de la base de datos actual de MIFIC, no logré identificar un contacto que fuera de este tipo, es decir, un contacto del tipo empresa, que igual vamos a ver el tema de empresa, que tuviera vinculado un, perdón, una empresa que tuviera vinculado un contacto.
+
+00:15:17
+
+David Ochoa: Actualmente las empresas solo se vinculan a negocios. Duda aquí puntual, ¿esta regla actualmente sí está en funcionamiento o todavía se tiene algunos problemas de esta parte de
+Ehdrei Aramburo: Eh, no,
+David Ochoa: aquí?
+Ehdrei Aramburo: en teoría hasta donde lo habíamos dejado desarrollado sí estaba eh implementado. No sé, a lo mejor en la carga inicial pues se hizo se dio de alta todo. A lo mejor ahorita no ha habido algo nuevo, ¿no? No sé. Igual si también si hay algún tema también sería eh
+David Ochoa: checarlo. Claro, justo porque aquí al hacer la verificación, por ejemplo, voy a agarrar aquí este estas empresas que estas empresas sí tienen sincronización con la A,
+Ehdrei Aramburo: checarlo.
+David Ochoa: veía que no todas las empresas tenían esta integración. justamente, por ejemplo, esta empresa que tiene creación del 21 de abril no tenía sincronización con un contacto. Algunos veí que sí, pero me quedaba esa duda si tenía ahí fallas esa
+Ehdrei Aramburo: Sí,
+David Ochoa: integración.
+Ehdrei Aramburo: sí. A lo mejor no nos hemos dado cuenta ahí de de esos esos temas. Puede ser que sí haya hay algo, pero sería igual cuestión de de revisarlo,
+
+00:16:29
+
+David Ochoa: verificar. No,
+Ehdrei Aramburo: a lo mejor hacer una prueba end to end y ver si se queda en algo y ver los todo eso,
+David Ochoa: dale. Claro, justo porque aquí verificando veía que las incluso las que se tienen algunas tenían que fue hecha por
+Ehdrei Aramburo: No.
+David Ochoa: manual, no fue hecho por un usuario, no fue hecho por la API, sino que fue hecho por una persona que hizo la vinculación, como se vea aquí, ¿no? Con spa para tu mente SA. Por eso nos quedaba la duda, ¿no?
+Ehdrei Aramburo: Sí, a lo mejor.
+David Ochoa: Si se hacía manualmente o quizá ahí quedaba como algún detallito que no se asociaban entre
+Ehdrei Aramburo: Okay. Sí,
+David Ochoa: sí.
+Ehdrei Aramburo: me lo llevo igual para anotarlo y aprendernos unas pruebas ahí de en tu
+David Ochoa: Dale, justo de empresa a contacto.
+Ehdrei Aramburo: endo.
+David Ochoa: La de negocio, ese es otro temita, pero de empresa a contacto es la que notábamos que quedaba ese detalle. Va, buenísimo.
+Ehdrei Aramburo: Listo.
+David Ochoa: Listo. Entonces, le voy a marcar aquí para que revisemos. Em, de ahí pasaríamos con el tema de empresas.
+
+00:17:32
+
+David Ochoa: En el caso de empresas, justamente tenemos dos reglas que son la creación automática del desarrollador en la parte de empresas una vez que que se tenga cargado el monific y se traería toda esta información inicial que es el nombre, clave del desarrollador, representante legal, motivo de interés y la última vez que se sincronizó con el aplicativo, igual de manera automática que se estaría registrando junto con una segunda regla que se trae el tema del representante legal que en este caso veía que tienen propiedades del representante legal dentro de empresa. Yo recomiendo igual seguirlo manteniendo dentro del contacto para, perdón, dentro de la empresa para tenerlo, pero si tener una vinculación con el contacto para que justamente lo tengamos, ya que el detalle que radica en cuando no tenemos una un contacto vinculado es que, por ejemplo, cuando se quieran comunicar en ejecutivos de venta o ejecutivos de atención a cliente, cuando le den aquí en correo, por defecto no va a aparecer el usuario al que se lo quieres enviar. No te va a aparecer aquí una lista que qui se lo puedes enviar y si tú introdujeras directamente el correo, las estadísticas de seguimiento y demás no quedan completamente rastreables porque no se vincula el contacto. Así que justamente por eso sí veíamos convena y tener esta segunda acá, pero va igual justamente lo tenemos ahí mapeado. Y ya de aquí entramos con el tema de los negocios. Antes de continuar con el tema de negocios, ¿alguien tiene alguna duda o pregunta?
+
+00:19:02
+
+Ehdrei Aramburo: No, de mi parte.
+David Ochoa: Buenísimo. Ya con el tema de negocios teníamos en cuenta que primer primera regla que hay que tomar en consideración es el tema de compra del mercado primario. decir, un inversionista que quiere realizar una compra en el mercado primario. Al realizarlo, Moneic detona ese envío hacia hotspot por medio de un deal donde se va a traer toda esta información importante, cuál es el tipo, clave y demás, y lo va a asociar con un contacto existente en la base por medio de su correo. Aquí puntualmente lo que me quedaba duda con el tema de de los negocios es que en la documentación se comenta que el monto que envían actualmente lo envían como string y no como número. ¿Me podrían dar noción de por qué razón se realiza de esa manera? si había un impedimento o alguna limitante en el momento que se
+Ehdrei Aramburo: Eh, bueno, tengo entendido que por la base de datos eh había tema con los
+David Ochoa: hizo.
+Ehdrei Aramburo: decimales. Entonces, y como se hace un eh cálculo de redondeo en algunas cosas, eh a como estaba la fórmula y eso, por eso se se almacenaba en la base como eh como string,
+David Ochoa: Okay.
+Ehdrei Aramburo: pero es por la regla que nosotros metíamos de redondeo y todo eso para los
+
+00:20:26
+
+David Ochoa: Ahí.
+Ehdrei Aramburo: decimales, porque quedaba si no un numero eh con con los decimales. Entonces, metemos una regla ahí para para ajustar, ¿no?, los decimales a dos y y
+David Ochoa: Okay.
+Ehdrei Aramburo: redondear.
+David Ochoa: Okay. Duda, aquí ya si te hace sentido esa parte o hay alguna manera un poquito óptima de realizarlo para Ah,
+Jazmín Córdova: Déjame revisar el código primero, David,
+David Ochoa: okay.
+Jazmín Córdova: y vemos cómo lo tienen y ya sobre esos
+David Ochoa: Sí, sí, va. Perfecto. Sí, tienes razón. Va buenísimo. Y ya en el caso de las que son con funcionalidad de masivos, justamente de monella que tiene la el aplicativo de que la persona puede activar el botón, un botoncito y justamente se hace la reinversión de manera activa. Justamente lo que me quedaba duda de esa parte es de que, por ejemplo, cuando se compra una acción, cada acción va a estar desencadenando un negocio, ¿no? Aunque se compre, por ejemplo, dos acciones del mismo tipo, ¿va a desencadenar dos negocios o es uno por todo? Es una duda ya.
+Ehdrei Aramburo: Mm. Ahí no, la verdad es que no me acuerdo ahí cómo está, pero creo que sí por cada uno este Bueno, es que como todo está ligado al ID, o sea, sí lo pues se para cada cosa, ¿no?
+
+00:22:00
+
+Ehdrei Aramburo: Pero al final se liga todo al mismo, o sea, si está dentro de la misma inversión, pues cada ID se liga al principal, por así decirlo.
+David Ochoa: Okay, okay, okay, okay. Ah, buenísimo. Entonces, revisamos ya el tema del otro.
+Ehdrei Aramburo: Sí,
+David Ochoa: Adelante.
+Ehdrei Aramburo: pero igual déjame este igual también si quieres este lo reviso porque te digo ya tiene rato que no veo cómo está ahí esa esa parte y ya te confirmo bien,
+David Ochoa: Esta
+Ehdrei Aramburo: pero te digo,
+David Ochoa: parte
+Ehdrei Aramburo: hasta donde recuerdo eh se liga todo se hace uno por uno y al final esos ID pues se unen al pues al principal, ¿no? O sea,
+David Ochoa: principal, o sea,
+Ehdrei Aramburo: los lig Ajá.
+David Ochoa: se sería un negocio por todo. Okay.
+Ehdrei Aramburo: Hasta ¿Dónde?
+David Ochoa: Okay, dale. Buenísimo. Entonces, solo validar esa parte. Ya en cambio de nombre, supercaro, dependiendo de la etapa de negocio se va a ir cambiando el nombre. Esa no hay mayor comentario que agregar. Y la que me quedaba duda venía a partir del tema del mercado secundario.
+
+00:23:03
+
+David Ochoa: La primera del mercado secundario me hace totalmente sentido de que una persona que compre en el mercado secundario va a tener un negocio del tipo poressas y que se va a estar cargando en la parte de inversión activa. Eso me hace totalmente sentido. El que me quedaba un poquito de duda justamente cómo lo cómo lo tienen es en el caso de la persona que hace la venta de esa inversión en el mercado secundario. Aquí de acuerdo a la documentación mencionaban que en el mercado secundario la persona que vende se le crea un negocio de esa venta. Mi duda puntual radica en que cuando se crea este negocio de venta, supongamos por ejemplo caso de María. María, por ejemplo, tenía 100 acciones en alguna inversión de Tulum. De esas 100 acciones que tenía, vendió tres a x persona. Se entiende entonces que con la venta de esas tres acciones se va a crear un negocio del tipo SOL que se va a estar guardando en la parte de mercado secundario. Y mi duda aquí es la el negocio principal que tenía en su momento 100 acciones, actualmente se actualiza y le resta esas 100 acciones. no tiene 100, ahorita tenías 97 acciones y haces esa resta o cómo funciona en esa parte, ya que no se menciona de manera explícita.
+Ehdrei Aramburo: Eh, sí, se supone que ya cuando se vende pues queda el el restante como principal, o sea, más bien ese eh pues si ese restante pues se queda, o sea, si ya se vendió, pues ahora ese restante pues pasa a ser el el 100%,
+
+00:24:47
+
+David Ochoa: Okay, exacto. Entonces, en resumidas cuentas tenía 100 acciones esta persona, María, ella vendió tres. Se le crea un negocio del tipo Sol, que tiene esas tres acciones en el mercado secundario y en sus acciones principales, en su deal principal que tenía, ya no son 100 que tiene, ahora son 97.
+Ehdrei Aramburo: Ajá.
+David Ochoa: Sí,
+Ehdrei Aramburo: Sí,
+David Ochoa: es correcto eso que comenté.
+Ehdrei Aramburo: sí, sí. Así
+David Ochoa: Okay, buenísimo.
+Ehdrei Aramburo: queda.
+David Ochoa: Igual lo integra aquí como otra regla adicional, justamente porque no no se comentaba ya y sí tenía esa duda si se hacía la actualización. Ya con el tema de los que compran, no hay problema. Con el tema de las liquidaciones de participaciones igual no me queda duda. Esto justamente se hace en el momento que se termina la campaña, el tiempo y ya se envía liquidados. Creo que es está bastante claro. Y en el tema de sincronización de campañas de fondeo, esta ya corresponde a solicitantes. En el tema de solicitantes, una vez que inyectan esta información, es una duda, ¿se va actualizando regularmente hasta que se llega al momento de fondeado o tiene algún momento en el que se para de estar actualizando o siempre se va a actualizar sin importar qué?
+
+00:25:59
+
+Ehdrei Aramburo: A ver, a ver.
+David Ochoa: Es una duda con el tema de solicitantes.
+Ehdrei Aramburo: No, no te
+David Ochoa: Va, mira,
+Ehdrei Aramburo: entendí.
+David Ochoa: con esta regla que tenemos aquí que dice, a ver, déjame revisar aquí. Manejo de errores. A ver, creo que está un poquito más arriba de negocios. Eh, compra y venta de participaciones, negocios. Ahorita te comento en cuál. Sincronización, diagrama, referencias, sincronización de desarrollades. Aquí está justamente con esta regla que tenemos aquí de aquí está de negocios, campañas de fondeo, la 11.2. Se comenta que se hace esta sincronización de campañas, no de inversiones. Supercaro ahí. Cuando se hace esta sincronización de campañas de fondeo, ¿se hace alguna actualización regular de estas propiedades? Es decir, hasta el momento en el que se esté enfondeado o liquidado o de cómo se va actualizando el tema de cuántas participaciones lleva, cuánto solicitó y cuánto lleva fondeado. ¿Se hace la actualización de eso o solo se hace única vez el
+Ehdrei Aramburo: Eh,
+David Ochoa: llamado?
+Ehdrei Aramburo: pues se supone que cuando hace la sincronización la hace en ambos eh sentidos, o sea,
+
+00:27:16
+
+David Ochoa: Ah.
+Ehdrei Aramburo: si detecta un cambio de un lado, lo actualiza en en del otro, ¿no? O sea, por ejemplo, en la campaña eh cuando detecta eh un
+David Ochoa: ¿Ven
+Ehdrei Aramburo: cambio, no sé, en la compañía, este lo actualiza en la campaña y viceversa, ¿no? O sea, se supone que ese es el como el cómo funciona.
+David Ochoa: cómo funciona? Okay. Okay.
+Ehdrei Aramburo: Ajá.
+David Ochoa: Buenísimos. Justo esa la regla que teníamos. Ya de ahí, justamente estas son las reglas que teníamos contempladas. Duda puntual. De las reglas que hemos comentado, ¿hay algún o alguna que está?
+Ehdrei Aramburo: Perdón, se se te cortó. No te no te
+David Ochoa: Ah,
+Ehdrei Aramburo: escuché.
+David Ochoa: discúlpemme que justamente de las reglas que les acabamos de comentar, ¿hay alguna que no esté contemplada o que consideren que falte o estamos cubiertos por el momento?
+Monific: No sé, yo tengo que revisar igual este documento que lo termine de revisar este Jesús. Me gustaría que le dé una revisada también adicional.
+Ehdrei Aramburo: Sí, justo. Ajá.
+
+00:28:29
+
+Ehdrei Aramburo: Justo también eso me me había comentado que este que necesitaba checarlo él
+David Ochoa: Okay.
+Ehdrei Aramburo: a a o sea ya que se lo compartieron a detalle para ver si faltaba algo o estaba todo completo.
+David Ochoa: Correcto. Va.
+Ehdrei Aramburo: Mhm.
+David Ochoa: Buenísimo. Sí, yo se los comparto. Esas son las eso que platicamos ahorita son las reglas que actualmente tienen. Justamente que lo que buscamos es hacer ese check de que sí se completen. Falta ver el tema de las reglas nuevas. Considerando que ahorita ya nos encontramos sobre el tiempo, me gustaría preguntarles de pronto si tienen espacio mañana como a las 12, como para poder revisar las reglas nuevas o si les es posible incluso el viernes. Igual déjenme valido rápidamente con jaz. No, perdón. Sí, justo si tienen espacio. Eh, perdón, mañana a las
+Monific: A ver, yo si tengo espacio.
+David Ochoa: 2.
+Monific: Déjame escribirle a Jesús a ver si él puede entrar y les confirmo en el en el chat.
+David Ochoa: Okay, dale, Barel. Yo te lo envío también para confirmar. Y esto sería para revisar las reglas nuevas. Ya vimos ahorita las existentes justamente para que ya pueda hacer ese barrido y ya las siguientes corresponden a las nuevas donde se integra este objeto de cobranza y las nuevas que se van a estar utilizando para proyecto.
+Monific: Okay,
+David Ochoa: Va,
+Monific: ahorita pregunto a Jesús en el grupo si él puede entrar mañana a las
+David Ochoa: esa es mi exigencia.
+Monific: 2.
+David Ochoa: Dale, va buenísimo. Pues listo,
+Monific: Gracias.
+David Ochoa: equipos. Igual ya no les quito más tiempo. Voy a detener la grabación para poder compartírselas. M.
+
+La transcripción finalizó después de 00:30:06
+
+Esta transcripción editable se ha generado por ordenador y puede contener errores. Los usuarios también pueden cambiar el texto después de que se haya generado.

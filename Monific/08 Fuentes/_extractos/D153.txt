@@ -1,0 +1,10 @@
+=== ID: D153 ===
+=== SOURCE: Wiki Monific\drive-download-20260807T143807Z-1-001\Presentación de Flujograma de Ventas - Monific - 2026_02_24 15_45 GMT-05_00 - Chat.txt ===
+=== MODIFIED: 2026-08-07 ===
+
+00:34:38.433,00:34:41.433
+David Ochoa: Se podria con una regla de exclusión en el workflow
+
+00:53:10.587,00:53:13.587
+Monific: https://docs.google.com/document/d/1afRXKDUaB_GD0pk6nazX4OmL28cYmyS0d8s4DI5nrL8/edit?usp=sharing
+

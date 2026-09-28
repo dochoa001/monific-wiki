@@ -1,0 +1,132 @@
+=== ID: D168 ===
+=== SOURCE: Wiki Monific\drive-download-20260807T144042Z-1-001\1. Jueves 22 de Enero 2026.docx ===
+=== MODIFIED: 2026-08-07 ===
+
+Minuta – Sesión 1 de mapeo (Inversionistas) | Proyecto HubSpot (Implementación/Optimización)
+Fecha: 22/01/2026
+Duración: 1 hora
+Modalidad: Videollamada (grabada)
+Objetivo de la sesión: Iniciar el mapeo del flujo AS-IS / TO-BE del journey de inversionistas, validar etapas del embudo, puntos de contacto humano vs automatización y detectar “silencios operativos” (fugas).
+
+1) Asistentes
+Raquel (Monific)
+Ricardo
+Josué
+David
+Caro
+
+2) Acuerdos de agenda y próximas sesiones
+Se acordó tener 3 sesiones la próxima semana: lunes, martes y jueves.
+Ajuste horario de jueves: la sesión que estaba de 4–5 pm se moverá a 3–4 pm (sin conflicto para el equipo externo).
+
+3) Contexto y alcance confirmado (en esta sesión)
+Se trabajará primero el flujo de inversionistas (la parte de solicitantes se verá después).
+El equipo externo revisó documentación previa (muy completa) y usará esta sesión para validaciones y preguntas clave.
+
+4) Flujo de Inversionistas (AS-IS validado)
+A. Atracción / primer contacto
+Monific usa marketing pagado operado por proveedor externo Boomit (Meta, Google Ads, TikTok).
+Objetivo de campañas: descarga de app o envío a web para registro/inversión.
+Decisión: por ahora se mantiene Boomit; se deja abierta la puerta a colaboración futura con el equipo externo (más adelante).
+B. Registro inicial (lead creado)
+Registro “simple” solicita: correo + contraseña + teléfono.
+En cuanto completa ese paso, ya cuenta como lead.
+C. KYC / Validación (4 pasos)
+El usuario puede completar en ese momento o dejarlo para después:
+Identificación oficial
+CURP y RFC
+Domicilio
+Firma de contrato
+Aclaración clave: Google Forms aplica a solicitantes, no a inversionistas.
+D. Contrato
+El Contrato es comisión mercantil (regulatorio CNBV), integrado en el sistema; se firma con contraseña y registra IP/fecha/hora.
+En HubSpot no se requiere almacenar el contrato; solo un flag/propiedad de “contrato firmado”.
+E. Integración de datos a HubSpot
+App/sistema interno (“Admin Monific”) ya manda datos por API a HubSpot.
+Existe propiedad de “nivel de registro” que cambia automáticamente (se mencionaron estados como: registro simple, perfil en proceso, contrato firmado, cuenta STP activa / inversiones activas; quedó pendiente refinar nomenclatura final).
+
+5) Hallazgos críticos / Pain points (prioridad alta)
+5.1 Brecha brutal de conversión (cuello de botella)
+Base histórica: 129,000 registros.
+50,000 con cuenta STP activa (terminaron KYC) ~50% de quienes se registran.
+Solo 17,000 invierten (brecha grande).
+Punto de fricción principal: usuario completa KYC pero no invierte.
+5.2 Dinero “estacionado” (riesgo reputacional + oportunidad comercial)
+Hay aprox. $14M MXN en cuentas de usuarios sin invertir (saldo parado).
+Caso extremo: cliente con saldo parado por años (ejemplo: $5,000).
+5.3 Automatizaciones actuales insuficientes
+No existe workflow robusto de “recuperación” para:
+“Te registraste, completa tu verificación”
+“Ya tienes STP activa, invierte”
+Hay una secuencia existente “mal hecha” (reconocido) y se requiere rediseño por etapas del embudo.
+5.4 Canal: email no alcanza
+Raquel ya mejoró correos transaccionales (último mes) con mensajes educativos (“saldo parado no genera”).
+Se probó SMS fuera de HubSpot y reactivó usuarios. Se quiere incorporar WhatsApp + plantillas como canal más efectivo.
+5.5 Falta de accountability del equipo (operación humana)
+Asignación de leads existe (rotación 1 a 1), pero falta:
+visibilidad de cumplimiento de tareas
+tracking de contacto real
+escalamientos preventivos y por SLA
+Hoy el equipo es más pasivo; Raquel quiere blindaje para cuando falte personal o se caiga el estándar.
+
+6) Modelo comercial/operativo: rol humano (Customer Success híbrido)
+No hay “asesores comerciales puros”; el rol actual es Atención a Clientes híbrido (atiende + vende, incluso con bono).
+Responsable operativo de llamadas/seguimiento: Atención a Clientes (actualmente vacante; temporalmente Raquel cubre).
+Definición operativa deseada: contacto humano especialmente en el momento en que:
+el usuario termina KYC (STP activa) y no invierte
+el usuario se queda en registro simple / perfil en proceso (seguimiento automatizado + empuje)
+
+7) Reinversión y estructura en HubSpot (pendientes clave)
+Se discutió el dilema de modelado:
+¿Se crea un Deal por cada inversión (por ser ingreso nuevo)?
+¿O se trabaja por disparadores (ej. días desde última inversión) para evitar volumen excesivo?
+Complejidad adicional:
+Participaciones desde $1,000 (muchísimo volumen)
+Mercado secundario (en rendimiento variable)
+Pendiente: propuesta del equipo externo sobre estructura de pipeline(s) para reinversión y manejo de eventos.
+
+8) Operación de campañas/proyectos (datos para diseño)
+Apertura frecuente: mínimo 3 campañas al mes, puede haber hasta 6.
+Pago de rendimientos:
+95% de proyectos: mensual
+Pago típico: día 15 del mes siguiente (ej. rendimientos de enero → 15 de febrero)
+Existen casos bimestrales o hasta pago al final del plazo (minoría).
+Tipos de inversión:
+Rendimiento fijo (inicio/fin definidos)
+Rendimiento variable (sin plazo fijo; sale por venta del inmueble / recompra por solicitante / venta en mercado secundario). Solo ~9 campañas de variable.
+
+9) Casos especiales discutidos
+Leads duplicados en inversionistas: raros, pero existen casos con CURP duplicado (TI revisando).
+Ex inversionistas (~2,000 con cuenta en cero): hoy no se les da seguimiento; se evaluará si conviene atacarlos vs priorizar conversión de nuevos.
+Brokers / Promotoría externa:
+Operación vía códigos de referido, comisiones y tracking en Excel
+Se intentó modelar en HubSpot, pero se abandonó por complejidad (pendiente a futuro).
+
+10) Acuerdos y próximos pasos
+Entregables/Acciones – Monific (Raquel)
+Preparar borrador de reglas de negocio/SLA:
+tipos de solicitudes
+tiempos de atención
+escalamiento preventivo (antes del vencimiento) y por incumplimiento
+Enviar (si lo tiene a la mano) análisis base: fugas por etapa (registro simple → KYC → STP activa → primera inversión).
+Entregables/Acciones – Equipo externo
+Diagnóstico y propuesta de estructura en HubSpot:
+pipeline(s) de conversión a primera inversión
+propuesta para reinversión (modelo de deals vs triggers por “última inversión”)
+Propuesta de workflows por etapa (no uno genérico):
+Registro simple (nurture)
+Perfil en proceso (KYC)
+STP activa sin inversión (ataque principal multicanal)
+Inversionista activo (cross-sell / reinversión)
+Diseño de tablero de control para visibilidad:
+tareas asignadas vs completadas
+tiempos de primer contacto
+alertas/escalamientos
+
+11) Preguntas abiertas (para sesión 2)
+Definición final de estatus/propiedades (nomenclatura exacta y mapeo a automatizaciones).
+¿Cuándo se considera “cliente”? (se concluyó: hasta que invierte en un proyecto, no solo depositar).
+Política formal de “lead perdido”: número de intentos, ventana de contacto, criterios de descarte.
+Diseño multicanal: WhatsApp (herramienta, plantillas, trazabilidad y compliance).
+Integridad de integración: restaurar creación automática de Deals (antes existía, se rompió).
+

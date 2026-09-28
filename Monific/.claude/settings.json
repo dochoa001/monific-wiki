@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "additionalDirectories": [
+      "../Adicionales",
+      "../Entregables Claude",
+      "../Entregables codex",
+      "../outputs"
+    ]
+  }
+}

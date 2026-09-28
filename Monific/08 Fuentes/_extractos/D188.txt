@@ -1,0 +1,158 @@
+=== ID: D188 ===
+=== SOURCE: Wiki Monific\drive-download-20260807T144042Z-1-001\9. Jueves 12 de Marzo.docx ===
+=== MODIFIED: 2026-08-07 ===
+
+MINUTA DE REUNIÓN
+Revisión del Flujograma de Servicio – Atención a Clientes Inversionistas
+Fecha
+ | Marzo 2026
+ |
+Plataforma
+ | Videollamada (grabación activa)
+ |
+Participantes
+ | Josué, Raquel, David, Ricardo
+ |
+Tema principal
+ | Revisión del flujograma de servicio para atención a clientes inversionistas en HubSpot
+ |
+
+1. Contexto y Ajustes Previos
+Se retomó el trabajo iniciado en sesiones anteriores sobre el flujograma de atención a clientes inversionistas. Se recordó que el documento incluye una tabla de acrónimos (puestos y equipos) y un cuadro de simbología. El cambio relevante presentado en esta sesión fue la incorporación de la interacción con Notion.
+Correcciones identificadas al inicio de la sesión:
+Guillermo fue listado incorrectamente como Ejecutivo de Atención a Clientes. Su rol correcto es Ejecutivo de Atención a Solicitantes.
+La Ejecutiva de Atención a Clientes en fines de semana es Sasha. Entre semana el puesto está vacante y siendo cubierto temporalmente por Raquel.
+Se espera incorporar a una nueva persona esa misma semana para cubrir el puesto entre semana.
+Sobre Notion:
+Notion no se utiliza para la atención a inversionistas; esta se gestiona íntegramente en HubSpot.
+Notion se usa únicamente para el proceso de escalamiento hacia el equipo de TI (tickets de soporte técnico).
+2. Canales de Entrada del Cliente
+Se identificaron los canales activos por los que un cliente puede iniciar contacto:
+WhatsApp
+Chat web (en la página de Monific)
+Formulario de la UNE (apartado 'Más información' en la página)
+Adicionalmente, Raquel mencionó dos canales externos que generan leads aunque no están tan activos:
+Formulario de 'Plan de Inversión a la Medida': El cliente deja su correo y automáticamente le llega una notificación al equipo para hacer contacto por correo.
+Formulario en el Asis (también orientado a planes a la medida).
+Resolución:
+Estos canales externos se considerarán para el pipeline comercial (captación de leads), no para el flujograma de atención a clientes actual.
+3. Tipos de Tickets Definidos
+Se presentaron y validaron los siguientes tipos de tickets para el pipeline de atención a clientes inversionistas:
+Tipo
+ | Nombre
+ | Descripción
+ |
+A
+ | Problema técnico
+ | Error en la app, no puede ingresar a su cuenta, fallo en la plataforma.
+ |
+B
+ | Información / Duda
+ | Preguntas generales sobre Monific, proyectos, rendimientos, regulación.
+ |
+C
+ | Nuevo solicitante
+ | El sistema detecta un posible solicitante. Se redirige al pipeline comercial.
+ |
+D
+ | Queja / Inconformidad
+ | Insatisfacción o reclamo con el servicio. Vía rápida de atención.
+ |
+E
+ | Reclamación formal UNE
+ | El cliente activa explícitamente el proceso formal ante la UNE. Gestionado exclusivamente por Dirección Comercial.
+ |
+
+4. Flujo General de Atención en HubSpot
+4.1 Identificación y Creación de Ticket
+El cliente escribe por alguno de los canales de entrada. HubSpot solicita nombre, correo y tipo de solicitud (mediante desplegable vinculado al Centro de Ayuda).
+HubSpot valida si el contacto ya existe. Si existe, asocia la conversación; si no, crea el registro.
+HubSpot identifica el tipo de consulta y crea el ticket, asignándolo al ejecutivo en turno por Round Robin según horario.
+Etapas del pipeline: el primer estatus es Nuevo.
+4.2 SLA de Primera Atención
+Una vez asignado el ticket, HubSpot inicia un cronómetro de SLA.
+SLA acordado: 5 minutos para la primera respuesta (no para la resolución completa).
+Cuando el ejecutivo responde, HubSpot cambia el estatus a En Atención de forma automática.
+Si el SLA se supera sin respuesta, HubSpot notifica a Dirección Comercial para dar seguimiento.
+5. Flujos por Tipo de Ticket
+5.1 Tipo A – Problema Técnico
+El ejecutivo analiza la información y determina si puede resolver el ticket.
+Si puede resolverlo: atiende al cliente, valida que la solución fue efectiva y cierra el ticket como Resuelto.
+Si no puede resolverlo o la solución no fue efectiva: escala a TI mediante Notion, enviando notificación de ticket a TI.
+El ejecutivo mantiene comunicación con el cliente durante el proceso (vía WhatsApp o correo electrónico según el canal de entrada).
+Cuando TI entrega la solución, el ejecutivo valida con el cliente; si es efectiva, cierra el ticket.
+5.2 Tipo B – Información o Duda
+El ejecutivo responde con base en el Centro de Ayuda (base de conocimientos de HubSpot) y/o fragmentos de información disponibles.
+Si la duda se resuelve: cierra el ticket como Resuelto.
+Si no se resuelve de inmediato: continúa interacción con el cliente hasta lograr la resolución.
+5.3 Tipo C – Nuevo Solicitante
+El ejecutivo orienta al cliente y le comparte la liga de registro como solicitante.
+El ticket se traspasa a Guillermo (Ejecutivo de Atención a Solicitantes) para que continúe la atención y gestione el ingreso al pipeline de ventas de solicitantes.
+Se dejó pendiente confirmar si con licencia Sales es suficiente para operar este flujo en HubSpot (David revisará y confirmará).
+5.4 Tipo D – Queja o Inconformidad
+El ejecutivo recibe el ticket y gestiona atención inmediata.
+Valida si la queja procede. Si procede: da resolución y cierra el ticket.
+Si no procede: informa al cliente con transparencia y ofrece la opción de solución rápida.
+Si el cliente decide formalizar: se escala al Tipo E.
+Si el cliente no desea formalizar: el ejecutivo continúa buscando solución y cierra el ticket.
+5.5 Tipo E – Reclamación Formal UNE
+El ejecutivo ofrece primero la vía rápida (Tipo D). Si el cliente insiste en formalizar, se procede.
+El ejecutivo etiqueta el ticket como UNE en HubSpot. HubSpot envía correo al cliente con el formulario de queja.
+A partir de este punto, la gestión es exclusiva de Dirección Comercial (correo: unefi). El ticket se reasigna a este rol.
+HubSpot notifica a Dirección Comercial para iniciar recopilación de información.
+HubSpot genera el folio del ticket automáticamente (ya no manual).
+Se notifica al cliente el inicio formal de su queja.
+Dirección Comercial analiza y emite dictamen (favorable o no procedente).
+Si no procede: se envía dictamen al cliente y se cierra el ticket.
+Si procede: se coordina con equipo legal, oficial de cumplimiento y TI para la devolución de recursos. Al confirmarse la devolución, se cierra el ticket.
+6. Reportería y Métricas
+Se definió la necesidad de contar con reportes visuales desde HubSpot para la toma de decisiones operativas:
+Categoría y subcategoría de cada ticket para identificar los tipos de incidencia más frecuentes.
+Tiempo de resolución por categoría (desde creación hasta cierre).
+Volumen de tickets escalados a TI y tiempo promedio de solución por tipo.
+Para tickets UNE: categoría, subcategoría, enlace al dictamen (en carpeta de Drive), importe reclamado y fecha. Permite generar reportes trimestrales ante la UNE y reutilizar dictámenes previos.
+Acción acordada:
+Raquel descargará los títulos de tickets históricos en Notion y usará IA para catalogarlos y generar las categorías/subcategorías base.
+7. Encuestas de Satisfacción
+Se acordó incorporar una encuesta de satisfacción breve (no invasiva) al cierre de tickets.
+Enfocada en: satisfacción con la resolución y con el trato del equipo.
+Se propuso también integrar un CTA en correos de marketing para dirigir a clientes a dejar reseñas en Google (actualmente en 3.9 estrellas), aprovechando los envíos de pago de rendimientos.
+8. Equipo de Tecnología (TI)
+Se aclaró la estructura del equipo de TI para el manejo de tickets escalados:
+Jesús Torres – CTO (responsable principal)
+Dani Torres – segundo al mando
+Gustavo Torres – tickets sencillos
+Edrey y Edgar – tickets de complejidad media
+Frida Luna – diseño y landing page
+En el flujograma se referenciará el puesto/equipo, no nombres individuales.
+9. Pendientes y Próximos Pasos
+Pendiente
+ | Responsable
+ | Estado
+ |
+Confirmar si licencia Sales es suficiente para Guillermo en tickets Tipo C
+ | David
+ | Pendiente
+ |
+Aplicar ajustes al flujograma (correcciones discutidas en sesión)
+ | Josué
+ | Pendiente
+ |
+Subir mapeo tecnológico de UNE a carpeta de tareas y enviar link por correo
+ | Josué
+ | Pendiente
+ |
+Descargar títulos de tickets de Notion y generar categorías con IA
+ | Raquel
+ | Categorias_Tickets_TI
+ |
+Incorporar encuesta de satisfacción al flujo de cierre de tickets
+ | Por definir
+ | Pendiente
+ |
+Integrar CTA en correos de marketing para reseñas Google
+ | Por definir
+ | Pendiente
+ |
+
+Documento generado a partir de la transcripción de la sesión de trabajo.

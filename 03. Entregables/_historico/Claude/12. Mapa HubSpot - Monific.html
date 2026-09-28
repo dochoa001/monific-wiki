@@ -1,0 +1,751 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<meta name="description" content="Hoja de referencia visual de la operacion de Monific en HubSpot. Portal 48427391.">
+<title>Monific en una página</title>
+<style>
+  :root {
+    --bg: #E8EBEE;
+    --surface: #FFFFFF;
+    --surface-2: #F3F5F7;
+    --ink: #141C24;
+    --muted: #56636F;
+    --faint: #8794A0;
+    --line: #CDD5DD;
+    --line-soft: #E1E7EC;
+
+    --c-sol: #8A5A0E;
+    --c-inv: #0D6459;
+    --c-cob: #96401E;
+    --c-ate: #1B4B7A;
+    --c-une: #6A3468;
+
+    --c-sol-soft: #F6EEDF;
+    --c-inv-soft: #E0EFEC;
+    --c-cob-soft: #F7E8E1;
+    --c-ate-soft: #E3ECF5;
+    --c-une-soft: #EFE6EF;
+
+    --display: Georgia, "Iowan Old Style", "Times New Roman", serif;
+    --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    --mono: ui-monospace, "Cascadia Mono", "SF Mono", Consolas, "Liberation Mono", monospace;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #0E1418;
+      --surface: #161E25;
+      --surface-2: #1C262E;
+      --ink: #E6ECF1;
+      --muted: #9BA8B4;
+      --faint: #6B7C89;
+      --line: #2A3742;
+      --line-soft: #212C35;
+
+      --c-sol: #D9A24A;
+      --c-inv: #4FB8A6;
+      --c-cob: #DE8A62;
+      --c-ate: #7FB0E0;
+      --c-une: #BC8CBA;
+
+      --c-sol-soft: #2A2213;
+      --c-inv-soft: #102E2A;
+      --c-cob-soft: #2E1B13;
+      --c-ate-soft: #16283A;
+      --c-une-soft: #261826;
+    }
+  }
+
+  :root[data-theme="dark"] {
+    --bg: #0E1418;
+    --surface: #161E25;
+    --surface-2: #1C262E;
+    --ink: #E6ECF1;
+    --muted: #9BA8B4;
+    --faint: #6B7C89;
+    --line: #2A3742;
+    --line-soft: #212C35;
+
+    --c-sol: #D9A24A;
+    --c-inv: #4FB8A6;
+    --c-cob: #DE8A62;
+    --c-ate: #7FB0E0;
+    --c-une: #BC8CBA;
+
+    --c-sol-soft: #2A2213;
+    --c-inv-soft: #102E2A;
+    --c-cob-soft: #2E1B13;
+    --c-ate-soft: #16283A;
+    --c-une-soft: #261826;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: var(--sans);
+    font-size: 15px;
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .sheet {
+    max-width: 72rem;
+    margin: 0 auto;
+    padding: 2.5rem 1.25rem 4rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+  }
+
+  .eyebrow {
+    font-family: var(--mono);
+    font-size: .68rem;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: var(--faint);
+  }
+
+  /* ---- masthead ---- */
+  header.top {
+    display: flex;
+    flex-direction: column;
+    gap: .6rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 2px solid var(--ink);
+  }
+  header.top h1 {
+    font-family: var(--display);
+    font-weight: 400;
+    font-size: clamp(2rem, 1.2rem + 3vw, 3.2rem);
+    line-height: 1.05;
+    letter-spacing: -.015em;
+    margin: 0;
+    text-wrap: balance;
+  }
+  header.top .sub {
+    color: var(--muted);
+    max-width: 58ch;
+    margin: 0;
+  }
+
+  .legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .4rem .5rem;
+    margin-top: .5rem;
+  }
+  .tag {
+    display: inline-flex;
+    align-items: center;
+    gap: .4rem;
+    font-family: var(--mono);
+    font-size: .68rem;
+    letter-spacing: .06em;
+    text-transform: uppercase;
+    padding: .2rem .55rem;
+    border-radius: 2px;
+    border: 1px solid currentColor;
+  }
+  .tag .dot { width: .5rem; height: .5rem; border-radius: 50%; background: currentColor; }
+  .t-sol { color: var(--c-sol); }
+  .t-inv { color: var(--c-inv); }
+  .t-cob { color: var(--c-cob); }
+  .t-ate { color: var(--c-ate); }
+  .t-une { color: var(--c-une); }
+
+  /* ---- panels ---- */
+  .panel {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 3px;
+    padding: 1.5rem;
+    break-inside: avoid;
+  }
+  @media (max-width: 40rem) { .panel { padding: 1rem; } }
+
+  .panel > h2 {
+    font-family: var(--display);
+    font-weight: 400;
+    font-size: 1.45rem;
+    margin: .3rem 0 .35rem;
+    text-wrap: balance;
+  }
+  .panel > .lede {
+    margin: 0 0 1.25rem;
+    color: var(--muted);
+    max-width: 62ch;
+  }
+
+  figure { margin: 0; }
+  figure svg {
+    display: block;
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+  }
+  .scroller { overflow-x: auto; }
+  .scroller svg { min-width: 34rem; }
+  figcaption {
+    margin-top: .85rem;
+    padding-top: .75rem;
+    border-top: 1px solid var(--line-soft);
+    font-size: .85rem;
+    color: var(--muted);
+  }
+
+  /* svg shared */
+  .box { fill: var(--surface-2); stroke: var(--line); stroke-width: 1; }
+  .lbl { fill: var(--ink); font-family: var(--sans); font-size: 13px; font-weight: 600; }
+  .sub { fill: var(--muted); font-family: var(--sans); font-size: 11px; }
+  .edge { stroke: var(--muted); stroke-width: 1.5; fill: none; }
+  .edgelbl { fill: var(--muted); font-family: var(--mono); font-size: 10px; letter-spacing: .04em; }
+  .hd { fill: var(--faint); font-family: var(--mono); font-size: 10px; letter-spacing: .12em; }
+
+  /* ---- objetos ---- */
+  .objs {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr));
+    gap: .75rem;
+  }
+  .obj {
+    border: 1px solid var(--line);
+    border-top: 3px solid var(--ink);
+    border-radius: 2px;
+    padding: .85rem .9rem;
+    background: var(--surface-2);
+  }
+  .obj h3 {
+    font-family: var(--display);
+    font-weight: 400;
+    font-size: 1.1rem;
+    margin: 0 0 .2rem;
+  }
+  .obj .ex {
+    font-family: var(--mono);
+    font-size: .72rem;
+    color: var(--faint);
+    margin-bottom: .5rem;
+  }
+  .obj p { margin: 0; font-size: .87rem; color: var(--muted); }
+
+  /* ---- tables ---- */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: .88rem;
+  }
+  th, td {
+    text-align: left;
+    padding: .55rem .6rem;
+    border-bottom: 1px solid var(--line-soft);
+    vertical-align: top;
+  }
+  thead th {
+    font-family: var(--mono);
+    font-size: .66rem;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: var(--faint);
+    border-bottom: 1px solid var(--line);
+  }
+  td.num {
+    font-family: var(--mono);
+    font-variant-numeric: tabular-nums;
+    white-space: nowrap;
+  }
+  tbody tr:last-child td { border-bottom: none; }
+
+  .rolecell { display: inline-flex; align-items: center; gap: .45rem; font-weight: 600; }
+  .rolecell .dot { width: .45rem; height: .45rem; border-radius: 50%; flex: none; }
+
+  /* ---- reglas ---- */
+  .reglas {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+    gap: .3rem 1.75rem;
+    counter-reset: r;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .reglas li {
+    counter-increment: r;
+    display: grid;
+    grid-template-columns: 1.6rem 1fr;
+    gap: .5rem;
+    padding: .5rem 0;
+    border-bottom: 1px solid var(--line-soft);
+  }
+  .reglas li::before {
+    content: counter(r, decimal-leading-zero);
+    font-family: var(--mono);
+    font-size: .72rem;
+    color: var(--faint);
+    padding-top: .15rem;
+  }
+  .reglas b { font-weight: 600; }
+  .reglas span { color: var(--muted); font-size: .87rem; display: block; }
+
+  footer.foot {
+    border-top: 1px solid var(--line);
+    padding-top: 1rem;
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    flex-wrap: wrap;
+    font-size: .78rem;
+    color: var(--faint);
+    font-family: var(--mono);
+  }
+
+  @media print {
+    body { background: #fff; }
+    .sheet { padding: 0; gap: 1.25rem; max-width: none; }
+    .panel { border-color: #bbb; box-shadow: none; page-break-inside: avoid; }
+    .scroller svg { min-width: 0; }
+  }
+</style>
+</head>
+<body>
+
+<div class="sheet">
+
+  <header class="top">
+    <div class="eyebrow">Portal 48427391 · Hoja de referencia</div>
+    <h1>Monific en una página</h1>
+    <p class="sub">Cómo se conecta todo lo que ves en HubSpot: por dónde entra cada persona, en qué pipeline vive su caso y quién lo lleva. Los colores se repiten en toda la hoja.</p>
+    <div class="legend">
+      <span class="tag t-sol"><span class="dot"></span>Solicitantes</span>
+      <span class="tag t-inv"><span class="dot"></span>Inversionistas</span>
+      <span class="tag t-cob"><span class="dot"></span>Cobranza</span>
+      <span class="tag t-ate"><span class="dot"></span>Atención</span>
+      <span class="tag t-une"><span class="dot"></span>UNE</span>
+    </div>
+  </header>
+
+  <!-- ================= 1 · EL RECORRIDO ================= -->
+  <section class="panel">
+    <div class="eyebrow">El recorrido</div>
+    <h2>De dónde sale una campaña y por dónde pasa</h2>
+    <p class="lede">Un proyecto nace en Solicitantes, lo fondean los Inversionistas, y a partir de ahí vive en Cobranza hasta liquidarse. Atención corre en paralelo, para todos.</p>
+
+    <figure class="scroller">
+      <svg viewBox="0 0 1040 560" role="img" aria-label="Diagrama del recorrido: el formulario web crea un negocio de solicitante que termina en campaña publicada; la app de Monific crea negocios de inversionista cuyos movimientos fondean esa campaña; al confirmarse la inversión efectiva nace un ticket de cobranza que termina en liquidación, refinanciamiento o ejecución de garantía; y en paralelo los canales de contacto generan tickets de atención, que si son tipo E generan un ticket separado en el pipeline UNE.">
+        <defs>
+          <marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+            <path d="M 0 0 L 10 5 L 0 10 z" fill="var(--muted)"/>
+          </marker>
+        </defs>
+
+        <!-- ROW 1 · SOLICITANTES -->
+        <text class="hd" x="30" y="38" style="fill:var(--c-sol)">SOLICITANTES · NEGOCIO</text>
+        <rect class="box" x="30" y="50" width="210" height="64" rx="3"/>
+        <rect x="30" y="50" width="4" height="64" style="fill:var(--c-sol)"/>
+        <text class="lbl" x="48" y="76">Formulario web</text>
+        <text class="sub" x="48" y="94">entra el solicitante</text>
+
+        <rect class="box" x="300" y="50" width="210" height="64" rx="3"/>
+        <rect x="300" y="50" width="4" height="64" style="fill:var(--c-sol)"/>
+        <text class="lbl" x="318" y="76">Negocio · Solicitantes</text>
+        <text class="sub" x="318" y="94">6 etapas · hasta la firma</text>
+
+        <rect class="box" x="570" y="50" width="210" height="64" rx="3"/>
+        <rect x="570" y="50" width="4" height="64" style="fill:var(--c-sol)"/>
+        <text class="lbl" x="588" y="76">Campaña publicada</text>
+        <text class="sub" x="588" y="94">abierta a fondeo</text>
+
+        <line class="edge" x1="240" y1="82" x2="294" y2="82" marker-end="url(#ar)"/>
+        <text class="edgelbl" x="267" y="74" text-anchor="middle">crea</text>
+        <line class="edge" x1="510" y1="82" x2="564" y2="82" marker-end="url(#ar)"/>
+        <text class="edgelbl" x="537" y="74" text-anchor="middle">firma</text>
+
+        <!-- ROW 2 · INVERSIONISTAS -->
+        <text class="hd" x="30" y="173" style="fill:var(--c-inv)">INVERSIONISTAS · NEGOCIO</text>
+        <rect class="box" x="30" y="185" width="210" height="64" rx="3"/>
+        <rect x="30" y="185" width="4" height="64" style="fill:var(--c-inv)"/>
+        <text class="lbl" x="48" y="211">App Monific</text>
+        <text class="sub" x="48" y="229">registro · KYC · CLABE</text>
+
+        <rect class="box" x="300" y="185" width="210" height="64" rx="3"/>
+        <rect x="300" y="185" width="4" height="64" style="fill:var(--c-inv)"/>
+        <text class="lbl" x="318" y="211">Negocio · Inversionistas</text>
+        <text class="sub" x="318" y="229">niveles 1 → 4</text>
+
+        <rect class="box" x="570" y="185" width="210" height="64" rx="3"/>
+        <rect x="570" y="185" width="4" height="64" style="fill:var(--c-inv)"/>
+        <text class="lbl" x="588" y="211">Movimientos</text>
+        <text class="sub" x="588" y="229">compra · venta · liquidación</text>
+
+        <line class="edge" x1="240" y1="217" x2="294" y2="217" marker-end="url(#ar)"/>
+        <text class="edgelbl" x="267" y="209" text-anchor="middle">nivel 3</text>
+        <line class="edge" x1="510" y1="217" x2="564" y2="217" marker-end="url(#ar)"/>
+        <text class="edgelbl" x="537" y="209" text-anchor="middle">nivel 4</text>
+
+        <!-- fondean: row2 box3 up to row1 box3 -->
+        <line class="edge" x1="675" y1="185" x2="675" y2="120" marker-end="url(#ar)"/>
+        <text class="edgelbl" x="686" y="156">fondean la campaña</text>
+
+        <!-- ROW 3 · COBRANZA -->
+        <text class="hd" x="300" y="308" style="fill:var(--c-cob)">COBRANZA · TICKET</text>
+        <rect class="box" x="300" y="320" width="210" height="64" rx="3"/>
+        <rect x="300" y="320" width="4" height="64" style="fill:var(--c-cob)"/>
+        <text class="lbl" x="318" y="346">Ticket · Cobranza</text>
+        <text class="sub" x="318" y="364">uno por campaña</text>
+
+        <rect class="box" x="570" y="320" width="210" height="64" rx="3"/>
+        <rect x="570" y="320" width="4" height="64" style="fill:var(--c-cob)"/>
+        <text class="lbl" x="588" y="346">Cierre de campaña</text>
+        <text class="sub" x="588" y="364">liquidada · refin. · garantía</text>
+
+        <line class="edge" x1="510" y1="352" x2="564" y2="352" marker-end="url(#ar)"/>
+
+        <!-- inversión efectiva: row1 box3 around right, down into row3 box1 -->
+        <path class="edge" d="M 780 82 H 880 V 352 H 516" marker-end="url(#ar)"/>
+        <text class="edgelbl" x="890" y="200">inversión</text>
+        <text class="edgelbl" x="890" y="214">efectiva</text>
+
+        <!-- ROW 4 · ATENCIÓN -->
+        <text class="hd" x="30" y="443" style="fill:var(--c-ate)">ATENCIÓN · TICKET</text>
+        <rect class="box" x="30" y="455" width="210" height="64" rx="3"/>
+        <rect x="30" y="455" width="4" height="64" style="fill:var(--c-ate)"/>
+        <text class="lbl" x="48" y="481">Chat · WhatsApp · Correo</text>
+        <text class="sub" x="48" y="499">cualquier cliente</text>
+
+        <rect class="box" x="300" y="455" width="210" height="64" rx="3"/>
+        <rect x="300" y="455" width="4" height="64" style="fill:var(--c-ate)"/>
+        <text class="lbl" x="318" y="481">Ticket · Atención</text>
+        <text class="sub" x="318" y="499">tipos A · B · C · D</text>
+
+        <rect class="box" x="570" y="455" width="210" height="64" rx="3"/>
+        <rect x="570" y="455" width="4" height="64" style="fill:var(--c-une)"/>
+        <text class="lbl" x="588" y="481">Ticket · UNE</text>
+        <text class="sub" x="588" y="499">tipo E · 30 días hábiles</text>
+
+        <line class="edge" x1="240" y1="487" x2="294" y2="487" marker-end="url(#ar)"/>
+        <line class="edge" x1="510" y1="487" x2="564" y2="487" marker-end="url(#ar)"/>
+        <text class="edgelbl" x="537" y="479" text-anchor="middle">tipo E</text>
+        <text class="edgelbl" x="537" y="505" text-anchor="middle">ticket nuevo</text>
+      </svg>
+      <figcaption>Lo que hay que retener: la campaña la <b>origina</b> Solicitantes, la <b>fondean</b> Inversionistas y la <b>cobra</b> Cobranza. Una reclamación formal nunca comparte ticket con un caso de atención — genera uno nuevo en UNE, y ese no se reabre jamás.</figcaption>
+    </figure>
+  </section>
+
+  <!-- ================= 2 · FRONTERA DE CÁLCULO ================= -->
+  <section class="panel">
+    <div class="eyebrow">La regla que evita el 90 % de las confusiones</div>
+    <h2>Quién calcula y quién registra</h2>
+    <p class="lede">HubSpot no inventa ni un peso. Todo dato financiero llega ya calculado desde el Admin de Monific. Saberlo cambia qué haces cuando un número no cuadra.</p>
+
+    <figure class="scroller">
+      <svg viewBox="0 0 1000 330" role="img" aria-label="Diagrama de la frontera de cálculo: el Admin de Monific calcula montos, saldos, días de mora, calendario de pagos, estado de pago y nivel de registro, y los envía a HubSpot en tiempo real y por lotes nocturnos; HubSpot registra y orquesta etapas, asignaciones, tareas, comunicaciones, tiempos e historial; la única información que regresa a Monific es el identificador del proyecto.">
+        <defs>
+          <marker id="ar2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+            <path d="M 0 0 L 10 5 L 0 10 z" fill="var(--muted)"/>
+          </marker>
+        </defs>
+
+        <!-- left -->
+        <rect class="box" x="20" y="20" width="380" height="230" rx="3"/>
+        <rect x="20" y="20" width="380" height="4" style="fill:var(--c-inv)"/>
+        <text class="hd" x="42" y="52" style="fill:var(--c-inv)">ADMIN MONIFIC · CALCULA</text>
+        <text class="lbl" x="42" y="86">Montos, saldos y deuda</text>
+        <text class="lbl" x="42" y="112">Días de mora y estado de pago</text>
+        <text class="lbl" x="42" y="138">Calendario y tabla de cuotas</text>
+        <text class="lbl" x="42" y="164">Nivel de registro 1 a 4</text>
+        <text class="lbl" x="42" y="190">CLABE de la cuenta STP</text>
+        <text class="sub" x="42" y="222">Es la fuente de verdad de todo lo financiero.</text>
+
+        <!-- right -->
+        <rect class="box" x="600" y="20" width="380" height="230" rx="3"/>
+        <rect x="600" y="20" width="380" height="4" style="fill:var(--c-ate)"/>
+        <text class="hd" x="622" y="52" style="fill:var(--c-ate)">HUBSPOT · REGISTRA Y ORQUESTA</text>
+        <text class="lbl" x="622" y="86">Etapa del pipeline</text>
+        <text class="lbl" x="622" y="112">Asignación y rotación por turno</text>
+        <text class="lbl" x="622" y="138">Tareas y recordatorios</text>
+        <text class="lbl" x="622" y="164">Comunicaciones aprobadas</text>
+        <text class="lbl" x="622" y="190">Tiempos de respuesta e historial</text>
+        <text class="sub" x="622" y="222">Guarda, mueve y deja rastro. No calcula.</text>
+
+        <!-- flow -->
+        <line class="edge" x1="404" y1="110" x2="592" y2="110" marker-end="url(#ar2)"/>
+        <text class="edgelbl" x="498" y="98" text-anchor="middle">datos ya calculados</text>
+        <text class="edgelbl" x="498" y="130" text-anchor="middle">tiempo real + lote nocturno</text>
+
+        <line class="edge" x1="592" y1="180" x2="404" y2="180" stroke-dasharray="4 3" marker-end="url(#ar2)"/>
+        <text class="edgelbl" x="498" y="200" text-anchor="middle">solo el ID del proyecto</text>
+
+        <!-- bottom rule -->
+        <rect x="20" y="278" width="960" height="40" rx="3" style="fill:var(--c-cob-soft);stroke:var(--c-cob);stroke-width:1"/>
+        <text class="lbl" x="42" y="303" style="fill:var(--c-cob)">Si un monto no cuadra, se corrige en el Admin — nunca a mano en HubSpot: esta noche se sobrescribe.</text>
+      </svg>
+      <figcaption>Los saldos llegan de madrugada. Si el cliente depositó esta mañana, HubSpot todavía no lo muestra — <b>nunca le digas que no depositó porque no aparece</b>.</figcaption>
+    </figure>
+  </section>
+
+  <!-- ================= 3 · TIPOS DE TICKET ================= -->
+  <section class="panel">
+    <div class="eyebrow">Atención a cliente</div>
+    <h2>Qué tipo de ticket es</h2>
+    <p class="lede">Se decide durante la llamada, con el cliente esperando. De ahí dependen la ruta del caso y quién lo cierra. Baja por las preguntas en orden y para en la primera que sea sí.</p>
+
+    <figure class="scroller">
+      <svg viewBox="0 0 840 450" role="img" aria-label="Árbol de decisión para tipificar un ticket: si es reclamación formal con Formato UNE es tipo E; si no, si el cliente está molesto con Monific es tipo D; si no, si es un solicitante de financiamiento es tipo C; si no, si algo falla técnicamente es tipo A, y en cualquier otro caso es tipo B.">
+        <defs>
+          <marker id="ar3" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+            <path d="M 0 0 L 10 5 L 0 10 z" fill="var(--muted)"/>
+          </marker>
+        </defs>
+
+        <!-- Q1 -->
+        <rect class="box" x="20" y="20" width="420" height="52" rx="3"/>
+        <text class="lbl" x="40" y="51">¿Presenta reclamación formal, con el Formato UNE?</text>
+        <line class="edge" x1="444" y1="46" x2="592" y2="46" marker-end="url(#ar3)"/>
+        <text class="edgelbl" x="518" y="38" text-anchor="middle">SÍ</text>
+        <rect x="600" y="20" width="220" height="52" rx="3" style="fill:var(--c-une-soft);stroke:var(--c-une);stroke-width:1"/>
+        <text class="lbl" x="620" y="44" style="fill:var(--c-une)">Tipo E · Reclamación</text>
+        <text class="sub" x="620" y="61" style="fill:var(--c-une)">ticket aparte en UNE</text>
+        <line class="edge" x1="230" y1="76" x2="230" y2="116" marker-end="url(#ar3)"/>
+        <text class="edgelbl" x="240" y="100">NO</text>
+
+        <!-- Q2 -->
+        <rect class="box" x="20" y="122" width="420" height="52" rx="3"/>
+        <text class="lbl" x="40" y="153">¿Está molesto o inconforme con Monific?</text>
+        <line class="edge" x1="444" y1="148" x2="592" y2="148" marker-end="url(#ar3)"/>
+        <text class="edgelbl" x="518" y="140" text-anchor="middle">SÍ</text>
+        <rect x="600" y="122" width="220" height="52" rx="3" style="fill:var(--c-ate-soft);stroke:var(--c-ate);stroke-width:1"/>
+        <text class="lbl" x="620" y="146" style="fill:var(--c-ate)">Tipo D · Queja</text>
+        <text class="sub" x="620" y="163" style="fill:var(--c-ate)">cierra el Director Comercial</text>
+        <line class="edge" x1="230" y1="178" x2="230" y2="218" marker-end="url(#ar3)"/>
+        <text class="edgelbl" x="240" y="202">NO</text>
+
+        <!-- Q3 -->
+        <rect class="box" x="20" y="224" width="420" height="52" rx="3"/>
+        <text class="lbl" x="40" y="255">¿Es un solicitante de financiamiento?</text>
+        <line class="edge" x1="444" y1="250" x2="592" y2="250" marker-end="url(#ar3)"/>
+        <text class="edgelbl" x="518" y="242" text-anchor="middle">SÍ</text>
+        <rect x="600" y="224" width="220" height="52" rx="3" style="fill:var(--c-sol-soft);stroke:var(--c-sol);stroke-width:1"/>
+        <text class="lbl" x="620" y="248" style="fill:var(--c-sol)">Tipo C · Solicitante</text>
+        <text class="sub" x="620" y="265" style="fill:var(--c-sol)">se deriva al especialista</text>
+        <line class="edge" x1="230" y1="280" x2="230" y2="320" marker-end="url(#ar3)"/>
+        <text class="edgelbl" x="240" y="304">NO</text>
+
+        <!-- Q4 -->
+        <rect class="box" x="20" y="326" width="420" height="52" rx="3"/>
+        <text class="lbl" x="40" y="357">¿Algo falla técnicamente?</text>
+        <path class="edge" d="M 444 352 H 520 V 322 H 592" marker-end="url(#ar3)"/>
+        <text class="edgelbl" x="530" y="316">SÍ</text>
+        <rect x="600" y="296" width="220" height="52" rx="3" style="fill:var(--c-ate-soft);stroke:var(--c-ate);stroke-width:1"/>
+        <text class="lbl" x="620" y="320" style="fill:var(--c-ate)">Tipo A · Técnico</text>
+        <text class="sub" x="620" y="337" style="fill:var(--c-ate)">escala a TI, por Notion</text>
+
+        <path class="edge" d="M 444 352 H 520 V 400 H 592" marker-end="url(#ar3)"/>
+        <text class="edgelbl" x="530" y="394">NO</text>
+        <rect x="600" y="374" width="220" height="52" rx="3" style="fill:var(--c-ate-soft);stroke:var(--c-ate);stroke-width:1"/>
+        <text class="lbl" x="620" y="398" style="fill:var(--c-ate)">Tipo B · Información</text>
+        <text class="sub" x="620" y="415" style="fill:var(--c-ate)">lo resuelves tú</text>
+      </svg>
+      <figcaption>El error más caro está en la segunda pregunta: cuando hay una falla técnica <b>y</b> el cliente está molesto, el reflejo es marcarlo tipo A. Si está expresando inconformidad con Monific es <b>tipo D</b> — puedes escalar a TI en paralelo, pero la queja no se pierde.</figcaption>
+    </figure>
+  </section>
+
+  <!-- ================= 4 · LÍNEA DE COBRANZA ================= -->
+  <section class="panel">
+    <div class="eyebrow">Cobranza</div>
+    <h2>La semana antes del vencimiento</h2>
+    <p class="lede">El sistema avisa tres veces; a partir de T-5 el contacto es humano y es tuyo. El Día 0 tiene hora de corte y el Día 1 no tiene gracia.</p>
+
+    <figure class="scroller">
+      <svg viewBox="0 0 1000 250" role="img" aria-label="Línea de tiempo de cobranza preventiva: en T menos 10, T menos 7 y T menos 5 el sistema envía recordatorios automáticos; en T menos 5, T menos 3, T menos 2 y el Día 0 el asesor hace contacto manual, incluyendo obligados solidarios desde T menos 2; el Día 0 tiene hora límite de las 18:00 y el Día 1 es incumplimiento sin periodo de gracia.">
+        <defs>
+          <marker id="ar4" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+            <path d="M 0 0 L 10 5 L 0 10 z" fill="var(--muted)"/>
+          </marker>
+        </defs>
+
+        <text class="hd" x="30" y="28">SISTEMA · AUTOMÁTICO</text>
+        <text class="hd" x="30" y="212" style="fill:var(--c-cob)">TÚ · CONTACTO MANUAL</text>
+
+        <!-- axis -->
+        <line class="edge" x1="30" y1="120" x2="872" y2="120" marker-end="url(#ar4)"/>
+
+        <!-- ticks -->
+        <g>
+          <circle cx="90" cy="120" r="5" style="fill:var(--muted)"/>
+          <text class="lbl" x="90" y="150" text-anchor="middle">T-10</text>
+          <text class="sub" x="90" y="52" text-anchor="middle">correo</text>
+          <line class="edge" x1="90" y1="60" x2="90" y2="112"/>
+        </g>
+        <g>
+          <circle cx="220" cy="120" r="5" style="fill:var(--muted)"/>
+          <text class="lbl" x="220" y="150" text-anchor="middle">T-7</text>
+          <text class="sub" x="220" y="52" text-anchor="middle">correo</text>
+          <line class="edge" x1="220" y1="60" x2="220" y2="112"/>
+        </g>
+        <g>
+          <circle cx="360" cy="120" r="5" style="fill:var(--muted)"/>
+          <text class="lbl" x="360" y="150" text-anchor="middle">T-5</text>
+          <text class="sub" x="360" y="52" text-anchor="middle">correo + WhatsApp</text>
+          <line class="edge" x1="360" y1="60" x2="360" y2="112"/>
+        </g>
+
+        <!-- manual side -->
+        <g style="color:var(--c-cob)">
+          <circle cx="360" cy="120" r="5" style="fill:var(--c-cob)"/>
+          <line class="edge" x1="360" y1="128" x2="360" y2="168" style="stroke:var(--c-cob)"/>
+          <text class="sub" x="360" y="186" text-anchor="middle" style="fill:var(--c-cob)">1er contacto · 24 h</text>
+        </g>
+        <g>
+          <circle cx="500" cy="120" r="5" style="fill:var(--c-cob)"/>
+          <text class="lbl" x="500" y="150" text-anchor="middle" style="fill:var(--c-cob)">T-3</text>
+          <line class="edge" x1="500" y1="128" x2="500" y2="168" style="stroke:var(--c-cob)"/>
+          <text class="sub" x="500" y="186" text-anchor="middle" style="fill:var(--c-cob)">2º contacto · 24 h</text>
+        </g>
+        <g>
+          <circle cx="650" cy="120" r="5" style="fill:var(--c-cob)"/>
+          <text class="lbl" x="650" y="150" text-anchor="middle" style="fill:var(--c-cob)">T-2</text>
+          <line class="edge" x1="650" y1="128" x2="650" y2="168" style="stroke:var(--c-cob)"/>
+          <text class="sub" x="650" y="186" text-anchor="middle" style="fill:var(--c-cob)">12 h · + obligados</text>
+        </g>
+
+        <!-- day 0 -->
+        <g>
+          <rect x="748" y="104" width="104" height="32" rx="3" style="fill:var(--c-cob-soft);stroke:var(--c-cob);stroke-width:1.5"/>
+          <text class="lbl" x="800" y="125" text-anchor="middle" style="fill:var(--c-cob)">Día 0</text>
+          <line class="edge" x1="800" y1="140" x2="800" y2="168" style="stroke:var(--c-cob)"/>
+          <text class="sub" x="800" y="186" text-anchor="middle" style="fill:var(--c-cob)">corte 18:00 · 12 h</text>
+        </g>
+
+        <!-- day 1 -->
+        <g>
+          <rect x="880" y="98" width="82" height="44" rx="3" style="fill:var(--c-cob);stroke:var(--c-cob)"/>
+          <text x="921" y="117" text-anchor="middle" style="fill:var(--surface);font-family:var(--sans);font-size:13px;font-weight:600">Día 1</text>
+          <text x="921" y="133" text-anchor="middle" style="fill:var(--surface);font-family:var(--sans);font-size:10px">incumple</text>
+        </g>
+        <text class="sub" x="921" y="164" text-anchor="middle">sin gracia</text>
+      </svg>
+      <figcaption>Sin confirmación de pago registrada antes de las <b>18:00 del Día 0</b>, el sistema asume que no pagó. Si no logras contacto, <b>documenta el intento igual</b>: uno registrado cuenta, uno que solo tú recuerdas no.</figcaption>
+    </figure>
+  </section>
+
+  <!-- ================= 5 · OBJETOS ================= -->
+  <section class="panel">
+    <div class="eyebrow">Dónde vive cada cosa</div>
+    <h2>Los cuatro objetos</h2>
+    <p class="lede">La pregunta que resuelve casi todas las dudas: ¿esto es una persona, una organización, algo que avanza hacia una venta, o algo que hay que resolver?</p>
+    <div class="objs">
+      <div class="obj">
+        <h3>Contacto</h3>
+        <div class="ex">una persona</div>
+        <p>Inversionistas, solicitantes y representantes legales. La llave siempre es el correo. Una persona, un contacto, un solo rol.</p>
+      </div>
+      <div class="obj">
+        <h3>Empresa</h3>
+        <div class="ex">una organización</div>
+        <p>Solo desarrolladores. Si tratas con varias personas de la misma organización, las notas van aquí.</p>
+      </div>
+      <div class="obj">
+        <h3>Negocio</h3>
+        <div class="ex">avanza hacia una venta</div>
+        <p>El recorrido del solicitante, el acompañamiento del inversionista, y cada compra, venta o liquidación por separado.</p>
+      </div>
+      <div class="obj">
+        <h3>Ticket</h3>
+        <div class="ex">hay que resolverlo</div>
+        <p>Atención, Cobranza y UNE. Cobranza vive en tickets: uno por campaña fondeada, no uno por cuota.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= 6 · TIEMPOS ================= -->
+  <section class="panel">
+    <div class="eyebrow">Lo que te miden</div>
+    <h2>Los tiempos de cada rol</h2>
+    <table>
+      <thead>
+        <tr><th>Proceso</th><th>Momento</th><th>Compromiso</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><span class="rolecell"><span class="dot" style="background:var(--c-sol)"></span>Solicitantes</span></td>
+          <td>Primer contacto humano</td><td class="num">≤ 24 h hábiles</td>
+        </tr>
+        <tr>
+          <td></td><td>Validación PLD · Revisión legal</td><td class="num">≤ 48 h · ≤ 72 h</td>
+        </tr>
+        <tr>
+          <td></td><td>Proceso de firma ante notario</td><td class="num">15 días hábiles</td>
+        </tr>
+        <tr>
+          <td></td><td>Seguimiento del expediente</td><td class="num">días 2 · 3 · 7 · 15</td>
+        </tr>
+        <tr>
+          <td><span class="rolecell"><span class="dot" style="background:var(--c-inv)"></span>Inversionistas</span></td>
+          <td>Niveles 1 a 3</td><td class="num">≤ 24 h</td>
+        </tr>
+        <tr>
+          <td></td><td>Inversionista activo · VIP</td><td class="num">60 días · 30 días</td>
+        </tr>
+        <tr>
+          <td></td><td>Sin fondeo tras abrir cuenta</td><td class="num">se congela a los 15 días</td>
+        </tr>
+        <tr>
+          <td><span class="rolecell"><span class="dot" style="background:var(--c-cob)"></span>Cobranza</span></td>
+          <td>Contacto manual desde T-5</td><td class="num">≤ 24 h</td>
+        </tr>
+        <tr>
+          <td></td><td>T-2 y Día 0</td><td class="num">≤ 12 h · corte 18:00</td>
+        </tr>
+        <tr>
+          <td><span class="rolecell"><span class="dot" style="background:var(--c-ate)"></span>Atención</span></td>
+          <td>Primera respuesta</td><td class="num">&lt; 5 min</td>
+        </tr>
+        <tr>
+          <td></td><td>Seguimiento de ticket escalado a TI</td><td class="num">cada 8 h</td>
+        </tr>
+        <tr>
+          <td></td><td>Sin resolución de TI → escala</td><td class="num">48 h</td>
+        </tr>
+        <tr>
+          <td><span class="rolecell"><span class="dot" style="background:var(--c-une)"></span>UNE</span></td>
+          <td>Dictamen · compromiso interno</td><td class="num">10 días</td>
+        </tr>
+        <tr>
+          <td></td><td>Plazo regulatorio</td><td class="num">30 días hábiles</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- ================= 7 · REGLAS ================= -->
+  <section class="panel">
+    <div class="eyebrow">Si solo te acuerdas de una parte de esta hoja</div>
+    <h2>Las diez reglas</h2>
+    <ol class="reglas">
+      <li><div><b>Busca por correo antes de crear.</b><span>Por nombre creas duplicados.</span></div></li>
+      <li><div><b>Casi nadie crea contactos a mano.</b><span>Si falta uno, es un aviso, no una tarea.</span></div></li>
+      <li><div><b>El Admin calcula, HubSpot registra.</b><span>Si no cuadra, la respuesta está en el Admin.</span></div></li>
+      <li><div><b>Los saldos son del corte de la madrugada.</b><span>Un depósito de hoy todavía no se ve.</span></div></li>
+      <li><div><b>Si no lo registras, no existe.</b><span>WhatsApp y llamadas propias no se registran solas.</span></div></li>
+      <li><div><b>El tipo de ticket se captura hablando.</b><span>No al cerrar: define la ruta del caso.</span></div></li>
+      <li><div><b>Una persona, un contacto, un rol.</b><span>O inversionista o representante legal, nunca ambos.</span></div></li>
+      <li><div><b>Una reclamación formal va aparte.</b><span>Ticket propio en UNE, y no se reabre nunca.</span></div></li>
+      <li><div><b>Refinanciar no es ajustar plazos.</b><span>Se cierra un ticket y nace otro. Igual la reinversión.</span></div></li>
+      <li><div><b>Nunca silencio.</b><span>Se responde primero y se profundiza después.</span></div></li>
+    </ol>
+  </section>
+
+  <footer class="foot">
+    <span>Guía de HubSpot para el equipo Monific · Portal 48427391</span>
+    <span>Agosto 2026</span>
+  </footer>
+
+</div>
+
+</body>
+</html>

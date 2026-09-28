@@ -1,0 +1,1320 @@
+=== ID: D195 ===
+=== SOURCE: Wiki Monific\drive-download-20260807T144151Z-1-001\Entregables pendientes del 26 de enero.docx ===
+=== MODIFIED: 2026-08-07 ===
+
+📃 Lista de tareas
+Tarea del 26 de enero
+Link de minuta: Lunes 26 enero 2026
+Tareas
+Diseñar el árbol de decisiones llegada del solicitante
+Documento con las preguntas clave del nuevo formulario y qué pasa según cada respuesta.
+SLAs para este proceso.
+
+Propuesta final de flujo de cobranza
+Documento con los pasos a seguir según cada tipo de proyecto + estatus.
+SLAs para este proceso.
+
+Definir SLAs y escalamientos del proceso de inversionistas
+
+Definir métricas del rol “Atención a solicitante”
+% expedientes que completan documentación
+Cero olvidos en cobranza (recordatorios enviados)
+Seguimiento activo a áreas internas
+NO medirlo por “cierres”, porque el problema hoy es el proceso, no la persona.
+
+1️⃣ Formulario nuevo de solicitantes
+Construcción formulario nuevo de solicitantes
+HubSpot no va a leer Drive.
+Drive solo guarda documentos.
+Las decisiones se toman en HubSpot con propiedades, no con archivos.
+Por eso se hace esta propuesta:
+1. Formulario HubSpot (nuevo)
+↓
+Responde SÍ - Enviar mail automático
+↓
+Árbol de decisiones después del mail
+↓
+┌─ No responde → Pausa
+├─ Quiere link → Drive
+├─ Llamada no-show → Pausa
+├─ Dudas → Espera
+└─ Más adelante → Pausa
+↓
+Cargando documentos a drive
+↓
+(Formulario puente)
+↓
+Revisión humana
+↓
+HubSpot automatiza
+↓
+┌─ Si estado de documentación→ Completa
+├─ Si estado de documentación→  Parcial
+└─ Si estado de documentación → No viable
+
+PASO 1 · FORMULARIO PRINCIPAL (HUBSPOT)
+El usuario llena un formulario en HubSpot.
+Ese formulario tiene una pregunta clave:
+“¿Cuentas con un inmueble que pueda quedar como garantía?”
+Según la respuesta:
+Sí → se marca como Solicitante potencial
+No → se manda al flujo de inversionistas (fuera de este proceso)
+En automático, HubSpot hace esto:
+Pipeline: Solicitantes
+Etapa: Pre-evaluación iniciada
+Propiedad Estado de documentación = Pendiente
+
+Inspo visual:
+
+Contenido del Formulario
+Lado izquierdo:
+Formulario para preautorizar
+Hasta $60 MDP por el valor de tu inmueble
+Califica para obtener un financiamiento en Monific. Más de 8 años otorgando financiamientos y ayudando a nuestros clientes a alcanzar sus metas.
+Obtén un financiamiento con garantía inmobiliaria por hasta 50% del valor de tu casa, departamento, oficina, local o terreno.
+Obtén liquidez para:
+✔ Unificar tus deudas
+✔ Capital de trabajo
+✔ Aprovechar oportunidades para tu negocio
+✔ Hacer realidad proyecto que tienes en mente
+
+Lado derecho:
+Datos personales
+Nombre completo *
+Teléfono *
+Correo electrónico *
+Sobre el financiamiento
+¿Cuánto necesitas? *
+Puedes obtener hasta $60,000,000*
+¿QuéQue uso le darás al financiamiento? *
+Reestructuración de pasivos
+Liquidez
+Desarrollo / construcción
+Compra de otro inmueble
+Remodelación
+Capital de trabajo inmobiliario
+Otro (especificar)
+Sobre la garantía
+Para poder acceder a un financiamiento con Monific, deberás contar con un inmueble que pueda quedar como garantía.
+¿Cuentas con un inmueble que podría quedar en garantía? *
+Sí
+No
+Disclaimer abajo:
+Este formulario tiene fines exclusivamente informativos y de pre-evaluación.
+No constituye una aprobación automática ni una obligación de otorgar financiamiento.
+Cualquier avance estará sujeto a la entrega completa de información y al resultado del análisis técnico, legal, financiero y de riesgo conforme a los criterios de Monific.
+
+PASO 2 · ENVÍO DE CORREO POST FORMULARIO (AUTOMÁTICO)
+Al enviar el formulario, HubSpot manda un correo automático:
+Confirma recepción
+Explica el modelo
+Da dos opciones:
+Pedir link para subir documentos
+Agendar llamada
+Aquí no se manda Drive todavía.
+Automatización
+Email 1: “Recibimos tu solicitud”
+Se explica el proceso
+CTA:
+Solicitar link de evaluación detallada
+o agendar llamada
+Acción humana (cuando pide link)
+Guillermo:
+Crea carpeta Drive
+Genera link
+Envía Email 2 con link
+Email 1 – “Recibimos tu solicitud”
+Asunto: Recibimos tu solicitud de financiamiento con garantía inmobiliaria
+Cuerpo:
+Hola {{Nombre}},
+Recibimos tu solicitud para evaluar un posible financiamiento con Monific.
+Gracias por tu interés; nos da mucho gusto saber que estás considerando esta opción.
+Para que tengas una visión clara de cómo funciona nuestro modelo y qué puedes esperar del proceso, te compartimos dos recursos breves y útiles:
+▶️ Video corto: cómo funciona el financiamiento en Monific
+https://youtu.be/Tg2QiptpSCM?si=-sIiGglo7kCKuH-o
+📘 Media kit para solicitantes: proceso, criterios y estructura
+👉 Ver media kit
+En Monific conectamos inversionistas con personas o empresas que buscan capital respaldado por inmuebles, bajo un esquema estructurado, transparente y responsable.
+Por eso, antes de avanzar, necesitamos entender mejor tu caso para poder darte una respuesta clara y bien fundamentada.
+¿Qué sigue?
+Si deseas avanzar de forma más ágil, puedes completar una evaluación más detallada a través de un link personalizado, donde podrás compartir información clave de tu proyecto de manera segura.
+Con esa información podremos:
+Validar si tu proyecto es viable
+Definir montos y una posible estructura
+Confirmarte con claridad si podemos avanzar
+👉 Solicitar link de evaluación detallada (le tiene que responder a Guillermo con una tarea para crear link)
+Si prefieres resolver primero algunas dudas o explicarnos tu caso, también puedes agendar una llamada directamente desde mi calendario:
+👉 Agendar llamada (le tiene que abrir el calendario de  Guillermo al potencial solicitante)
+Gracias nuevamente por tu interés en Monific.
+Quedamos a tu disposición para cualquier consulta.
+Saludos cordiales,
+Equipo Monific
+
+ÁRBOL DE DECISIONES
+Desde Email 1 hasta Formulario 2
+
+PUNTO DE PARTIDA
+Evento: El solicitante envía el Formulario 1 (HubSpot)
+Sistema hace automáticamente:
+Pipeline: Solicitantes
+Etapa: Pre-evaluación iniciada
+Estado documentación: Pendiente
+Email 1 – “Recibimos tu solicitud” (automático)
+→ Aquí se abren TODOS los escenarios.
+ESCENARIO 1 · NO RESPONDE NADA
+Día 0
+Email 1 enviado
+(No pasa nada más)
+
+Día 3 · RECORDATORIO 1 (automático)
+Hola {{Nombre}},
+Vimos que completaste el formulario inicial para evaluar un financiamiento con garantía inmobiliaria en Monific.
+Si deseas avanzar al siguiente paso y que podamos revisar tu caso con mayor detalle, solo responde este correo y con gusto te compartimos el link para continuar.
+Quedamos atentos.
+Saludos,
+Equipo Monific
+
+Día 6 · RECORDATORIO 2(automático)
+Hola {{Nombre}},
+Por ahora dejaremos tu solicitud en pausa, ya que no recibimos respuesta para continuar con el proceso.
+Si en cualquier momento deseas retomarla, solo responde este correo y con gusto seguimos desde donde lo dejamos.
+Saludos,
+Equipo Monific
+Estado interno:
+Etapa: En pausa por falta de acción
+
+ESCENARIO 2 · RESPONDE “QUIERO EL LINK”
+Día 0–2
+El solicitante responde el Email 1 o da clic en CTA
+Acción interna (manual)
+Guillermo:
+crea carpeta Drive
+genera link
+manda Email 2
+Email 2 – envío de link (manual con plantilla)
+Aquí el flujo pasa a “esperando Formulario 2”
+(fin de este árbol)
+Email 2 - Plantilla
+Uso: Guillermo copia el link y pega en el correo antes de enviarlo.
+
+Asunto: Siguiente paso: evaluación detallada de tu proyecto
+Cuerpo:
+Hola {{Nombre}},
+Estamos listos para conocer más de tu proyecto y avanzar juntos.
+¿Qué sigue?
+Tal como lo comentamos, te comparto el link personalizado para que puedas completar la evaluación detallada de tu proyecto:
+👉 Acceder a evaluación detallada
+{{PEGAR_LINK}}
+Ese link es exclusivo para ti y en él encontrarás todo lo que necesitamos en un solo lugar.
+No hay pierde:
+Abres tu link personalizado.
+Revisas el checklist de requisitos.
+Vas cargando los documentos uno por uno de forma segura.
+Si necesitas que también le mandemos el link a alguien de tu equipo, solo dinos.
+Si tienes cualquier duda durante el proceso, puedes responder directamente este correo.
+Saludos,
+Equipo Monific
+
+ESCENARIO 3 · AGENDA LLAMADA, PERO NO CONTESTA
+Día 0–2
+Agenda llamada desde calendario
+Día de la llamada
+❌ No contesta
+
+Día +1 · FOLLOW-UP POST NO-SHOW (automático)
+Hola {{Nombre}},
+Intentamos contactarte en el horario agendado para revisar tu solicitud, pero no logramos coincidir.
+Si deseas continuar, puedes:
+Reagendar tu llamada aquí 👉 {{link_calendario}}
+O responder este correo para enviarte directamente el link de evaluación.
+Quedamos atentos.
+Saludos,
+Equipo Monific
+
+Día +4 · CIERRE (automático)
+Hola {{Nombre}},
+Por ahora dejaremos tu solicitud en pausa, ya que no hemos logrado coincidir para continuar con el proceso.
+No te preocupes:
+si en cualquier momento deseas retomarla, solo responde este correo y con gusto continuamos desde donde lo dejamos.
+Gracias por tu interés en Monific.
+Saludos cordiales,
+Equipo Monific
+
+ESCENARIO 4 · RESPONDE CON DUDAS, NO PIDE LINK
+Día 0–2
+Responde Email 1 con preguntas tipo:
+tasas
+plazos
+“quiero entender mejor”
+Acción
+❌ No Drive
+❌ No Formulario 2
+✔ Respuesta humana (Guillermo)
+📩 Respuesta humana tipo (guía, no automática):
+Gracias por tu mensaje, {{Nombre}}.
+Con gusto te aclaramos las dudas.
+Para poder darte una respuesta concreta sobre montos y estructura, el siguiente paso es revisar información básica de tu proyecto.
+Si te parece bien, te compartimos el link para continuar.
+
+Si NO responde después de eso
+Se aplica ESCENARIO 1 (recordatorios Día 3 y Día 6).
+
+ESCENARIO 5 · RESPONDE “AHORITA NO / MÁS ADELANTE”
+Día 0–2
+Responde algo como:
+“Luego lo veo”
+“Más adelante”
+Respuesta automática o manual corta
+Hola {{Nombre}},
+Perfecto, no hay problema.
+Dejaremos tu solicitud en pausa por el momento.
+Cuando desees retomarla, solo responde este correo y con gusto continuamos.
+Saludos,
+Equipo Monific
+Estado interno:
+En pausa voluntaria
+❌ No seguimiento activo
+
+PASO 3 · CARGA EN DRIVE (ZONA NEUTRA)
+Aqu:
+El solicitante sube documentos en Drive
+HubSpot no se entera
+
+PASO 4 · FORMULARIO PUENTE
+Dentro de la carpeta de drive de cada solicitante, agregar un documento con el link al formulario puente que diga:
+“Cuando hayas terminado de cargar tu documentación, confírmanos aquí 👇”
+Formulario HubSpot: Confirmación de carga
+Campos mínimos:
+Nombre (autorrelleno)
+Correo (autorrelleno)
+Checkbox:
+“Confirmo que ya cargué toda la documentación solicitada”
+Efecto
+Confirmación de carga (solicitante) = Sí
+Esto sí lo ve HubSpot.
+No valida documentos, solo dispara el siguiente paso.
+
+PASO 5 · CHECKPOINT HUMANO
+Guillermo revisa la carpeta de Drive.
+No manda correos.
+No cambia pipeline.
+Solo actualiza UNA propiedad en HubSpot:
+Estado de documentación:
+Completa
+Parcial
+No viable
+
+PASO 6 · AUTOMATIZACIONES SEGÚN ESTADO
+Si Estado de documentación = Completa
+Cambio de etapa:
+Pipeline: Solicitantes
+Etapa: Evaluación aprobada
+Se dispara:
+Email 3 “Avanzamos con tu solicitud” con carta anexa.
+Cadencia de contacto humano
+Una vez aprobado el proyecto, se activa automáticamente el proceso para cerrar condiciones y escalar a campaña:
+Confirmación de monto, tasa y plazo vía correo de aceptación simple o formulario digital.
+
+Validación legal final sobre vigencia documental y estructura jurídica.
+
+Transición formal a campaña: se actualiza el pipeline y se generan tareas automáticas a los equipos de marketing y legal.
+Carta institucional generada automáticamente:
+Incluye: monto aprobado, tasa, plazo, tipo de instrumento, condiciones sujetas y pasos siguientes.
+Se envía al solicitante como PDF en formato oficial, firmado digitalmente.
+01  - Carta Solicitantes Aprobados
+Email 3 — automático inmediato
+Hola {{Nombre}},
+Gracias por compartir la información de tu proyecto.
+Con la documentación que nos enviaste, tu solicitud puede avanzar a la siguiente etapa del proceso.
+Nuestro equipo validó que, en principio, la estructura es viable para continuar.
+En breve, un ejecutivo de Monific se pondrá en contacto contigo para explicarte los siguientes pasos, resolver dudas y acompañarte en el proceso.
+Si por ahora prefieres avanzar más adelante, no hay problema: solo respóndenos y lo coordinamos.
+Saludos cordiales,
+Equipo Monific
+
+Cadencia de contacto humano (guideline)
+Día 0–1 | WhatsApp personalizado
+Hola {{Nombre}}, buen día.
+Te escribe {{Nombre del ejecutivo}} de Monific.
+Ya revisamos tu información y quería platicarte los siguientes pasos con calma.
+¿Hay algún horario que te quede bien?
+Día 0–1 | Llamada
+1 intento.
+Si no contesta, no insistir el mismo día.
+Día 2 | Email breve (auto o manual)
+Asunto: Seguimiento a tu solicitud
+Hola {{Nombre}},
+Queríamos confirmar que recibiste nuestra actualización y ponernos a tu disposición para avanzar cuando te sea conveniente.
+Saludos,
+Equipo Monific
+Día 3 | WhatsApp corto
+Hola {{Nombre}}, te escribimos de Monific para dar seguimiento a tu solicitud.
+¿Hay buen momento para platicar o lo vemos más adelante?
+Día 4–5 | Email de pausa (automático)
+Hola {{Nombre}},
+Por ahora dejaremos tu solicitud en pausa, ya que no hemos logrado coincidir para continuar.
+Cuando desees retomarla, solo responde este correo y con gusto seguimos desde donde lo dejamos.
+Saludos,
+Equipo Monific.
+
+Si Estado de documentación = Parcial
+Email automático:
+“Nos falta información para continuar”
+Estado se mantiene
+Sin llamadas hasta que complete
+Objetivo: pedir lo faltante sin presión ni llamadas.
+Sistema (inmediato)
+Etapa: se mantiene
+Dispara: Email automático de información faltante
+El expediente es pausado y queda en estatus de observación. El objetivo es brindar claridad al solicitante sobre qué falta para avanzar.
+Proceso automatizado:
+Se genera y envía una Carta de Observación con bullets seleccionables según el expediente:
+
+Documentos faltantes.
+Proyección financiera no sustentada.
+Garantía no estructurada legalmente.
+Inconsistencias en titularidad o contratos.
+Otros motivos específicos.
+
+Se asignan tareas con fecha límite de respuesta (por default 5 días hábiles).
+Una vez respondido, se activa el workflow de reevaluación con opción a aprobación directa o reenvío a comité.
+La carta generada incluye:
+Detalle de observaciones.
+Fecha límite de respuesta.
+Medio oficial de reaplicación.
+Nombre del ejecutivo responsable.
+Se guarda en carta_observacion_link para trazabilidad.
+02 - Carta Solicitantes con Observaciones
+Email — automático
+Hola {{Nombre}},
+Gracias por compartir tu información.
+Para poder continuar con la evaluación de tu proyecto, nos falta completar algunos elementos de la documentación.
+Te invitamos a revisar el checklist y cargar lo pendiente en el mismo enlace que ya tienes.
+Cuando termines, por favor confírmanos la carga desde el formulario de confirmación para poder retomar la revisión.
+Quedamos atentos.
+Saludos,
+Equipo Monific
+
+Si Estado de documentación = No viable
+Cambio de estado:
+Pipeline: Solicitantes · Descartado
+Email neutro (si aplica)
+Cierre limpio
+Objetivo: cierre limpio, sin debate ni fricción reputacional.
+Sistema (inmediato)
+Pipeline: Solicitantes · Descartado
+Dispara: email neutro solo si compliance lo exige
+El expediente se cierra formalmente y se comunica con carta institucional de no aprobación. Esta carta se selecciona entre cuatro plantillas ya desarrolladas:
+Documentación pendiente.
+Proyección financiera no aprobada.
+Requisitos de deuda y riesgo.
+Valuación / aforo insuficiente.
+Proceso automatizado:
+El analista selecciona el motivo de rechazo en HubSpot (motivo_rechazo).
+El sistema genera la carta correspondiente (Word editable con campos dinámicos).
+Se exporta a PDF y se envía por correo automáticamente.
+Se guarda en el CRM como carta_rechazo_link.
+Contenido obligatorio:
+Motivo claro en bullets.
+Enlace institucional para reaplicación.
+Tiempos de “cooldown” antes de reingreso.
+Firma oficial del Comité o Riesgo.
+
+Ubicación de plantillas: 03- Cartas Solicitantes Rechazados
+Email neutro (opcional)
+Hola {{Nombre}},
+Gracias por compartir la información de tu proyecto.
+Después de revisar la documentación, en este momento no es posible avanzar con la estructura planteada conforme a nuestros criterios internos.
+Agradecemos tu interés en Monific.
+Si en el futuro tu situación cambia o deseas explorar otras alternativas, puedes volver a contactarnos.
+Saludos cordiales,
+Equipo Monific
+
+❗ SLA, GUIDELINES, CADENCIAS Y ESCALAMIENTOS
+SLA, GUIDELINES, CADENCIAS Y ESCALAMIENTOS
+Proceso de solicitantes – Monific
+
+PRINCIPIOS OPERATIVOS
+El solicitante nunca empuja el proceso → lo empuja Monific.
+El SLA no es promesa al cliente, es compromiso interno.
+Todo incumplimiento genera señal, no “se compensa después”.
+
+1. SLA · LEAD RECIBIDO → PRIMER CONTACTO
+Etapa
+ | Evento disparador
+ | Tiempo objetivo
+ | Responsable
+ | Canal
+ | Si NO se cumple
+ |
+Lead recibido
+ | Formulario 1 enviado
+ | Inmediato
+ | Sistema
+ | Email auto
+ | —
+ |
+Primer contacto humano
+ | Lead pide link o agenda llamada
+ | ≤ 24 h hábiles
+ | Atención solicitantes (Guillermo)
+ | Email / WhatsApp / Llamada
+ | Escala a Ops
+ |
+No respuesta del lead
+ | Email 1 enviado
+ | Día 3
+ | Sistema
+ | Email auto
+ | —
+ |
+Cierre por inacción
+ | Sin respuesta
+ | Día 6
+ | Sistema
+ | Email pausa
+ | Se congela lead
+ |
+Escalamiento
+>24 h sin contacto humano cuando el lead sí pidió link
+→ alerta a Ops / Head of Operations (Raquel Alfie)
+Reincidencia (>2 veces/mes)
+→ se documenta como incumplimiento operativo
+
+2. SLA · DOCUMENTACIÓN COMPLETA → ANÁLISIS (PLD / LEGAL )
+Subetapa
+ | Tiempo objetivo
+ | Responsable
+ | Qué se revisa
+ | Si NO se cumple
+ |
+Validación PLD
+ | ≤ 48 h hábiles
+ | Compliance / PLD
+ | Listas, alertas, perfil
+ | Escala a Ops
+ |
+Revisión legal
+ | ≤ 72 h hábiles
+ | Legal
+ | Propiedad, titularidad, estructura
+ | Escala a Ops
+ |
+Nota: Que la revisión financiera no se encuentre en el proceso, no significa que no se hace, simplemente y por indicaciones de Ted se puede avanzar con las primeras dos revisiones
+
+3. SLA · ANÁLISIS TERMINADO → RESPUESTA AL SOLICITANTE
+Evento
+ | Tiempo objetivo
+ | Responsable
+ | Comunicación
+ | Si NO se cumple
+ |
+Análisis completo
+ | Día 0
+ | Ops
+ | —
+ | —
+ |
+Respuesta al solicitante
+ | ≤ 24 h hábiles
+ | Atención solicitantes
+ | Email automático o humano
+ | Escala a Ops
+ |
+Tipos de respuesta
+Viable → Email “Avanzamos con tu solicitud”
+Estructura especial → Email educativo + revisión adicional
+No viable → Email neutro + cierre limpio
+
+4. CADENCIAS OPERATIVAS (GUIDELINES)
+Contacto humano (solo cuando aplica)
+Máx. 2 intentos activos
+Máx. 1 llamada por día
+WhatsApp solo informativo, no insistente
+Email de pausa = stop total
+Automatizaciones
+Recordatorios solo antes de análisis
+Nunca durante análisis legal/financiero
+Nunca después de pausa
+
+5. ESCALAMIENTOS (QUIÉN EMPUJA A QUIÉN)
+Escalamiento a LEGAL
+Responsable: Ops
+Cuándo:
+Docs completos confirmados
+Lead estratégico o monto relevante
+Riesgo de cuello de botella
+Análisis > 5 días hábiles
+Caso borderline (riesgo / reputación)
+Monto alto o estructura atípica
+Conflicto entre áreas
+Legal / Finanzas no se autoasignan casos.
+
+ALERTA ROJA
+Cualquiera de estas:
+Lead con docs completos sin respuesta > 72 h
+Incumplimiento de SLA 2 veces en el mes
+Solicitud viable “congelada” sin razón
+Comunicación contradictoria al solicitante
+Riesgo PLD sin resolución clara
+Acción:
+Caso se congela
+Dirección decide
+Se documenta incidente
+
+6. KPI PARA CONTROL
+% leads con primer contacto < 24 h
+Tiempo promedio docs completos → respuesta
+% solicitudes en pausa
+% SLA incumplidos por área
+Tiempo promedio por etapa
+
+📁 Estructura de carpeta de Drive
+Estructura de carpeta de Drive por tipo de Persona:
+
+Carpeta Persona física
+Carpeta 01. Proyecto
+
+07 - Brochure
+06 - Materiales gráficos
+05 - Boleta de agua
+04 - Boleta predial
+03 - Avalúo
+02 - Certificado de libertad de gravamen
+01 - Título de propiedad
+
+Carpeta 02. Persona física garante
+01 - Identificación oficial
+02 - CURP
+03 - Comprobante de certificado digital
+04 - Constancia de situación fiscal
+05 - Comprobante de domicilio
+06 - Opinión de cumplimiento
+07 - Estado de cuenta bancario
+99 - Reporte historial crediticio
+99 - Cuestionario persona física.xlsx
+
+Datos de identificación
+ |
+
+ |
+Apellido paterno
+ |
+Apellido materno
+ |
+Nombre(s) sin abreviaturas
+ |
+Género
+ |
+Fecha de nacimiento
+ |
+Entidad federativa de nacimiento
+ |
+País de nacimiento
+ |
+Nacionalidad
+ |
+Clave de elector
+ |
+Ocupación
+ |
+CURP
+ |
+Número de teléfono
+ |
+Correo electrónico
+ |
+Número de serie de la Firma Electrónica Avanzada
+ |
+
+ |
+Domicilio
+ |
+
+ |
+Calle o avenida
+ |
+Número exterior
+ |
+Número interior
+ |
+Colonia
+ |
+Alcaldía o municipio
+ |
+Ciudad
+ |
+Entidad federativa
+ |
+Código postal
+ |
+País
+ |
+
+ |
+Datos bancarios
+ |
+
+ |
+Banco
+ |
+Número de cuenta
+ |
+Clabe interbancaria
+ |
+
+Carpeta 03. Persona física obligado solidario
+01 - Identificación oficial
+02 - CURP
+03 - Comprobante de certificado digital
+04 - Constancia de situación fiscal
+05 - Comprobante de domicilio
+06 - Opinión de cumplimiento
+07 - Estado de cuenta bancario
+99 - Cuestionario persona física.xlsx
+
+Carpeta Persona Moral
+Carpeta 01. Proyecto
+
+07 - Brochure
+06 - Materiales gráficos
+05 - Boleta de agua
+04 - Boleta predial
+03 - Avalúo
+02 - Certificado de libertad de gravamen
+01 - Título de propiedad
+
+Carpeta 02. Persona moral
+01 - Acta constitutiva
+02 - Asamblea más reciente
+03 - Poder notarial
+04 - Comprobante de certificado digital
+05 - Constancia de situación fiscal
+06 - Comprobante de domicilio
+07 - Opinión de cumplimiento
+08 - Estado de cuenta bancario
+09 - Organigrama
+99 - Cuestionario persona moral.xls
+
+Datos de identificación
+ |
+
+ |
+Denominación o razón social
+ |
+Giro mercantil, actividad u objeto social
+ |
+Nacionalidad
+ |
+Registro Federal de Contribuyentes
+ |
+Número de serie de Firma Electrónica Avanzada
+ |
+Número de teléfono
+ |
+Correo electrónico
+ |
+Fecha de constitución
+ |
+
+ |
+Domicilio
+ |
+
+ |
+Calle o avenida
+ |
+Número exterior
+ |
+Número interior
+ |
+Colonia
+ |
+Alcaldía o municipio
+ |
+Ciudad
+ |
+Entidad federativa
+ |
+Código postal
+ |
+País
+ |
+
+ |
+Datos bancarios
+ |
+
+ |
+Banco
+ |
+Número de cuenta
+ |
+Clabe interbancaria
+ |
+
+2️⃣ Flujo de Cobranza
+Flujo de Cobranza
+Aplica a TODOS los proyectos fondeados (RF y RV), con diferencias claras por tipo.
+INICIO DEL PERIODO
+↓
+Identificar tipo de proyecto
+↓
+┌─ Rendimiento Fijo
+│     ↓
+│     Calendario fijo (monto + fecha definidos)
+│
+└─ Rendimiento Variable
+      ↓
+      Recordatorio de pago + entrega de reporte
+↓
+================================================
+COBRANZA PREVENTIVA (RENDIMIENTOS)
+================================================
+↓
+Sistema (HubSpot)
+↓
+T-10  Recordatorio automático → SOLICITANTE
+↓
+T-7   Recordatorio automático → SOLICITANTE
+↓
+T-5   Recordatorio automático → SOLICITANTE
+↓
+¿Pago registrado?
+├─ Sí → CICLO CUMPLIDO → SE REINICIA SIGUIENTE PERIODO
+└─ No
+    ↓
+    Alerta automática a Guillermo
+    ↓
+    T-5  Guillermo manual → SOLICITANTE
+    ↓
+    T-3  Guillermo manual → SOLICITANTE
+    ↓
+    T-2  Guillermo manual → SOLICITANTE
+         + COPIA A OBLIGADOS SOLIDARIOS
+    ↓
+    Día 0 Guillermo manual → SOLICITANTE
+         + COPIA A OBLIGADOS SOLIDARIOS
+    ↓
+    ¿Pago recibido en fecha límite efectiva?
+    ├─ Sí → CICLO CUMPLIDO → SE REINICIA
+    └─ No
+        ↓
+        ¿Fecha límite fue inhábil?
+        ├─ Sí
+        │     ↓
+        │     Esperar siguiente día hábil
+        │     ↓
+        │     ¿Pago recibido?
+        │     ├─ Sí → CICLO CUMPLIDO
+        │     └─ No → EVENTO DE INCUMPLIMIENTO (DÍA 1)
+        └─ No → EVENTO DE INCUMPLIMIENTO (DÍA 1)
+↓
+================================================
+EVENTO DE INCUMPLIMIENTO (DÍA 1)
+================================================
+↓
+HubSpot detecta NO PAGO
+↓
+¿Proyecto SOLID? (Aforo ≥ 1.5 : 1 + Garantía Real)
+├─ Sí
+│     ↓
+│     🔨 APLICAR AUTOMÁTICAMENTE:
+│        - Comisión por Pago Tardío 15% + IVA
+│        - Inicio de Interés Moratorio (38% anual)
+│     ↓
+│     Notificación formal:
+│     SOLICITANTE + OBLIGADOS SOLIDARIOS
+│
+└─ No
+      ↓
+      Gestión de cobranza estándar
+↓
+Clasificar tipo de incumplimiento
+↓
+┌─ Incumplimiento de Rendimientos
+│     ↓
+│     ¿Existe garantía?
+│     ├─ Sí
+│     │     ↓
+│     │     Ted toma control del caso
+│     │     ↓
+│     │     Emiliano + Vian validan garantía
+│     │     ↓
+│     │     ¿Garantía líquida / reserva?
+│     │     ├─ Sí
+│     │     │     ↓
+│     │     │     Uso de reserva para cubrir rendimiento
+│     │     │     ↓
+│     │     │     Solicitud de reposición inmediata
+│     │     │     ↓
+│     │     │     Bloqueo del solicitante para nuevas campañas
+│     │     │
+│     │     └─ No
+│     │           ↓
+│     │           Continuar causación de moratorios
+│     │           ↓
+│     │           Preparar expediente legal
+│     │           ↓
+│     │           Ejecución de garantía
+│     │
+│     └─ No
+│           ↓
+│           Gestión directa / negociación
+│           ↓
+│           ¿Se regulariza?
+│           ├─ Sí → REGRESA A CICLO NORMAL
+│           └─ No → Reestructura / salida
+│
+└─ Incumplimiento de Capital
+      ↓
+      ¿Estamos ≥ 90 días antes del vencimiento?
+      ├─ Sí
+      │     ↓
+      │     Revaluación automática de aforo
+      │     ↓
+      │     ¿Aforo ≥ 1.5 : 1?
+      │     ├─ Sí
+      │     │     ↓
+      │     │     Solicitar confirmación de fuente de repago
+      │     │     ↓
+      │     │     ¿Fuente consolidada?
+      │     │     ├─ Sí → Esperar vencimiento
+      │     │     └─ No → Solicitar refinanciamiento
+      │     │
+      │     └─ No
+      │           ↓
+      │           Exigir refuerzo de garantía o prepago parcial
+      │           ↓
+      │           ¿Se cumple?
+      │           ├─ Sí → Operación continúa
+      │           └─ No → MARGEN LIMPIO PARA EJECUTAR GARANTÍA
+      │
+      └─ No (ya vencido)
+            ↓
+            INCUMPLIMIENTO DE CAPITAL
+            ↓
+            ¿Existe garantía?
+            ├─ Sí → EJECUCIÓN DE GARANTÍA
+            └─ No → ESTRATEGIA DE RECUPERACIÓN
+↓
+================================================
+COMUNICACIÓN A INVERSIONISTAS (RAQUEL)
+================================================
+↓
+¿Hubo activación de garantía líquida?
+├─ Sí
+│     ↓
+│     Mensaje:
+│     “Hubo un retraso operativo.
+│      Se activó la garantía líquida.
+│      Tu rendimiento se pagará puntualmente.”
+│
+└─ No
+      ↓
+      Mensaje:
+      “Se activó el proceso de cobranza
+       con respaldo patrimonial.
+       El crédito cuenta con aforo ≥ 1.5 : 1.”
+↓
+FIN DEL FLUJO
+
+PASO 1 · Clasificación del Proyecto (HUBSPOT)
+Al iniciar un proyecto o una nueva campaña, deben llenarse las siguientes propiedades en el Objeto "Negocio" (Deal/Proyecto):
+Tipo de Proyecto: Solid (Aforo ≥ 1.5 + Garantía Real) / Estándar (Legacy).
+Tipo de Rendimiento: Fijo / Variable.
+Aforo Inicial: (Ej. 1.8)
+Garantía Líquida: Sí/No.
+Monto de Garantía Líquida: $ (Si aplica).
+Tasa Moratoria: 38% (Default para Solid).
+Comisión Pago Tardío: 15% (Default para Solid).
+Plazo: En caso de tener se ponen los meses.
+Rendimiento fijo anual:
+Fecha de próximo pago
+Legacy serán los primeros proyectos de Monific con garantías menos robustas que las que existen hoy.
+
+PASO 2 · Cobranza preventiva (automatización)
+Sistema
+HubSpot monitorea la propiedad:
+Fecha_de_Pago_Próxima
+Workflow de recordatorios
+T-10 → Email automático al Solicitante
+T-7 → Email automático al Solicitante
+T-5 → Email + Whatsapp automático al Solicitante
+Mensaje base
+“Te recordamos que el pago del proyecto [Proyecto] vence el [fecha].”
+Checkpoint automático
+Propiedad:
+Pago_Registrado = Sí / No
+Si Pago_Registrado = Sí
+El ciclo se marca como cumplido.
+HubSpot reprograma el siguiente periodo.
+Fin del ciclo.
+
+PASO 3 · Activación de cobranza humana
+Disparador
+T-5 y Pago_Registrado = No
+Sistema
+HubSpot crea tarea a Guillermo:
+“Iniciar cobranza preventiva manual”
+Acciones de Guillermo
+T-5 → Contacto manual al Solicitante
+T-3 → Contacto manual al Solicitante
+T-2 → Contacto manual al Solicitante + Obligados Solidarios
+Día 0 → Contacto manual al Solicitante + Obligados Solidarios
+Mensaje clave (T-2 y Día 0)
+“Hola [Dueño/Socio], el pago del proyecto [Proyecto] vence en menos de 48h.
+Evita la comisión automática por pago tardío.”
+
+PASO 4 · Fecha límite efectiva
+Sistema
+HubSpot valida:
+Fecha_de_Pago_Próxima es hábil / inhábil
+Si es inhábil
+La fecha límite se recorre al siguiente día hábil.
+
+PASO 5 · Checkpoint final (Día 0)
+Sistema
+HubSpot crea tarea a Guillermo:
+“Confirmar pago o promesa de pago”
+Propiedad clave
+Pago_Confirmado = Sí / No
+Regla
+Hora límite: 6:00 PM del Día 0 (fecha límite efectiva)
+
+PASO 6 · Evento de Incumplimiento (Día 1)
+Disparador
+Pago_Confirmado = No después de las 6:00 PM del Día 0
+Sistema
+HubSpot marca:
+Estatus_del_Proyecto = Incumplimiento
+Fecha_de_Incumplimiento = Día 1
+
+PASO 7 · Aplicación automática de penalizaciones
+Condición
+Proyecto_SOLID = Sí
+(Aforo ≥ 1.5 : 1 + Garantía Real)
+Automatización
+HubSpot actualiza automáticamente:
+Comisión_por_Pago_Tardío = 15% + IVA
+Interés_Moratorio = 38% anual (activo)
+Notificación automática
+Email / WhatsApp a:
+Solicitante
+Obligados Solidarios
+Mensaje
+“El pago no fue recibido.
+Se ha aplicado la comisión por pago tardío conforme a contrato.”
+
+PASO 8 · Clasificación del incumplimiento
+Sistema
+HubSpot evalúa:
+Tipo_de_Incumplimiento = Rendimientos / Capital
+
+PASO 9A · Incumplimiento de rendimientos
+Si Existe_Garantía = Sí
+HubSpot asigna el caso a Ted.
+Emiliano + Vian validan tipo de garantía.
+Si Garantía_Líquida = Sí
+Finanzas usa la reserva para cubrir el rendimiento.
+HubSpot marca:
+Garantía_Usada = Sí
+Solicitante_Bloqueado = Sí
+Si Garantía_Líquida = No
+Continúan moratorios.
+Se prepara expediente legal.
+Se ejecuta garantía.
+
+PASO 9B · Incumplimiento de rendimientos sin garantía
+Acción
+Gestión directa / negociación.
+Resultado
+Si se regulariza → regresa a ciclo normal.
+Si no → reestructura o salida.
+
+PASO 10 · Incumplimiento de capital (pre-vencimiento)
+Disparador
+Dias_Para_Vencimiento ≤ 90
+Sistema
+HubSpot dispara:
+Revaluación de aforo.
+Decisión
+Si Aforo ≥ 1.5 : 1
+Solicitar fuente de repago.
+Si Aforo < 1.5 : 1
+Exigir refuerzo de garantía o prepago parcial.
+
+PASO 11 · Refinanciamiento
+Condición
+Fuente de repago no consolidada.
+Acción
+Solicitud formal de refinanciamiento.
+Resultado
+Aprobado → nuevo calendario.
+Rechazado → margen limpio para ejecutar garantía.
+
+PASO 12 · Incumplimiento de capital post vencimiento
+Acción
+Con garantía → ejecución.
+Sin garantía → estrategia de recuperación.
+
+PASO 13 · Comunicación a inversionistas
+Responsable
+Raquel
+Si hubo garantía líquida
+“Se activó la garantía. Tu rendimiento se pagará conforme al calendario.”
+Si no hubo garantía líquida
+“Se inició el proceso de cobranza con respaldo patrimonial.”
+
+❗ SLAs, Guidelines y Escalamientos para Cobranza
+SLAs, Guidelines y Escalamientos para Cobranza
+1. PRINCIPIOS
+Día 1 = Incumplimiento
+No hay “periodos de gracia”.
+Si no pagó en fecha límite efectiva → incumple.
+
+La automatización abre el camino, el humano cierra
+HubSpot presiona.
+Guillermo confirma.
+Legal ejecuta.
+
+2. SLAs POR FASE
+🟦 FASE 1 · Cobranza preventiva (sin incumplimiento)
+Objetivo: Evitar el incumplimiento antes de que ocurra.
+SLA del sistema (HubSpot)
+Recordatorios automáticos:
+T-10
+T-7
+T-5
+Cumplimiento: 100% automático, sin excepción
+SLA humano (Guillermo)
+Desde T-5:
+Primer contacto manual ≤ 24 h
+Desde T-3:
+Segundo contacto manual ≤ 24 h
+T-2 y Día 0:
+Contacto ≤ 12 h
+Regla
+Si Guillermo no logra contacto, se documenta intento, no se pausa el flujo.
+
+🟨 FASE 2 · Día 0 (fecha límite efectiva)
+Objetivo: Confirmar pago o promesa real.
+SLA crítico
+Hora límite de validación: 6:00 PM
+Propiedad clave:
+Pago_Confirmado = Sí / No
+Responsable
+Guillermo
+Regla dura
+Sin confirmación explícita en HubSpot → el sistema asume NO pago
+
+🟥 FASE 3 · Evento de Incumplimiento (Día 1)
+Objetivo: Ejecutar consecuencias sin discusión.
+SLA del sistema
+Detección de incumplimiento: automática
+Aplicación de penalizaciones: inmediata
+Comisión 15% + IVA
+Interés moratorio activo
+SLA de notificación
+Notificación formal a:
+Solicitante
+Obligados solidarios
+Tiempo máximo: mismo día (Día 1)
+
+🟪 FASE 4 · Gestión post-incumplimiento
+Incumplimiento de rendimientos con garantía
+SLA interno
+Asignación a Ted: ≤ 24 h
+Validación de garantía (Emiliano + Vian): ≤ 48 h
+Si hay garantía líquida
+Uso de reserva: ≤ 72 h
+Solicitud de reposición: inmediata
+Bloqueo del solicitante: inmediato
+
+Incumplimiento de rendimientos sin garantía
+SLA
+Primera negociación: ≤ 5 días hábiles
+Definición (regulariza / no): ≤ 15 días
+
+Incumplimiento de capital (pre-vencimiento)
+SLA
+Revaluación de aforo: ≤ 10 días
+Solicitud de refuerzo / prepago: inmediata
+Respuesta del solicitante: ≤ 10 días
+
+Incumplimiento de capital vencido
+SLA
+Decisión de ejecución: ≤ 5 días
+Inicio legal: según contrato (sin pausa operativa)
+
+3. CADENCIAS DE CONTACTO
+Preventiva (antes del incumplimiento)
+Automático: email / WhatsApp
+Manual:
+T-5 → contacto
+T-3 → contacto
+T-2 → contacto + obligados
+Día 0 → contacto + obligados
+Máx. 1 contacto manual por día
+No saturar, no negociar antes de tiempo.
+
+Post-incumplimiento
+Día 1: notificación formal
+Día 3–5: contacto estratégico (no insistente)
+Después:
+Ritmo definido por legal / riesgo
+
+4. GUIDELINES DE COMUNICACIÓN (COBRANZA)
+Qué SÍ decir
+“Conforme a contrato”
+“Se activó automáticamente”
+“Para evitar mayores consecuencias”
+Qué NO decir
+“Te entendemos”
+“Vamos viendo”
+“No pasa nada”
+
+5. MATRIZ DE RESPONSABILIDAD (RESUMEN)
+Fase
+ | Responsable
+ |
+Automatización
+ | HubSpot
+ |
+Cobranza preventiva
+ | Guillermo
+ |
+Confirmación Día 0
+ | Guillermo
+ |
+Incumplimiento
+ | Sistema
+ |
+Garantías
+ | Ted / Emiliano / Vian
+ |
+Comunicación inversionistas
+ | Raquel
+ |
+Legal
+ | Legal externo / interno
+ |
+
+3️⃣ SLAs ATC
+SLAs, Guidelines y Escalamientos
+Atención al Cliente (ATC) · HubSpot · Monific
+1. SLAs OFICIALES DE ATENCIÓN
+1.1 Atención en canales inmediatos (Inbox HubSpot)
+Evento
+ | SLA
+ | Responsable
+ | Canal
+ |
+Primera respuesta
+ | < 5 min
+ | ATC
+ | Chat / WhatsApp / Inbox
+ |
+Respuesta excelente
+ | < 2 min
+ | ATC
+ | Chat / WhatsApp
+ |
+Conversación abierta > 24 h
+ | < 1%
+ | ATC
+ | Todos
+ |
+Si el volumen supera la capacidad, se responde primero y se profundiza después. Nunca silencio.
+
+1.2 Seguimiento CRM por nivel
+Se les da prioridad a los nuevos leads con la intención de no abandonar posibles ventas, aquí literal la formula es asignados en crm vs contactados.
+
+Nivel
+ | SLA contacto humano
+ | Regla
+ |
+Nivel 1 – Lead
+ | ≤ 24 h
+ | Contacto obligatorio
+ |
+Nivel 2 – Perfil en proceso
+ | ≤ 24 h
+ | Lead caliente
+ |
+Nivel 3 – STP activa
+ | ≤ 24 h
+ | Lead caliente
+ |
+Nivel 4 – Inversionista activo
+ | 1 contacto / 60 días
+ | Relación viva
+ |
+VIP
+ | 1 contacto / 30 días
+ | Atención preferencial
+ |
+
+2. GUIDELINES OPERATIVOS
+2.1 Qué SÍ hace ATC
+Explica proyectos usando información pública aprobada
+Contiene emocionalmente al cliente
+Da contexto de plazos, procesos y riesgos
+Sugiere alternativas
+Activa flujos de HubSpot
+Documenta
+
+2.2 Qué NO hace ATC
+Prometer fechas
+Prometer rendimientos
+Opinar sobre decisiones legales
+Inventar explicaciones
+Escalar por incomodidad
+Frase permitida:
+“Déjame validar el estatus y te confirmo.”
+
+3. CADENCIAS DE ATENCIÓN
+Leads / usuarios activos
+Máx. 2 contactos activos por semana
+Máx. 1 llamada por día
+WhatsApp solo informativo
+Email para seguimiento formal
+Usuarios inactivos
+Contacto humano ≤ 48 h
+Si no hay respuesta → pausa automática
+Reactivación solo con propuesta concreta
+
+4. MODELO DE ESCALAMIENTO
+🟢 NIVEL 0 · SISTEMA (HubSpot)
+Resuelve solo:
+Recordatorios
+Pausas
+Cierres por inacción
+Reasignaciones
+Seguimientos
+Nunca escala.
+
+🟡 NIVEL 1 · ATC
+Resuelve sin pedir permiso:
+Dudas operativas
+Quejas leves
+Atrasos explicables
+Recomendaciones de proyectos
+Clientes indecisos
+Si puede resolverse con fragmentos o subiendo tickets → se resuelve.
+
+🔵 NIVEL 2 · RESPONSABLE ATC (Por el momento Raquel lo asume)
+Escala SOLO cuando:
+El cliente insiste más de 3 veces
+Hay riesgo de abandono
+El mensaje empieza a ser hostil
+Hay inconsistencia operativa
+
+🔴 NIVEL 3 · RAQUEL
+Escala si se cumple al menos uno:
+✔ Riesgo reputacional
+✔ Cliente VIP amenaza salida
+✔ Posible UNE / CNBV
+✔ Impacto colectivo
+✔ Decisión estratégica
+

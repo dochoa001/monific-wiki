@@ -1,0 +1,550 @@
+=== ID: D196 ===
+=== SOURCE: Wiki Monific\drive-download-20260807T144151Z-1-001\REPORTES MONIFIC - HUBSPOT.docx ===
+=== MODIFIED: 2026-08-07 ===
+
+REPORTES MONIFIC - HUBSPOT
+Notas: Si el reporte está en rosa es porque tiene dependencias o validaciones, ejemplo el 2.1.
+
+MÓDULO 1: GROWTH Y RETENCIÓN INVERSIONISTAS
+Objetivo: Medir entrada de dinero, fricción de UX, fidelización y comportamiento del capital.
+Reporte 1.1: Embudo de Conversión (De Lead a Inversionista)
+1. Objetivo del Reporte
+Medir la tasa de conversión paso a paso (y el tiempo que toma) desde que una persona deja su correo hasta que el dinero entra a un proyecto. Su misión es detectar si el cuello de botella está en la validación de identidad (KYC), en el fondeo de la cuenta (transferencia de banco a stp), o en el miedo a invertir (UX/Confianza).
+2. Objeto Base en HubSpot
+Objeto principal: Contactos.
+Tipo de reporte: Informes > Embudos (Funnel) > Viaje del Contacto (Contact Journey) o Embudo de etapas del ciclo de vida.
+3. Propiedades a Crear
+Asegurar que el sistema (vía API o integración con el back-office de Monific) actualice automáticamente las siguientes propiedades de marca de tiempo (Date Picker) en el Contacto:
+Fecha de creación (Propiedad nativa de HubSpot).
+Fecha de registro completado: Cuando el usuario termina de llenar sus datos básicos.
+Fecha de cuenta stp activa: El instante en que se valida su identidad.
+Fecha de primer fondeo en Wallet: El momento exacto en que su saldo pasa de $0 a >$0 por primera vez.
+Fecha de primera inversión: Cuando el capital pasa de la wallet a un proyecto (Pasa a ser Cliente Activo).
+4. Configuración de las Etapas del Embudo (Filtros del Reporte)
+El reporte en HubSpot debe configurarse con la opción "Todas las etapas en orden" (Strict Order) para ver la caída real. Las etapas son:
+Etapa 1: Lead Creado (Filtro: Fecha de creación es conocida).
+Etapa 2: Registro Completo (Filtro: Fecha de registro completado es conocida).
+Etapa 3: Identidad Validada (Filtro: Fecha de cuenta stp activa es conocida).
+Etapa 4: Billetera con Fondos (Filtro: Fecha de primer fondeo es conocida).
+Etapa 5: Inversionista Activo (Filtro: Fecha de primera inversión es conocida).
+5. Interpretación y Uso
+Este panel dará dos métricas:
+Tasa de conversión entre etapas: Si notas que entre la Etapa 3 y la Etapa 4 se cae el 60% de la gente, el problema no es de marketing, es que el proceso de depositar vía CLABE/SPEI está oculto, genera desconfianza o no se está enviando un recordatorio inmediato.
+Tiempo entre etapas: HubSpot te dirá el promedio de días. Si de la Etapa 4 a la 5 pasan más de 5 días, tienes "dinero dormido" y necesitas disparar un workflow automatizado de "Últimos lugares en X proyecto" para empujarlos a invertir.
+
+Reporte 1.2: Métrica de Fricción de Wallet (KYC aprobado, saldo inactivo).
+1. Objetivo del Reporte
+Cuantificar cuántos usuarios, y qué volumen de capital potencial, están estancados en el paso de fondeo. Identificar si la barrera es técnica (no entienden cómo usar la CLABE/SPEI), de confianza (miedo de último minuto), o simple olvido, para poder atacarlos con estrategias dirigidas de growth y neuromarketing.
+2. Objeto en HubSpot
+Objeto principal: Contactos.
+Tipo de reporte: Gráfico de barras o Reporte de tabla (Mesa de ayuda visual para el equipo  comercial).
+3. Propiedades a Crear
+Conectar vía API estas propiedades:
+Nivel de registro (Propiedad de menú desplegable) Actualmente ya se encuentra en Hubspot**, pero no se cambia en tiempo real.
+Fecha de cuenta stp activa (Propiedad de fecha - automatizada en cuanto el estado cambie a "Active").
+Saldo actual en cuenta (Propiedad numérica. Vital: Debe sincronizarse desde el back-office de Monific; jamás debe llenarse a mano).
+Días de inactividad post-cuenta activa (Propiedad calculada en HubSpot: Mide el tiempo transcurrido entre la Fecha de cuenta activa y el día de hoy, siempre y cuando el saldo sea cero).
+4. Configuración del Reporte
+El reporte debe mostrar únicamente a los contactos que cumplan con estas tres condiciones estrictas al mismo tiempo:
+Filtro 1: Estado de cuenta es igual a active.
+Filtro 2: Saldo actual en cuenta es igual a $0 (o está vacío).
+Filtro 3: Días de inactividad post-cuenta activa es mayor a 7 días.
+Recomendación de visualización: Agrupar las barras por "Cohortes de inactividad" (7-14 días, 15-30 días, +30 días).
+5. Interpretación y Uso
+Este reporte es el gatillo para la automatización de rescate. No se trata solo de ver el número, sino de accionarlo:
+Fricción de UX: Si el volumen más alto está en la cohorte de 7-14 días, la plataforma no está siendo clara sobre cómo fondear. Se debe disparar un correo tutorial automático: "Cómo agregar fondos a tu cuenta en 2 minutos".
+Activación por Neuromarketing: Para los usuarios inactivos por más de 15 días, el problema suele ser la falta de urgencia. Aquí se conectan los esfuerzos de marketing: HubSpot debe enviar automáticamente correos de escasez y oportunidad, empujando proyectos ancla. Por ejemplo, mostrar la rentabilidad o los últimos lugares disponibles en el proyecto Vértiz para reactivar el deseo de inversión y forzar el fondeo.
+6. Instrucción para BnO
+Regla: La propiedad Saldo actual en cuenta tiene que actualizarse automáticamente mediante un webhook o integración directa con la base de datos de Monific (idealmente en tiempo real o con cortes diarios).
+
+Reporte 1.3: Velocidad de Fondeo (Time-to-First-Investment).
+1. Objetivo del Reporte
+Medir el "Time-to-Value" del inversionista. Cuantificar cuántos días naturales transcurren desde que un usuario se registra en Monific hasta que realiza su primera inversión, haciendo un enfoque en el "dinero dormido" (el tiempo que pasa desde que el dinero entra a la cuenta hasta que se asigna a un proyecto).
+2. Objeto en HubSpot
+Objeto principal: Contactos.
+Tipo de reporte: Reporte de Promedios (Gráfico de líneas de tendencia o medidor KPI) construido desde el Generador de Informes Personalizados.
+3. Propiedades a Crear
+Propiedades Calculadas (Calculation Properties) de tipo "Tiempo entre" (Time between). Para que funcionen, el back-office debe estar alimentando estas tres fechas base de forma automatizada:
+Fecha de creación (Nativa de HubSpot).
+Fecha de primer fondeo en cuenta (La misma que usamos en el reporte 1.2).
+Fecha de primera inversión (Timestamp exacto del primer clic en "Invertir").
+Las propiedades calculadas que BnO debe crear en HubSpot son:
+Métrica A: Días desde Registro hasta Primera Inversión (Calcula el tiempo entre Fecha de creación y Fecha de primera inversión).
+Métrica B: Días desde Fondeo hasta Primera Inversión (Calcula el tiempo entre Fecha de primer fondeo en cuenta y Fecha de primera inversión).
+4. Configuración del Reporte
+El tablero principal debe mostrar el promedio de la Métrica B a lo largo del tiempo (por mes de cohorte).
+Filtro: Fecha de primera inversión es conocida (medimos a los que ya invirtieron para sacar el promedio real).
+Eje X: Mes de la Fecha de primera inversión.
+Eje Y: Promedio de Métrica B: Días desde Fondeo hasta Primera Inversión.
+Opcional pero recomendado: Agregar un desglose por "Canal de origen" para saber si los leads que vienen de pautas invierten más rápido que los orgánicos.
+5. Interpretación y Uso
+Aquí es donde entra el equipo comercial y de finanzas:
+Si la Métrica B es menor a 24 horas: Tienes un flujo transaccional sano. El usuario entra, fondea y compra de inmediato.
+Si la Métrica B es mayor a 3 días: Tienes un problema de "Parálisis por Análisis". El usuario ya confió lo suficiente para meter su dinero a Monific, pero al ver la oferta de proyectos se congela.
+Acción automatizada: Al detectar que la Métrica B llega al día 3, HubSpot debe detonar un workflow de urgencia. Aquí es ideal empujar proyectos ancla con alta tracción; por ejemplo, enviar un correo persuasivo mostrando el avance de fondeo de Vértiz (o el proyecto que esté en etapa de cierre) con un mensaje claro: "Tu dinero está perdiendo valor en tu wallet. Únete a los inversionistas que ya están generando rendimientos hoy mismo".
+6. Instrucción para BnO
+Sin manipulación manual: La Fecha de primera inversión es un hito inmutable. BnO no debe permitir que esta propiedad se actualice manualmente por ningún equipo, ni que se sobrescriba cuando el usuario haga una segunda o tercera inversión. Debe ser configurada con la regla de integración: "Actualizar solo si la propiedad está en blanco". Si se sobrescribe, arruinarán el promedio histórico de la plataforma.
+
+Reporte 1.4: Tasa y Velocidad de Reinversión (Clasificación temporal: Inmediata, Rápida, Extendida).
+1. Objetivo del Reporte
+Medir la lealtad del capital. Queremos ver de forma gráfica en qué "ventana de tiempo" los inversionistas están decidiendo recolocar su dinero tras una liquidación, para saber exactamente cuándo enviar los estímulos de neuromarketing (escasez, FOMO, o interés compuesto).
+2. Objetos requeridos en Hubspot
+Recibir del backend los registros transaccionales por inversionista. Crear un Objeto Personalizado (Custom Object) llamado "Transacciones" asociado al Contacto, con los siguientes tipos:
++ LIQUIDACIÓN (Entra capital base) | Fecha y Hora
++ DISTRIBUCIÓN DE RENDIMIENTO (Entra utilidad) | Fecha y Hora
++ DISTRIBUCIÓN DE PROMOCIÓN (Entra dinero) | Fecha y Hora
+- RETIRO (Dinero sale al banco) | Fecha y Hora
+- COMPRA (El botón de invertir) | Fecha y Hora
+3. El Workflow de Código Personalizado
+Construir un Workflow que se dispare cada vez que se cree un registro de transacción tipo Compra.
+Dentro de este Workflow, insertar una Acción de Código Personalizado que ejecute la siguiente lógica:
+Paso A (Query): El script debe buscar todas las transacciones previas de Liquidación y Distribución de Rendimientos asociadas a ese Contacto que tengan saldo disponible mayor a $0.
+Paso B (Ordenamiento): Debe ordenar estos registros por Fecha y Hora de forma ascendente (del más antiguo al más reciente).
+Paso C (Asignación): Tomar el Monto de la nueva Compra y ejecutar un bucle (loop):
+Prioridad 1: Descontar el monto usando los saldos de Distribución de Rendimientos disponibles.
+Prioridad 2: Si aún queda monto por cubrir de la compra, descontarlo de los saldos de Liquidación disponibles más antiguos.
+Prioridad 3: Si aún queda monto de la compra tras agotar capital y rendimientos históricos, etiquetar el remanente estrictamente como Dinero Nuevo.
+Paso D (Actualización de Saldos): El script debe reescribir los registros de liquidación y rendimientos que utilizó, bajando su "saldo disponible" para que no se vuelvan a contar en el futuro (evitando el doble conteo).
+3. El Resultado (Output) que el código inyecta a HubSpot
+Una vez que el script termine la matemática en milisegundos, debe escupir el resultado y rellenar automáticamente las siguientes propiedades de esa Compra:
+Capital Reutilizado (Monto)
+Rendimientos Reutilizados (Monto)
+Dinero Nuevo (Monto)
+Velocidad de Reinversión (Cálculo de días entre la liquidación usada y esta compra).
+4. Los Reportes Finales
+Solo cuando el código personalizado haga este cálculo, los reportes en los Dashboards podrán graficar la verdad financiera:
+Tasa de Retención: Suma de Capital Reutilizado / Suma de Liquidaciones.
+Retención de Rendimientos: Suma de Rendimientos Reutilizados / Suma de Distribución de Rendimientos.
+Flujo Neto Real: Suma de Dinero Nuevo.
+Reporte 1.7: Atribución de Campañas de Reputación
+1. Objetivo del Reporte
+Medir la efectividad y el retorno de las estrategias diseñadas para blindar la reputación digital de Monific. El objetivo es rastrear qué porcentaje de los inversionistas impactados participa activamente en dinámicas de incentivos, campañas pagadas, etc. y cómo esa participación afecta su Lead Score interno.
+2. Objeto en HubSpot
+Objeto principal: Contactos.
+Herramienta complementaria: Módulo de Campañas (Campaigns) de HubSpot.
+Tipo de reporte: Embudo de conversión de campaña (Gráfico de embudo) y Tabla de Atribución.
+3. Propiedades a Crear
+Aquí si lo dejo al criterio de Bno*
+Reporte 1.8: Lead Scoring de Inversionistas — Dos scores separados (Calidad de Registro + Engagement Comercial).
+1. Objetivo del Reporte
+Cuantificar de forma diferenciada (i) la madurez del usuario como cuenta (qué tan completo está su registro y trayectoria como inversionista) y (ii) el nivel de intención comercial en tiempo real (qué tan listo está para reinvertir o aumentar ticket). Mantener ambas señales separadas — y no en un solo score como en versiones previas de este reporte — permite que ATC actúe sobre intención real de compra, sin confundirse con usuarios que simplemente tienen cuenta activa pero no están comprometidos. Esto está alineado al KPI de Reinversión post-liquidación (≥80%) que mide el Representante de Atención al Cliente y Ventas.
+2. Decisión Técnica Validada con BnO (sesión del 27 de mayo)
+HubSpot permite construir varios scores en paralelo (no solo uno). Confirmado por David (BnO). Por esta razón se diseñan dos scores independientes que viven en propiedades distintas del Contacto:
+Score A — Calidad de Registro / Madurez de Cuenta: mide qué tan terminado y activo está el usuario como cuenta de Monific. Es un score de onboarding y trayectoria. Vive solo, no dispara tareas a ATC.
+Score B — Engagement Comercial / Intención de Compra: mide la intención inmediata de inversión / reinversión. Es el score operativo que dispara tareas de alta prioridad a ATC cuando el contacto cruza el umbral “Caliente”.
+
+Métricas evaluadas técnicamente en la sesión: viables nativas en HubSpot (apertura de correos, visitas a páginas con tracking code, tickets asociados, eventos de comunicación) y viables vía integración admin → propiedad HubSpot (reinversión / comportamiento de cartera, ≥60 días sin login, status / nivel de registro del usuario). Métrica descartada por no viabilidad técnica: reseñas en Play Store / App Store (no es directamente medible desde HubSpot y se queda fuera del scoring salvo que Monific habilite acceso externo a esa información en una segunda fase).
+3. Objeto Base en HubSpot
+Objeto principal: Contactos.
+Herramienta principal: Propiedad nativa HubSpot Score (Calificación de HubSpot) — se crean dos instancias independientes, una para cada score — y Workflows.
+Tipo de reporte: Tabla de Contactos Calientes (Lista dinámica filtrada por Score B), Gráfico de dispersión de Score B vs. Saldo en Wallet, y Gauge / KPI gigante con distribución por temperatura.
+
+4. Propiedades a Crear
+Score A — Calidad de Registro (Numérica, rango 0-100, construida con HubSpot Score nativo).
+Score B — Engagement Comercial (Numérica, rango 0-100, construida con HubSpot Score nativo, con regla de decaimiento — ver Sección 7).
+Temperatura de Inversión (Menú desplegable automatizado por Workflow basado en Score B: Frío (<20 pts), Tibio (21-50 pts), Caliente (>50 pts)).
+Madurez de Cuenta (Menú desplegable automatizado por Workflow basado en Score A: Inicial (<30 pts), Intermedia (30-70 pts), Consolidada (>70 pts)).
+5. Reglas del Score A — Calidad de Registro
+Este score no dispara tareas comerciales. Se usa para reportes de funnel (cruzar con el Reporte 1.1) y para segmentar campañas de onboarding y comunicación masiva (cuanta más madurez, más sofisticación en el mensaje).
+Atributos Positivos (suman puntos):
+KYC completo (+25 pts) — Fuente: integración admin.
+Cuenta STP activa (+25 pts) — Fuente: integración admin.
+Primer fondeo en wallet (+20 pts) — Fuente: integración admin.
+Primera inversión realizada (+30 pts) — Fuente: integración admin, sobre el objeto Negocio según lo acordado en el Reporte 1.4.
+
+Atributos Negativos (restan puntos):
+Más de 60 días sin iniciar sesión en la plataforma (-20 pts) — Fuente: integración admin (esta propiedad debe vivir como propiedad de HubSpot vía integración admin, validado por David en la sesión).
+Retiro del 100% del capital tras la liquidación de un proyecto (-25 pts) — Fuente: integración admin.
+6. Reglas del Score B — Engagement Comercial
+Este es el score operativo. El umbral de “Caliente” (>50 pts) dispara tarea de alta prioridad a ATC, y si además el contacto tiene Saldo en wallet > $0 la tarea sube a urgente.
+Atributos Positivos (suman puntos):
+Reinversión en ventana “Inmediata” (+25 pts) — Fuente: Reporte 1.4 vía objeto Negocio. La definición exacta de la ventana “Inmediata” queda pendiente de validación final del Reporte 1.4, una vez BnO tenga visibilidad del código admin.
+Reinversión en ventana “Rápida” (+15 pts) — Fuente: Reporte 1.4.
+Visita la landing page de proyectos en fondeo (+15 pts si más de 2 veces en la última semana) — Fuente: tracking code nativo de HubSpot.
+Click en correo de “nuevo proyecto disponible” (+10 pts) — Fuente: nativa de HubSpot (el click vale más que la apertura porque indica intención).
+Apertura de correo promocional (+5 pts) — Fuente: nativa de HubSpot.
+Respondió un correo del asesor (correo no automático) (+10 pts) — Fuente: nativa de HubSpot. Es la señal más fuerte de engagement vivo: hay diálogo de vuelta.
+Saldo en wallet > $0 con cuenta activa (+15 pts) — Fuente: integración admin. Esta propiedad debe sincronizarse automáticamente (no captura manual) según el Reporte 1.2.
+
+Atributos Negativos (restan puntos):
+Más de 60 días sin iniciar sesión en la plataforma (-25 pts) — Fuente: integración admin.
+Ticket de queja escalado a Nivel 2 (-20 pts) — Fuente: Service Hub. Cuando el cliente tiene fricción activa, no se le debe empujar comercialmente hasta que se resuelva.
+Incidente UNE / CONDUSEF abierto (-40 pts) — Fuente: Service Hub. Penalización fuerte porque combina riesgo legal y reputacional: ATC no debe vender a un usuario en disputa formal.
+Retiro del 100% del capital tras la liquidación de un proyecto (-30 pts) — Fuente: integración admin. Distinto al Score A: aquí pega más fuerte porque señala fuga reciente, no solo madurez perdida.
+7. Decaimiento del Score B por Inactividad
+Para evitar que inversionistas antiguos queden permanentemente “Calientes” por inercia, el Score B decae automáticamente cuando no hay actividad reciente. Regla:
+Si el contacto pasa 30 días sin ninguna actividad de engagement positivo (sin abrir correos, sin visitar la landing, sin responder al asesor, sin nueva inversión), el Score B resta 10 pts cada 30 días adicionales hasta llegar a 0 o hasta que vuelva a generarse engagement.
+El Score A NO decae, porque mide madurez estructural (KYC, STP activa, primera inversión) que no se pierde con el tiempo.
+
+Esto evita que la lista de “Contactos Calientes” se llene de fantasmas que sumaron puntos hace 6 meses y nunca volvieron a moverse, y mantiene a ATC enfocado en intención real.
+8. Configuración del Reporte (Dashboards)
+Dashboard 1 — Contactos Calientes (operativo, vive todo el día abierto en ATC): Tabla dinámica filtrada por Temperatura = Caliente (Score B > 50 pts), ordenada por Saldo en wallet descendente, con columnas: Nombre, Asesor asignado, Score A, Score B, Saldo, Última interacción, Estado del último ticket. Cada fila tiene atajo para crear tarea/llamada directo.
+Dashboard 2 — Salud del Embudo (estratégico, revisión semanal de Dirección): Gráfico de dispersión con eje X = Score A (madurez de cuenta), eje Y = Score B (engagement comercial), cada punto = un contacto, tamaño del punto = Saldo en wallet. Permite ver visualmente dónde está atorada la cartera: cuadrante superior derecho = ideal (madura + caliente), cuadrante inferior izquierdo = nuevos con baja intención, cuadrante superior izquierdo = inversionistas viejos dormidos (oportunidad de reactivación).
+Dashboard 3 — Distribución por Temperatura: Gauge / dona con el % de contactos en Frío / Tibio / Caliente. Permite ver de un vistazo si la base está fría (problema de growth) o caliente (oportunidad de cierre que ATC debe ejecutar).
+9. Interpretación y Uso Estratégico
+Automatización a ATC (operativa): Si un usuario llega a Score B > 50 pts Y tiene Saldo en wallet > $0, HubSpot genera tarea de alta prioridad para ATC. Guion sugerido: "Notamos que has estado revisando el avance de [proyecto] y tienes saldo disponible. ¿Te ayudo a asegurar tu participación antes de que se llene?". Si además Score A > 70 (cuenta consolidada), la tarea sube a urgente porque es un cliente experimentado con alta probabilidad de cerrar rápido.
+Reactivación de inversionistas dormidos: Contactos con Score A alto (madurez consolidada) pero Score B bajo (engagement frío) son el target perfecto para campañas de reactivación dirigidas con propuesta concreta (no nurturing genérico). Reporte cruzable con el Reporte 1.4 para identificar inversionistas que liquidaron y no reinvirtieron.
+Diagnóstico del growth: Si Score A promedio del trimestre baja, hay un problema de onboarding (la gente entra y no completa KYC / no fondea). Si Score B promedio baja pero A se mantiene, hay un problema de oferta de proyectos o de comunicación (la base existe pero no se está activando).
+Diferenciación de CTR (métrica oculta): Si un inversionista abre 10 veces el reporte de un proyecto atrasado, no está “enganchado” para comprar, está preocupado. Esos clicks deben ir al Reporte 4.2 (Alertas de Fricción Operativa), no al Score B. El Score B es estrictamente de intención de negocio, no de ansiedad.
+10. Instrucción para BnO
+Crear dos propiedades HubSpot Score nativas e independientes (no un solo score sumando todo): Score A y Score B, cada una con sus reglas propias. Confirmado en la sesión del 27 de mayo que HubSpot lo permite técnicamente.
+Configurar el decaimiento del Score B mediante Workflow programado (cada 30 días sin actividad positiva, restar 10 pts). El Score A NO decae.
+Los Workflows que actualizan los scores deben escribir en la propiedad únicamente, nunca permitir captura manual de puntos por parte de un agente. Esto preserva la integridad analítica del modelo.
+Las propiedades dependientes de integración admin (Saldo en wallet, días sin login, primera inversión sobre objeto Negocio, retiros) se quedan en espera hasta que la integración admin esté operativa. Mientras tanto, los atributos viables de forma nativa (apertura, click, visita a landing, respuesta a correo, tickets) ya pueden activarse para empezar a construir baseline de Score B parcial.
+Ningún equipo de Monific (ni Comercial ni ATC) puede modificar manualmente el valor del Score A o Score B. Si necesitan corregir un caso particular, debe pasar por revisión de la regla del Workflow, no por edición directa.
+
+MÓDULO 2: ORIGINACIÓN Y EVALUACIÓN (SOLICITANTES)
+Objetivo: Eliminar la caja negra de los desarrolladores, medir la velocidad de evaluación y el éxito de fondeo.
+Reporte 2.1: Embudo de Captación y Expediente Puente (De Lead a Carga Documental).
+1. Objetivo del Reporte
+Medir la tasa de conversión y los cuellos de botella en la fase de originación. Saber cuántos solicitantes levantan la mano, a cuántos se les envía el "Formulario Puente" para pedirles sus papeles, y cuántos realmente completan su expediente para pasar a Comité. Este reporte expone si los requisitos documentales son demasiado pesados o si el equipo comercial está fallando en el seguimiento.
+2. Objeto Base en HubSpot
+Objeto principal: Negocios (Deals). Nota para BnO: Los solicitantes deben manejarse como "Negocios B2B" asociados a una Empresa (Desarrollador) y un Contacto (Representante legal). También podrán existir solicitantes personas físicas
+Tipo de reporte: Informe de Embudo de Negocios (Deal Funnel) con etapas en orden estricto .
+3. Propiedades a Crear
+Configurar las siguientes propiedades a nivel Negocio, respetando las directrices del documento del 26 de enero:
+Monto de Fondeo Solicitado (Number). Para saber de qué tamaño es la oportunidad atascada.
+Estado de Documentación (Menú desplegable: Vacía, Parcial, Completa).
+Fecha de Formulario Puente Enviado (Date Picker).
+Motivo de Pausa Automática (Menú desplegable: No responde, Llamada No-Show, Decide esperar).
+4. Configuración del Reporte (Las Etapas del Pipeline)
+Mapear el reporte gráfico basado en las etapas de este nuevo pipeline de originación:
+Etapa 1: Lead / Solicitud Inicial (Ingresa por el nuevo formulario web).
+Etapa 2: Formulario Puente Enviado (El sistema o el equipo solicita la carga de documentos).
+Etapa 3: Documentación Parcial (El desarrollador empezó a subir archivos a Drive, pero faltan cosas clave).
+Etapa 4: Documentación Completa (Estado de Documentación cambia a Completa. Listo para evaluación).
+5. Interpretación y Uso (SLA y Alertas)
+Aquí es donde conectamos los SLAs definidos con el equipo interno:
+Alerta de Fricción Documental: Si un Negocio (Proyecto) pasa más de 5 días en la etapa de "Documentación Parcial", HubSpot dispara una alerta para el equipo de Originación. Significa que el desarrollador se trabó con un documento técnico (ej. licencia de construcción) y requiere ayuda humana.
+Flujo de Pausa Automática (Regla del 26 de enero): Si el desarrollador se queda en la Etapa 2 (Formulario Puente Enviado) y no hay respuesta en 48 horas tras el seguimiento, HubSpot debe mover automáticamente el negocio a una etapa de pérdida llamada "Pausado por inacción". Así mantenemos el pipeline limpio y el equipo no pierde tiempo persiguiendo fantasmas.
+6. Instrucción para BnO
+Drive vs. HubSpot: Drive es un simple casillero. Si el analista revisa Drive y ve que ya están todos los papeles, tiene la obligación operativa de ir a HubSpot y cambiar manualmente la propiedad Estado de Documentación a "Completa". Si el equipo omite este clic en HubSpot, el negocio no avanzará en el embudo, los tiempos de medición (Time-to-Market) se arruinarán y el Reporte 2.1 mostrará datos falsos.
+Reporte 2.2: Pipeline de Riesgos y Comité (Volumen monetario en Precalificación → Comité → Aprobado).
+1. Objetivo del Reporte
+Medir el volumen de capital potencial que está atrapado en la burocracia de evaluación interna y auditar la velocidad del Comité de Riesgos. El objetivo no es solo contar cuántos proyectos hay, sino saber cuánto dinero representan y cuántos días llevan congelados antes de salir a fondeo.
+2. Objeto Base en HubSpot
+Objeto principal: Negocios (Deals).
+Pipeline: "Originación de Proyectos".
+Tipo de reporte: Gráfico de cascada (Waterfall) o Gráfico de barras apiladas por etapa del pipeline, mostrando la sumatoria del monto, no el conteo de negocios.
+3. Propiedades a Crear
+Estructurar estas propiedades en el Negocio:
+Monto de Fondeo Solicitado (Number - viene desde el formulario puente).
+Monto de Fondeo Autorizado (Number - se llena tras la resolución del comité, ya que a veces aprueban menos de lo pedido).
+Fecha de Ingreso a Comité (Date Picker - automatizada cuando el negocio entra a esa etapa).
+Resolución de Comité (Menú desplegable estricto: Aprobado, Rechazado, Condicionado).
+Días en Evaluación (Propiedad Calculada: Tiempo transcurrido entre que la Documentación está Completa y la Resolución de Comité).
+4. Configuración del Reporte (El Tablero de Aprobación)
+Configurar un tablero que visualice las siguientes etapas de este pipeline:
+Etapa 1: Precalificación y Análisis. (Filtro: Negocios listos con documentos).
+Etapa 2: En Comité de Riesgos. (El proyecto se está debatiendo).
+Etapa 3: Aprobado / Fila de Publicación. (El proyecto está listo para que marketing prepare la campaña).
+Métricas a incluir:
+Suma total del Monto de Fondeo Solicitado estacionado en la "Etapa 2" (para que la directiva vea cuánto dinero está frenado por el Comité).
+Promedio de la propiedad calculada Días en Evaluación (para auditar el SLA interno).
+5. Interpretación y Uso
+Este reporte dicta el ritmo de crecimiento de la plataforma.
+Control de SLAs: Si el promedio de Días en Evaluación supera los 10 días, el riesgo de que el desarrollador se vaya a otra plataforma es altísimo. HubSpot debe disparar un aviso alertando del retraso.
+Priorización Comercial (Condicionantes Estratégicos): Cuando el Comité marca un proyecto como "Condicionado", aquí es donde el equipo negocia nuevas condiciones. Por ejemplo, si un proyecto no se puede fondear por la zona, se le explica al desarrollador buscando una alternativa que se encuentre en una zona distinta.
+Proyección de Campañas: Si la "Fila de Publicación" está vacía, comercial no tiene producto que vender. Este reporte avisa que deben frenar las campañas de atracción de capital y enfocarse en la originación.
+6. Instrucción para BnO
+Automatización del SLA y Cero "Falsos Positivos": BnO debe configurar un candado en el CRM. El equipo de Originación no puede mover un proyecto a la etapa de "Aprobado" si la propiedad Monto de Fondeo Autorizado está vacía o si no existe un archivo cargado en HubSpot (el acta del comité). Esto asegura que ningún proyecto fantasma o no validado llegue a las manos del equipo de marketing para su publicación (como el caso de preparar traslados de capital tipo Sánchez Azcona hacia Vértiz sin certezas jurídicas previas).
+
+Reporte 2.3: Tasa de Aprobación vs. Rechazo (Segmentado por motivo de rechazo exacto).
+1. Objetivo del Reporte
+Medir la tasa de éxito de los desarrolladores B2B que logran llegar a la evaluación final y, sobre todo, diseccionar quirúrgicamente las razones por las que se rechaza el capital. Esto crea un ciclo de retroalimentación (feedback loop) inmediato para que Marketing y Originación ajusten sus filtros de captación desde la Landing Page o el Formulario Puente.
+2. Objeto Base en HubSpot
+Objeto principal: Negocios (Deals).
+Pipeline: "Originación de Proyectos" (Etapas finales / Closed-Won vs Closed-Lost).
+Tipo de reporte: Gráfico de Anillo (Donut Chart) para la proporción general, y Gráfico de Barras horizontales para el desglose de motivos.
+3. Propiedades a Crear
+Configurar propiedades que eliminen las respuestas como "No calificó" o "No le interesó".
+Resolución de Comité (Menú desplegable: Aprobado, Rechazado, Condicionado - misma del Reporte 2.2).
+Motivo Exacto de Rechazo de Comité (Menú desplegable o Descripción breve, lo dejo a criterio de BnO).
+Notas de Comité (Texto multilínea, para adjuntar el dictamen resumido).
+4. Configuración del Reporte
+El reporte debe cruzar el volumen de negocios evaluados en los últimos 90 días:
+Filtro base: Negocios donde la Resolución de Comité es conocida.
+Gráfico 1 (La Tasa de Bateo): Porcentaje de negocios Aprobados vs. Rechazados (calculado tanto por cantidad de proyectos como por Monto de Fondeo Solicitado).
+Gráfico 2 (La Autopsia del Rechazo): Un gráfico de barras filtrado únicamente por la resolución Rechazado, desglosado por la propiedad Motivo Exacto de Rechazo de Comité.
+5. Interpretación y Uso
+Los datos de este reporte tienen impacto en toda la compañía:
+Feedback para UI: Si el reporte arroja que el 60% de los proyectos se rechazan por "Falta de Garantías Reales", significa que la comunicación de la plataforma no es clara. UI debe modificar la Landing Page B2B y el primer correo automático para decir en negritas: "Requisito indispensable: Contar con garantía inmobiliaria libre de gravamen". Así evitas que prospectos no viables llenen formularios.
+Diagnóstico de Originación: Si el 40% de los rechazos son por "Desistimiento del Desarrollador" (es decir, el cliente se echó para atrás estando ya en comité), significa que el equipo comercial está tardando demasiado o la tasa/condición que ofrece Monific no está siendo competitiva frente a otras opciones de fondeo.
+6. Instrucción para BnO
+Lógica Condicional Obligatoria (Propiedades Dependientes): Configurar una regla en HubSpot que dicte: "Si el Negocio se mueve a la etapa de Pérdida / Rechazado, es IMPOSIBLE guardar el cambio sin seleccionar el Motivo Exacto". Si permiten que los analistas cierren negocios sin llenar esta propiedad, el reporte se llenará de valores "En blanco" y perderá todo su valor analítico.
+
+Reporte 2.4: Time-to-Market de Originación (Días desde Lead hasta Campaña Publicada).
+1. Objetivo del Reporte
+Medir el ciclo de vida completo de la originación en días naturales. El objetivo no es solo sacar un promedio global, sino fragmentar el tiempo para descubrir exactamente qué departamento es el cuello de botella: ¿El solicitante está tardando en subir documentación? ¿El equipo en evaluar? ¿O Marketing en armar la campaña final?
+2. Objeto Base en HubSpot
+Objeto principal: Negocios (Deals).
+Pipeline: "Originación de Proyectos".
+Tipo de reporte: Gráfico de Promedios (Línea de tendencia mensual) y Gráfico de Barras desglosando los tiempos por etapa.
+3. Propiedades a Crear
+Crear un ecosistema de fechas automatizadas impulsadas por el cambio de etapa del negocio. Ningún humano debe tocar estas propiedades.
+Fecha de Creación del Negocio (Nativa - El día 0).
+Fecha de Documentación Completa (Date Picker - Cuando el estatus de los documentos en Drive se valida en HubSpot).
+Fecha de Aprobación de Comité (Date Picker - Cuando se dicta la resolución positiva).
+Fecha de Campaña Publicada (Date Picker - Cuando el proyecto sale en vivo en la app/web).
+Las Propiedades Calculadas (Calculation Properties):
+Tiempo de Originación del Cliente: Días entre Creación y Documentación Completa. (Mide la fricción del lado del desarrollador).
+Tiempo de Evaluación Interna: Días entre Documentación Completa y Aprobación de Comité. (Mide el SLA de Riesgos).
+Tiempo de Preparación de Campaña: Días entre Aprobación de Comité y Campaña Publicada. (Mide el SLA de Marketing).
+Time-to-Market Total: Días entre Creación y Campaña Publicada.
+4. Configuración del Reporte (El Tablero de Velocidad)
+El reporte debe configurarse estrictamente para los Negocios que ya llegaron a la meta.
+Filtro obligatorio: Negocios en la etapa Campaña Publicada (Closed-Won).
+Gráfico Principal: Mostrar a lo largo de los meses el promedio del Time-to-Market Total.
+Gráfico Secundario (Diagnóstico): Un gráfico de barras apiladas que muestre el promedio de las tres sub-métricas (Tiempo de Originación, Tiempo de Evaluación, Tiempo de Preparación).
+5. Interpretación y Uso
+Este es un reporte para la mesa directiva y los líderes de área:
+Fricción del Cliente: Si el Tiempo de Originación del Cliente ocupa el 70% del Time-to-Market, el formulario puente o la lista de requisitos en Drive es un infierno burocrático. Se debe simplificar o asignar un Concierge para ayudar a los solicitantes clave.
+Cuello de Botella Interno: Si un proyecto se aprueba el día 10, pero la campaña se publica hasta el día 25, Marketing tiene un problema grave de capacidad o el equipo legal está tardando demasiado en formalizar los contratos de publicación.
+6. Instrucción para BnO
+Protección contra el "Efecto Rebote": En la vida real, un proyecto puede avanzar a "Comité" y luego ser regresado a "Documentación Parcial" porque faltó una firma. BnO debe configurar los Workflows de estampado de fechas (Date Stamping) con la regla estricta de: "Actualizar fecha SOLO si la propiedad está en blanco". Si no ponen este candado, un negocio que retrocede de etapa sobrescribirá la fecha original, rompiendo la matemática y generando cálculos de "días negativos" o tiempos irreales que destruirán la credibilidad del reporte.
+
+Reporte 2.5: Efectividad y Velocidad de Campaña de Fondeo (Avance % diario).
+1. Objetivo del Reporte
+Medir la tracción y el apetito del mercado por cada proyecto publicado. El objetivo es calcular la "velocidad de absorción" (cuánto dinero entra por día) para proyectar con exactitud la fecha de cierre de la campaña, y detonar estrategias de marketing (escasez o prueba social) de forma automatizada según el porcentaje de avance.
+2. Objeto Base en HubSpot
+Objeto principal: Negocios (Deals).
+Pipeline: "Originación de Proyectos" (Etapa final: En Fondeo / Campaña Activa).
+Tipo de reporte: Gráfico de medidor (Gauge) para el porcentaje actual por proyecto, y Gráfico de líneas cruzadas (Avance % vs Días Activos).
+3. Propiedades a Crear
+BnO debe crear las propiedades "cubeta" en el Negocio, pero el backend de Monific es quien debe empujar el dato transaccional.
+Monto mínimo de campaña (Number - el mínimo que busca el solicitante para la campaña actual).
+Monto máximo de campaña (Number - el total máximo que busca el solicitante para la campaña actual).
+Monto Fondeado Actual (Number - Obligatorio: Actualizado vía API o Webhook cada hora o cada 24 hrs desde la base de datos transaccional).
+Fecha de Publicación de Campaña (Date Picker).
+Porcentaje de Avance de Fondeo (Propiedad de Ecuación / Calculated: Monto Fondeado Actual / Monto Objetivo de Fondeo).
+Velocidad Diaria Promedio (Propiedad de Ecuación: Monto Fondeado Actual / Días transcurridos desde la Fecha de Publicación).
+4. Configuración del Reporte
+Este tablero es el faro del equipo comercial:
+Filtro: Negocios en etapa Campaña Activa.
+Visual 1 (Pacing): Una tabla dinámica que muestre el Porcentaje de Avance y la Velocidad Diaria Promedio
+Visual 2 (Alerta de Estancamiento): Un reporte de semáforo que destaque en rojo los proyectos cuya velocidad diaria haya caído a cero durante más de 3 días consecutivos.
+5. Interpretación y Uso
+Este reporte es el gatillo principal para exprimir la base de datos usando el Reporte 1.8 (Lead Scoring):
+El efecto FOMO (Miedo a quedarse fuera): Cuando el Porcentaje de Avance de Fondeo cruza matemáticamente el 80%, HubSpot debe disparar automáticamente un Workflow enviando un correo y WhatsApp de "Últimos lugares" exclusivamente a los inversionistas que tienen un Lead Score "Caliente" (los que visitaron la landing pero no compraron). La escasez real cierra ventas en horas.
+El efecto "Social Proof" (Prueba Social): Cuando un proyecto cruza el 20% en sus primeras 48 horas (alta Velocidad Diaria), el sistema dispara una campaña a la base fría: "El proyecto X está rompiendo récords de fondeo. Únete a los más de 500 inversionistas que ya participaron".
+Protocolo de Rescate: Si un proyecto lleva 15 días publicado y no supera el 10% de avance, el mercado está rechazando la tasa, el riesgo o el activo. El sistema detona una alerta a Dirección para evaluar si se retira la campaña o se lanza un beneficio en especie extraordinario (ej. el solicitante acaba de subir el rendimiento) para forzar la tracción.
+
+Reporte 2.6: Índice de Reestructuración de Proyectos (Portafolio sano vs. Reestructuras permanentes).
+1. Objetivo del Reporte
+Medir el "riesgo sistémico" de las evaluaciones previas. Comparar el volumen de capital y la cantidad de proyectos que se mantienen en un estatus "Sano" (pagando en tiempo y forma) frente a los que han pasado a una "Reestructura". Esto le dice a Dirección si las políticas de financiamiento actuales están funcionando o si se está originando producto de alto riesgo.
+2. Objeto Base en HubSpot
+Objeto principal: Negocios (Deals).
+Pipeline: Para esto, BnO debe usar el pipeline de "Administración de Portafolio" o "Proyectos Activos" (la etapa que sigue después de que la campaña se fondeó y el dinero se entregó).
+Tipo de reporte: Gráfico de Anillo (Donut Chart) para la fotografía actual del capital, y un Gráfico de Barras Apiladas para ver el histórico de cohortes (Ej. cuántos proyectos originados en 2024 se reestructuraron vs 2025).
+3. Propiedades a Crear
+Configurar propiedades que el equipo de Seguimiento/Cobranza actualizará cuando se firme un nuevo convenio con el desarrollador:
+Estatus de Salud del Proyecto (Menú desplegable: Sano, Atraso Operativo (<30 días), Reestructura Permanente, Cartera Vencida / Legal).
+Fecha de Firma de Reestructura (Date Picker).
+Motivo de Reestructura (Menú desplegable estricto: Falta de liquidez por bajas ventas, Retraso de obra/permisos, Incremento de costos, Otro).
+Monto de Capital en Reestructura (Number - El saldo insoluto al momento de reestructurar).
+Impacto de la Reestructura (Menú desplegable múltiple: Extensión de plazo, Cambio de tasa, Congelamiento de capital).
+4. Configuración del Reporte (El Tablero de Riesgo)
+El reporte cruza la salud actual de los proyectos activos:
+Filtro obligatorio: Negocios en estatus de Proyecto Activo / No Liquidado.
+Gráfico 1 (El Termómetro del Portafolio): Un anillo que compare la suma del Monto Objetivo de Fondeo (de los proyectos Sanos) vs el Monto de Capital en Reestructura. (Si el pedazo de reestructura supera el 10% o 15% del total, hay una crisis de originación).
+Gráfico 2 (Diagnóstico de Origen): Un gráfico de barras filtrado solo por proyectos en "Reestructura Permanente", desglosado por el Motivo de Reestructura.
+5. Interpretación y Uso Estratégico
+Este reporte es un golpe de realidad para el Comité y el equipo Comercial:
+Freno a Originadores: Si el reporte muestra que los proyectos comerciales (plazas/locales) tienen un índice de reestructuración del 40% por "Retraso de permisos", el Comité de Riesgos tiene la evidencia de HubSpot para rechazar futuros proyectos de ese tipo, por más atractivos que parezcan en papel.
+Control de Mora (Regla del AS IS): Como marca el documento de operaciones, este reporte permite comparar la mora global antes y después del refinanciamiento. Si el índice de reestructuras sube, pero la mora >60 días no baja, significa que las reestructuras están neutralizando riesgos temporales pero no corrigiendo la tendencia. El desarrollador sigue sin poder pagar, solo se le dio más cuerda.
+Preparación de ATC (Nivel 1): Cuando un proyecto cambia su Estatus de Salud a Reestructura, el equipo de Atención a Clientes (ATC) puede prepararse para el impacto reputacional, sabiendo exactamente qué responder antes de que los inversionistas empiecen a preguntar por qué no cayó su pago.
+
+MÓDULO 3: COBRANZA Y SALUD DE CARTERA
+Objetivo: Medir el riesgo de impago, la gestión preventiva y ejecutiva (basado en lógica Moonflow).
+Reporte 3.1: Aging Report de Cartera (Mora 0-30 días, 31-60 días, >60 días).
+1. Objetivo del Reporte
+Visualizar y cuantificar el riesgo de impago del portafolio activo (AUM). El objetivo es tener una radiografía en tiempo real de cuánto capital está sano y cuánto está en peligro, categorizado por sus días de atraso. Esto permite al equipo de cobranza priorizar sus esfuerzos y al equipo de legal preparar la contención con los inversionistas afectados.
+2. Objeto Base en HubSpot
+Objeto principal: Negocios (Deals) en el pipeline de "Proyectos Activos" o "Administración de Cartera". (Nota: Si BnO decide manejar las cuotas mensuales como "Tickets" asociados al Negocio, el reporte se hace sobre el objeto Ticket, pero la lógica de propiedades es la misma).
+Tipo de reporte: Gráfico de Barras Verticales o Gráfico de Embudo (Funnel) segmentado por cohortes de mora.
+3. Propiedades a Crear
+Para reemplazar la lógica de Moonflow dentro de HubSpot, crear una combinación de propiedades sincronizadas y calculadas:
+Fecha de Vencimiento de Pago Actual (Date Picker - Sincronizada desde el sistema core).
+Monto Exigible en Atraso (Number - El capital/interés exacto que no se ha pagado).
+Días de Atraso (Propiedad Calculada: Tiempo transcurrido entre la Fecha de Vencimiento de Pago Actual y la Fecha de hoy).
+Etapa de Mora (Aging) (Menú desplegable automatizado por Workflow: Al Corriente, Mora 0-30 días, Mora 31-60 días, Mora >60 días).
+4. Configuración del Reporte (El Tablero de Cobranza)
+El tablero de control debe diseñarse para lectura rápida del equipo de Riesgos:
+Filtro: Negocios/Tickets donde Monto Exigible en Atraso sea mayor a $0.
+Eje X (Categorías): Etapa de Mora (Aging).
+Eje Y (Medición): Suma del Monto Exigible en Atraso.
+Desglose Secundario: Agrupar las barras por "Desarrollador" o "Tipo de Proyecto" para identificar si el riesgo está concentrado en un solo cliente.
+5. Interpretación y Uso
+Este reporte dicta las acciones del equipo, respetando los niveles de escalamiento del Guideline Operativo del 26 de enero:
+Mora 0-30 días (Preventiva): Nivel 0 (Sistema). Aquí no interviene humanos. HubSpot dispara recordatorios automáticos (WhatsApp/Email) al desarrollador exigiendo el pago.
+Mora 31-60 días (Ejecutiva): Nivel 1 (ATC/Cobranza). Se detona una Tarea obligatoria para realizar llamadas directas. Punto crítico: En el momento en que un proyecto cruza la barrera del día 31, HubSpot debe disparar una alerta a ATC para enviar un comunicado oficial a los inversionistas de ese proyecto. El "AS IS" marca esto como la principal causa de quejas CONDUSEF: el silencio.
+Mora >60 días (Legal): Escalamiento a Nivel 2 y 3. HubSpot detiene los correos automáticos "amigables", pausa al desarrollador de poder solicitar nuevos fondeos, y el expediente pasa al despacho legal para ejecución de garantías.
+6. Instrucción para BnO
+Automatización Dinámica de las Etapas: Deben construir un Workflow de categorización basado en la propiedad calculada Días de Atraso.
+Si Días de Atraso = 1 a 30 -> Mover a Mora 0-30.
+Si Días de Atraso = 31 -> Mover automáticamente a Mora 31-60 y disparar alerta.
+Si esto se deja manual, los agentes esconderán la mora real para evitar presiones, y el reporte mostrará un portafolio falsamente "Sano".
+
+Reporte 3.2: Tasa de "Cero Olvidos" (Recordatorios automatizados vs Fechas de pago).
+1. Objetivo del Reporte
+Garantizar que el 100% de los vencimientos de pago del portafolio activo reciben su gestión preventiva y ejecutiva a tiempo. El reporte cruza las fechas en las que los desarrolladores deben pagar frente a las acciones reales (correos automáticos, WhatsApps y registro de llamadas) ejecutadas por el sistema (Nivel 0) y por el equipo de (Nivel 1).
+2. Objeto Base en HubSpot
+Objeto principal: Actividades (Llamadas, Tareas, Correos) cruzadas con Negocios (Proyectos Activos).
+Tipo de reporte: Gráfico de medidor (Gauge Chart) apuntando al 100%, y un Reporte de Tabla para auditoría de fallas.
+3. Propiedades a Crear
+Configurar propiedades de control (Checkboxes/Casillas de verificación) que se irán marcando solas conforme el sistema o el equipo trabajen:
+Fecha de Vencimiento de Pago Actual (La misma del Reporte 3.1).
+Recordatorio Preventivo (Nivel 0) Enviado (Casilla de verificación - Se marca sola por Workflow 3 días antes del vencimiento).
+Recordatorio Día Cero Enviado (Casilla de verificación - Se marca sola por Workflow el día del vencimiento).
+Gestión Humana de Cobranza (Nivel 1) Ejecutada (Casilla de verificación - Se marca por Workflow SOLO si el asesor de ATC registra una llamada o tarea completada en el timeline del desarrollador 24/48 hrs después del atraso).
+4. Configuración del Reporte
+El tablero no mide dinero, mide disciplina:
+Filtro del Numerador (Lo que se hizo): Cantidad de Negocios donde las casillas de Recordatorio Preventivo, Día Cero o Gestión Humana están marcadas como "Verdadero" dentro del mes actual.
+Filtro del Denominador (Lo que se debió hacer): Cantidad total de Negocios cuya Fecha de Vencimiento de Pago Actual cae en el mes en curso.
+Visualización: Un KPI gigante en porcentaje. Si hay 10 proyectos que debían pagar este mes, y el sistema solo registra 9 con gestión completa, la Tasa de Cero Olvidos es del 90%. Ese 10% faltante es un foco rojo operativo.
+5. Interpretación y Uso
+Este es el tablero con el líder operativo evalúa a su equipo de Atención a Solicitantes:
+Fallas de Nivel 0 (Sistema): Si el reporte arroja que no se enviaron correos preventivos, el problema no es del personal, es de TI/BnO porque el Workflow se rompió o la API no actualizó la fecha de vencimiento.
+Fallas de Nivel 1 (Humanas): Si el desarrollador cayó en Mora (día +1) y el reporte muestra que la casilla Gestión Humana Ejecutada está vacía, el agente de ATC falló en su SLA. No se trata de si el cliente contestó el teléfono o no; se trata de si el agente intentó marcar y dejó el registro en HubSpot.
+Defensa ante Dirección: Si la mora sube, pero este KPI está al 100%, el equipo de cobranza tiene la evidencia para decir: "Nosotros ejecutamos el proceso perfecto, el desarrollador simplemente no tiene liquidez. El problema es de Originación/Riesgos, no de Cobranza".
+6. Instrucción para BnO
+Bloqueo de las casillas de verificación: No permitir que el equipo marque la casilla de Gestión Humana Ejecutada de forma manual con un simple clic. Si hacen eso, los agentes la van a palomear al final del día para cumplir su meta sin haber hecho la llamada. BnO debe construir un Workflow que diga: "Solo si la Tarea tipo 'Llamada de Cobranza' cambia a estatus 'Completada', entonces marca la casilla como Verdadera". Sin atajos.
+
+MÓDULO 4: EFICIENCIA OPERATIVA, ATC Y RIESGO REPUTACIONAL
+Objetivo: Auditar el trabajo del equipo interno, cumplir los lineamientos y medir el descontento.
+Reporte 4.1: Cumplimiento de SLAs de ATC (segmentado por origen del canal).
+1. Objetivo del Reporte
+Medir el porcentaje de éxito del equipo de Atención a Clientes (ATC) en cumplir con los tiempos de respuesta y resolución prometidos a los clientes. El reporte audita los tres tiempos clave del ciclo de un ticket (primera respuesta, siguientes respuestas y cierre) y los segmenta por origen del canal (Chat, Llamada, Correo, Forms), no por prioridad, porque la expectativa del cliente es distinta en un canal síncrono (chat) que en uno asíncrono (correo, formulario UNE). Los SLAs respetan el horario laboral configurado y se pausan automáticamente cuando el avance del ticket depende de un equipo distinto a ATC.
+2. Objeto Base en HubSpot
+Objeto principal: Tickets (Service Hub).
+Pipeline: "Atención a Inversionistas / Solicitantes".
+Herramienta nativa: SLA de Service Hub (horario laboral configurado, semáforo de vencimiento, pausa del reloj por etapa).
+Tipo de reporte: Gráfico de medidor (Gauge) para la Tasa de Cumplimiento Global, y Tabla / Gráfico de Barras Apiladas desglosando los tiempos por canal de origen.
+
+3. Propiedades a Crear
+Configurar el motor de SLAs nativo de HubSpot y añadir propiedades de categorización obligatorias:
+Canal de Origen del Ticket (Menú desplegable estricto: Chat, Llamada, Correo, Forms). Es la dimensión que segmenta el SLA. Se llena automáticamente al crearse el ticket según el canal por el que entró.
+Nivel de Escalamiento Actual (Menú desplegable: Nivel 0 - Sistema, Nivel 1 - ATC, Nivel 2 - Responsable ATC, Nivel 3 - Dirección).
+Categoría del Ticket (Menú desplegable: Duda operativa, Queja leve, Atraso explicable, Cliente indeciso, Hostilidad / Riesgo de abandono, Reclamación UNE, Escalado a TI).
+Tiempo de Primera Respuesta (Propiedad SLA nativa).
+Tiempo de Siguiente Respuesta (Propiedad SLA nativa).
+Tiempo de Cierre (Time-to-close) (Propiedad SLA nativa).
+Estatus del SLA (Calculado por HubSpot: Cumplido, En Riesgo, Vencido).
+
+4. Configuración de SLAs por Canal
+Configurar el módulo de SLA de Service Hub con la siguiente tabla por canal de origen. Los tiempos asumen horario laboral configurado en HubSpot (L-J 9:30-18:30 y V 9:30-15:00) y no corren fuera de horario. La columna ‘Vence pronto’ dispara el aviso visual (warning) antes del vencimiento.
+Chat (web / WhatsApp Business) — canal síncrono, alta prioridad. Primera respuesta: 5 minutos. Siguiente respuesta: 10 minutos. Cierre: 4 horas. Vence pronto: 2 minutos antes. Goal active: SÍ.
+Llamada (devolución de llamada / callback) — canal síncrono diferido. Primera respuesta: 15 minutos. Siguiente respuesta: 30 minutos. Cierre: 4 horas. Vence pronto: 5 minutos antes. Goal active: NO en primera vuelta (se activa una vez exista baseline de volumen).
+Correo — canal asíncrono. Primera respuesta: 2 horas. Siguiente respuesta: 4 horas. Cierre: 24 horas. Vence pronto: 30 minutos antes. Goal active: SÍ.
+Forms (formulario web / formulario UNE) — canal asíncrono regulatorio. Primera respuesta: 4 horas (acuse de recibo, NO resolución). Siguiente respuesta: 8 horas. Cierre operativo: 48 horas. Vence pronto: 1 hora antes. Goal active: NO en primera vuelta.
+
+Nota importante sobre Forms / UNE: Cuando un ticket de Forms se etiqueta como Reclamación UNE iniciada, el SLA interno de HubSpot se pausa y el caso pasa a regirse por el plazo regulatorio de 30 días definido por la autoridad. El SLA operativo de 48 horas aplica únicamente para acuses, no para la resolución formal del caso UNE.
+5. Pausa Automática del Reloj del SLA (Configuración para BnO)
+Esto fue lo que David explicó en la sesión del 27 de mayo y es indispensable para que el reporte no genere vencimientos falsos. El reloj del SLA debe pausarse automáticamente cuando el avance del ticket depende de un equipo distinto a ATC. Cuando el ticket regresa a manos de ATC, el reloj se reanuda donde quedó. Configurar las siguientes etapas como condiciones de pausa:
+Escalado a TI: cuando el ticket cambia su estatus a "Escalado a TI" (Jesús y equipo). El reloj se pausa hasta que TI marque el ticket como "Solución entregada a ATC" o equivalente.
+Escalado a Nivel 3 (Dirección): cuando el ticket pasa a Nivel 3 - Dirección (Raquel / Ted) para resolución directiva. El reloj se pausa hasta que Dirección devuelva el ticket a ATC.
+En espera de respuesta del cliente: cuando ATC le envió al cliente algo que requiere su respuesta (información, documento, validación) y el cliente no ha contestado. El reloj se reanuda en cuanto el cliente conteste por cualquier canal.
+Reclamación UNE formal iniciada: cuando el ticket se clasifica como reclamación UNE formal y entra al plazo regulatorio de 30 días. El SLA interno se suspende y el ticket pasa a regirse por norma.
+
+Cuando el reloj está pausado, el ticket debe mostrarse visualmente con un indicador de "SLA pausado" en el dashboard, y los reportes deben filtrar esos tiempos pausados para que no contaminen el promedio de cumplimiento.
+6. Configuración del Reporte (Tablero de Cumplimiento)
+Este tablero es el monitor diario de operaciones:
+Filtro base: Tickets creados en el período de medición (mes en curso o rango específico).
+Gráfico 1 — Cumplimiento Global por canal: Porcentaje de tickets con Estatus del SLA = Cumplido frente al total, segmentado por Canal de Origen. La meta de cumplimiento operativo es ≥95% para Chat y Correo (los canales con Goal Active encendido).
+Gráfico 2 — Embudo de Escalamiento: Volumen de tickets agrupados por Nivel de Escalamiento Actual. Esto visualiza cuántos problemas mueren en Nivel 1 frente a cuántos se filtran a Nivel 2 o 3, y permite detectar si el Nivel 1 está escalando innecesariamente o si Nivel 2 se está convirtiendo en un cuello de botella.
+Gráfico 3 — Tickets vencidos automáticamente perdidos: HubSpot tipifica automáticamente como perdidos los tickets que vencen su SLA sin resolución. Este gráfico muestra el volumen mensual de pérdidas por canal, para identificar dónde está la fuga real de servicio.
+
+7. Interpretación y Uso
+Autonomía del Nivel 1: La regla dicta que el Nivel 1 resuelve sin pedir permiso. Si el embudo de escalamiento muestra que un volumen alto de tickets por Duda operativa está pasando al Nivel 2, el equipo está rompiendo el guideline por inseguridad o falta de capacitación. El Nivel 2, bajo la supervisión de la Directora Comercial, no puede convertirse en embudo de casos básicos; debe reservarse para cuando el cliente insiste más de 3 veces o el tono se vuelve hostil.
+Tiempos por canal: Si el cumplimiento en Chat cae por debajo del 95%, la capacidad instalada del equipo de ATC está topada en el horario pico o los agentes están priorizando mal. Si el incumplimiento se concentra en Correo, probablemente hay correos atascados sin atribución (no asignados a un agente específico).
+Forms UNE como caso especial: El cumplimiento del SLA de Forms mide solamente acuse de recibo (4 horas), no resolución regulatoria. Para auditar el cumplimiento del plazo de 30 días de la UNE, usar el Reporte 4.4 (Riesgo Reputacional y CONDUSEF).
+
+8. Instrucción para BnO
+Configuración estricta del motor de SLA de Service Hub. BnO debe configurar:
+Los tiempos por canal exactos de la tabla de la Sección 4, con la unidad correcta (minutos / horas) y el toggle Goal active encendido únicamente en Chat y Correo en primera vuelta. Llamada y Forms quedan configurados pero con el toggle apagado durante los primeros 30-60 días para no contaminar el dashboard hasta tener baseline operativo. Una vez exista baseline, ATC notifica a BnO para activarlos.
+Las condiciones de pausa del reloj definidas en la Sección 5 (Escalado a TI, Escalado a Nivel 3, En espera del cliente, Reclamación UNE iniciada). Sin estas pausas, el reporte mostrará vencimientos falsos cuando el ticket esté fuera de la cancha de ATC, y los KPIs del equipo serán injustos.
+Un Workflow de Auto-Escalamiento para Chat y Correo: si un ticket en Nivel 1 cruza la barrera de su tiempo de cierre por canal sin resolución, el sistema debe cambiar automáticamente la propiedad a Nivel de Escalamiento: Nivel 2 y notificar al responsable de ATC. Ningún agente debe poder esconder un ticket retrasado.
+Visualización por semáforo (verde / amarillo / rojo) en el listado de tickets, conforme se acerca el tiempo de vencimiento del SLA, usando el indicador "Vence pronto" configurado por canal.
+
+Reporte 4.2: Alertas de Fricción Operativa (Usuarios que requieren > 2 contactos humanos por semana).
+1. Objetivo del Reporte
+Detectar en tiempo real a los usuarios que están consumiendo una cantidad desproporcionada de recursos humanos (Atención a Clientes o Ventas). El objetivo es identificar cuellos de botella en la experiencia de usuario (UX) o en los procesos, para resolver la causa raíz del problema en lugar de simplemente seguir contestando llamadas y correos.
+2. Objeto Base en HubSpot
+Objeto principal: Contactos (cruzado con Actividades).
+Tipo de reporte: Lista dinámica de auditoría y Tabla de Clasificación (Leaderboard) de contactos con mayor fricción.
+3. Propiedades a Crear
+Configurar propiedades de cálculo continuo (Rollup properties) que cuenten las interacciones. Esto es pura automatización de HubSpot:
+Contador de Interacciones Humanas (Últimos 7 días) (Propiedad calculada/Rollup - Suma el número de actividades registradas en el contacto).
+Categoría de Fricción (Menú desplegable: Operación Normal, Alerta de Fricción, Usuario Crítico).
+Origen de la Fricción (Menú desplegable: Dudas sobre plataforma, Ansiedad por pagos/mora, Problemas con documentos B2B, Quejas).
+4. Configuración del Reporte
+Este no es un reporte para admirar, es una lista de tareas de urgencia:
+Filtro: Contactos donde Contador de Interacciones Humanas (Últimos 7 días) sea Mayor a 2.
+Visual 1 (El Radar): Una tabla que muestre el Nombre del Contacto, el Propietario asignado (quién lo está atendiendo), el número exacto de interacciones, y el Negocio/Ticket asociado.
+Visual 2 (Diagnóstico Raíz): Un gráfico de barras que agrupe a estos usuarios problemáticos por su Origen de la Fricción.
+5. Interpretación y Uso
+Este panel le dice a Raquel y dónde se está rompiendo la operación:
+Falla de UX/Tecnología: Si hay 50 inversionistas disparando la alerta de fricción porque todos llamaron 3 veces esta semana para preguntar cómo fondear la nueva wallet, el problema no es de ATC. Es una orden directa para que el equipo de Producto mejore la interfaz o para que Marketing envíe un tutorial masivo.
+Ansiedad por Mora: Si un grupo de inversionistas del proyecto "Una Luna Tulum" supera los 3 contactos semanales justo cuando hay un atraso, el Nivel 2 debe intervenir. Significa que los comunicados de Nivel 0 (automatizados) no están dando certeza y el cliente está entrando en pánico.
+Fricción B2B (Desarrolladores): Si un solicitante B2B requiere 4 llamadas para entender cómo llenar el "Formulario Puente" o subir documentos a Drive, Originación debe asignarle un ejecutivo dedicado (Concierge) o rediseñar los requisitos, porque el proceso "self-service" fracasó.
+6. Instrucción para BnO
+Filtrado de "Actividades Humanas": La propiedad Contador de Interacciones Humanas TIENE PROHIBIDO contar correos automatizados de marketing (Newsletters, notificaciones de sistema). Debe configurarse un filtro en el Rollup para que solo cuente:
+Llamadas registradas (Logged calls).
+Correos uno-a-uno (Sales/Service emails).
+Reuniones agendadas (Meetings).
+Mensajes directos de WhatsApp (si hay integración).
+Si BnO comete el error de sumar los correos masivos, cada vez que manden un boletín a 10,000 personas, el reporte colapsará arrojando 10,000 "Alertas de Fricción" falsas.
+
+Reporte 4.3: Embudo de "Pausas Automáticas" (Leads inactivos pausados tras 48h de no respuesta).
+1. Objetivo del Reporte
+Medir el volumen de leads (tanto inversionistas como de solicitantes) que son descartados temporalmente por falta de interés o respuesta. El objetivo es auditar la calidad del tráfico que está generando Marketing y garantizar que el equipo comercial no pierda un solo minuto persiguiendo fantasmas.
+2. Objeto Base en HubSpot
+Objeto principal: Negocios (Para solicitantes B2B) y Contactos (Para inversionistas B2C).
+Tipo de reporte: Gráfico de Embudo (Funnel) de decantación y Gráfico de Barras horizontales por Motivo de Pausa.
+3. Propiedades a Crear
+Configurar propiedades que actúen como temporizadores:
+Fecha de Último Intento de Contacto (Date Picker - Se estampa automáticamente cuando ATC envía un correo, WhatsApp o hace una llamada sin éxito).
+Horas sin Respuesta (Propiedad calculada: Tiempo transcurrido desde el Último Intento de Contacto).
+Estatus del Lead / Etapa de Negocio (Debe existir una etapa final de pérdida llamada exactamente: Pausa Automática).
+Motivo de Pausa Automática (Menú desplegable, extraído de las minutas: No responde en 48h, Llamada No-Show, Pide revisar más adelante sin fecha, Dudas resueltas sin acción).
+4. Configuración del Reporte
+Este tablero se revisa semanalmente para entender qué está fallando en la captación:
+Filtro obligatorio: Contactos o Negocios que hayan entrado a la etapa de Pausa Automática en los últimos 30 días.
+Gráfico 1 (La Tasa de Abandono): Un embudo que muestre: Total de Leads Nuevos ➔ Leads Contactados ➔ Leads Pausados Automáticamente. (Si de 100 leads, 60 terminan pausados, la segmentación de la pauta de marketing es errónea).
+Gráfico 2 (Diagnóstico del Fantasma): Un desglose por Motivo de Pausa Automática.
+5. Interpretación y Uso
+Los datos de este reporte son munición para corregir estrategias:
+El problema del "No-Show": Si el 40% de los desarrolladores solicitantes terminan pausados por "Llamada No-Show" (agendaron pero no se conectaron a la reunión), el recordatorio automático previo a la junta no está funcionando o el formulario es tan fácil de llenar que atrae curiosos sin verdadero compromiso.
+Reactivación Estratégica: Un lead pausado no está muerto para siempre. Como dicta el guideline, la reactivación es solo con propuesta concreta. HubSpot debe tomar a todos los que llevan 30 días en Pausa Automática y meterlos a una campaña de "Nurturing" pasiva. Si de pronto uno de ellos hace clic en un correo sobre el nuevo proyecto Vértiz, el Lead Score (Reporte 1.8) sube y lo "despausa" automáticamente, regresándolo a la bandeja de ATC.
+6. Instrucción para BnO
+Ejecución 100% por Nivel 0 (El Sistema): El humano solo debe registrar su intento de llamada. BnO debe configurar un Workflow que corra en el fondo: Si Horas sin Respuesta > 48, el sistema cambia la etapa a Pausa Automática y le quita la tarea al agente. Si el agente lo hace a mano, corremos el riesgo de que pausen leads calientes solo para limpiar sus tareas vencidas. El sistema es el único juez del tiempo.
+
+Reporte 4.4: Riesgo Reputacional y CONDUSEF (Incidentes UNE clasificados por causa raíz: mala comunicación, falta de claridad, etc.).
+1. Objetivo del Reporte
+Cuantificar y diseccionar los incidentes graves (quejas formales, reclamaciones UNE y requerimientos CONDUSEF) para entender por qué están ocurriendo. El objetivo no es solo resolver la queja, sino identificar si la raíz es un problema de comunicación de Monific, expectativas falsas de marketing o incumplimiento del desarrollador, activando la supervisión inmediata de la Dirección.
+2. Objeto Base en HubSpot
+Objeto principal: Tickets (Service Hub).
+Pipeline: "Atención a Inversionistas" (o un pipeline exclusivo si deciden separar "Casos Legales / UNE").
+Tipo de reporte: Gráfico de Pareto (Barras + Línea de porcentaje acumulado) para la Causa Raíz, y un Medidor de KPI (Gauge) para el Riesgo Sistémico.
+3. Propiedades a Crear
+BnO debe mapear textualmente las directrices de tu documento AS IS dentro de las propiedades del Ticket:
+Tipo de Incidente (Menú desplegable estricto: Aclaración interna, Queja formal, Reclamación UNE, Requerimiento CONDUSEF).
+Causa Raíz del Incidente (Menú desplegable estricto: Comunicación deficiente, Expectativas no alineadas, Falta de evidencia en expediente, Mala interpretación del refinanciamiento, Tiempos no cumplidos).
+Proyecto Asociado (Propiedad de asociación al Negocio, para saber qué proyecto está detonando el fuego).
+Monto en Disputa (Number).
+4. Configuración del Reporte
+Este es el tablero exclusivo para Raquel, Finanzas, Legal y Dirección:
+Filtro obligatorio: Tickets donde Tipo de Incidente sea Reclamación UNE o Requerimiento CONDUSEF.
+Visual 1 (La Autopsia del Problema): Gráfico de barras agrupando el volumen de tickets por la propiedad Causa Raíz del Incidente.
+Visual 2 (El Termómetro del AS IS): Un medidor porcentual que calcule: (Total de inversionistas con incidentes en un proyecto / Total de inversionistas del proyecto).
+Rango Verde: 0 - 2% (Control y transparencia).
+Rango Amarillo: 3 - 5% (Revisar comunicaciones).
+Rango Rojo: > 5% (Riesgo reputacional elevado, intervención de Nivel 3).
+5. Interpretación y Uso
+Auditoría de Nivel 1 (ATC): Si el Visual 1 muestra que el 80% de las quejas CONDUSEF tienen como causa raíz "Comunicación deficiente" o "Mala interpretación del refinanciamiento", el equipo no está siguiendo los guiones autorizados (Guidelines del 26 de enero) y está improvisando respuestas que confunden al usuario.
+El "Efecto Contagio": Si un proyecto específico cruza la barrera del 5% de quejas, el sistema asume que hay pánico colectivo. HubSpot debe pausar inmediatamente toda comunicación automatizada de marketing hacia esos usuarios para no irritarlos más, y el manejo de ese grupo pasa exclusivamente a Nivel 2 o 3.
+6. Instrucción para BnO
+Candados de Bloqueo Legal: BnO debe configurar permisos restrictivos (Roles & Permissions) para este tipo de tickets.
+Cuando un agente clasifica un ticket como Reclamación UNE o CONDUSEF, el sistema debe bloquear el borrado del ticket. Nadie puede eliminarlo.
+Automáticamente, el Workflow debe cambiar la propiedad Nivel de Escalamiento a Nivel 3 (Raquel / Dirección).
+Regla de Cierre: El ticket NO puede moverse a la etapa "Cerrado / Resuelto" a menos que se haya subido un archivo adjunto obligatorio (El acuse de resolución de la autoridad o el comprobante de liquidación). Si BnO permite que un asesor de Nivel 1 cierre un caso CONDUSEF con un simple clic, la empresa queda ciega ante un riesgo legal.

@@ -1,0 +1,69 @@
+=== ID: D183 ===
+=== SOURCE: Wiki Monific\drive-download-20260807T144042Z-1-001\4. Martes 24 de Febrero.docx ===
+=== MODIFIED: 2026-08-07 ===
+
+Minuta de Reunión: Integración HubSpot y Mapeo de Procesos
+Fecha: 24 de febrero de 2026
+Participantes: Raquel, Caro, Josué, Ricardo, José y  David.
+Objetivo: Revisión de flujogramas de procesos, definición de estados de leads e integración técnica entre HubSpot y los sistemas de Monific/Admin Monific.
+Flujograma
+
+1. Acuerdos de Agenda y Coordinación
+Próxima Sesión Técnica: Se propusieron dos horarios para una reunión con el equipo de TI para profundizar en la arquitectura y mapeo de propiedades:
+Lunes 2 de marzo a las 13:30 (CDMX).
+Miércoles 4 de marzo a las 11:00 (CDMX).
+Confirmación: Raquel confirmará la fecha definitiva por WhatsApp tras consultar la disponibilidad de Jesús y Dani (TI).
+2. Definiciones del Proceso de Inversionistas (Flujograma)
+Josué presentó el flujo comercial dividido en tres secciones: Cliente, Admin Monific y Agente de Atención.
+A. Captación y Registro
+Canales: Se integrará TikTok a la lista de canales de entrada (junto a Meta Ads, Google Ads, Orgánico y WhatsApp).
+Formularios: Se migrarán los registros a formularios nativos de HubSpot para capturar datos mínimos (correo, contraseña, teléfono).
+B. Proceso KYC (Know Your Customer) y Cuenta STP
+Simplificación: Raquel sugirió unificar el proceso de KYC y la activación de la cuenta STP. En Monific, tener una cuenta STP es sinónimo de haber completado el KYC.
+Sincronización: Admin Monific debe enviar el dato de "Cuenta STP Activa" a HubSpot en tiempo real. Se revisará la falla actual de sincronización en la sesión técnica.
+C. Gestión de Leads Inactivos ("Congelados")
+Estado "Congelado": Se creará una etapa en el ciclo de vida o una etiqueta para leads que no completan su registro tras 15 días.
+Nutrición: Se enviarán correos de nutrición de largo plazo (cada 3 o 6 meses). Raquel menciona que hay usuarios que se reactivan incluso después de 2 años.
+Cierre Perdido: Si tras 48 meses de nutrición no hay respuesta (y no tiene saldo ni inversiones activas), el negocio se marcará como cierre perdido.
+D. Estrategia de Seguimiento y Ventas
+Lead "Caliente": Una vez que la cuenta STP está activa pero no hay inversión, se priorizarán tareas manuales para los agentes (llamadas) antes que los correos automáticos.
+Regla de los $1,000: Los recordatorios de "fondos sin invertir" solo se enviarán si el saldo es mayor a $1,000 MXN para evitar fricciones con usuarios que no alcanzan el mínimo de inversión.
+3. Notificaciones y Automatización de Correos
+Sustitución de Monific: HubSpot se encargará de los correos de bienvenida y seguimiento.
+Notificación de Pagos/Rendimientos: Actualmente Raquel lo hace manual. Se busca automatizarlo en HubSpot.
+Reto Técnico: Evitar el spam. Si un usuario tiene 50 proyectos, no debe recibir 50 correos el mismo día.
+Solución Propuesta: Usar propiedades de texto y tokens en HubSpot para agrupar las inversiones en un solo correo resumen.
+Finalización de Proyecto: Se automatizará un correo cuando un proyecto termine para incentivar la reinversión inmediata.
+4. Definiciones Técnicas (HubSpot Enterprise)
+Propiedades: Las propiedades de las campañas deben ser de tipo "Texto" (no multiselección) para que la API pueda viajar correctamente y se usen como tokens dinámicos.
+Secuencias: Se mencionó que para inscribir contactos en secuencias de manera 100% automática vía Workflow se requiere licencia Enterprise. De lo contrario, el Workflow creará una tarea para que el agente la active manualmente.
+5. Proceso de Solicitantes (Avance Preliminar)
+Entradas: Brokers (socios), referidos y canales digitales.
+Scoring de Viabilidad: Raquel compartió un documento con el "Árbol de Decisiones" para calificar solicitantes después de llenar el formulario de HubSpot. Este punto se profundizará en la siguiente sesión.
+
+Acciones Pendientes (Next Steps)
+Acción
+ | Responsable
+ | Fecha Límite
+ |
+Confirmar fecha de reunión técnica (Lunes o Miércoles).
+ | Raquel
+ | ASAP
+ |
+Revisar por qué el dato de cuenta STP no viaja a HubSpot.
+ | Equipo TI / David
+ | Próxima sesión
+ |
+Modificar flujograma para unificar KYC y STP.
+ | Josué
+ | Próxima sesión
+ |
+Revisar lógica de agrupación de tokens para correos de pago.
+ | Equipo Técnico
+ | Próxima sesión
+ |
+Estudiar el documento "Árbol de Decisiones" de solicitantes.
+ | Caro / Josué
+ | Próxima sesión
+ |
+

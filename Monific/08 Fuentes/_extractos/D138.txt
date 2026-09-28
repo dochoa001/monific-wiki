@@ -1,0 +1,44 @@
+=== ID: D138 ===
+=== SOURCE: Wiki Monific\drive-download-20260807T143807Z-1-001\Emmanuel  _ David - Alineación interna - Monific_ 2026_06_19 12_01 CST - Notas de Gemini.docx ===
+=== MODIFIED: 2026-08-07 ===
+
+📝 Las notas
+jun 19, 2026
+Emmanuel  / David - Alineación interna - Monific
+Invitado David Ochoa Emmanuel Chulin
+Archivos adjuntos Emmanuel  / David - Alineación interna - Monific
+Registros de la reunión Grabación
+
+Resumen
+Revisión de implementación técnica, flujos de trabajo pendientes y estrategias de automatización para optimizar la integración de datos.
+
+Estado técnico y flujos
+La implementación actual presenta inconsistencias en flujos de trabajo y carece de datos críticos en reportes. Se requiere corregir la integración de API para habilitar la visibilidad de datos.
+
+Configuración de procesos clave
+Se determinó gestionar la cobranza mediante tickets y utilizar el objeto de proyectos como pivote relacional. Se priorizó la automatización de la creación de propiedades utilizando Codex.
+
+Estrategia de ejecución
+Se acordó ajustar los permisos administrativos para permitir que Codex automatice la creación de las 150 propiedades faltantes. Se consolidará el plan de trabajo para validar los resultados.
+
+Próximos pasos
+[David Ochoa] Crear diagrama propiedades: Generar el diagrama de propiedades necesarias para la integracion basandose en los documentos macro y de hallazgos. Incluir detalles como nombre interno, descripcion, tipo de campo y obligatoriedad.
+[David Ochoa] Validar documentos: Confrontar la lista de propiedades requeridas por el cliente contra el documento macro para asegurar la precision de los datos. Verificar la cantidad total de propiedades pendientes.
+[David Ochoa] Revisar grabacion: Consultar la grabacion de la reunion previa con el cliente para confirmar la decision sobre la gestion de cobranza mediante objetos de tickets.
+[Emmanuel Chulin] Resolver conexion HubSpot: Solucionar los problemas de permisos de conexion entre la herramienta Codex y la cuenta de HubSpot del cliente. Asegurar que Codex tenga privilegios suficientes para la creacion automatizada de campos.
+[El grupo] Preparar avance reunion: Consolidar la creacion de las propiedades faltantes para presentar los avances en la reunion del lunes con Alan. Asegurar tener un plan de trabajo claro para los puntos restantes.
+
+Detalles
+Estado de la implementación y flujos de trabajo: David Ochoa señala problemas específicos en la implementación, como la posibilidad de reactivar negocios cerrados como ganados, lo cual consideran incongruente. Además, se han desactivado varios flujos de trabajo debido a la falta de claridad lógica, la ausencia de campos en el sistema maestro o la falta de conectores para alimentar dichos flujos. David Ochoa también menciona que, aunque existen integraciones entre sistemas, la mejora necesaria para incluir todos los campos requeridos por el cliente aún está pendiente.
+Dependencia de la integración en los reportes: David Ochoa y Emmanuel Chulin discuten que los reportes se encuentran preconfigurados pero carecen de información porque las propiedades no están conectadas a la integración de la API. Todo cambio en esta área está sujeto a la aprobación explícita de Monifi, quien debe validar aspectos como el tipo de gráfico, colores y la naturaleza de la información presentada, lo cual es un requisito estricto mencionado en el documento de hallazgos.
+Pendientes de capacitación y documentación: David Ochoa reporta que la documentación actual es insuficiente y que las capacitaciones previas no tuvieron la profundidad necesaria. Se requiere la creación de manuales, playbooks, cursos y bases de conocimiento. La realización de estas capacitaciones está condicionada a que la integración con el ERP (Enterprise Resource Planning) inyecte datos reales en la plataforma, ya que procesos como la cobranza dependen de la visibilidad de datos que actualmente no existen en HubSpot.
+Estrategia para la creación de propiedades con Codex: Emmanuel Chulin propone utilizar Codex para automatizar la creación de las propiedades faltantes. David Ochoa acuerda probar esta metodología, haciendo énfasis en que se debe garantizar que las etiquetas internas coincidan exactamente con el mapeo del documento de la API para asegurar que la integración funcione correctamente.
+Preparación para la reunión de seguimiento: Emmanuel Chulin enfatiza la necesidad de llegar a la reunión del lunes con Alan con un plan de trabajo avanzado y resultados tangibles. La meta es definir claramente las propiedades requeridas, especificando su nombre interno, descripción, tipo de campo, y si son obligatorias, basándose en la lista de aproximadamente 180 propiedades, de las cuales solo 30 existen actualmente.
+Revisión de documentos de hallazgos: David Ochoa y Emmanuel Chulin revisan la "Matriz única de hallazgos" y la "Plantilla de respuestas de Black and Orange". Estos documentos contienen los 16 bloques de trabajo prioritarios, incluyendo la consolidación de los procesos "to-be" (el mapeo), la automatización de los cuatro segmentos principales (solicitantes, inversionistas, unidad de servicio y cobranza), y la configuración de los tableros de control.
+Configuración del objeto de cobranza: David Ochoa aclara que, tras evaluar las opciones, se decidió gestionar el proceso de cobranza utilizando "Tickets" en lugar de un objeto personalizado. Esta decisión se tomó porque, en el momento de la implementación, el cliente no contaba con una suscripción Enterprise, aunque recientemente han escalado a dicho nivel, por lo que existe la posibilidad de reajustar esta estructura si fuera necesario.
+Prueba de integración técnica con Codex: Emmanuel Chulin y David Ochoa realizan una prueba práctica conectando Codex a la cuenta de HubSpot de Black and Orange. Aunque durante el ejercicio inicial se presentó un error de permisos que impidió la creación directa de nuevas propiedades, el equipo identifica la necesidad de ajustar los permisos administrativos para permitir que la herramienta automatice la creación de campos según el mapeo del documento maestro.
+Clarificación sobre el objeto de proyectos: David Ochoa explica que el objeto de "proyectos" (anteriormente referido como "edificio") funciona como un objeto pivote. Su propósito es permitir el seguimiento de relaciones entre entidades, como inversionistas que financian proyectos o empresas que solicitan financiamiento, manteniendo una estructura distinta a la de los tickets utilizados para la cobranza.
+Acuerdos de cierre y siguientes pasos: Emmanuel Chulin y David Ochoa acuerdan que el siguiente paso es validar que las propiedades creadas por Codex sean correctas, consolidar la lista definitiva de las 100+ propiedades pendientes y preparar el plan de trabajo para el lunes. El objetivo es presentarle a Alan un progreso claro donde una parte sustancial de las propiedades ya estén creadas y el resto esté debidamente mapeado.
+
+Revisa las notas de Gemini para asegurarte de que sean precisas. Obtén sugerencias y descubre cómo Gemini toma notas
+Cómo es la calidad de estas notas específicas? Responde una breve encuesta para darnos tu opinión; por ejemplo, cuán útiles te resultaron las notas.

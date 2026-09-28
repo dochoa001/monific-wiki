@@ -1,0 +1,1253 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<meta name="description" content="Repaso posterior a cada sesion de capacitacion de HubSpot. Portal 48427391.">
+<title>Repaso HubSpot Monific</title>
+<style>
+  :root {
+    --bg: #E8EBEE;
+    --surface: #FFFFFF;
+    --surface-2: #F3F5F7;
+    --ink: #141C24;
+    --muted: #5A6773;
+    --faint: #8794A0;
+    --line: #CDD5DD;
+    --line-soft: #E1E7EC;
+    --accent: #1B4B7A;
+    --accent-soft: #E3ECF5;
+    --ok: #186B4E;
+    --ok-soft: #E2F0E9;
+    --err: #9E2B25;
+    --err-soft: #F8E5E4;
+    --shadow: 0 1px 2px rgba(20,28,36,.06), 0 8px 24px -12px rgba(20,28,36,.18);
+
+    --display: Georgia, "Iowan Old Style", "Times New Roman", serif;
+    --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    --mono: ui-monospace, "Cascadia Mono", "SF Mono", Consolas, "Liberation Mono", monospace;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #0E1418;
+      --surface: #161E25;
+      --surface-2: #1C262E;
+      --ink: #E6ECF1;
+      --muted: #94A2AE;
+      --faint: #6B7C89;
+      --line: #2A3742;
+      --line-soft: #212C35;
+      --accent: #7FB0E0;
+      --accent-soft: #16283A;
+      --ok: #63C095;
+      --ok-soft: #122E24;
+      --err: #E4867F;
+      --err-soft: #341A1A;
+      --shadow: 0 1px 2px rgba(0,0,0,.4), 0 8px 28px -14px rgba(0,0,0,.7);
+    }
+  }
+
+  :root[data-theme="dark"] {
+    --bg: #0E1418;
+    --surface: #161E25;
+    --surface-2: #1C262E;
+    --ink: #E6ECF1;
+    --muted: #94A2AE;
+    --faint: #6B7C89;
+    --line: #2A3742;
+    --line-soft: #212C35;
+    --accent: #7FB0E0;
+    --accent-soft: #16283A;
+    --ok: #63C095;
+    --ok-soft: #122E24;
+    --err: #E4867F;
+    --err-soft: #341A1A;
+    --shadow: 0 1px 2px rgba(0,0,0,.4), 0 8px 28px -14px rgba(0,0,0,.7);
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: var(--sans);
+    font-size: 16px;
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .wrap {
+    max-width: 60rem;
+    margin: 0 auto;
+    padding: 2.5rem 1.25rem 4rem;
+  }
+
+  .eyebrow {
+    font-family: var(--mono);
+    font-size: .7rem;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: var(--faint);
+  }
+
+  /* ---------- header ---------- */
+  .masthead {
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid var(--line);
+    margin-bottom: 2rem;
+  }
+  .masthead h1 {
+    font-family: var(--display);
+    font-weight: 400;
+    font-size: clamp(1.9rem, 1.2rem + 2.4vw, 2.9rem);
+    line-height: 1.1;
+    margin: 0;
+    text-wrap: balance;
+    letter-spacing: -.01em;
+  }
+  .masthead p {
+    margin: 0;
+    color: var(--muted);
+    max-width: 46ch;
+  }
+  .masthead .row {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  /* ---------- session grid ---------- */
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
+    gap: .875rem;
+  }
+
+  .ficha {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+    text-align: left;
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 3px;
+    padding: 1.1rem 1.1rem 1rem;
+    cursor: pointer;
+    font: inherit;
+    color: inherit;
+    transition: border-color .15s, transform .15s, box-shadow .15s;
+  }
+  .ficha:hover {
+    border-color: var(--accent);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow);
+  }
+  .ficha:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+  }
+  .ficha .num {
+    font-family: var(--mono);
+    font-size: .7rem;
+    letter-spacing: .12em;
+    color: var(--accent);
+  }
+  .ficha .title {
+    font-family: var(--display);
+    font-size: 1.15rem;
+    line-height: 1.25;
+    text-wrap: balance;
+  }
+  .ficha .meta {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: .75rem;
+    margin-top: auto;
+    padding-top: .5rem;
+    border-top: 1px solid var(--line-soft);
+    font-family: var(--mono);
+    font-size: .72rem;
+    color: var(--faint);
+    font-variant-numeric: tabular-nums;
+  }
+  .score-chip {
+    padding: .1rem .45rem;
+    border-radius: 2px;
+    font-variant-numeric: tabular-nums;
+    background: var(--surface-2);
+    color: var(--muted);
+  }
+  .score-chip.good { background: var(--ok-soft); color: var(--ok); }
+  .score-chip.bad  { background: var(--err-soft); color: var(--err); }
+
+  /* ---------- quiz ---------- */
+  .hidden { display: none !important; }
+
+  .topbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-bottom: 1rem;
+    flex-wrap: wrap;
+  }
+  .linkbtn {
+    background: none;
+    border: none;
+    padding: .25rem 0;
+    font: inherit;
+    font-size: .875rem;
+    color: var(--muted);
+    cursor: pointer;
+    border-bottom: 1px solid transparent;
+  }
+  .linkbtn:hover { color: var(--accent); border-bottom-color: var(--accent); }
+  .linkbtn:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+
+  .counter {
+    font-family: var(--mono);
+    font-size: .78rem;
+    color: var(--faint);
+    font-variant-numeric: tabular-nums;
+  }
+
+  .rail {
+    display: flex;
+    gap: 3px;
+    margin-bottom: 1.75rem;
+  }
+  .rail span {
+    height: 3px;
+    flex: 1;
+    background: var(--line);
+    border-radius: 2px;
+    transition: background .2s;
+  }
+  .rail span.done-ok { background: var(--ok); }
+  .rail span.done-bad { background: var(--err); }
+  .rail span.current { background: var(--accent); }
+
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 3px;
+    padding: 1.75rem;
+    box-shadow: var(--shadow);
+  }
+  @media (max-width: 34rem) { .card { padding: 1.25rem; } }
+
+  .qtext {
+    font-family: var(--display);
+    font-size: clamp(1.25rem, 1rem + 1vw, 1.6rem);
+    line-height: 1.3;
+    margin: .35rem 0 1.5rem;
+    text-wrap: balance;
+  }
+
+  .options {
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+  }
+  .opt {
+    display: flex;
+    align-items: flex-start;
+    gap: .75rem;
+    width: 100%;
+    text-align: left;
+    background: var(--surface-2);
+    border: 1px solid var(--line-soft);
+    border-radius: 3px;
+    padding: .8rem .9rem;
+    font: inherit;
+    color: inherit;
+    cursor: pointer;
+    transition: border-color .12s, background .12s;
+  }
+  .opt:hover:not(:disabled) { border-color: var(--accent); }
+  .opt:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+  .opt:disabled { cursor: default; }
+  .opt .key {
+    flex: none;
+    font-family: var(--mono);
+    font-size: .72rem;
+    line-height: 1.5rem;
+    width: 1.5rem;
+    height: 1.5rem;
+    text-align: center;
+    border: 1px solid var(--line);
+    border-radius: 2px;
+    color: var(--muted);
+    background: var(--surface);
+  }
+  .opt.is-ok {
+    background: var(--ok-soft);
+    border-color: var(--ok);
+  }
+  .opt.is-ok .key { border-color: var(--ok); color: var(--ok); }
+  .opt.is-bad {
+    background: var(--err-soft);
+    border-color: var(--err);
+  }
+  .opt.is-bad .key { border-color: var(--err); color: var(--err); }
+  .opt.dim { opacity: .5; }
+
+  .feedback {
+    margin-top: 1.25rem;
+    padding: 1rem 1.1rem;
+    border-left: 3px solid var(--accent);
+    background: var(--accent-soft);
+    border-radius: 0 3px 3px 0;
+  }
+  .feedback.ok { border-left-color: var(--ok); background: var(--ok-soft); }
+  .feedback.bad { border-left-color: var(--err); background: var(--err-soft); }
+  .feedback .verdict {
+    font-family: var(--mono);
+    font-size: .7rem;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    margin-bottom: .4rem;
+  }
+  .feedback.ok .verdict { color: var(--ok); }
+  .feedback.bad .verdict { color: var(--err); }
+  .feedback p { margin: 0; }
+  .feedback .ref {
+    margin-top: .6rem;
+    padding-top: .6rem;
+    border-top: 1px solid var(--line-soft);
+    font-size: .82rem;
+    color: var(--muted);
+  }
+  .feedback .ref b { font-weight: 600; color: var(--ink); }
+
+  @media (prefers-reduced-motion: no-preference) {
+    .feedback { animation: rise .22s ease-out; }
+    @keyframes rise {
+      from { opacity: 0; transform: translateY(4px); }
+      to { opacity: 1; transform: none; }
+    }
+  }
+
+  .actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: .6rem;
+    margin-top: 1.25rem;
+  }
+  .btn {
+    font: inherit;
+    font-size: .9rem;
+    padding: .55rem 1.1rem;
+    border-radius: 3px;
+    border: 1px solid var(--accent);
+    background: var(--accent);
+    color: var(--surface);
+    cursor: pointer;
+    transition: opacity .12s;
+  }
+  :root[data-theme="dark"] .btn,
+  .btn { color: var(--bg); }
+  .btn:hover { opacity: .88; }
+  .btn:focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; }
+  .btn.ghost {
+    background: none;
+    color: var(--ink);
+    border-color: var(--line);
+  }
+  .btn.ghost:hover { border-color: var(--accent); color: var(--accent); }
+
+  /* ---------- results ---------- */
+  .result-head {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid var(--line);
+    margin-bottom: 1.5rem;
+  }
+  .sello {
+    flex: none;
+    display: grid;
+    place-content: center;
+    text-align: center;
+    width: 7rem;
+    height: 7rem;
+    border: 2px solid var(--accent);
+    border-radius: 50%;
+    color: var(--accent);
+    transform: rotate(-6deg);
+  }
+  .sello.good { border-color: var(--ok); color: var(--ok); }
+  .sello.bad { border-color: var(--err); color: var(--err); }
+  .sello .n {
+    font-family: var(--display);
+    font-size: 2.1rem;
+    line-height: 1;
+    font-variant-numeric: tabular-nums;
+  }
+  .sello .of {
+    font-family: var(--mono);
+    font-size: .62rem;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    margin-top: .2rem;
+  }
+  .verdict-text h2 {
+    font-family: var(--display);
+    font-weight: 400;
+    font-size: 1.5rem;
+    margin: .25rem 0 .4rem;
+    text-wrap: balance;
+  }
+  .verdict-text p { margin: 0; color: var(--muted); max-width: 44ch; }
+
+  .review { display: flex; flex-direction: column; gap: .5rem; }
+  .review-item {
+    display: flex;
+    gap: .75rem;
+    padding: .75rem .9rem;
+    background: var(--surface-2);
+    border: 1px solid var(--line-soft);
+    border-left-width: 3px;
+    border-radius: 0 3px 3px 0;
+  }
+  .review-item.ok { border-left-color: var(--ok); }
+  .review-item.bad { border-left-color: var(--err); }
+  .review-item .mark {
+    font-family: var(--mono);
+    font-size: .8rem;
+    flex: none;
+  }
+  .review-item.ok .mark { color: var(--ok); }
+  .review-item.bad .mark { color: var(--err); }
+  .review-item .q { font-size: .9rem; }
+  .review-item .r {
+    font-size: .78rem;
+    color: var(--muted);
+    margin-top: .2rem;
+    font-family: var(--mono);
+  }
+
+  footer.note {
+    margin-top: 3rem;
+    padding-top: 1.25rem;
+    border-top: 1px solid var(--line);
+    font-size: .8rem;
+    color: var(--faint);
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+
+  <!-- ============ HOME ============ -->
+  <section id="home">
+    <div class="masthead">
+      <div class="eyebrow">Portal 48427391 · Repaso posterior a sesión</div>
+      <div class="row">
+        <h1>¿Se te quedó?</h1>
+      </div>
+      <p>Seis preguntas por sesión. Cinco minutos. No es examen: cada respuesta te explica el porqué, que es lo que de verdad se queda.</p>
+    </div>
+
+    <div class="eyebrow" style="margin-bottom:.75rem">Elige la sesión que acabas de tomar</div>
+    <div class="grid" id="sessionGrid"></div>
+
+    <footer class="note">
+      <span>Guía de HubSpot para el equipo Monific</span>
+      <span id="resetWrap"></span>
+    </footer>
+  </section>
+
+  <!-- ============ QUIZ ============ -->
+  <section id="quiz" class="hidden">
+    <div class="topbar">
+      <button class="linkbtn" id="backBtn">← Todas las sesiones</button>
+      <span class="counter" id="counter"></span>
+    </div>
+    <div class="eyebrow" id="quizSession"></div>
+    <div class="rail" id="rail"></div>
+
+    <div class="card">
+      <div class="eyebrow" id="qTopic"></div>
+      <h2 class="qtext" id="qText"></h2>
+      <div class="options" id="options"></div>
+      <div id="feedbackSlot" aria-live="polite"></div>
+      <div class="actions hidden" id="actions">
+        <button class="btn" id="nextBtn">Siguiente</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ RESULT ============ -->
+  <section id="result" class="hidden">
+    <div class="topbar">
+      <button class="linkbtn" id="backBtn2">← Todas las sesiones</button>
+      <span class="counter" id="resultSession"></span>
+    </div>
+
+    <div class="card">
+      <div class="result-head">
+        <div class="sello" id="sello">
+          <div>
+            <div class="n" id="selloNum">0</div>
+            <div class="of" id="selloOf">de 6</div>
+          </div>
+        </div>
+        <div class="verdict-text">
+          <div class="eyebrow">Resultado</div>
+          <h2 id="verdictTitle"></h2>
+          <p id="verdictBody"></p>
+        </div>
+      </div>
+
+      <div class="eyebrow" style="margin-bottom:.6rem">Repaso pregunta por pregunta</div>
+      <div class="review" id="review"></div>
+
+      <div class="actions">
+        <button class="btn ghost" id="retryBtn">Repetir esta sesión</button>
+        <button class="btn" id="anotherBtn">Otra sesión</button>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<script>
+const SESSIONS = [
+  {
+    id: 1,
+    title: "Fundamentos del CRM",
+    qs: [
+      { topic: "Buscar antes de crear", q: "Vas a registrar a un cliente nuevo. ¿Por qué se busca por correo y no por nombre?",
+        o: ["Porque el buscador de HubSpot no acepta nombres",
+            "Porque el correo es único y el nombre se escribe de mil formas",
+            "Porque el nombre solo funciona si el contacto ya tiene empresa asociada",
+            "Porque buscar por nombre es más lento"],
+        a: 1,
+        why: "«Miguel Ángel Rodríguez», «Miguel A. Rodríguez» y «miguel rodriguez» son tres personas distintas para el buscador. El correo es una sola.",
+        ref: "07 · Buscar antes de crear" },
+
+      { topic: "Dónde va la nota", q: "Tratas con tres personas de la misma desarrolladora. ¿Dónde dejas las notas de tus conversaciones?",
+        o: ["En el contacto de cada persona, por separado",
+            "En la empresa, para que el equipo vea el panorama completo",
+            "En el negocio, siempre",
+            "Da igual, HubSpot las junta solo"],
+        a: 1,
+        why: "Si cada quien deja notas en su contacto, nadie ve el panorama. Cuando hay varios interlocutores de la misma organización, la nota va en la empresa.",
+        ref: "04 · Los cuatro objetos" },
+
+      { topic: "Crear contactos", q: "Eres del equipo de Inversionistas y un contacto que esperabas no aparece en HubSpot. ¿Qué haces?",
+        o: ["Lo creas a mano para no detener el proceso",
+            "Avisas: que no aparezca significa que algo no entró bien",
+            "Esperas 24 horas y si no aparece lo creas",
+            "Le pides al cliente que se registre otra vez"],
+        a: 1,
+        why: "Los contactos entran solos. La única excepción es el equipo de Solicitantes. Si falta uno, es un aviso de que algo falló — crearlo a mano tapa el problema y además duplica.",
+        ref: "05 · Las diez reglas de Monific" },
+
+      { topic: "Modelo de datos", q: "¿En qué objeto vive la cobranza de una campaña fondeada?",
+        o: ["En un objeto de cobranza propio",
+            "En el negocio del solicitante",
+            "En un ticket, uno por campaña",
+            "En un ticket por cada cuota"],
+        a: 2,
+        why: "Cobranza vive en tickets: un ticket por campaña fondeada, que la sigue de la primera cuota a la última. No es uno por cuota.",
+        ref: "04 · Los cuatro objetos" },
+
+      { topic: "Frontera de cálculo", q: "El saldo que muestra HubSpot no coincide con el del Admin de Monific. ¿Qué haces?",
+        o: ["Lo corriges en HubSpot para que quede bien",
+            "Lo reportas a TI y no lo tocas en HubSpot",
+            "Le preguntas al cliente cuál es el bueno",
+            "Lo corriges y además avisas a TI"],
+        a: 1,
+        why: "HubSpot no calcula datos financieros, los recibe. Si lo corriges a mano, la siguiente sincronización lo sobrescribe — y mientras tanto hay dos versiones distintas del mismo dato.",
+        ref: "05 · Las diez reglas de Monific" },
+
+      { topic: "Vista o lista", q: "Quieres organizar tu cartera para trabajarla cada mañana. ¿Qué usas?",
+        o: ["Una lista",
+            "Una vista guardada",
+            "Una exportación a Excel",
+            "Un reporte"],
+        a: 1,
+        why: "La vista guardada es para trabajar el día a día. Las listas son para campañas de marketing y además consumen cupo de contactos.",
+        ref: "12 · Vistas guardadas y filtros" }
+    ]
+  },
+  {
+    id: 2,
+    title: "Correo, calendario y biblioteca",
+    qs: [
+      { topic: "Verificar la conexión", q: "Conectaste tu correo. ¿Cuál prueba confirma de verdad que quedó bien?",
+        o: ["Mandar un correo desde HubSpot y ver que aparece en el contacto",
+            "Mandar un correo desde Gmail u Outlook y ver que también aparece",
+            "Que el icono de correo salga en verde en la configuración",
+            "Recibir el correo de bienvenida de HubSpot"],
+        a: 1,
+        why: "La primera prueba funciona aunque la conexión esté a medias. La que confirma es la segunda: que un correo enviado desde tu cliente de correo también se registre.",
+        ref: "02 · Conectar tu correo y calendario" },
+
+      { topic: "Privacidad", q: "Con el correo conectado, ¿qué correos ve HubSpot?",
+        o: ["Todos los de tu bandeja",
+            "Solo los que tengan adjuntos",
+            "Solo los que son con personas que ya existen como contacto en el CRM",
+            "Los de los últimos 30 días, todos"],
+        a: 2,
+        why: "HubSpot solo registra correos con contactos del CRM. Tus correos personales y los de compañeros no los ve.",
+        ref: "02 · Conectar tu correo y calendario" },
+
+      { topic: "Qué se registra solo", q: "Le mandaste un WhatsApp a un cliente desde tu teléfono personal. ¿Qué pasa en HubSpot?",
+        o: ["Se registra solo si el teléfono está en el contacto",
+            "No pasa nada: lo tienes que registrar tú",
+            "Se registra al día siguiente en el batch nocturno",
+            "Se registra solo si el cliente responde"],
+        a: 1,
+        why: "WhatsApp desde tu teléfono, llamadas desde tu celular, LinkedIn y SMS personales no se registran solos. Si no lo registras, tu trabajo no existe en ningún reporte.",
+        ref: "08 · Registrar lo que hiciste" },
+
+      { topic: "Plantilla o fragmento", q: "Respondes la misma frase corta muchas veces al día dentro de conversaciones distintas. ¿Qué te conviene?",
+        o: ["Una plantilla",
+            "Un fragmento",
+            "Una secuencia",
+            "Un documento"],
+        a: 1,
+        why: "El fragmento es un bloque corto que insertas escribiendo # y un atajo. La plantilla es un correo completo. Para atención a cliente, los fragmentos son lo que permite responder en menos de 5 minutos.",
+        ref: "13 · Plantillas, fragmentos y documentos" },
+
+      { topic: "Agendar", q: "¿Qué resuelve el enlace de agendamiento?",
+        o: ["Que el cliente vea tus horas libres reales y elija, sin ir y venir por correo",
+            "Que HubSpot agende automáticamente por ti",
+            "Que se cree un ticket cada vez que alguien quiere reunirse",
+            "Que puedas ver el calendario del cliente"],
+        a: 0,
+        why: "Pegas el enlace en tu firma, el cliente entra, ve tu disponibilidad real y elige. La reunión se crea en tu calendario y en HubSpot.",
+        ref: "10 · Correo y reuniones desde HubSpot" },
+
+      { topic: "Documentos", q: "¿Qué ganas al mandar un material como documento de HubSpot en vez de adjuntarlo?",
+        o: ["Pesa menos",
+            "Ves quién lo abrió, cuándo y cuánto tiempo estuvo en cada página",
+            "Se traduce automáticamente",
+            "El cliente puede editarlo"],
+        a: 1,
+        why: "Sabes si el inversionista realmente leyó el material antes de llamarle. Y si actualizas el archivo, el enlace sigue sirviendo.",
+        ref: "13 · Plantillas, fragmentos y documentos" }
+    ]
+  },
+  {
+    id: 3,
+    title: "Pipeline de Solicitantes",
+    qs: [
+      { topic: "Viabilidad", q: "¿Cuál es la pregunta que define si un solicitante es viable?",
+        o: ["¿Cuánto factura al año?",
+            "¿Tiene un inmueble que pueda quedar en garantía?",
+            "¿Cuál es su historial crediticio?",
+            "¿Cuánto dinero necesita?"],
+        a: 1,
+        why: "Una sola pregunta. Si tiene inmueble para garantía es viable; si no, no lo es. Los casos intermedios los decide el asesor revisando avalúo, monto y capacidad de pago.",
+        ref: "18 · Ventas Solicitantes" },
+
+      { topic: "Sin garantía", q: "Un solicitante no tiene inmueble. Le explicas que puede invertir. ¿Le creas un negocio de inversionista?",
+        o: ["Sí, de inmediato, para no perder el lead",
+            "No, hasta que la persona exprese interés explícito",
+            "Sí, pero en etapa congelado",
+            "No, nunca se puede"],
+        a: 1,
+        why: "Se le informa la alternativa, pero el negocio de inversionista no se crea hasta que la persona lo pida. Crear negocios que nadie pidió ensucia el embudo.",
+        ref: "18 · Ventas Solicitantes" },
+
+      { topic: "Drive y HubSpot", q: "El solicitante ya subió todos sus documentos a Drive. ¿Qué hace avanzar el proceso?",
+        o: ["Que los archivos estén en la carpeta",
+            "Que actualices el Estatus de documentación en HubSpot",
+            "Que el sistema detecte los archivos nuevos",
+            "Que le mandes un correo al comité"],
+        a: 1,
+        why: "HubSpot no lee Drive. Drive guarda los archivos, HubSpot guarda el estado — y el estado es lo que mueve el proceso. Por eso existe el formulario puente de confirmación de carga.",
+        ref: "18 · Ventas Solicitantes" },
+
+      { topic: "Tiempos", q: "¿Cuál es el SLA habitual del proceso de firma ante notario?",
+        o: ["5 días hábiles",
+            "10 días hábiles",
+            "15 días hábiles",
+            "30 días naturales"],
+        a: 2,
+        why: "15 días hábiles. Conviene tener una vista ordenada por fecha de entrada a esa etapa para vigilarlos.",
+        ref: "18 · Ventas Solicitantes" },
+
+      { topic: "Primer contacto", q: "Llega un solicitante nuevo por el formulario. ¿En cuánto tiempo debe haber contacto humano?",
+        o: ["Menos de 5 minutos",
+            "Menos de 24 horas hábiles",
+            "Menos de 48 horas hábiles",
+            "El mismo día, sin hora fija"],
+        a: 1,
+        why: "24 horas hábiles para el primer contacto humano. Los 5 minutos son el compromiso de atención a cliente, que es otro proceso.",
+        ref: "18 · Ventas Solicitantes" },
+
+      { topic: "Seguimiento", q: "¿En qué días se da seguimiento al expediente de un solicitante?",
+        o: ["Cada tercer día, sin límite",
+            "Días 2, 3, 7 y 15",
+            "Solo el día 7",
+            "Una vez por semana durante un mes"],
+        a: 1,
+        why: "Días 2, 3, 7 y 15, escalando tareas vencidas. Al día 15 pasa a pausa o seguimiento.",
+        ref: "18 · Ventas Solicitantes" }
+    ]
+  },
+  {
+    id: 4,
+    title: "Pipeline de Inversionistas",
+    qs: [
+      { topic: "Niveles de registro", q: "¿Qué evento hace que un inversionista llegue a nivel 3?",
+        o: ["Que valide su identidad",
+            "Que dé su dirección completa",
+            "Que se le cree la cuenta STP y tenga CLABE",
+            "Que haga su primera inversión"],
+        a: 2,
+        why: "Nivel 3 es la cuenta STP creada. El indicador de que el KYC está completo es la CLABE: sin CLABE, no está completo.",
+        ref: "19 · Ventas Inversionistas" },
+
+      { topic: "Niveles de registro", q: "¿Y qué se necesita para llegar a nivel 4?",
+        o: ["Depositar dinero en la cuenta",
+            "Confirmar la primera compra de participaciones",
+            "Tener saldo mayor a $1,000",
+            "Cumplir 90 días como inversionista"],
+        a: 1,
+        why: "Nivel 4 solo con la primera compra confirmada. Tener saldo no basta: el nivel sube por compra, no por depósito.",
+        ref: "19 · Ventas Inversionistas" },
+
+      { topic: "Tu cliente objetivo", q: "Un inversionista está en nivel 3 y no tiene fecha de primera inversión. ¿Qué significa?",
+        o: ["Que su cuenta tiene un problema técnico",
+            "Que tiene todo listo para invertir y no lo ha hecho: es a quien hay que llamar",
+            "Que está congelado",
+            "Que ya no le interesa"],
+        a: 1,
+        why: "Tiene CLABE y no ha invertido. Es el cliente objetivo del A.A.I. y la razón de tener esa vista guardada abierta cada mañana.",
+        ref: "19 · Ventas Inversionistas" },
+
+      { topic: "El monto que mueve", q: "¿Qué monto de fondeo detiene la secuencia de empuje y mueve el negocio a Inversionista Activo?",
+        o: ["Cualquier depósito",
+            "$1,000 MXN o más",
+            "$5,000 MXN o más",
+            "El monto mínimo del proyecto"],
+        a: 1,
+        why: "$1,000 MXN o más. La secuencia de correos y WhatsApp se detiene sola cuando entra ese fondeo.",
+        ref: "19 · Ventas Inversionistas" },
+
+      { topic: "Congelado", q: "Un inversionista no tiene inversiones activas pero sí tiene saldo en su cuenta. ¿Qué pasa?",
+        o: ["Se congela a los 90 días",
+            "Sigue activo: hay saldo",
+            "Se congela de inmediato",
+            "Se congela solo si además no entra a la app"],
+        a: 1,
+        why: "Si hay saldo positivo, el negocio permanece activo. Y nunca se congela a alguien solo por no entrar a la app si tiene inversiones vivas.",
+        ref: "19 · Ventas Inversionistas" },
+
+      { topic: "El momento de oro", q: "¿Cuándo es más probable que un inversionista reinvierta?",
+        o: ["Al abrir su cuenta",
+            "Justo después de que cierra su campaña y tiene saldo disponible",
+            "A los 90 días de inactividad",
+            "Cuando sale un proyecto nuevo"],
+        a: 1,
+        why: "Cerró su campaña, tiene el capital y los rendimientos de vuelta, y la ventana dura poco: después el dinero sale de la plataforma. Ahí es donde una llamada rinde más.",
+        ref: "19 · Ventas Inversionistas" }
+    ]
+  },
+  {
+    id: 5,
+    title: "Cobranza",
+    qs: [
+      { topic: "Estructura", q: "¿Cuántos tickets de cobranza se abren por una campaña fondeada?",
+        o: ["Uno por cada cuota del calendario",
+            "Uno por campaña, que la sigue completa",
+            "Uno por mes de mora",
+            "Uno por solicitante, sin importar campañas"],
+        a: 1,
+        why: "Un ticket por campaña fondeada. Sigue la campaña de la primera cuota a la última.",
+        ref: "20 · Cobranza" },
+
+      { topic: "La hora límite", q: "¿A qué hora del Día 0 se corta la validación de pago?",
+        o: ["A las 12:00",
+            "A las 15:00",
+            "A las 18:00",
+            "A las 23:59"],
+        a: 2,
+        why: "18:00. Sin confirmación explícita de pago registrada en HubSpot antes de esa hora, el sistema asume que no pagó.",
+        ref: "20 · Cobranza" },
+
+      { topic: "Día 1", q: "El solicitante no pagó el Día 0. ¿Cuántos días de gracia tiene?",
+        o: ["Tres días",
+            "Un día",
+            "Hasta el siguiente día hábil",
+            "Ninguno: Día 1 es incumplimiento"],
+        a: 3,
+        why: "Día 1 es incumplimiento y no hay periodos de gracia. Lo que sí se recorre es la fecha límite cuando cae en día inhábil.",
+        ref: "20 · Cobranza" },
+
+      { topic: "Refinanciamiento", q: "El comité aprueba una reestructura. ¿Qué haces con el ticket?",
+        o: ["Le cambias los plazos y las condiciones",
+            "Lo mueves a Cierre por Refinanciamiento y creas un ticket nuevo",
+            "Lo mueves a la etapa Refinanciamiento y ahí se queda",
+            "Lo cierras y no creas nada"],
+        a: 1,
+        why: "Un refinanciamiento es la extinción de un caso y el nacimiento de otro, no un ajuste de plazos.",
+        ref: "20 · Cobranza" },
+
+      { topic: "Mora moderada", q: "A partir de mora moderada, ¿qué campo se vuelve obligatorio?",
+        o: ["Razón del retraso",
+            "Nota de acuerdo de pago",
+            "Número de expediente jurídico",
+            "Abogado externo asignado"],
+        a: 1,
+        why: "La nota de acuerdo de pago. Es el registro de qué se pactó con el solicitante, y es lo que se revisa después.",
+        ref: "20 · Cobranza" },
+
+      { topic: "Tasas y penalizaciones", q: "El solicitante te pregunta exactamente cuánto va a pagar de interés moratorio. ¿Qué haces?",
+        o: ["Le dices el porcentaje que recuerdas de la capacitación",
+            "Le dices que conforme a contrato aplican cargos y que validas los montos exactos de su caso",
+            "Le dices que no hay cargos si paga esta semana",
+            "Lo mandas a leer su contrato y cuelgas"],
+        a: 1,
+        why: "Las condiciones están en su contrato de financiamiento y las confirma Finanzas. No se citan cifras de memoria — pero tampoco se deja al cliente sin respuesta.",
+        ref: "20 · Cobranza" }
+    ]
+  },
+  {
+    id: 6,
+    title: "Centro de ayuda y canales",
+    qs: [
+      { topic: "Canales", q: "¿Cuál es el único canal donde el tipo de ticket se clasifica automáticamente?",
+        o: ["WhatsApp",
+            "Correo a soporte",
+            "Chat web",
+            "Llamada telefónica"],
+        a: 2,
+        why: "El chat web clasifica solo, con la opción que elige el cliente en el chatbot. En WhatsApp, correo y llamada, la tipificación la haces tú durante la interacción.",
+        ref: "21 · Atención a cliente" },
+
+      { topic: "Compromiso", q: "¿Cuál es el compromiso de primera respuesta de Monific?",
+        o: ["Menos de 5 minutos",
+            "Menos de 30 minutos",
+            "Menos de 2 horas",
+            "El mismo día"],
+        a: 0,
+        why: "Menos de 5 minutos, y menos de 2 se considera respuesta excelente. Por eso la bandeja de conversaciones se mira seguido, no una vez al día.",
+        ref: "21 · Atención a cliente" },
+
+      { topic: "Nunca silencio", q: "Entran más casos de los que puedes atender a fondo. ¿Qué haces?",
+        o: ["Atiendes bien los primeros y los demás esperan",
+            "Respondes primero y profundizas después",
+            "Escalas todo a tu líder",
+            "Cierras los menos importantes"],
+        a: 1,
+        why: "«Si el volumen supera la capacidad, se responde primero y se profundiza después. Nunca silencio.» Una respuesta corta a tiempo vale más que una completa tarde.",
+        ref: "05 · Las diez reglas de Monific" },
+
+      { topic: "Responder rápido", q: "¿Qué herramienta te ayuda más a cumplir los 5 minutos?",
+        o: ["Las secuencias",
+            "Los fragmentos, con atajos como #validar o #folio",
+            "Los reportes",
+            "La app móvil"],
+        a: 1,
+        why: "Escribes # y el atajo, y media respuesta ya está puesta. Funcionan también dentro del chat en vivo.",
+        ref: "13 · Plantillas, fragmentos y documentos" },
+
+      { topic: "Autoservicio", q: "Resolviste el mismo problema por tercera vez esta semana. ¿Qué haces además de resolverlo?",
+        o: ["Nada, es parte del trabajo",
+            "Lo levantas: ese volumen es candidato a autoservicio o a un artículo de ayuda",
+            "Escalas el caso a TI",
+            "Creas una plantilla y no dices nada"],
+        a: 1,
+        why: "Casi 4 de cada 10 tickets son datos de cuenta y accesos. Ese tipo de volumen se resuelve mejor con un artículo de ayuda que con más gente contestando. La señal la tiene que levantar alguien.",
+        ref: "21 · Atención a cliente" },
+
+      { topic: "Qué no se hace", q: "Un cliente insiste en saber cuándo se va a fondear un proyecto. ¿Qué le dices?",
+        o: ["Una fecha estimada, para que se quede tranquilo",
+            "El rendimiento esperado, que es lo que en realidad quiere saber",
+            "«Déjame validar el estatus y te confirmo»",
+            "Que nadie puede saberlo"],
+        a: 2,
+        why: "No se prometen fechas ni rendimientos. Esa frase es la salida permitida: gana tiempo sin inventar.",
+        ref: "05 · Las diez reglas de Monific" }
+    ]
+  },
+  {
+    id: 7,
+    title: "Proceso de atención al cliente",
+    qs: [
+      { topic: "Tipificar", q: "«Llevo tres semanas esperando mi retiro y nadie me contesta.» ¿Qué tipo de ticket es?",
+        o: ["Tipo A — problema técnico",
+            "Tipo B — información",
+            "Tipo D — queja o inconformidad",
+            "Tipo E — reclamación formal"],
+        a: 2,
+        why: "Es el caso que más se equivoca. Aunque debajo haya un problema técnico, el cliente está expresando inconformidad con Monific: es D, y lo cierra el Director Comercial. Puedes escalar a TI en paralelo.",
+        ref: "21 · Atención a cliente" },
+
+      { topic: "Cuándo tipificar", q: "¿En qué momento se captura el tipo de ticket?",
+        o: ["Al cerrar el ticket, cuando ya sabes de qué se trataba",
+            "Durante la interacción, con el cliente en línea",
+            "Al día siguiente, en la revisión",
+            "Lo pone el sistema siempre"],
+        a: 1,
+        why: "Durante la interacción. De ese campo dependen la ruta del caso y los avisos que se disparan: elegirlo tarde desvía todo.",
+        ref: "21 · Atención a cliente" },
+
+      { topic: "Escalar a TI", q: "¿Dónde trabaja el equipo de TI los tickets escalados?",
+        o: ["En HubSpot, en el mismo ticket",
+            "En Notion",
+            "En correo",
+            "En el Admin de Monific"],
+        a: 1,
+        why: "TI trabaja en Notion. Por eso el escalamiento tiene dos mitades y las dos son tuyas: registrar en HubSpot y avisar en Notion, incluyendo el folio.",
+        ref: "21 · Atención a cliente" },
+
+      { topic: "Seguimiento", q: "Tu ticket está escalado a TI. ¿Cada cuánto le das seguimiento?",
+        o: ["Cada 8 horas, validando con TI y actualizando al cliente",
+            "Cada 24 horas",
+            "Cuando TI te avise",
+            "Cada 48 horas"],
+        a: 0,
+        why: "Cada 8 horas, y en cada vuelta también se actualiza al cliente. El ticket sigue siendo tuyo: no hay traspaso.",
+        ref: "21 · Atención a cliente" },
+
+      { topic: "Categorías", q: "«No me llegó mi dinero.» ¿Qué categoría de TI le pones?",
+        o: ["Problemas técnicos en app",
+            "Retiros y movimientos",
+            "Gestión de datos de cuenta",
+            "Consultas e información"],
+        a: 1,
+        why: "«Problemas técnicos en app» es solo cuando la app falla como app: no abre, no descarga, truena. Si la app funciona pero el dato está mal, la categoría es la del dato.",
+        ref: "21 · Atención a cliente" },
+
+      { topic: "Cerrar", q: "¿Qué hace falta para cerrar un ticket, además de resolver el problema?",
+        o: ["Escribir «resuelto» en la resolución",
+            "Que pasen 24 horas sin que el cliente responda",
+            "La confirmación del cliente de que quedó resuelto",
+            "La autorización de tu líder"],
+        a: 2,
+        why: "La resolución documentada lleva tres cosas: cuál era el problema, qué se hizo, y cómo se confirmó. Sin la confirmación del cliente, no se cierra.",
+        ref: "21 · Atención a cliente" }
+    ]
+  },
+  {
+    id: 8,
+    title: "Pipeline UNE",
+    qs: [
+      { topic: "Separación", q: "Un ticket de queja escala a reclamación formal. ¿Qué haces?",
+        o: ["Cambias el tipo a E y mueves el ticket al pipeline UNE",
+            "Creas un ticket nuevo en el pipeline UNE y dejas referencia cruzada",
+            "Cambias solo el pipeline y dejas el tipo como estaba",
+            "Cierras el ticket de queja y no creas nada"],
+        a: 1,
+        why: "Una reclamación formal nunca comparte ticket con un caso de servicio. Genera un ticket aparte, con su folio, sus fechas y su dictamen.",
+        ref: "11 · Mover un negocio o un ticket de etapa" },
+
+      { topic: "Reapertura", q: "Un cliente cuya reclamación ya se cerró vuelve con el mismo tema. ¿Qué haces?",
+        o: ["Reabres el ticket UNE cerrado",
+            "Lo mandas al pipeline de atención",
+            "Llena el formato otra vez y se genera un ticket nuevo",
+            "Lo agregas como nota al ticket anterior"],
+        a: 2,
+        why: "Los tickets UNE cerrados no se reabren nunca. Nueva reclamación, ticket nuevo. Los de atención sí se reabren si llega un comentario sobre la misma cadena.",
+        ref: "05 · Las diez reglas de Monific" },
+
+      { topic: "El plazo regulatorio", q: "¿Cuál es el plazo regulatorio para entregar el dictamen de una reclamación?",
+        o: ["10 días hábiles",
+            "15 días naturales",
+            "30 días hábiles",
+            "30 días naturales"],
+        a: 2,
+        why: "30 días hábiles, no naturales. Es una obligación ante CNBV y CONDUSEF, no un compromiso interno.",
+        ref: "05 · Las diez reglas de Monific" },
+
+      { topic: "Los dos relojes", q: "Si el plazo regulatorio es de 30 días hábiles, ¿para qué existe un compromiso interno de 10 días?",
+        o: ["Para poder cobrar antes",
+            "Para que los 30 días nunca lleguen a agotarse",
+            "Porque CONDUSEF exige los dos",
+            "Es el mismo plazo contado distinto"],
+        a: 1,
+        why: "Son dos relojes distintos. Los 10 días son el compromiso operativo de Monific consigo misma, y existen precisamente para que el plazo regulatorio no se agote.",
+        ref: "05 · Las diez reglas de Monific" },
+
+      { topic: "Cierre", q: "¿Qué se necesita para poder cerrar un ticket de reclamación?",
+        o: ["Que el cliente confirme que quedó satisfecho",
+            "El resultado del dictamen y el dictamen adjunto",
+            "Que pasen los 30 días hábiles",
+            "La autorización de Compliance"],
+        a: 1,
+        why: "El cierre exige las dos cosas: el resultado (aprobado o rechazado) y el archivo del dictamen. Sin dictamen no hay cierre.",
+        ref: "05 · Las diez reglas de Monific" },
+
+      { topic: "Quién lo lleva", q: "¿Quién es responsable del pipeline UNE y del cierre con dictamen?",
+        o: ["El ejecutivo de atención a clientes",
+            "El Director Comercial",
+            "TI",
+            "El asesor que atendió al cliente"],
+        a: 1,
+        why: "El Director Comercial, con soporte de Cumplimiento Legal. El E.A.C. orienta al cliente sobre cómo presentar la reclamación y cierra su ticket de servicio — pero eso no cierra la reclamación.",
+        ref: "21 · Atención a cliente" }
+    ]
+  },
+  {
+    id: 9,
+    title: "Reportes y supervisión",
+    qs: [
+      { topic: "La vista clave", q: "¿Cuál es la vista guardada que más previene problemas?",
+        o: ["Todos mis registros, ordenados por monto",
+            "Lo que tengo asignado y llevo más de 7 días sin tocar",
+            "Los cerrados este mes",
+            "Los que entraron esta semana"],
+        a: 1,
+        why: "Es donde se pierden los casos. Anticipa problemas en vez de reportarlos, y por eso se abre cada mañana.",
+        ref: "12 · Vistas guardadas y filtros" },
+
+      { topic: "Filtros", q: "Quieres ver los tickets tipo D y los tipo E en una sola vista. ¿Cómo los unes?",
+        o: ["Con Y, en el mismo grupo",
+            "Con O, en grupos separados",
+            "Con Y, en grupos separados",
+            "No se puede en una sola vista"],
+        a: 1,
+        why: "Ningún ticket es D y E al mismo tiempo: con Y la vista sale vacía. Cuando filtras el mismo campo con varios valores, va O.",
+        ref: "12 · Vistas guardadas y filtros" },
+
+      { topic: "Leer el embudo", q: "Tienes un negocio activo que lleva 60 días sin actividad. Para leer tu embudo con honestidad, ¿qué es?",
+        o: ["Parte de tu embudo: sigue abierto",
+            "Un caso que infla el embudo y necesita decisión, no seguimiento",
+            "Un caso normal, los ciclos son largos",
+            "Un error del sistema"],
+        a: 1,
+        why: "Un negocio que lleva 60 días sin actividad no está en tu embudo: está muerto y no lo has enterrado. Un embudo inflado no sirve para decidir nada.",
+        ref: "15 · Tus reportes y tu tablero" },
+
+      { topic: "Trabajo en lote", q: "Necesitas dejar la misma tarea de seguimiento a 20 clientes. ¿Cómo lo haces?",
+        o: ["Uno por uno, abriendo cada registro",
+            "Marcas las casillas en la lista y usas Crear tarea de la barra de arriba",
+            "Exportas a Excel y lo mandas por correo",
+            "Creas una secuencia"],
+        a: 1,
+        why: "Marcar casillas y usar la barra de acciones sirve para crear tareas, cambiar propietario, editar una propiedad o inscribir en secuencia. Casi nadie lo usa y ahorra horas.",
+        ref: "17 · Trucos que ahorran tiempo" },
+
+      { topic: "El hábito del Excel", q: "¿Cuál es el problema real de llevar tu cartera en un Excel aparte?",
+        o: ["Que Excel es más lento",
+            "Que solo tú lo ves: tu trabajo no aparece en ningún lado",
+            "Que no se puede filtrar",
+            "Que HubSpot lo bloquea"],
+        a: 1,
+        why: "El problema no es que Excel sea peor. Es que cuando alguien cubre tu ausencia, empieza de cero — y tu esfuerzo no se ve en ningún reporte.",
+        ref: "17 · Trucos que ahorran tiempo" },
+
+      { topic: "Cadencia", q: "¿Cada cuánto conviene revisar tus propios números?",
+        o: ["Todos los días",
+            "Una vez por semana, el mismo día",
+            "Una vez al mes",
+            "Solo cuando te los pidan"],
+        a: 1,
+        why: "Diario genera ruido; mensual es demasiado tarde para corregir. Cinco minutos, el mismo día cada semana.",
+        ref: "15 · Tus reportes y tu tablero" }
+    ]
+  }
+];
+
+const KEYS = ["A", "B", "C", "D"];
+const STORE = "monific-repaso-v1";
+
+let scores = {};
+try { scores = JSON.parse(localStorage.getItem(STORE) || "{}"); } catch (e) { scores = {}; }
+
+function save() {
+  try { localStorage.setItem(STORE, JSON.stringify(scores)); } catch (e) { /* modo privado */ }
+}
+
+const $ = (id) => document.getElementById(id);
+const homeEl = $("home"), quizEl = $("quiz"), resultEl = $("result");
+
+let current = null, idx = 0, answers = [];
+
+/* ---------- home ---------- */
+function renderHome() {
+  const grid = $("sessionGrid");
+  grid.innerHTML = "";
+  SESSIONS.forEach((s) => {
+    const prev = scores[s.id];
+    const btn = document.createElement("button");
+    btn.className = "ficha";
+    btn.type = "button";
+
+    const chip = prev === undefined
+      ? '<span class="score-chip">sin hacer</span>'
+      : `<span class="score-chip ${prev >= 5 ? "good" : "bad"}">${prev}/${s.qs.length}</span>`;
+
+    btn.innerHTML =
+      `<span class="num">Sesión ${String(s.id).padStart(2, "0")}</span>
+       <span class="title">${s.title}</span>
+       <span class="meta"><span>${s.qs.length} preguntas</span>${chip}</span>`;
+    btn.addEventListener("click", () => startSession(s.id));
+    grid.appendChild(btn);
+  });
+
+  const done = Object.keys(scores).length;
+  $("resetWrap").innerHTML = "";
+  if (done > 0) {
+    const r = document.createElement("button");
+    r.className = "linkbtn";
+    r.textContent = "Borrar mis resultados";
+    r.addEventListener("click", () => {
+      scores = {}; save(); renderHome();
+    });
+    $("resetWrap").appendChild(r);
+  }
+}
+
+/* ---------- quiz ---------- */
+function show(section) {
+  [homeEl, quizEl, resultEl].forEach((s) => s.classList.add("hidden"));
+  section.classList.remove("hidden");
+  window.scrollTo({ top: 0, behavior: "instant" in window ? "instant" : "auto" });
+}
+
+function startSession(id) {
+  current = SESSIONS.find((s) => s.id === id);
+  idx = 0;
+  answers = [];
+  $("quizSession").textContent = `Sesión ${String(current.id).padStart(2, "0")} · ${current.title}`;
+  show(quizEl);
+  renderQuestion();
+}
+
+function renderRail() {
+  const rail = $("rail");
+  rail.innerHTML = "";
+  current.qs.forEach((_, i) => {
+    const bar = document.createElement("span");
+    if (i < answers.length) bar.className = answers[i] ? "done-ok" : "done-bad";
+    else if (i === idx) bar.className = "current";
+    rail.appendChild(bar);
+  });
+}
+
+function renderQuestion() {
+  const q = current.qs[idx];
+  $("counter").textContent = `Pregunta ${idx + 1} de ${current.qs.length}`;
+  $("qTopic").textContent = q.topic;
+  $("qText").textContent = q.q;
+  $("feedbackSlot").innerHTML = "";
+  $("actions").classList.add("hidden");
+  renderRail();
+
+  const box = $("options");
+  box.innerHTML = "";
+  q.o.forEach((text, i) => {
+    const b = document.createElement("button");
+    b.className = "opt";
+    b.type = "button";
+    b.innerHTML = `<span class="key">${KEYS[i]}</span><span>${text}</span>`;
+    b.addEventListener("click", () => answer(i));
+    box.appendChild(b);
+  });
+}
+
+function answer(choice) {
+  const q = current.qs[idx];
+  const right = choice === q.a;
+  answers.push(right);
+
+  const opts = Array.from($("options").children);
+  opts.forEach((b, i) => {
+    b.disabled = true;
+    if (i === q.a) b.classList.add("is-ok");
+    else if (i === choice) b.classList.add("is-bad");
+    else b.classList.add("dim");
+  });
+
+  const fb = document.createElement("div");
+  fb.className = "feedback " + (right ? "ok" : "bad");
+  fb.innerHTML =
+    `<div class="verdict">${right ? "Correcto" : "Repasa esto"}</div>
+     <p>${q.why}</p>
+     <div class="ref">Dónde repasarlo: <b>${q.ref}</b></div>`;
+  $("feedbackSlot").appendChild(fb);
+
+  renderRail();
+  $("actions").classList.remove("hidden");
+  $("nextBtn").textContent = idx === current.qs.length - 1 ? "Ver resultado" : "Siguiente";
+  $("nextBtn").focus();
+}
+
+$("nextBtn").addEventListener("click", () => {
+  if (idx === current.qs.length - 1) renderResult();
+  else { idx++; renderQuestion(); }
+});
+
+/* ---------- result ---------- */
+function renderResult() {
+  const total = current.qs.length;
+  const score = answers.filter(Boolean).length;
+  scores[current.id] = score;
+  save();
+
+  $("resultSession").textContent = `Sesión ${String(current.id).padStart(2, "0")} · ${current.title}`;
+  $("selloNum").textContent = score;
+  $("selloOf").textContent = `de ${total}`;
+
+  const sello = $("sello");
+  sello.className = "sello " + (score >= 5 ? "good" : score >= 3 ? "" : "bad");
+
+  let title, body;
+  if (score === total) {
+    title = "Impecable.";
+    body = "Te quedó completo. Si quieres afinar, vuelve en una semana: lo que se repasa espaciado es lo que se queda.";
+  } else if (score >= 5) {
+    title = "Bien.";
+    body = "Dominas la sesión. Dale una leída a lo que fallaste — abajo está en qué artículo está.";
+  } else if (score >= 3) {
+    title = "A medias.";
+    body = "Hay huecos que conviene cerrar antes de la siguiente sesión. Repasa los artículos de abajo y vuelve a intentarlo.";
+  } else {
+    title = "Vale la pena repetir.";
+    body = "No pasa nada: repasa los artículos de abajo y haz la prueba otra vez. Es más rápido que aprenderlo con un cliente en la línea.";
+  }
+  $("verdictTitle").textContent = title;
+  $("verdictBody").textContent = body;
+
+  const rev = $("review");
+  rev.innerHTML = "";
+  current.qs.forEach((q, i) => {
+    const ok = answers[i];
+    const item = document.createElement("div");
+    item.className = "review-item " + (ok ? "ok" : "bad");
+    item.innerHTML =
+      `<span class="mark">${ok ? "✓" : "✕"}</span>
+       <span><span class="q">${q.topic}</span><div class="r">${q.ref}</div></span>`;
+    rev.appendChild(item);
+  });
+
+  show(resultEl);
+}
+
+/* ---------- nav ---------- */
+$("backBtn").addEventListener("click", () => { renderHome(); show(homeEl); });
+$("backBtn2").addEventListener("click", () => { renderHome(); show(homeEl); });
+$("retryBtn").addEventListener("click", () => startSession(current.id));
+$("anotherBtn").addEventListener("click", () => { renderHome(); show(homeEl); });
+
+renderHome();
+</script>
+
+</body>
+</html>
