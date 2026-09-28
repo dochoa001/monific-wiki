@@ -1,0 +1,137 @@
+=== ID: D175 ===
+=== SOURCE: Wiki Monific\drive-download-20260807T144042Z-1-001\16. Miércoles 27 de mayo.docx ===
+=== MODIFIED: 2026-08-07 ===
+
+MINUTA DE REUNIÓN
+Implementación HubSpot — Monific
+Sesión
+ | Revisión de reportes por módulo, Lead Scoring de inversionistas, SLAs de Servicio y formalización de bolsa de horas por extensión
+ |
+Fecha
+ | 27 de mayo de 2026
+ |
+Participantes
+ | • Raquel — Directora Comercial, Monific
+• David — Equipo de implementación HubSpot
+• Caro — Equipo de implementación HubSpot (Project Manager)
+• Lalo — Equipo de ventas HubSpot
+ |
+Objetivos
+ | 1. Revisar los reportes propuestos por módulo (Inversionistas, Solicitantes, Servicio al Cliente).
+2. Validar viabilidad técnica de las métricas del reporte de Lead Scoring de inversionistas.
+3. Definir el esquema de SLAs del módulo de Servicio al Cliente.
+4. Alinear el bloqueo por integración y formalizar la propuesta de bolsa de horas de acompañamiento por extensión del proyecto.
+ |
+
+1. Resumen
+La sesión se centró en validar el set de reportes que vivirán dentro de HubSpot por módulo. El equipo de implementación expuso que los reportes de Inversionistas y Servicio dependen aún de la integración con admin para alimentarse de datos reales, pero la estructura ya está maquetada.
+Se discutieron en profundidad dos puntos:
+(i) la viabilidad técnica de las métricas propuestas por Raquel para el Lead Scoring de inversionistas, y
+(ii) la lógica de los SLAs del módulo de Servicio al Cliente.
+La sesión cerró con Lalo presentando formalmente la propuesta comercial de bolsa de horas de acompañamiento para cubrir la extensión del proyecto provocada por el retraso en la entrega de accesos al código por parte del equipo de TI de Monific (Jesús), bloqueo que a su vez deriva de los requerimientos legales/regulatorios post-auditoría CNBV.
+2. Reportes por módulo
+David presentó la propuesta de reportes dividida por módulos, replicando la estructura del proyecto. Los reportes del Módulo 1 (Inversionistas) y del Módulo 4 (Servicio) están maquetados pero aún sin datos reales, ya que dependen de la integración con admin. Los reportes del Módulo 2 (Solicitantes) se revisaron sin observaciones materiales.
+2.1 Fuente de verdad
+El documento de reportes compartido por el equipo de implementación queda como fuente de verdad de los reportes a construir.
+Si Raquel detecta reportes adicionales necesarios, los puede agregar al final del documento o comunicarlos directamente para que el equipo los incorpore.
+Los reportes que no puedan generarse por limitaciones de datos se marcarán en amarillo; Raquel asume esa cancha.
+2.2 Módulo 1 — Inversionistas
+Reportes maquetados; pendientes de datos reales hasta que la integración con admin esté operativa.
+Se discutió en detalle el reporte de Tasa de velocidad de reinversión: el equipo de implementación confirmó que no es necesario crear un objeto personalizado para medirla. La recomendación es alojar las transacciones directamente en el objeto Negocio (predeterminado) y no en un objeto personalizado.
+Razón técnica: los objetos personalizados tienen un límite de hasta 1 millón de registros, mientras que el objeto Negocio (predeterminado) tiene un límite de 15 millones de registros (15x más capacidad). Dado el volumen de transacciones de Monific, usar Negocio es lo correcto.
+Raquel reafirma su postura: el equipo de implementación es el experto en HubSpot; ella se apega a la recomendación técnica.
+2.3 Módulo 2 — Solicitantes
+Reportes revisados sin observaciones: activaciones, rechazos, cobranza 30 días, todos viables.
+Se confirmó que el Índice de restauración de portafolio no se incluirá (no aplica).
+2.4 Módulo 4 — Servicio al Cliente
+Reportes amarrados a la configuración de SLAs (ver sección 4).
+Estos reportes solo se nutren correctamente una vez activada y configurada la herramienta de Service Hub.
+3. Lead Scoring de inversionistas
+Raquel presentó la propuesta de Lead Scoring basada en métricas de comportamiento (reinversión, navegación web, app, reseñas, etc.) generada con apoyo de IA. El equipo de implementación validó qué es técnicamente medible y qué no.
+3.1 Métricas viables
+Comportamiento de cartera / reinversión (ej. suma de 20 pts por reinversión): viable, ya que las transacciones vivirán en el objeto Negocio.
+Navegación web (ej. visitar página de proyectos = 15 pts): viable mediante el código de seguimiento nativo de HubSpot.
+Apertura de correos enviados desde HubSpot: viable de forma nativa.
+60 días o más sin iniciar sesión en la plataforma: viable, siempre y cuando esa información viva como propiedad de HubSpot vía la integración con admin.
+Tickets asociados al contacto: viable, ya depende del flujo actual de tickets en HubSpot.
+Status / nivel de registro del usuario (ej. cuenta activa, primera inversión realizada): viable y puede integrarse al scoring principal o vivir como un score independiente.
+Eventos (asesor envía correo, cliente responde correo, etc.): viables como criterios de scoring.
+3.2 Métricas no viables
+Reseñas en Play Store / App Store: no es directamente medible desde HubSpot. Queda fuera del scoring salvo que Monific habilite acceso externo a esa información.
+3.3 Posibilidad de múltiples scores
+HubSpot permite construir varios scores en paralelo (no necesariamente uno solo). Esto abre la puerta a tener, por ejemplo, un score de “calidad de registro” separado de un score de “engagement comercial”.
+3.4 Acuerdo operativo
+Raquel investiga internamente las métricas que requieren validación de su lado y entrega la versión final del Lead Scoring (cuáles entran, cuáles no, y peso de cada una) en el mismo documento de reportes.
+La métrica de Tasa de velocidad de reinversión queda pendiente de validación final hasta que el equipo de implementación tenga visibilidad del código de admin.
+4. SLAs de Servicio al Cliente
+David explicó que los SLAs son una configuración nativa de HubSpot que se activa dentro de Service Hub y se amarra a un horario laboral configurable.
+4.1 Indicadores que se configuran
+Tiempo de primera respuesta: máximo para responder un ticket recién recibido.
+Tiempo de la siguiente respuesta: máximo para responder cada interacción posterior dentro del ticket.
+Tiempo de cierre de ticket: máximo para dejar el ticket en estatus cerrado.
+4.2 Configuración aplicable
+Los SLAs pueden definirse de forma general o segmentados por prioridad del ticket (urgente, alto, medio, bajo) o por origen del canal (WhatsApp, correo, formulario, llamada).
+Se acordó dividir los SLAs por origen del canal y no por prioridad: el correo no aplica los mismos tiempos que un chat de WhatsApp.
+Los SLAs respetan el horario laboral configurado en HubSpot (no corren fuera de horario).
+Es posible pausar el reloj del SLA en etapas específicas (ej. “Escalado a TI”) cuando el avance depende de un equipo externo al de atención.
+Si un ticket vence el SLA, el sistema lo tipifica automáticamente como perdido y lo refleja en el reporte de SLAs.
+4.3 Aclaración sobre tickets vs. centro de ayuda
+Raquel pidió aclaración sobre la relación entre tickets y centro de ayuda. Se confirmó:
+Toda conversación abierta desde el centro de ayuda genera un ticket automáticamente.
+El centro de ayuda es solo el espacio de comunicación; los tickets son donde vive la información y desde donde se construyen los reportes.
+Los reportes de SLAs se nutren de los tickets (no del centro de ayuda).
+4.4 Compromiso de Raquel
+Raquel define los tiempos numéricos de los tres SLAs (primera respuesta, siguiente respuesta, cierre), divididos por origen del canal, y los entrega en el mismo documento de reportes.
+5. Bloqueo por integración con admin (contexto regulatorio)
+Raquel expuso de forma transparente el estado del bloqueo:
+El retraso no es por desidia del equipo de TI (Jesús), sino por precaución regulatoria: Monific opera bajo Ley Fintech y supervisión de la CNBV.
+Tras la auditoría reciente, cualquier acceso a código por parte de un tercero (en este caso el equipo de implementación) debe estar documentado y blindado legalmente para evidenciar ante la CNBV que el acceso fue otorgado, controlado y revocado al cierre de la implementación.
+La pelota está actualmente en cancha del equipo legal (Emiliano) para preparar la documentación.
+Es probable que se solicite al equipo de implementación firmar documentos adicionales como parte de los requerimientos regulatorios.
+En paralelo, Jesús y su equipo están avanzando con los repositorios de información que el equipo de implementación necesita.
+6. Propuesta comercial: bolsa de horas de acompañamiento
+Lalo se sumó a la sesión para presentar la propuesta formal por la extensión del proyecto.
+6.1 Planteamiento
+El equipo de implementación no cobrará horas adicionales de desarrollo de la integración: esas horas ya estaban consideradas en la propuesta original y no se han consumido por el bloqueo.
+Sí se requiere cubrir las horas del equipo de Caro y David (acompañamiento, capacitaciones, QA, comunicación), que sí se están extendiendo por la prolongación del proyecto.
+6.2 Esquema propuesto
+Paquete de soporte / acompañamiento mensual: bolsa de horas del equipo (Caro + David).
+Volumen base mencionado: 30 horas por $28,000 MXN al mes (a confirmar por escrito).
+La extensión se cubre mes a mes según se prolongue el bloqueo: si la integración se finaliza en un mes, se cubre un mes; si se extiende dos o tres, se cubren dos o tres.
+Inicio del cobro: a partir del mes 7 del proyecto = julio. El proyecto está actualmente en mes 5 (mayo); junio (mes 6) aún está cubierto por el alcance original.
+6.3 Acuerdo
+Raquel está de acuerdo con el esquema (no se cobra integración, se cobra acompañamiento), pero requiere la propuesta por escrito y limpia para bajarla con Finanzas y usarla también como palanca con TI y Legal para acelerar la entrega de accesos.
+7. Capacitaciones (planeación)
+Se ratifica el inicio de capacitaciones a partir de la próxima semana: 2 sesiones semanales, comenzando por Ventas.
+Equipo a capacitar en Ventas / Atención: depende de si Raquel logra contratar al puesto vacante de Atención al Cliente (entrevistas en curso). Si no, ella toma la capacitación y el equipo de implementación deja grabaciones en carpeta compartida para el nuevo recurso cuando ingrese.
+8. Acuerdos y Acciones
+Acción
+ | Responsable
+ | Plazo / Estado
+ |
+Entregar versión final del Lead Scoring de inversionistas (métricas que entran, cuáles no, pesos) sobre el mismo documento de reportes.
+ | Raquel
+ | En curso
+ |
+Definir tiempos numéricos de los 3 SLAs (primera respuesta, siguiente respuesta, cierre) divididos por origen del canal.
+ | Raquel
+ | En curso
+ |
+Validar viabilidad final de la Tasa de velocidad de reinversión una vez se tenga visibilidad del código de admin.
+ | David + Caro
+ | Sujeto a integración
+ |
+Confirmar internamente con Legal (Emiliano) la firma de documentos adicionales que requiera el equipo de implementación para acceder al código.
+ | Emiliano
+ | Urgente
+ |
+Bajar propuesta económica con Finanzas y notificar a TI / Legal el impacto de cifras concretas del retraso.
+ | Raquel
+ | Listo
+ |
+
+9. Notas Adicionales
+El reporte de reportes del equipo de implementación queda como fuente de verdad; cualquier reporte adicional se agrega ahí o se comunica directamente para incorporarlo.
+La integración con admin se ejecuta detrás del sistema: no afectará la experiencia ni el rendimiento de la plataforma para los usuarios finales.
+Algunas métricas del scoring pueden vivir como scores independientes (no todo tiene que ir en uno solo), lo que da flexibilidad para separar “calidad de registro” de “engagement comercial”.
+El bloqueo regulatorio CNBV es la causa raíz de la extensión del proyecto; el equipo de implementación lo entiende y por eso renuncia a cobrar horas de desarrollo adicionales, cubriendo solo acompañamiento.

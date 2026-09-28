@@ -1,0 +1,23 @@
+=== ID: D166 ===
+=== SOURCE: Wiki Monific\drive-download-20260807T143952Z-1-001\00_LEER_PRIMERO.txt ===
+=== MODIFIED: 2026-08-07 ===
+
+PROYECTO BnO – MONIFIC
+INSTRUCCIÓN VIGENTE DE CIERRE
+
+1. El CONTROL ÚNICO CIERRE BNO es la única lista de seguimiento.
+2. Los cuatro masters revisados contienen la hoja 00_REVISION_MONIFIC.
+3. Los insumos necesarios para terminar están en:
+   01_PARA_CORREGIR_BNO/00_INSUMOS_PARA_TERMINAR
+4. BnO consulta 01, pero no reemplaza los archivos originales.
+5. BnO deposita masters corregidos, respuesta y evidencia en:
+   02_RESPUESTA_BNO
+6. No crear una matriz adicional.
+7. Cada bloque se cierra únicamente con:
+   - documento corregido;
+   - evidencia de configuración;
+   - caso de prueba reproducible;
+   - validación escrita de Monific.
+8. 99_HISTORICO_NO_USAR no es fuente de trabajo.
+
+Si una entrega llega por correo o por otra carpeta, debe registrarse en el bloque correspondiente del CONTROL ÚNICO con su URL/ID y resultado de prueba.

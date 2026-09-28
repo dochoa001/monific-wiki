@@ -1,0 +1,80 @@
+=== ID: D170 ===
+=== SOURCE: Wiki Monific\drive-download-20260807T144042Z-1-001\11. Miércoles 15 de abril.docx ===
+=== MODIFIED: 2026-08-07 ===
+
+MINUTA DE REUNIÓN
+Revisión del MVP de Pipelines Comerciales en HubSpot
+Fecha
+ | Abril 2026
+ |
+Participantes
+ | Caro, Raquel, Dave
+ |
+Plataforma
+ | HubSpot CRM
+ |
+
+1. Pipeline de Solicitantes
+
+Ya está construido en HubSpot con las 6 etapas que mapeamos: Nuevo Solicitante → Evaluación → Formalización → Proceso de Firma → Cierre Ganado → Cierre Perdido. En cada etapa el sistema solicita campos específicos de forma progresiva (viabilidad, score, documentación, etc.). Cuando llega a Cierre Ganado, se genera automáticamente un objeto de cobranza vinculado al proyecto.
+
+Se revisó el pipeline con las siguientes etapas mapeadas:
+
+Nuevo Solicitante
+Evaluación
+Formalización
+Proceso de Firma
+Cierre Ganado
+Cierre Perdido
+Puntos clave discutidos
+Se puede crear un negocio en cualquier etapa (no necesariamente desde 'Nuevo Solicitante'), ya que algunos llegan por socios con avances previos.
+Al pasar de una etapa a otra, el sistema solicita campos obligatorios adicionales: tipo de negocio, canal de entrada, fuente de lead, viabilidad inicial, score, estado de documentación, link de carpeta Drive, entre otros.
+Los negocios creados desde el formulario de HubSpot llenarán muchas propiedades de forma automática.
+Al llegar a Cierre Ganado, se crea automáticamente un objeto de cobranza vinculado al proyecto/solicitante.
+
+2. Pipeline de Inversionistas
+Mismo funcionamiento que el de solicitantes, con sus propias etapas y campos específicos (fecha de campaña, fecha de cierre de campaña, motivo de congelado, etc.).
+Acuerdo
+Raquel enviará una lista de los motivos de congelado más comunes para configurarlos como campo desplegable (en lugar de texto libre), facilitando así la generación de reportes futuros y el análisis de tendencias.
+
+3. Integración con Google Drive (Novedad)
+HubSpot lanzó el 31 de marzo una integración nativa con Google Drive. Ya fue instalada durante la reunión. Permite:
+Vincular carpetas y archivos de Drive directamente a registros de contactos, negocios y tickets.
+Ver hasta 5 documentos por registro desde HubSpot.
+Acceso rápido sin salir de la plataforma a toda la documentación del cliente.
+
+La instalación fue realizada durante la sesión y quedó activa para contactos y negocios.
+
+4. Funcionalidad de IA en HubSpot (Tarjeta de Descripción)
+Se presentó la tarjeta de Descripción con inteligencia artificial integrada, que ofrece:
+Calificación dinámica del negocio según actividad registrada (correos, llamadas, etc.).
+Resumen del estado del negocio consultable como asistente conversacional.
+Identificación automática de información faltante y metas del prospecto.
+Enriquecimiento progresivo del registro conforme se agrega información al negocio.
+
+5. Fecha de Cierre Predeterminada
+Se configuró una fecha de cierre predeterminada de 30 días desde la creación del negocio, como indicador de seguimiento. Esto permite:
+Identificar negocios a tiempo vs. atrasados con etiquetas visuales.
+Calcular tiempos promedio de cierre con datos reales.
+Generar alertas para negocios estancados.
+
+Nota: La fecha de cierre debe actualizarse manualmente si el proceso se extiende más allá de los 30 días iniciales.
+
+6. Próximos Pasos
+Responsable
+ | Acción
+ |
+Raquel
+ | Enviar lista de motivos de congelado más comunes para configurar campo desplegable.
+ |
+Raquel
+ | Revisar propiedades de cada etapa y enviar feedback detallado por correo.
+ |
+Equipo Arco / Implementación
+ | Continuar con automatizaciones en base al mapeo de Josué.
+ |
+Todos
+ | Reunión semanal de avance con entregable funcional.
+ |
+
+Nota: Esta reunión fue de presentación de avances del MVP. Falta una capacitación formal al equipo completo una vez esté todo integrado. Las automatizaciones son funcionales en base a los llenados del sistema; conforme se complete la información, se dispararán las acciones configuradas.

@@ -1,0 +1,898 @@
+=== ID: D156 ===
+=== SOURCE: Wiki Monific\drive-download-20260807T143807Z-1-001\Presentación de Master de Implementación de Cobranza - Monific_ 2026_03_10 12_58 GMT-05_00 - Notas de Gemini.docx ===
+=== MODIFIED: 2026-08-07 ===
+
+📝 Las notas
+10 mar 2026
+Presentación de Master de Implementación de Cobranza - Monific
+Invitados Josue Torres Ricardo Gomez David Ochoa Caroline Bersot Monific Vianey Correa
+Archivos adjuntos Presentación de Master de Implementación de Cobranza - Monific
+Registros de la reunión Transcripción Grabación
+
+Resumen
+Revisión de la estructura de objetos de Cobranza en Hobspot y validación del flujo maestro con etapas de refinanciamiento y ejecución de garantía.
+
+Estructura de Objetos Hobspot
+Se detalló la jerarquía de objetos en Hobspot, donde el objeto Contacto se asocia a una Empresa, y un nuevo objeto Edificio/Proyecto será el padre de múltiples tickets de cobranza. El equipo validó la alineación de esta estructura para continuar con la implementación del flujo maestro.
+
+Flujo Maestro de Cobranza
+Se revisó el flujo de Cobranza Activa, determinando que los proyectos de rendimiento fijo pasan automáticamente a esta etapa, mientras que los de rendimiento variable requieren una tarea inicial de configuración del ciclo de seguimiento con un SLA de 3 días. Se acordó que Hobspot sustituirá las funcionalidades de recordatorio automático de Moonflow para la gestión de campañas.
+
+Cierre y Transición de Casos
+Se definió que los registros en mora grave pasan a la etapa de Refinanciamiento, donde una aprobación del comité resulta en la creación de un nuevo proyecto asociado al edificio original. Los casos de rechazo o incumplimiento total pasan a Ejecución de Garantía, donde se establecerá un estatus de proceso jurídico iniciado con un SLA de 3 días para la decisión del comité.
+
+Detalles
+Inicio de la Sesión y Estructura de Objetos en Hobspot: La sesión se inició con la presentación de Ricardo Gomez sobre la organización de la información dentro de Hobspot, enfocándose en la segmentación de objetos. Hobspot utiliza objetos (cajas) para albergar información específica, como contactos, negocios, empresas y cobranza (00:00:00).
+Objeto Contacto y su Relación con la Empresa: El objeto "Contacto" contendrá información personal (nombre, dirección, correo, teléfono) y puede o no estar asociado a un objeto "Empresa" mayor. Estos objetos se pueden asociar y navegar entre ellos en Hobspot para ver información detallada (00:01:10).
+Creación del Objeto Edificio/Proyecto: Tras el cierre exitoso del negocio del solicitante, se creará un nuevo objeto propuesto llamado "Edificio" (o "Proyecto") para albergar todos los objetos de cobranza, que serán gestionados como *tickets*. Esto permite tener múltiples inmuebles o proyectos asociados al proceso (00:02:19).
+Segmentación de Cobranza en Tickets: El objeto "Edificio" contendrá la información gruesa del dinero, que luego se segmentará en diferentes campañas representadas por *tickets* individuales de cobranza. Por ejemplo, si hay $10 millones, se puede segmentar en campañas individuales, y cada campaña tendrá su propio registro y gestión en un ticket de cobranza (00:02:19).
+Validación de la Estructura de Objetos: El equipo validó la alineación de la estructura propuesta, donde los tickets de cobranza se asocian a un objeto padre (Edificio/Proyecto), y se acordó continuar con la presentación del flujo maestro (00:03:45).
+Revisión del Flujo Maestro de Cobranza: Etapas Propuestas: Josué Torres comenzó la revisión del flujo maestro, detallando las etapas propuestas, que incluyen Nuevo Registro, Cobranza Activa, Refinanciamiento, Ejecución de Garantía, Cierre por Refinanciamiento, Campaña Liquidada y Cierre por Incumplimiento (00:04:51).
+Lógica de la Etapa "Nuevo Registro": La etapa de Nuevo Registro implica la interacción entre Adminific y Hobspot, donde Adminific funge como la fuente de verdad y Hobspot recibe la información para crear un nuevo objeto de cobranza (00:05:51). Para proyectos de rendimiento variable, se genera una tarea para el ejecutivo de cobranza para configurar el ciclo de seguimiento, basándose en su experiencia, y programar pagos y montos (00:07:22).
+Funcionamiento de la Etapa "Nuevo Registro" para Rendimiento Fijo: Para proyectos de rendimiento fijo, la información de Adminific se trae directamente a Hobspot, notificando al ejecutivo de cobranza, y el registro pasa automáticamente a la etapa de Cobranza Activa (00:07:22).
+Workflows y Automatizaciones en "Nuevo Registro": Al recibir la notificación de inversión efectiva confirmada desde Adminific, se detona la creación de la campaña de cobranza en Hobspot, se importa el calendario, y se asigna automáticamente al ejecutivo de cobranza. También se envía una notificación de asignación al ejecutivo y un correo de bienvenida al solicitante con la información de inicio, lo cual se busca automatizar (00:10:20).
+Tareas Iniciales para Rendimiento Variable: Cuando se crea una campaña de rendimiento variable, se crea una tarea para el ejecutivo de cobranza para configurar el ciclo de seguimiento y registrar la primera cuota, con un SLA de 3 días hábiles para completar este registro (00:10:20). Una vez creada exitosamente la campaña de cobranza, se pasa a la etapa de Cobranza Activa (00:11:48).
+Lógica de la Etapa "Cobranza Activa" y Cierres: Cobranza Activa es la etapa central donde se visualiza la correcta ejecución de los pagos. Si el solicitante realiza todos los pagos de rendimiento y capital correctamente, el ticket se mueve directamente a Campaña Liquidada (00:13:14) (00:20:29).
+Alerta Anticipada de Capital y Clasificación de Mora: Tres meses antes del último pago de capital, Hobspot crea automáticamente una tarea para el ejecutivo de cobranza para contactar al solicitante y validar su capacidad de pago (00:14:43) (00:22:55). También se usan etiquetas para clasificar el estado de los tickets, como Al Corriente, Mora Temprana, Mora Moderada, y Mora Grave (00:13:14).
+Flujo en Caso de Incumplimiento y Ajuste de Roles: Si se detecta riesgo de incumplimiento, se notifica a la dirección de finanzas y se coordina una evaluación de refinanciamiento anticipado con la dirección general. Se corrigió que el ejecutivo de cobranza es quien debe contactar al solicitante, mientras que el director comercial debe ser informado para comunicados a los inversionistas (00:16:23).
+Transición a la Etapa "Refinanciamiento": Un registro en mora grave (más de 61 días) se mueve a la etapa de Refinanciamiento, donde se evalúa la posibilidad de refinanciar, lo cual requiere la aprobación de la Dirección General. Si el refinanciamiento no es viable, el caso pasa directamente a Ejecución de Garantía (00:19:13) (00:24:17).
+Workflows en Cobranza Activa (Sustitución de Moonflow): Al entrar en Cobranza Activa, un workflow envía un correo al solicitante con los datos de la campaña, sustituyendo el primer recordatorio automático de Moonflow (00:20:29). Se hizo hincapié en que Hobspot debe reemplazar las funcionalidades de Moonflow (00:22:55).
+Gestión de Actualizaciones por Pagos Parciales/Acuerdos Internos: Se abordó la necesidad de que Hobspot esté alineado con cualquier modificación en los montos de pago (por pagos parciales o acuerdos internos) que se registren en Adminific (00:33:16). Se propone una propiedad de Adminific que actualizará automáticamente el registro en Hobspot para reflejar estos cambios (00:35:56).
+Lógica de la Etapa "Refinanciamiento": Refinanciamiento es una etapa de transición para formalizar y validar las condiciones de una reestructura (00:35:56). Se busca documentar la decisión del comité mediante el registro manual de propiedades como fecha de aprobación, responsable, y notas sobre el motivo y viabilidad del cliente (00:37:35).
+Salidas de la Etapa "Refinanciamiento": Las dos salidas de Refinanciamiento son: si el comité aprueba el refinanciamiento, el ticket se mueve a "Cierre por Refinanciamiento"; si el comité rechaza la reestructura, se mueve automáticamente a "Ejecución de Garantía" (00:39:04).
+Creación de Nuevo Proyecto Tras Refinanciamiento (Fin 00X): Si el comité aprueba el refinanciamiento, la campaña actual se cierra, y se debe crear un nuevo proyecto en Adminific (ej. "Palma Real Refin") que inicie un nuevo ciclo de cobranza (00:40:31) (00:43:07). Este nuevo proyecto estará asociado al historial del solicitante y ligado al edificio original como un "hijo" (nuevo ticket de cobranza) (00:44:19) (00:46:52).
+Lógica de la Etapa "Ejecución de Garantía": Esta etapa es una transición a un cierre negativo, donde Cumplimiento Legal recibe la información, la envía a un abogado externo (cuyo registro se rastrea en Hobspot) para el proceso legal. El proceso legal culmina con el remate de la propiedad, la dispersión de los recursos a los inversionistas, y el movimiento a la etapa de Cierre por Incumplimiento (00:28:29) (00:52:46).
+Posibilidad de Retorno a Refinanciamiento desde Ejecución de Garantía: Aunque raro, el comité podría decidir un último intento de refinanciamiento si las condiciones mejoran para los inversionistas, permitiendo el retorno a la etapa de Refinanciamiento (00:54:28).
+Flujo de Notificaciones y SLAs en Ejecución de Garantía: Se decidió que Cumplimiento Legal gestionará toda la interacción con el abogado externo fuera de Hobspot (00:55:47). Se propuso un SLA máximo de 3 días para que el comité tome la decisión de ejecutar la garantía, con notificaciones previas para que el área legal se prepare (00:56:56).
+Gestión de la Tarea de Ejecución en Hobspot: Se considera útil que las notificaciones de ejecución de garantía continúen hasta que el estatus en Hobspot sea marcado manualmente como "Iniciado" para asegurar la velocidad del proceso y evitar que la decisión del comité se pierda (00:58:10).
+Establecimiento del Estatus de Proceso Jurídico: Josué Torres sugirió que, si se decide una ejecución de garantía, la propiedad debe pasar a un estatus de proceso jurídico iniciado para que se detone el envío de recordatorios [i]. Vianey Correa y Josué Torres confirmaron que esto está bien, aunque Josué Torres indicó que ajustará la redacción [i].
+Determinación de la Licencia de Servicio Legal: Caroline Bersot preguntó sobre la asignación del servicio legal a Miguel Emiliano, a lo que Monific confirmó que sí, señalando que sería necesario cambiar su licencia de gratuita a algo más [i]. Caroline Bersot confirmó que ya está actualizado y que Miguel Emiliano necesitará una licencia de Service Pro [i].
+Estrategia Evolutiva de los Workflows: Monific mencionó que los workflows actuales son una prueba y un Producto Mínimo Viable (MVP), y que el próximo año se buscará mejorarlos nuevamente [i]. Vianey Correa complementó que las mejoras y cambios son esperables, especialmente porque hay partes del proceso, como la ejecución de garantías, que aún no han sido vividas, lo que es normal ya que un CRM es un ambiente vivo que siempre cambiará [i, j].
+Etapa Terminal Negativa de Cobranza (Cierre por Incumplimiento): Josué Torres explicó que esta es una etapa terminal negativa que requiere la notificación a los inversionistas [i]. Al entrar en esta etapa, se crea una tarea para el director comercial sobre la creación de comunicados, se registra la fecha de cierre de incumplimiento como fecha actual, y se notifica a la dirección comercial para coordinar la comunicación [i].
+Protocolo de Comunicación para Incumplimiento Total: Josué Torres preguntó si Monific tiene un protocolo de comunicación definido para inversionistas en caso de incumplimiento total de un cliente que desaparece del mapa después de haber recibido fondos y pagado algunas cuotas [i]. Monific respondió que sí, tienen un manual de comunicación en desarrollo que se está definiendo este año, debido a un solicitante que decidió dejar de pagar [i].
+Campaña Liquidada (Cierre Exitoso): Josué Torres describió la campaña liquidada como una etapa terminal exitosa, donde el cliente idealmente hace el pago correspondiente y el proceso se cierra como debe ser [i]. Esta etapa incluye el llenado automático de la fecha de liquidación, el historial de pago y el estado de crédito final, además de un llenado manual para la conciliación validada por el director de finanzas [i].
+Workflows y Notificaciones de Liquidación: Josué Torres explicó que si todos los objetos de cuota de pago están en estatus "pagado", la campaña se cierra automáticamente, pero si hay un pago pendiente, se genera una alerta para el director de finanzas y el cierre se hace manualmente [i]. Al entrar en esta etapa, se notifica a los directores comercial, de finanzas y legal sobre la campaña liquidada [i].
+Propuesta de Incorporación de ID de Proyecto (Financiamiento): Vianey Correa sugirió agregar una propiedad extra para el ID del proyecto, que internamente en Monific identifican como FIN 001, FIN 002, etc., para ligarlo al sistema administrativo [i]. Esto es necesario porque un solicitante (dueño) puede tener múltiples proyectos (edificios), y cada proyecto puede tener múltiples campañas (tickets de cobranza) [i, j].
+Confirmación de Estructura de IDs Múltiples: El equipo confirmó la necesidad de tres identificadores distintos: ID de solicitante (el dueño), ID de proyecto (el edificio) e ID de campaña (el ticket de cobranza) [i]. Josué Torres y Ricardo Gomez validaron que en un refinanciamiento, el ID de proyecto permanece igual, pero el ID de campaña es el que cambia [i, j].
+Solicitud para Sugerir Propiedades Adicionales: Vianey Correa preguntó si pueden sugerir más propiedades para la lista de propiedades, a lo que Josué Torres respondió que sí, sin problema [i]. Josué Torres solicitó que, al agregar una propiedad, se les apoye validando si se necesita hacer alguna referencia o workflow adicional [i].
+Revisión de Requerimientos de Licencias de HubSpot (Licencias): Caroline Bersot inició la revisión de licencias de HubSpot, señalando que la licencia de Miguel Emiliano se actualizará a Service Pro y que el perfil de Guillermo está bien como un core [i, j]. En el caso de una vacante de atención a clientes y ventas, se mantendrá una licencia de ventas porque manejarán el pipeline para inversionistas, y para Ted (director general), se necesita evaluar si una licencia de pago será necesaria, ya que podría necesitar interactuar con el correo conectado o WhatsApp [i, j].
+Evaluación de Licencias para el Director General y Vianey Correa: Caroline Bersot indicó que si Ted necesita que su respuesta por correo cree una tarea automática en HubSpot, se requeriría un workflow, lo cual no es posible automáticamente solo con la respuesta de correo, sugiriendo que podría ser una visualización si no interactúan en HubSpot [i, j]. Para Vianey Correa, cuya labor incluye la calificación tras la liquidación, se evaluará si esa calificación puede realizarse fuera de HubSpot y luego ser ingresada por alguien más para justificar una licencia de visualización en lugar de una licencia Core [i, j].
+
+Pasos siguientes recomendados
+Vianey Correa revisará el archivo maestro para validar qué información mapeada le servirá para dejar de usar Moonflow, y si falta alguna información.
+Josué Torres ajustará la lógica de la tarea de alerta anticipada de capital para que sea creada para el ejecutivo de cobranza en lugar del director comercial.
+Josué Torres ajustará el "wording" en la etapa de ejecución de garantía.
+Vianey Correa revisará la lista de propiedades de forma completa y sugerirá propiedades extra para agregar al máster, e informará a Josué Torres sobre cualquier propiedad agregada para validar si se requiere un flujo de trabajo o referencia adicional.
+Monific evaluará con Vianey Correa y Ted si la licencia de cada uno debe ser de visualización o "core" para sus respectivas tareas.
+
+Revisa las notas de Gemini para asegurarte de que sean correctas. Obtén consejos y descubre cómo toma notas Gemini
+Danos tu opinión sobre el uso de Gemini para tomar notas en una breve encuesta.
+📖 Transcripción
+10 mar 2026
+Presentación de Master de Implementación de Cobranza - Monific - Transcripción
+00:00:00
+
+Ricardo Gomez: Perfecto.
+David Ochoa: Ok.
+Josué Torres: Muchas gracias,
+Ricardo Gomez: Ahí
+Josué Torres: David. Ahora eh va a comenzar eh Rich, va a explicar unos temas importantes,
+Ricardo Gomez: sí,
+Josué Torres: puntualizaciones, justamente
+Ricardo Gomez: justo.
+David Ochoa: Ok.
+Ricardo Gomez: Ahí voy. Eh, déjen les presento pantalla. David, voy a presentar. Yo creo que es conveniente el flujo el de la segmentación de los objetos, al menos de manera rápida. Va. Eh, para equipo, digo,
+David Ochoa: He.
+Ricardo Gomez: eh, justamente el día de ayer estábamos rebotando esta parte de cómo al menos dentro de Hobstar organizar en dónde va a ir entrando toda la información. ¿Okay? Entonces, por eso creo que es conveniente que hagamos este pequeño paréntesis para que también ustedes se vayan familiarizando tal vez con estos términos o estas cajitas, ¿va? Entonces, eh, no sé también en qué punto de la capacitación se encuentran ustedes o del conocimiento de Hobsw. Entonces voy a hacer un poco como desde el inicio, ¿no? En el sentido de que quieran o no. Hopsot cuenta con esta palabra o este objeto que literal se llama objeto. Véanlo ustedes como una cajita en donde vamos a albergar cierta información. Entonces tenemos la cajita de contacto que pues va a tener información del contacto, ¿no?
+
+00:01:10
+
+Ricardo Gomez: La del negocio que va a tener información relacionada al negocio y así nos vamos. sale, va a haber una empresa, va a haber una cobranza, etcétera, etcétera. Entonces, con este supuesto quiero mostrarles el cómo estamos organizando esta parte. Eh, vamos, entendemos que esto ya viene mucho detrás, obviamente, del proceso de los solicitantes y de los inversionistas. ¿Okay? Entonces, vamos para el caso de cobranza, que obviamente va enfocado hacia la parte de los solicitantes. Vamos a entender que tenemos este objeto, ¿sale?, que es el de contacto. Ahí vamos a tener pues el nombre de esta persona, eh su dirección, su correo, su teléfono, etcétera, etcétera. Digo, aquí puede o no aplicar de que este contacto pertenezca a una empresa, ¿okay? Mucho más grande. Por eso aquí yo tengo si aplica estos objetos. Obviamente ahí después en hopsot van a ver cómo los pueden asociar y cómo pueden moverse entre ventanas, ¿sale? Para ver información detallada de cada uno de estos objetos. Entonces, como quien dice, partimos de este contacto. Entonces, ese contacto, como hablamos en el proceso pasado, pues obviamente tuvo un negocio de solicitante que ahora sí que, ¿cómo se puede decir?
+
+00:02:19
+
+Ricardo Gomez: Se cerró, ¿no? De manera exitosa, ganada. Entonces que era, no, no, okay, va por ahí enviar e bueno, no enviar, sino va a detonar ciertos procesos nuevamente en Hotspot. Pero okay, ahora sí vamos a crear otro objeto que en este caso estamos proponiendo que se llame edificio, puede llamarse también proyecto, no lo sé, ¿no? El punto es que vamos a tener tal vez yo tengo dos eh dos inmuebles, ¿okay?, puestos con ustedes, pues voy a tener dos dos objetos de esto, ¿no? Dos dos edificios o dos proyectos, como ustedes decidan llamarlo. El punto es eso. Dentro de este edificio o de este proyecto es donde entonces vamos a estar albergando todos estos otros objetos de cobranza, ¿sale? Que básicamente van a ser tickets, ticket de cobranza. Entonces, lo que estamos proponiendo aquí es justamente, okay, ya tengo mi objeto de edificio, eh, tiene como que el grueso de la eh de todo el dinero, ¿no?, que que se va a segmentar después en las campañas y todo lo demás. El punto es eso, que ahí después esto va a derivar en sus respectivos tickets, en donde estamos proponiendo que cada uno de estos tickets, ¿okay?, sea propiamente, digámoslo así, una campaña. Entiendo que del grueso por aquí también traté de agregar esta parte como de ejemplo de que si se entiende que son 10 m000ones, lo vamos a segmentar como en diferentes campañas, ¿va?
+
+00:03:45
+
+Ricardo Gomez: Igual me corrige si es que estamos por ahí errados. Entonces, para cada uno de esos tickets, por ejemplo, una campaña que en este caso son de 3,000, pues va a tener su registro, ¿no? Su gestión en este ticket. Ahorita después vamos a ver con Josué qué tanto vamos a poder estar gestionando de esa cobranza como tal. El punto es eso, sale. Eh, si tenemos n cantidad de campañas, vamos a tener n cantidad de tickets de cobranza asociadas a ese edificio o ese proyecto. Sale y listo. O sea, como tal este es el previo que quería bajar con ustedes para ver si también estamos alineados en cómo lo ven. Hasta aquí todo okay. Arriba Raquel.
+Vianey Correa: Perfectores.
+Ricardo Gomez: S. Perfecto. Vale, gracias. Entonces, digo, ya no los entretengo más. Voy a dejar de compartir con base en esto. Digo, estamos alineados y ahora sí,
+Vianey Correa: Sí,
+Ricardo Gomez: Josué, por favor, apóyame entonces a presentar el máster. ¿Qué digo? Mientras lo presentas, Josué, te sumaste a la otra sesión donde revisamos un máster, creo que era el de ventas o no tuviste oportunidad. Creo que no, ¿verdad?
+
+00:04:51
+
+Ricardo Gomez: O sí, revisamos un fjograma,
+Monific: Sí, ha sumado según yo,
+Ricardo Gomez: pero no.
+Monific: a todos los masters.
+Vianey Correa: sí.
+Ricardo Gomez: Okay, más que nada como para dar la intro, eh, digo, si quieres la podemos dar de manera super rápida, más que nada para BN sale.
+Vianey Correa: No, adelante. Sí, sí, sí. Sé como Ya están, ya los entendí.
+Ricardo Gomez: Okay,
+Vianey Correa: Perfecto. Gracias.
+Ricardo Gomez: va. Entonces, si la si la doy, vi o o estamos check con esta parte.
+Vianey Correa: No estamos. Check.
+Ricardo Gomez: Estamos check. Okay. S. Vale, prácticamente es el mismo formato de la sesión pasada. Okay. Donde las etapas son las, perdón, las filas son las etapas y pues cada una de esas etapas tiene diferentes rumos. Okay, s. Entonces, yo ya terminé por aquí. Adelante, José, por favor.
+Josué Torres: Gracias, gracias, Rich.
+Ricardo Gomez: M.
+Josué Torres: Bueno, pues entonces es un avance que ya sepamos cómo está estructurado el máster, ¿no? Eh, me voy a ir directo a presentarle las etapas para que podamos ir este validando y las etapas que estamos proponiendo son las siguientes.
+
+00:05:51
+
+Josué Torres: Ahora después vamos a ir viendo el la lógica de cada una, ¿no? Eh, la primera es nuevo registro. Después vamos a entrar a una etapa de cobranza activa, después una etapa de refinanciamiento, etapa de ejecución de garantía, cierre por refinanciamiento, campaña liquidada y cierre por incumplimiento. ¿De qué va cada una de esas etapas? La primera es una etapa donde estamos haciendo la propuesta que haya una interacción entre adminific y hotpot, ¿no? En ese en esa dirección. Eh, en ese sentido, eh, esta etapa lo que va a hacer es una eh, voy a decir esta palabra, ¿no?, una recopilación de información para generar un nuevo eh objeto de cobranza dentro de Hotspot. Eh, es decir, adminificados, va a seguir siendo la fuente de verdad y de ahí de ahí se va a centralizar toda esa información y únicamente Hotpot lo que va a hacer es recibir esta información, eh validar estos esta información mínima para creación de nuevos registros de cobranza en Hotspot. Y una vez que se tenga esa información, entonces vamos a avanzar de etapa. Sí, es más una etapa como detrás de eh a excepción de la parte de rendimiento variable. Para la parte de rendimiento variable va este ambas se detonan con la inversión efectiva, confirmación de inversión efectiva, ¿no?
+
+00:07:22
+
+Josué Torres: Una vez que ya tenemos este esta información que también viene del admin, entonces para la parte rendimientos variables lo que se va a hacer es una tarea al ejecutivo de cobranza. Esta tarea eh es para configurar el ciclo de seguimiento, ¿no? Y aquí es lo que platicábamos en el flujograma. el ejecutivo de cobranza hace la este la programación de los pagos, los montos, etcétera, ¿no? Conforme vaya recibiendo ese esa esos reportes del solicitante. Ahora, algo que es importante que comentamos durante la sesión de flujograma es que la primera eh actividad que va a programar el ejecutivo de cobranza, pues es una actividad que se va a basar en su en su experiencia con el con este tipo de proyectos, ¿no? porque obviamente no va a tener un reporte a ese momento. El deber ser es que se empuje a que se vayan generando esos reportes y este ciclo cada vez más se vaya homologando, estandarizando, ¿no? Pero pues esto va a apoyar mucho porque en realidad lo que está lo que estamos proponiendo es que el mismo sistema Hotspot empuje al ejecutivo de cobranza a empezar a llevar este proceso de esta manera, ¿no? para el caso de los proyectos de rendimiento fijo, bueno, ahí si no hay tanto problema porque la información que se va a traer de adminifica hotspot ya la tenemos bien identificada y mapeada, entonces no va a haber ningún tema.
+
+00:08:51
+
+Josué Torres: Lo único que va a hacer aquí es que cuando ya se tenga esto, se le va a notificar al al ejecutivo de cobranza y en automático ya vamos a pasar a una etapa de cobranza activa. Sí, esa es la lógica de funcionamiento de esta etapa. No sé si eh les hace sentido, tienen alguna duda respecto a ello
+Vianey Correa: No, adelante por mí quedó bien plansado.
+Monific: Yo igual.
+Josué Torres: para que va igual como en todas las sesiones, ¿no? Si algo no hace sentido de inmediato sin ningún problema. Va que va. Después, bueno, aquí tenemos las e las propiedades que que estamos eh proponiendo que se que se actualicen en automático y de manera manual desde adminific, pero estas propiedades no son las únicas. Está todo este listado aquí que digo esto se lo lo pueden revisar más este a fondo ya una vez que que compartamos el archivo. Eh, ¿cuál es la idea de esto? La idea es que esta etapa hacerla eh va a ser automática, manual por el tema de los proyectos de rendimiento variable, pero la idea es que sea una etapa detrás de bombalinas y que se actualice solita, ¿no? Que nos esté creando estos registros de cobranza, va dentro de los WFlows. Bueno, los WFlows eh responden eh a la a las notificaciones y seteos de ingresos, etcétera, ¿no?
+
+00:10:20
+
+Josué Torres: En la parte de generales, al recibir notificación de inversión efectiva confirmada, pues se crea la campaña de cobranza en Hospel, ¿no? Este, esta notificación o esta información, ¿de dónde la va a recibir? Desde adminifique. Al crear la y bueno, de ahí se van a detonar otros. Al crear esa campaña, pues se tiene que importar el calendario, generar los objetos de cuota de pago asociados y bueno, esto aplicaría para proyectos de rendimiento fijo, ¿no? Al crear la campaña, pues se asigna automáticamente al ejecutivo de cobranza, ¿no? Al día de hoy esa sería como la premisa para este para esta automatización, ¿no? En en cuanto a notificaciones, al crear la campaña se envía notificación de que se le asignó una nueva campaña de cobranza al ejecutivo y al crear esta campaña se le envía un correo de bienvenida al solicitante con el con toda la información de inicio, ¿no?, que es el correo que estaba enviando Viany eh cuando ya cuando nos decía, "No, es que cuando ya iniciamos el ciclo de pagos, envió un correo donde viene toda su información y todo lo que va a estar este pagando, ¿no? La idea es que ya esté automatizado de esta manera. Eh, en cuanto a tareas, este, al crear la campaña de tipo de rendimiento variable, se crea una tarea para el ejecutivo de cobranza que se que va a decir algo como configurar ciclo de seguimiento de rendimiento de variable y registra la primera cuota.
+
+00:11:48
+
+Josué Torres: Sí, esta es como la primera tarea que se va a crear para el ejecutivo de cobranza. La tarea es en términos simples, ¿sabes qué? ya te tienes una nueva campaña de tipo variable, de campaña de cobranza tipo variable, necesitas configurar el seguimiento y crear la primera, registrar esta primera cuota, cuándo la tiene que pagar y el monto, ¿no? Esa sería la tarea. Y bueno, ahí tiene un SLI de 3 días hábiles, ¿no? Para crear esta esta este registro. El cambio de etapa. Al procesarse exitosamente la creación de de la campaña de cobranza se mueve este automáticamente a la siguiente etapa que es cobranza activa. Sí, aquí un segundo, por favor. Bien, aquí pues la interacción de integración pues va a ser la sincronización de eh la inversión efectiva confirmada para iniciar con el registro de nueva campaña de cobranza, ¿no? Esto de adminifica, subsecuente, cobranza activa y otras etapas pues no aplica, ¿no? Y bueno, ha unas notas para para el equipo de Black and Orange, ¿no? Bien, de ahí nos vamos a la segunda etapa, que sería la de cobranza activa. En esta etapa es donde nosotros vamos a poder este visualizar eh que se esté pagando correctamente.
+
+00:13:14
+
+Josué Torres: ¿Qué pasa si un si un este un solicitante hace sus pagos en tiempo y forma de sus rendimientos y cuando llega el momento de pagar su capital eh ejecuta el pago y si todo se procesa correctamente? Voy a adelantarme un poquito también para para optimizar el tiempo. De aquí nos vamos a ir directamente a la parte de campaña liquidada. Sí, si el ejecutante eh si el solicitante ejecuta todos sus pagos de rendimientos y capital sin ningún contratiempo ni nada, pues simplemente nos vamos a campaña liquidada, ¿no? de la parte de cobranza activa, si ejecuta el solicitante sus pagos de manera correcta en tiempo y forma y 3 meses antes se le hace un contacto para ver si va a poder hacer este efectivo el pago de su capital y dice, "¿Sabes qué? No he este vendido mi propiedad en garantía, etcétera, etcétera. Lo que ya platicamos. Si eso ocurre, entonces vamos a irnos de cobranza activa a la etapa de refinanciamiento. Sí, ahorita la vamos a ver más a fondo. De cobranza activa, si empieza desde el primer incumplimiento de pago de rendimientos, ya vamos a empezar a tener etiquetas aquí en cobranza activa, que le estamos llamando eh al corriente, mora temprana, mora moderada y mora grave.
+
+00:14:43
+
+Josué Torres: Sí. Y aquí está como este los SLS o los periodos para poder ir etiquetando esos esos registros, esos tickets de cobranza, ¿no? Esto que nos va a permitir, pues obviamente ver este o gestionar más que nada al ejecutivo de cobranza, que es el que va a estar encargado, este, qué tanto dentro de sus campañas o tickets de cobranza, a a qué tanto le tiene que dar seguimiento y qué tanto no. Sí, esto atiende una de las principales este cosas o formas de trabajar de manera manual que era una que nos platicaba Bieny, ¿no? O sea, yo aquí tengo que hacer un un doble cotejo, un doble check de que esto que estoy viendo en las tablas de pago por clientes, en el adminificé este cuadrando correctamente con las con los pagos de las cuotas, ¿no?, que estén al día, etcétera. Bien, pues ahí Hostpot va a estar haciendo esa esa validación, ya va a tener la información de las tablas de de pagos, todas las cuotas y va a estar revisando que se estén este llevando a cabo de manera correcta, ¿no? Bien, aquí este también vamos a tener lo que les platicaba hace un momento, alerta anticipada de capital. 3 meses antes de la fecha del último pago, cuando se va a efectuar el pago de capital, este Hospot va a crear automática una automáticamente una tarea para director comercial y es la intención es contactar al solicitante, validar su su capacidad de pago del capital, etcétera.
+
+00:16:23
+
+Josué Torres: Si se detecta riesgo de incumplimiento, se crea una tarea para dirección de finanzas y ahí van a coordinar con director general evaluación de un refinanciamiento anticipado antes de de inclusive llegar a una etapa de mora en ese sentido, ¿no? Entonces, esto igual nos va a prevenir que que pues el solicitante entre en esa etapa y nos lleva un
+Monific: Ahí la tarea que crea para el director comercial es contactar al
+Josué Torres: estatus.
+Monific: solicitante, ¿no? Ahí está mal. Ahí la tarea no tiene que ser que el director comercial contacta al solicitante, el director comercial se tiene que enterar para poder este ver si da
+Josué Torres: Okay.
+Monific: aviso a los inversionistas, pero el que tiene que contactar al solicitante en este caso es el ejecutivo de atención a solicitantes. Yes.
+Josué Torres: Okay. Aquí me surge una duda. El el ejecutivo de atención a solicitantes es un es un puesto que habíamos mapeado durante el proceso comercial. Es si no estoy mal. Entonces, aquí mi duda es también el ejecutivo atención a los solicitantes participan en el proceso de cobranza o
+Vianey Correa: No, creo que son dos diferentes. El de comercial,
+Josué Torres: sería
+Vianey Correa: me parece que es el de atención a clientes, el que tú tienes ahí mapeado.
+
+00:17:44
+
+Vianey Correa: Y acá en el de cobranza solicitante lo tienes como, no me acuerdo si lo tienes como ejecutivo de cobranza.
+Josué Torres: ejecutivo de cobranzam.
+Vianey Correa: Ajá.
+Josué Torres: Mm.
+Vianey Correa: Es ese.
+Josué Torres: Okay.
+Vianey Correa: Ahorita es una sola persona que tiene como tres este puestos,
+Josué Torres: Okay.
+Vianey Correa: ¿no? Ciclas en tu en tu en tu flow,
+Josué Torres: Guillermo.
+Vianey Correa: pero Ajá. Ahorita ponle ejecutivo de cobranza.
+Josué Torres: Okay. Va que va.
+Vianey Correa: Gracias. M.
+Josué Torres: Entonces aquí lo lo registro. Déjenme insertar el comentario. Listo. Va que va.
+Vianey Correa: Y nada más como para que no este se vaya, sí se le da aviso a dirección comercial, pero no tanto como para el proceso de cobranza de solicitantes, sino como para el comunicado que tiene que elaborar hacia la parte de inversiones.
+Josué Torres: hace inversionistas. Okay.
+Vianey Correa: M.
+Josué Torres: Sí, de hecho, hm, sí, sí, sí, tengo aquí bajado el en el mapeo esas tareas para
+Vianey Correa: Gracias
+Josué Torres: este director comercial sobre los comunicados, ¿no?
+
+00:19:13
+
+Josué Torres: Lo que platicábamos en el en el flujograma. Va,
+Vianey Correa: esto.
+Josué Torres: sí, por aquí, por aquí lo tengo. Ahora llegamos por allá. No, va que va bien. Esa es eh la parte de cobranza activa. Okay. ¿Qué pasa entonces cuando llegamos con un cliente, un solicitante que no nos hizo el pago este de rendimientos o de capital y ya lo tenemos en mora grave? Lo que va a suceder entonces es que se va a mover a la siguiente etapa de refinanciamiento. Y aquí, ¿cuál es la finalidad? La finalidad es que también Dirección General pueda estar enterado de estos casos porque pudiéramos decir, "Okay, pues lo mandamos de una vez a ejecución en garantía de garantía, ¿no? No no no hay no hay por qué moverlo a refinanciamiento, ¿no? Sin embargo, si existiera la posibilidad de refinanciar, aquí estaríamos, bueno, eso es lo que está bajado acá y esa es la propuesta. Ahí estaríamos ante el escenario de que si vale la pena refinanciar es un cliente ideal, ¿no? Como ya habían comentado, pero si no pues de una vez se manda ejecución de garantía. No sé si me explico con esta parte.
+
+00:20:29
+
+Vianey Correa: Sí.
+Josué Torres: Sí. Okay. Entonces después de eso nos vamos a ejecución de garantía. Ahora vamos a ver estas etapas, este más por qué estoy paseándome mucho entre etapas, porque esta etapa de cobranza activa estamos planteando que sea la etapa central, ¿no? Aquí es donde se va a gestionar todo y de donde se van a a disparar hacia las siguientes etapas, ¿no? Entonces, obviamente,
+Vianey Correa: Yeah.
+Josué Torres: al ejecutar la garantía de un solicitante, entonces este proceso es donde ingresa ya la parte externa, el abogado externo y se hace toda la el la situación legal y demás. Y una vez que se hace el el la el pago a los inversionistas, entonces se iría a un cierre por incumplimiento, ¿no? Ahí es donde quedaríamos, ¿no? Va. Bien. Entonces,
+Vianey Correa: Sí, de acuerdo.
+Josué Torres: ah, entonces habiendo dicho esto, pues ya vimos las entradas, el la lógica de funcionamiento de la etapa de cobranza activa y las salidas de cobranza activa. Sí, acá si si gustan podemos ver igual unos unos workflows de aquí de este en la parte de generales. Al entrar a esta etapa se envía eh al solicitante el correo del día uno con los datos de la campaña, número de cuota, periodo monto a pagar y eso sustituye el primero recordatorio este automático que hoy envía Moonflow.
+
+00:21:56
+
+Josué Torres: Eso lo puse de esta forma porque también me parece que ese es el correo que envías tú, Vian, ¿verdad? Es es más como una nota, ¿no?, que que quería corroborar
+Vianey Correa: Sí, exacto.
+Josué Torres: ustedes.
+Vianey Correa: se les informa como a partir del día un cuánto tienen que pagar para que lo traigan estimado en el mes.
+Josué Torres: Ajá. Bueno,
+Vianey Correa: Ajá.
+Josué Torres: este es exactamente ahí olvidé subrayar este esta este observación que es la que quería platicar con ustedes. Aquí este primer workflow lo que va a hacer es esto, ¿no? Es sustituir ese envío que tú haces y ahí le va a decir al cliente, "Oye, ¿vas a pagar tanto?", etcétera, etcétera. ¿No?
+Vianey Correa: que sí se manda porfow, o sea, estaba correcto el día un si entra porfow,
+Josué Torres: Sí. Ah, okay.
+Vianey Correa: pero vaya la parte manual es que yo tenía que cargar esa información antes del día un para que el día un se enviera Ça.
+Josué Torres: Ah, okay, okay. Va, va, va, va. Entonces no estaba tan extra una precisión,
+Vianey Correa: Ok.
+Josué Torres: una nota, ¿no?
+
+00:22:55
+
+Josué Torres: Si ustedes observan o detectan que hay alguna funcionalidad o particularidad de Moonflow que no esté mapeando, coméntenme y la bajamos también. Sí, porque, o sea, ¿por qué lo comento? Porque en el en el entendido Hotspot va a sustituir a Moonflow, ¿no? Entonces esa parte, o sea, oye, ¿sabes qué, Josué? Te faltó bajar esto con todo gusto. Vamos bien.
+Vianey Correa: Okay. Sí, gracias.
+Josué Torres: Y bueno, aquí tenemos como algunas condicionales, ¿no? Si recibimos información del pago recibido, se actualiza la cuota de pago. Si el pago recibido es parcial, se registra la diferencia pendiente entre la cuota y mantiene el estado de alerta activo. El día uno de cada mes inicia la secuencia de recordatorios preventivos para todas las campañas activas. eh 90 días antes de la fecha del último pago se crea aquí es la tarea para este ejecutivo de cobranza, para contactar al solicitante, etcétera, ¿no? Entonces, de eso van los los workflows que tenemos aquí. En cuanto a las a las notificaciones, pues también se hace notificaciones. Este, aquí ya incluí también la parte de este la copia de información y notificaciones a director comercial para que esté enterado de todos estos cambios de estatus y seguimientos.
+
+00:24:17
+
+Monific: Ah, yo tengo una duda, José. ¿Qué pasa si cuando algo entra en mora, este, que nunca nos ha pasado, pero o sea,
+Josué Torres: Sí.
+Monific: que algo ya se tenga que ejecutar una garantía y ya le empiecen a llegar las notificaciones a a los responsables, este, para, no sé, escalar las garantías y todo y se empieza a pues a mover esas tareas, pero prácticamente no tenemos novedades. ¿Va a haber un segundo escalamiento o algún aviso o eso no se está contemplando.
+Josué Torres: Ah. Sí, de hecho aquí en cambio de etapa lo estamos contemplando de esta manera. Igual si lo quisieras validar estaría excelente. Si la si los días de mora llega a 61, esto viendo la la tabla que tenemos aquí, o sea, si ya escalamos mora grave, en ese caso lo que va a hacer es que se va a mover a la etapa de ejecución de garantía. Y ahí, ¿qué es lo que va a suceder? Aquí tenemos que el principal eh responsable aquí es el director de cumplimiento legal. ¿Por qué? Porque esta persona va a recibir la la el expediente y o sea, esta persona ya es en automático. ¿Sabes qué? Este caso ya escaló a una mora es grave, ya se necesita ejecutar esta garantía.
+
+00:25:37
+
+Josué Torres: lo que necesitas hacer es validar, ¿no?, la viabilidad de esta ejecución de garantía, ¿no? O sea, revisar lo que platicábamos en el en el flujograma, ¿no? Validarú y validar todas estas cuestiones. Y entonces aquí el soporte es con dirección de finanzas, dirección comercial y el comité, ¿no? En este caso estoy contemplando que el comité sería serían justamente director general, cumplimiento legal, este finanzas y aquí no sé si igual incluir comercial ahí sí este como para tenerlo
+Monific: Sí. O sea,
+Josué Torres: mapeado.
+Monific: a lo que te refieres con el soporte en este caso es que si el principal no, o sea, incumple, le va a llegar los reportes al
+Josué Torres: es más como un tema de escalamiento para la aprobación,
+Monific: comité.
+Josué Torres: o sea, como tal, eh según lo que hemos mapeado y platicado, el la persona que aprueba o autoriza cuestiones de refinanciamiento y este y Ajá.
+Monific: Está bien los que tienes mapeados en esa parte. en la ejecución de la garantía.
+Josué Torres: Okay, exacto. Como tal, la persona que aprueba ejecuciones de garantía y demás, pues es el director general que igual le lo tenemos mapeado como un comité, ¿no? Entonces, justamente eh más que allá de que si no hace su tarea le va a llegar, ¿no?
+
+00:27:00
+
+Josué Torres: Es como ese soporte de aprobación, ¿no? O sea, sí se requiere su interacción, ¿va? Entonces, respondiendo a tu pregunta, ¿qué pasa cuando llega una ejecución de garantía? Pues aquí va una es una etapa de transición a un cierre negativo, ¿no? Para para entender igual esta etapa de ejecución de garantía es una transición a un cierre negativo. Aquí entra en funciones también un abogado externo. Aquí el departamento, el director, perdón, de cumplimiento legal, lo que hace es revisar este expediente, lo envía con con un abogado externo. Aquí no platicamos mucho como la parte de la de la interacción o lo que tiene que hacer el abogado externo, pero entiendo que aquí pues es más como un litigio de la adjudicación del predio, después un remate bancario y después etcétera, ¿no? Entonces, bueno, esa parte queda como por afuera de de todo el proceso, pero si estamos contemplando, aunque queda por fuera, si estamos contemplando aquí estas propiedades, estatus del proceso jurídico, el e igual la fecha de envío a garantía para poder mapear cuánto tiempo igual este se demora, ¿no?, este proceso de ejecución de garantía, ¿no? Y una vez que ya se tiene el pues sí, el ingreso del del dinero, que eso es la parte que nos que nos interesa igual acá para poder hacer los pagos.
+
+00:28:29
+
+Josué Torres: Entonces sí, ya que se hacen los pagos, si tiene otra vez el la liquidez con la con el remate de la propiedad en garantía, ya nos iríamos a un cierre por incumplimiento, ¿no? Eso es lo que sucedería en el caso de una garantía. Sí,
+Vianey Correa: igual nos va a permitir como conocer en tiempo real el estatus en el que está,
+Josué Torres: adelante.
+Vianey Correa: ¿no? Por lo que por lo las características que tú nos estás poniendo acá.
+Josué Torres: Sí.
+Vianey Correa: Perfecto.
+Josué Torres: Así únicamente que aquí si necesitamos este por
+Vianey Correa: Ajá.
+Josué Torres: ejemplo estatus del proceso jurídico. Ahí si nos tendría que apoyar el director de cumplimiento legal en estar actualizando, ¿no? Porque pues no hay una forma de poder actualizarlo en tiempo real,
+Vianey Correa: Sí, no, no. Y aparte yo creo que cada caso va a ser diferente,
+Josué Torres: ¿no?
+Vianey Correa: o sea,
+Josué Torres: Sí.
+Vianey Correa: lo veo
+Josué Torres: Y en realidad son son sencillas las etapas. este iniciado. Eh, digo, ahora vemos Ajá. Sí,
+Josue's Fathom Notetaker: Yeah.
+Josué Torres: por ahí en proceso y y resuelto algo así.
+
+00:29:33
+
+Josué Torres: A ver, déjenme buscarlo. Bueno, les explico igual ya aprovechando que abría esta hoja, ¿no? Esta hoja es el listado de todas las propiedades que estamos proponiendo y están segmentados por etapa. viene el nombre, el tipo de objeto este en hotspot, tipo de llenado, el tipo de propiedad y el carácter, si es obligatorio, opcional, ¿no? Aquí estamos buscando los posibles valores del estatus jurídico, estatus del proceso jurídico iniciado en proceso y concluido. sencillo para que ustedes tengan igual un panorama inmediato de de cómo va este tema, ¿no? Va que va bien.
+Vianey Correa: Sí, perfecto.
+Josué Torres: Entonces, de cobranza activa de esta etapa, ¿tienen algún comentario, alguna duda? ¿Quieren que profundicemos en en algo en específico? ¿Quisieran ver todas las propiedades, todos los workflows?
+Monific: No, bueno, yo de mi parte las únicas dudas que me quedan ya nada más este antes de cederle la palabra a Vian es este cuando entra ya una liquidación que que lo vi en una de las etapas de este pipeline, están contemplando,
+Josué Torres: Mhm.
+Monific: obviamente que también un proyecto de rendimiento variable se puede llegar a liquidar aunque no tenga un calendario de pagos, ¿correcto?
+
+00:30:54
+
+Monific: O sea, muchos de los proyectos de rendimiento variable puede el solicitante de repente llegar a recomprarnos su parte o a veces vender el inmueble y por eso lo podemos liquidar el financiamiento, perdón. Entonces, no solamente los proyectos de rendimiento fijo se liquidan, también los proyectos de rendimiento variable pueden llegar a más bien tienen que tener esa opción. Eso sí
+Josué Torres: Sí, sí, sí está contemplado.
+Monific: contemplado.
+Josué Torres: Si recordamos el flujograma, la única bifurcación que había era al inicio, ¿no?
+Monific: Okay,
+Josué Torres: Alá al inicio cuando se hacía la programación de los recordatorios y etcétera, ¿no? Pero una vez que ya llegaba esa parte de la cobranza activa,
+Monific: va
+Josué Torres: entonces todo se unificaba, ¿no?
+Monific: perfecto.
+Josué Torres: Incluido el cierre.
+Monific: Super.
+Josué Torres: Va que va. Adelante, no sé si tenías por ahí.
+Vianey Correa: No, no, adelante. Estoy viendo el archivo que nos estás compartiendo hasta ahorita lo que nos estás platicando bien, nada más como para tenerlo bien claro. Sí, no lo van a compartir después, ¿verdad? Para poderle echar ojo a detalle.
+Josué Torres: Sí, claro.
+
+00:32:04
+
+Josué Torres: Sí, sí, sí, claro.
+Vianey Correa: Perfecto,
+Josué Torres: Igual, equipo,
+Vianey Correa: adelante.
+Josué Torres: dejo también micrófono abierto si gustan que profundicemos en algo en específico. Adelante. Adelante, Rich.
+Ricardo Gomez: Yo no más algo para para también eh, ¿cómo se puede decir? o dejarlo más explícito, que en este pipeline sí estamosando de que el mayor tiempo que van a tener estos registros en este pipeline justamente va a ser en esta etapa sale en la en la de la cobranza activa. Entonces toda esa parte de la mora que si ya pasó, se escaló, pues obviamente lo estamos trabajando no a nivel de las etapas, sino con etiquetas, ¿sale? Como ahorita de hecho lo están trabajando con los contactos que vamos donde esas etiquetas van cambiando, ¿sale? En función del tiempo, la mayoría del tiempo van a estar aquí. er ese temita, Josué.
+Vianey Correa: No.
+Josué Torres: Va que va, equipo, ¿quisieran agregar algo en la etapa de cobranza activa o en alguna otra etapa? ¿Todo bien?
+Monific: Yo todo bien, gracias.
+Josué Torres: Va que va. Excelente. Bien, pues justo, ¿no? Por eso dedicamos bastante tiempo a esta etapa de este cobranza activa.
+
+00:33:16
+
+Josué Torres: ¿Cuáles son dos puntos importantes para poder recibir desde adminifica Hotspot? la información del pago recibido y la información del último pago registrado. No, solo quisiera validar si eso sí se tiene en adminific. Sí, ¿verdad?
+Vianey Correa: Sí, sí se tiene.
+Josué Torres: Okay,
+Vianey Correa: Y duda,
+Josué Torres: bien.
+Vianey Correa: ya viene aquí este,
+Josué Torres: Adelante,
+Vianey Correa: perdóname.
+Josué Torres: adelante, adelante. Pasa
+Vianey Correa: En cuando estábamos viendo lo del programa te comentaba que en ocasiones se hacen modificaciones,
+Josué Torres: nada.
+Vianey Correa: ya sea por pagos parciales a capital o por acuerdos internos a la cifra que tienen que pagar del rendimiento mensual o del capital al final del plazo, ¿no? Entonces yo les decía que podía hacer una consulta con admin siempre antes de que empezara el mes, antes de mandar como el primer recordatorio. Esa parte si ya la tienen como identificada,
+Josué Torres: Sí,
+Vianey Correa: mapeada.
+Josué Torres: sí está identificada. Este, bueno, ahí no sé este, David,
+Vianey Correa: Ah.
+Josué Torres: si si tú si lo tienes como presente esta parte de esta propiedad que se está actualizando, lo que lo que nos explicaste el otro día que tuvimos
+
+00:34:27
+
+Vianey Correa: O sea, no es algo recurrente ni tan común, pero sí hay casos especiales en los que se llegada. Entonces, mi preocupación o lo que yo ahorita quisiera evitar es que en algún momento un hotspot con los recordatorios no esté alineado a acuerdos previos que se tengan con el solicitante que ya estén aterrizados en en admin.
+Josué Torres: Sí, sí. justamente platicamos acerca de una de una propiedad así este, no sé si si por ahí lo tienes como en fresco, David.
+Ricardo Gomez: Creo que David se bajó.
+Josué Torres: Sí. Ay, una disculpa,
+Ricardo Gomez: Josué.
+Josué Torres: es que yo como no veo la pantalla estoy proyectando. Sí, una disculpa. Bien, les platico, ¿no?
+Vianey Correa: Yeah.
+Josué Torres: Tal vez no les puedo explicar muy muy bien como como David o igual si si Carol lo tienes presente, pero les platico cómo es. Este, justo durante el mapeo tuvimos unas reuniones internas de este lado, este, el equipo para definir este puntos importantes y uno de ellos fue este que comenta Vi, ¿no? Aquí este estamos nosotros proponiendo esta etapa que se va a anclar de una propiedad de adminific esa esa propiedad este eh la la está la está evaluando todavía David. Y esta propiedad lo que van a hacer es que eso cuando haya un cambio de de este tipo de, no sé, ya hay un cambio en el monto y hay un cambio porque se hizo un depósito parcial o etcétera, ¿no?
+
+00:35:56
+
+Josué Torres: Entonces esa esa propiedad va a actualizar automáticamente el el registro en hotspot, ¿no? O sea, va a ser en esa dirección, admin hacia hotpot,
+Vianey Correa: Okay,
+Josué Torres: ¿no?
+Vianey Correa: perfecto.
+Josué Torres: Sí, tal vez no les puede dar una una descripción muy muy técnica porque bueno, este, pero pues ese es el el sentido, ¿no?
+Vianey Correa: Sí, está bien.
+Josué Torres: Va que va bien.
+Vianey Correa: Gracias.
+Josué Torres: Entonces, si gustan nos vamos a las siguientes etapas ya entendiendo de dónde vienen y por qué caen en estas etapas, ¿no? la etapa de refinanciamiento. Esta etapa es una etapa igual de de transición donde aquí se tienen que formalizar todas las condiciones y se tienen que validar todas las este las condiciones también para poder ofrecer una reestructura por refinanciamiento, ¿no? Aquí como habíamos platicado, este la idea es que tengamos un cierre de ese ticket de cobranza. Entonces, la salida de esta etapa sería la que justamente se llama cierre por refinanciamiento, ¿no? Entonces, en esta etapa eh tenemos la reestructura de la campaña de cobranza y aquí se tiene que registrar la decisión del comité. Sí. Igual dentro de sus documentos, en la parte del el último que que el que decía entregables que nos compartiste, Raquel, ahí venía una parte como un un pain point, ¿no?, que era es que las decisiones del comité no se registran y que etcétera, ¿no?
+
+00:37:35
+
+Josué Torres: Bien, la idea de esta de esta etapa es justamente atender parte de esa de esa problemática y dar una solución. ¿Cómo planteamos la solución? pues con el registro con propiedades, ¿no? Aquí cuando caemos a esta etapa tenemos un llenado automático de fecha de inicio de reestructura. Después vamos a tener un objeto de de cobranza con llenado manual. Esto nos va a pedir la fecha de aprobación de la reestructura, el responsable de la aprobación, motivo de la reestructura y alguna nota que el comité este necesita dejar. O sea, es decir, esta reestructura ocurrió por tales o tales situaciones, este cliente es apto, aunque venía ya de un de un incumplimiento de pagos de rendimientos, la no sé, el este cliente tiene otros proyectos adicionales con nosotros, no solo este, por lo tanto es viable ofrecer un es todas esas notas que nos den a nosotros información o data que nos ayude con la trazabilidad de de los de estas decisiones, ¿no? ¿Por qué? porque en algún punto este ya hablando más adelante y sé que queda fuera de todo el scope actualmente, pero tal vez esto más adelante les puede dar a ustedes una base de información sobre las cuales poder tomar decisiones, ¿no? Y en algún punto eh en el futuro pues no necesariamente tenga que ser el director general, ¿no?
+
+00:39:04
+
+Josué Torres: atendiendo también al tema de que justo que no queremos este cargar tanto a TED con tipo de interacciones, ¿no? Que igual comentábamos en las reuniones de mapeo. Entonces una de las posibles vías de solución a futuro pues es documentar estas estas este decisiones,
+Vianey Correa: decisiones.
+Josué Torres: ¿no?
+Vianey Correa: Correcto.
+Josué Torres: Y justo se documentaría en esa propiedad.
+Vianey Correa: No, sí, sí hay.
+Josué Torres: En la parte de propiedades opcionales, pues aquí pondríamos condiciones especiales del acuerdo,
+Vianey Correa: Y
+Josué Torres: ya muy específico cómo va a quedar, y este un link al contrato de refinanciamiento en Drive. Aquí no sé si en específico esa propiedad ustedes la ven bien. Eh, tal vez me digan, "Oye, José, no es que como que tal haya un contrato de refinanciamiento."
+Vianey Correa: yo lo veo muy viable.
+Josué Torres: Okay, va que va bien. Entonces, una vez que el refinanciamiento cumple todas las las este los criterios y se logra establecer las condiciones y demás, se registra, etcétera, tenemos este dos opciones para cambio de etapa. Si el comité aprueba y director de finanzas carga el nuevo calendario, entonces se mueve automáticamente a cierre por refinanciamiento. Por otro lado, si el comité rechaza este refinanciamiento, se me automáticamente a ejecución de garantía.
+
+00:40:31
+
+Josué Torres: Y bueno, esas serían las dos salidas de este de esta etapa. ¿Les hace sentido?
+Monific: Acá tengo una duda, o sea, porque en este si el comité aprueba, en este caso no sería que el director de finanzas cargue un nuevo calendario, en este caso sería que el comité aprueba y se carga un nuevo proyecto, entonces se empieza un ciclo desde cero. El proyecto se llamaría Palma Real Refin. Entonces, ya automáticamente vuelve a iniciar un flujo,
+Josué Torres: Okay.
+Monific: pero con la etiqueta refin. ahí si quieres corregirme o cualquier cosa
+Vianey Correa: Sí, lejos de la etiqueta. Eh, en alguna de nuestras pláticas les comentaba que cada campaña tiene como un ID, el fin 001, fin 002, ¿no? Entonces,
+Josué Torres: Sí.
+Vianey Correa: cuando se cierra una campaña o varias campañas por refinanciamiento, como es el que estamos viendo ahorita, vamos a ponerte un ejemplo, que las iniciales eran el fin 004 y el fin 008, ¿no? A estas dos se les va a dar el cierre por refinanciamiento,
+Josué Torres: Mhm.
+Vianey Correa: terminan y ya. Y a lo mejor estas dos se van a refinanciar con el fin 0020. Entonces, ese fin 0020 va a ser un proyecto nuevo.
+
+00:41:42
+
+Vianey Correa: Por eso te decía yo que era viable lo del contrato, porque a final de cuentas es independiente, que sí está ligado obviamente al historial solicitante, que sí nos ayuda mucho lo de las notas para saber de dónde vino ese proyecto, pero a final de cuentas, desde el momento en que se firma su contrato hacia el final de su vida, ¿no?, de todo el plazo es independiente, es se maneja su propia tabla de pagos,
+Josué Torres: Okay.
+Vianey Correa: eh me ayuda a mí a tenerlo eh identificado como proyecto diferente porque en los reportes que yo mando a la autoridad que mucha de la información viene de admin y de Moonflow, que en este caso estoy buscando que ya venga todo de hotspot,
+Josué Torres: Mhm.
+Vianey Correa: el tenerlo como un proyecto aparte y no solo como una tabla adicional o modificada me ayuda ayuda para que baje toda esa información nada más y yo pueda llenar mis layouts de de informes.
+Josué Torres: Okay. Aquí tengo dos temas. Este, viene justo esto que acabas de comentar, estoy buscando que esta información que me da Monflo ya la ya la obtenga de admin. Entonces ahí este si me permites dejarte una tarea que cuando se haga la revisión del del máster justo valides con ese ojo, ¿no? ¿Qué información te estamos bajando, mapeando que te va a servir a ti para ya este dejar de utilizar Moonflow?
+
+00:43:07
+
+Josué Torres: Y en el caso de que no la veas o nos o me hizo falta de más, pues eh me comentas y la la anexo de una vez, ¿no?
+Vianey Correa: De acuerdo. Sí, completamente de acuerdo.
+Josué Torres: Ajá. Esa era una. La otra es que justo cuando entonces estamos alineados, cuando cuando hacemos un cierre por refinanciamiento, lo que ocurre es que este registro de de cobranza o este ticket se va justo cierre por refinanciamiento y entonces eh tú tienes que ir a la adminicar un nuevo proyecto que se va a llamar Ref y entonces sí, una vez que ya tenemos este nuevo proyecto, se tiene que detonar un nuevo ingreso a este a este pipeline de cobranza, ¿no? Sí.
+Vianey Correa: Sí, correcto.
+Josué Torres: Okay. Este, bueno, aquí te serviría este es pregunta, ¿no? Te serviría mucho también que esté relacionado, ¿no? O sea, que yo veo este proyecto, o sea, yo ya sé que está relacionado porque es refil, pero si tiene algún algún enlace, alguna etiqueta que te puede indicar de qué proyecto viene, etcétera, eso también te serviría,
+Vianey Correa: Sí, sí me sirve.
+Josué Torres: ¿no?
+Vianey Correa: Y mira, regularmente digo hasta ahorita, ¿no?
+
+00:44:19
+
+Vianey Correa: Lo que hemos hecho en Monific es de que lleva el mismo nombre y nada más como lo comentaba ahorita, Morifique, ¿no? O sea, modifique este Raquel, perdón, eh decía Palmarreal es mi proyecto original.
+Josué Torres: Okay.
+Vianey Correa: Cuando yo lo cierro y creo uno para refinanciar, ese va a llamar palma real refil, ¿no? Así lo identifico. Ahorita inicialmente lo estamos haciendo con el nombre. Si tú a nivel propiedades hoppot lo pudieras este llevar a través de una etiqueta o de algún identificador para poderlos ligar, sería viable. Bueno,
+Josué Torres: De hecho, el este en hotspot igual ahí no sé si este Carro nos quieres platicar cómo funciona, pero en hotspot tengo entendido que justo cuando se hace un la creación de un ticket se le genera un ID único también.
+Caroline Bersot: Sí, equipo, les hablo aquí rápidamente. La idea es que cuando que este ticket se cree de manera automática desde la integración con la API Monefic, ¿cierto? Y la idea es que esto sí no se puede, digamos que frenar. Eh, toda vez que se crea un ticket, sea de manera manual o automática, dentro de Hubspot, hay un ID único. Este ID es de Hubspot, no se puede cambiar.
+
+00:45:37
+
+Caroline Bersot: Aquí lo que la idea es asociar al ID de cobranza que va a venir desde la API Monific, ¿vale?
+Josué Torres: que va. Gracias, Car.
+Ricardo Gomez: Eh, yo tenía una duda, a ver si no meto un poco de ruido en esa parte. ahorita que mencionabas eh Dianey de que generas un nuevo proyecto que a fin de cuentas es el mismo edificio, pero que termina con fin, ¿no? O algo por el estilo. Ahí yo creo que contrasto un poquito con lo que tenemos bajado porque haz de cuenta que nosotros, como mencionaba en el en el flujo, ¿no?, tenemos un objeto antes que se llama ese edificio o ese proyecto Palmas, creo que mencionaste y de ahí se van a derivar o va a tener como hijos las diferentes campañas. Entonces, como lo vemos es, okay, la primera campaña fue la que se generó de cajón y todo y la segunda que estás hablando de un refinanciamiento, yo lo veo que sea un igual, ¿sabes? O sea, un ticket de cobranza, pero asociado a ese objeto madre que viene siendo el el edificio o el proyecto.
+Vianey Correa: Sí,
+Ricardo Gomez: Digo, hace sentido o si quieres otro proyecto aparte.
+Vianey Correa: sí, sí. No, no, no está, está perfecto así porque sería como están funcionando las campañas hijas que ahorita tú
+
+00:46:52
+
+Ricardo Gomez: Okay.
+Vianey Correa: mencionaste. Asío sería ese nuevo proyecto porque cada campaña hija tiene un fin
+Ricardo Gomez: Ajá.
+Vianey Correa: 00 algo, ¿sabes? Entonces,
+Ricardo Gomez: Justo.
+Vianey Correa: a lo que yo ahorita me refiero es que este refinanciamiento va a tener un fin 00 diferente,
+Ricardo Gomez: Okay.
+Vianey Correa: ¿no? O sea, pero ves, hijo del mismo proyecto, hijo del mismo solicitante.
+Ricardo Gomez: Va. Okay. En ese sentido, Raquel.
+Monific: Vian, ¿estás segura de que no tienen que ser los refinanciamientos objetos como edificios? Este, por lo que yo he entendido, Ted, independientemente, ya sabes que tú la lógica de cobranza tú la llevas, este, pero un refinanciamiento se puede hacer cinco veces y va y puede tener muchas campañas. Palma Real específicamente, pues solamente se hizo una campaña y solo hemos tenido un refinanciamiento, pero luego se puede llevar a ser un relajo y no sé cuántos objetos o cuántas propiedades puede tener un solo objeto, o sea, y cuántos piquecitos podría tener. Al final del camino, no sé si se va a hacer un relajo adentro de de esto, lejos de mejorar la operación, loentaríamos. No sé si me
+
+00:48:03
+
+Ricardo Gomez: Okay.
+Monific: explico.
+Ricardo Gomez: Ahí, Raquel,
+Vianey Correa: Yeah.
+Ricardo Gomez: tu preocupación es justamente de que se generen muchos objetos de de esto, mucha información
+Monific: O sea, por ejemplo,
+Ricardo Gomez: regada.
+Monific: yo tengo este Onobble Boutique. On Bobble Boutique, no no me hagas mucho caso, pero creo que tiene siete campañas. Este, ponte que vamos a hacer un refinanciamiento con ellos en el mes 60. Entonces se va a llamar Onobble Boutique Refing. Ese es un nuevo proyecto. Si lo hacemos bajo esta estructura en el edificio y se va a llamar Ombow Boutique Refing, pero van a entrar adentro de este de esta, como lo proponen en esta construcción de hotspot, que todo sea dentro de este edificio.
+Ricardo Gomez: Hm.
+Monific: En este primer refinanciamiento sería On Boutique Refing 1 y va y caen todos estas según como se fonde. Y luego si hay un refinanciamiento dos sería on bubble boutique refin 2 1. O sea, no sé cómo explicarles, pero son 1000. O sea, pueden llegar a ver muchos refinanciamientos. Ya me entendiste bien.
+Vianey Correa: Sí, sí te entiendo.
+Monific: Es que tú lo vas a bajar por mis palabras. M.
+Vianey Correa: Sí, te entiendo. No le veo ningún problema.
+
+00:49:11
+
+Ricardo Gomez: Sí,
+Vianey Correa: O sea,
+Ricardo Gomez: también.
+Vianey Correa: porque independientemente de cómo los nombremos, que es ahorita como tú lo estás viendo, ¿no?, eh, mi propiedad de cobranza únicamente se va a ligar a un fin 00 y tantos o en algún momento un fin 240 y tantos, ¿no? que no importa cuántas veces ya estuvo en el anterior, me da todo el ciclo de cobranza que estoy viendo con Hobspot, o sea, que va a iniciar en algún momento, va a tener una tabla de pagos, va a estar pagando y va a terminar de alguna manera, ¿no? O con liquidación o con refinanciamiento y todo, o sea, pero cada uno de estos que se vaya abriendo tiene que pasar por el mismo SIC. Entonces, mientras no tenga yo limitantes en cuántos tickets de cobranza,
+Ricardo Gomez: Increíble.
+Vianey Correa: que es el nombre que ustedes le dieron a ligados al edificio, yo no voy a tener problema de identificarlo.
+Ricardo Gomez: Okay. A ver, antes de avanzar, si quieres, permíteme, Josué, para tenerme echado bien esto, volver a mostrarles pantallita, please. Bueno, ya se la estoyando, eh. Vale, digo, si te entendí bien, no no te entendí bien el nombre, Ombo Boutique, así lo escribí.
+
+00:50:33
+
+Ricardo Gomez: Y básicamente este es tu edificio, ¿no? El que se crea y es uno solo por edificio. Lo que sucede después es que, okay, por aquí mencionaba Raquel de que va a haber una, digámoslo así, primer campaña, ¿no? 001, por así decirlo. Y listo. Entonces, lo que sucede después, okay, entramos con un refinanciamiento, lo que sea, entonces no es volver a generar otro por acá, sino bajarlo aquí, que sea un hijo de Ombob Boutique, ¿sale? ya sea refin o lo que sea, refin 001, que eso viene del admin modific y pues lo vamos a estar cachando, ¿va? Digo, esa es la lógica que estamos pues sí postulando, ¿sale? Y las n campañas que ustedes o que deba de tener este proyecto o edificio. Digo, ¿hace sentido esto, chicas?
+Vianey Correa: Sí, sí, sí, sí.
+Ricardo Gomez: Sí.
+Vianey Correa: 100%.
+Ricardo Gomez: Okay.
+Vianey Correa: Ajá.
+Ricardo Gomez: Va s estamos
+Vianey Correa: No.
+Monific: Los tickets están limitados, o sea,
+Ricardo Gomez: alineados.
+Monific: se puede tener muchísimos tickets adentro de un
+David Ochoa: Yeah.
+Ricardo Gomez: Es que básicamente e ese ticket es otro objeto.
+Monific: objeto.
+
+00:51:34
+
+Ricardo Gomez: Lo único que estamos haciendo con esto es asociarlos entre sí. Entonces, tal vez fue una mala analogía el decir que es madre e hija, pero va de la mano. Sale por por buena práctica.
+Monific: Okay. No, no fue una malaía, o sea,
+Ricardo Gomez: Ajá.
+Monific: porque al final del camino es una madre, es un hijo y es un, o sea, hay muchos hijos también van a haber muchos hijos regados. Es lo que quiero que me entiendan. Por eso quería hacer también mis analogías, pero luego yo no sé explicar. Yeah.
+Ricardo Gomez: Okay, s, no, está bien. Eh, la realidad es eso, son objetos separados, pero bueno, la por buena práctico para entenderlo es que si no uno está ligado al otro y no pueden hacer al revés y todo lo demás. S. V. Entonces, listo. Perdón, José. Avancemos.
+Josué Torres: que va justo qué bueno que que bajamos esa parte también. Bien, entonces eh pues ya tenemos de aquí nos vamos a un cierre por refinanciamiento y en caso de que no, ¿sabes qué? No se puede, no se puede hacer este refinanciamiento, nos vamos a una ejecución de garantía. Ejecución de garantía de aquí este, ¿qué es lo que nosotros estamos proponiendo acá?
+
+00:52:46
+
+Josué Torres: Esta también es una etapa de transición, este, pero aquí a diferencia de la parte de refinanciamiento, esta es una etapa de transición a un cierre negativo. Sí, la ejecución de garantía ya expliqué un poquito hace un momento. Básicamente la lógica es la siguiente. Cumplimiento legal o legal recibe la información. Legal hace el envío de información a un abogado externo que también vamos a estar tenemos que estar registrando en hospot en una propiedad. Este abogado externo asignado. Este abogado hace toda la trámite legal. se reciben los los recursos, se se hacen los pagos a los solicitantes con la con la lógica que ya platicamos en el flujograma de este e los rendimientos, etcétera, menos comisiones y y ya que realizamos esa eh dispersión o esa o ese pago a los a los inversionistas, entonces podemos decir este que podemos irnos a un cierre por incumplimiento, que sería la etapa final negativa, ¿no? Aquí lo vemos más este más bajado, ¿no? Origen vino de una cobranza activa, es decir, eh pues obviamente si no hubo un buen cumplimiento, vamos de una vez a una ejecución de garantía y pues eso nos lleva también a a lo que sigue, ¿no? y viene de un refinanciamiento, pues también si no hubo este la aprobación de un refinanciamiento, pues nos vamos a ejecución de garantía.
+
+00:54:28
+
+Josué Torres: Salidas. Este, aquí estoy mapeando que el comité decibe decide un último intento. ¿De acuerdo? Lo que quiero validar con ustedes es una vez que ya que ya se inició este proceso de ejecución de garantía, ¿hay alguna posibilidad de decir, "¿Sabes qué? Este, pues sí conviene o a Munifil le conviene pues ofrecer un refinanciamiento o se presentó una nueva condición que nos que nos orille justamente a retornarnos o a regresarnos un pasito o es que ya se decidió y se
+Monific: Sí. A ver,
+Vianey Correa: A ver.
+Josué Torres: ejecutó.
+Monific: nos ha pasado con el proyecto de Verti, se hizo uno, que fortalece las garantías de, o sea, de un proyecto, otro proyecto mejorando las condiciones de los inversionistas. Entonces, sí podría llegar a pasar. Eh, sería muy raro que pasara, pero sí, obviamente sí mejora las condiciones para los inversionistas. Entonces es más fácil, es más rápido, se puede con el comité y se retrocede para avanzar. O sea, no sé si me explico.
+Josué Torres: Sí, sí, sí. Okay. Entonces, estaría correcto, ¿no? Una de las salidas en alguno de los casos a por muy remoto que fuera, pues sería un refinanciamiento, ¿no?
+
+00:55:47
+
+Josué Torres: Y ahí nos estaríamos regresando a la etapa que ya platicamos, ¿no? Y la salida pues ya sería diferente, ¿va? Y bueno, el otro que sería el la salida eh pues obvia, natural, pues es la del cierre por incumplimiento, ¿no? Aquí tengo dos preguntas para ustedes. Eh, ¿el abogado externo necesita recibir alguna notificación de hotspot o todo lo gestiona cumplimiento legal?
+Vianey Correa: Yo opino que todo cumplimiento ilegal, o sea, porque es que conlleva decisiones internas. O sea,
+Josué Torres: Okay.
+Vianey Correa: creo que la notificación de Hopspot va justo a la dirección de cumplimiento ilegal para que se hagan las comunicaciones y decisiones internas necesarias. Se decida quién va a ser el externo que va a llevar el caso y ya todo lo llevamos nosotros, ¿no? O sea,
+Josué Torres: Sí,
+Vianey Correa: pero con que le llegue al Ajá.
+Josué Torres: eso es eso que acabas de comentar ocurriría todo fuera de hospital, ¿no?
+Vianey Correa: Sí, correcto.
+Josué Torres: Okay, va que va y la No, al contrario, muchas gracias. La otra pregunta es esa, ¿no? Hay un SLI definido para el comité para que este tome una decisión.
+
+00:56:56
+
+Josué Torres: Es decir, ¿saben qué? Tienen 3 días, una
+Vianey Correa: Es decisión para mandarlo con un externo
+Josué Torres: semana,
+Vianey Correa: o que ya se ejecute.
+Josué Torres: para ejecutar la garantía.
+Monific: No,
+Vianey Correa: Ay,
+Monific: pues ahí la idea sería que el SL sea inmediato porque prácticamente si mal no entiendo
+Vianey Correa: no.
+Monific: ya entró en una mora, o sea, deento por los días que ya habías mencionado, ¿correcto?
+Josué Torres: Mm.
+Monific: Entonces yo ahí pondría 3 días máximo a menos que tú digas algo bien.
+Josué Torres: Sí.
+Monific: Este y obviamente para no o sea tampoco generarle ahí como un tema a la parte legal que que esté enterado de las notificaciones previas anteriores, o sea, como que para que no lo lleve como de sorpresa, sino que le estén llegando antes que ha estado pasando y oye, posiblemente este proyecto se vaya a riesgo. Vete preparando, my friend, porque vas a tener que mandar esto a garantía.
+Josué Torres: Okay, Okay,
+Vianey Correa: Y perdón que me meto de una vez, ¿no? O sea,
+Josué Torres: perdón.
+Vianey Correa: pero adicional a las notificaciones previas a que llegue ese momento, yo creo que un punto clave que acabas de mencionar este tú, Josué, es ya llega el momento de que manda la notificación de que se tiene que ejecutar la garantía.
+
+00:58:10
+
+Vianey Correa: Probablemente yo veo útil que le sigan llegando esas notificaciones hasta que sí realmente a nivel comité se decida llevarlo a cabo y dárselo a un externo. Y para saber si eso ya pasó, tú estabas eh mostrando en la ejecución de garantías tres pases, ¿no? O sea, como que está iniciada en proceso o finalizada, ¿no? Para que manualmente se lleve al proceso de iniciada.
+Josué Torres: Okay.
+Vianey Correa: Yo creo que hasta que no manualmente se marca iniciado, se debe de mandar constante recordatorio para que no se pierda y realmente se le dé velocidad a la ejecución de garantía. Sí, se nos puede ir de manos, o sea, puede tardar mucho el comité en tomar la decisión o o estar comunicando con el solistante de qué va a pasar, si ejustamos garantía o le vamos a dar refinanciamiento o vamos a volver a hablar con él, ¿no? Entonces sí nos ayudaría, creo un poco el que le estén llegando estas notificaciones hasta que no se decida si ya está en proceso de iniciada este ejecución de garantía o si ya se tomó otro camino.
+Josué Torres: Okay. Entonces, aquí tal vez la lógica sería porque esto viene de la parte, recordemos, cobranza activa, tenemos una mora. Si esto es así, entonces este ya nos vamos a una etapa en la que se evalúa si se hace un refinanciamiento,
+
+00:59:26
+
+Ricardo's Fathom Notetaker: Yeah.
+Josué Torres: si se si decide que es una ejecución de garantía. Al entrar a esta etapa de ejecución de garantía se pondría la propiedad este estatus del proceso jurídico como iniciado para que detone el envío de recordatorios, ¿no?
+Vianey Correa: Okay, con eso está
+Josué Torres: Okay. Sí, hay que cambiar un poquito aquí en el warding, pero si lo lo ajusto sin tema. Adelante, Caro.
+Caroline Bersot: Eh, una pregunta, Raquel, eh, La parte legal sería con Miguel Emiliano,
+Monific: Sí,
+Caroline Bersot: ¿cierto?
+Monific: que ahí por lo que entiendo y por lo que les mandé ayer de las licencias, voy a tener que quitarlo de, o sea, de gratis y cambiarlo algo
+Caroline Bersot: Exacto. Yo acabo de Ya está actualizado.
+Monific: Porque
+Caroline Bersot: Es que eso quería porque ahí él va a necesitar el service pro. Lo único que quería ver, pero ahí vemos en el final es el de del equipo de evaluación técnica. Pero ahí descemos.
+Monific: Está bien. Este, sí, perfecto. Otra cosa que les quería decir es, obviamente esto es una prueba de error seguramente y el siguiente año otra vez los vamos a estar buscando para mejorar este estos workflows. O sea, esto es un MVP, pero ustedes nos están ayudando mucho, pero pues yo creo que con este arranque sí puede llegar a jalar, obvian.
+
+01:00:53
+
+Monific: Ok.
+Vianey Correa: Sí, sí, adelante. O sea, yo lo veo bien igualmente con el tiempo si hay mejoras o cambios, más que nada porque hay partes del proceso que no hemos vivido, o sea, ni en Munifi, ¿saben? Entonces, cuando se empiecen a presentar, por ejemplo, esto de ejecución de garantías o más refinanciamientos, pues en en la experiencia pues se llevan varias mejoras, ¿no? Entonces, tal vez ya en esos casos es que sean modificaciones
+Caroline Bersot: Y eso es muy normal porque cuando uno ya está dentro del proceso funcionando se ve que hay cosas que se pueden eh mejorar, ¿no? Y un CRM queriendo no es un ambiente vivo que siempre siempre va a cambiar. Eso es normal.
+Vianey Correa: Sí,
+Caroline Bersot: M.
+Vianey Correa: siempre va a tener modificaciones, pero sí son ese sentido que dice RC que no es definitivo. Por el momento se escucha muy bien, ¿no? Si nos funciona para lo que ahorita tenemos. Conforme vayamos avanzando estaremos realizando las modificaciones que nos simplifiquen la vida. M.
+Josué Torres: Va, que va, me parece excelente. Entonces, okay, entonces seguimos avanzando. Esto ya es la parte de ejecución de garantía y una vez que este se ejecuta la garantía y lo que platicamos, pues ya nos vamos a un cierre por incumplimiento.
+
+01:02:21
+
+Josué Torres: Esta es una etapa terminal negativa de la campaña de cobranza y se tiene que notificar también a inversionistas. Aquí este es donde estaba una de las tareas que que comentábamos hace un momento, ¿no? Cuando entramos a esta etapa se crea esta tarea para director comercial acerca de la creación de comunicados impresionistas. Al entrar a esta etapa registramos fecha de cierre incumplimiento como fecha actual y este y también enviamos una notificación a dirección comercial para empezar a coordinar estos esta comunicación. Sí, consideraciones comerciales, etcétera. Va, que va. Sería una etapa final. Como ven, es es más mucho mucho más más pequeña, pero pues también nos nos arroja este información eh buena, ¿no? Actualmente, y esa igual es una pregunta para ustedes, ¿tienen algún protocolo de comunicación definido para inversionistas en caso de un incumplimiento total? Es decir, alguien que ya recibió los fondos, pagó una, dos, tres cumplimientos y se desapareció del mapa. ¿Les ha tocado esa esa situación? ¿Cómo la han
+Monific: Sí,
+Josué Torres: manejado?
+Monific: más o menos. Sí. O sea, tenemos un solicitante que tomó la decisión de dejar de pagar este y eso me está ayudando a hacer un manual de comunicación, pero sí se está definiendo este año.
+
+01:03:48
+
+Josué Torres: Okay, va. Sí, mi pregunta iba más orientada justo al al tema de si me hicieron falta bajar este, no sé, algunas cosas que no consideré, etcétera, ¿no? No sé, alguna notificación, pero justo lo que comentaba, ¿no? Tal vez más adelante ya podramos tener más información y lo podemos aterrizar mejor.
+Monific: Perfecto.
+Josué Torres: Bien,
+Monific: Yeah.
+Josué Torres: de aquí este nada más quiero revisar con ustedes. Ya ya prácticamente revisamos todas las etapas. Nada más nos falta campaña liquidada. No, esta pues es más sencilla, ya la habíamos platicado muy rápidamente al principio, es una etapa terminal exitosa de la campaña de cobranza. Eh, entendemos que el cliente ideal es el que está en refinanciamiento una y otra vez por siempre, ¿no? Ese sería el ideal. Pero pues también entendemos que hay clientes que justo necesitan la el financiamiento y ya cuando lo obtienen hacen el pago que corresponde y se acabó, ¿no? Idealmente ese sería un cierre exitoso para este proceso, ¿no? Es decir, se abre y se cierra como tiene que ser. Ya está, ¿no? Entonces aquí este lo que estamos mapeando es lo siguiente.
+
+01:05:03
+
+Josué Torres: Son este propiedades que nos ayudan a identificar a los tipos de clientes que con los que ya contamos, ¿no? En automático se llenaría la fecha de liquidación, el historial de pago y el estado de crédito final, ¿no? ¿Cómo cerramos con ese cliente? Eh, aquí estamos incluyendo este objeto que es un llenado manual, que es una conciliación validada por eh director de finanzas. ¿Qué es esto? Pues es una revisión ya final de que todo está en orden, recibimos todos sus pagos, todo se reflejó, estamos bien, el expediente está cargado este en en el Drive o o en el repositorio. Eh, cargamos ese link del expediente también aquí este y bueno, aquí eh podemos asignar una un score para este para este proyecto, ¿no? Estos son datos, justo lo que te comentaba hace rato, ¿no? Estos son datos pensando ya en lo que tú necesitas, la información para presentar tus reportes ante la autoridad, ¿no? Eh, justos lo que nos haga falta aquí de información, coméntame, José, me veo esto, esto, esto, esto y esto y y sin problema yo lo yo lo agrego, ¿no? Y si me dices está correcto así,
+Vianey Correa: Perfect.
+Josué Torres: pues también va.
+
+01:06:18
+
+Josué Torres: Y bueno, aquí ya nada más tenemos como algunos workflows muy muy sencillos, ¿no? Al recibir la información de último pago registrado, este, cuando todos los objetos de cuota de pago tengan el estatus pagado, pues entonces se cierra. Si no, o sea, si por alguna situación hay algún pago pendiente o no está reflejado en el sistema, hay algún error, lo que sea, se genera una alerta para director de finanzas y no se cierran en automático, ¿no? Ahí ya tú vas a tener que hacer la la validación justo en esa en esa última este validación que te comentaba el por qué no se está cerrando automático y ya sería el cierre. Va. Eh, notificaciones. Al entrar a esa etapa notificar al director de de este comercial, finanzas y legal acerca de la campaña liquidada, ¿no? Ya el cliente ya pagó, se terminó su su este su ciclo de cobranza. Eh, ¿qué es lo que necesitamos? Usando mi unifica hostpot, el envío de información del último pago registrado, ¿sí? Que es el que le ponías, si no me equivoco, ese ese numerito que le ponía 100, ¿no? Okay. Y bueno, este el origen
+Vianey Correa: Perdón, sí, correcto.
+
+01:07:38
+
+Vianey Correa: Ese último pago sería ya como la liquidación, ¿cierto? O sea, ya acabó.
+Josué Torres: es correcto.
+Vianey Correa: Perfecto. Gracias.
+Josué Torres: Okay. Va que va. El origen pues una cobranza activa, aquí no tenemos ninguna alteración de nada y una salida pues ya no hay porque es de etapa final. Y aquí pues obviamente el reporte de cierre exitoso y reportes para la autoridad pues seguiría siendo manual, ¿no? Al menos este al día de hoy, ¿no? No es como que te puedes clicar un botón y ya te arroja un reporte para que subas en las plataformas, ¿no? Entonces hasta aquí. Este, no sé si tienen algún comentario o alguna duda acerca de todo el máster que que les estamos presentando. digo, ya tengo en cuenta aquí los comentarios que que nos hicieron y entiendo que la revisión a fondo pues muy seguramente traerá nuevos comentarios, pero a este momento no sé si existe alguno eh parte de Monific de parte de del equipo de de Mapeo Black and Orange un
+Vianey Correa: No, de mi parte no. Hasta esta parte, como dices, ya viendo la detalle tal vez algo, pero hasta ahorita estoy bien. Gracias.
+Caroline Bersot: Sí,
+
+01:08:47
+
+Vianey Correa: Yeah.
+Josué Torres: Okay,
+Caroline Bersot: Josué. Gracias.
+Josué Torres: va que va. Y bueno, aquí tenemos el listado. Gracias. Gracias. Igual tenemos el listado de las propiedades. Son exactamente las mismas que ustedes se encuentran aquí en las en las columnas de obligatorias y opcionales, ¿no? Por ejemplo, ID de cobranza. ustedes lo van a encontrar en la etapa de cobranza activa, eh, nuevo registro, perdón, ID de cobranza. Antes de esto, pues se necesita toda esta información que hasta el momento tenemos bajada para que se cree este nuevo registro o ticket de cobranza. Sí, aquí la solicitud eh es que justo nos apoyen validando que estos registros si se encuentran en el adminific, ¿no? Que yo pienso que sí. son son registros como muy este esenciales, ¿no? Y bueno, en la parte del máster pues no tengo mucho más que agregar también solo quisiera preguntar lo siguiente que que no tengo como una nota, pero no está reflejado aquí en el máster. Okay, vámonos a cobranza activa. cuando tenemos una morra, este, ya entendiendo todo el mapa que nos presentó este Rich, una vez que este que esta amor agrave inicia, tengo varias preguntas, ¿no?
+
+01:10:12
+
+Josué Torres: La primera es, ¿qué debería ocurrir con el registro con este cliente? ¿Se le tiene que bloquear este una nueva campaña? A lo mejor sucede eso de que a lo mejor ya pasó la campaña uno, pagaste bien o bueno, vas a iniciar a pagar porque ya se fondeó la campaña uno, vas a iniciar a pagar, se inicia la campaña dos de tu proyecto y tú ya estás pagando la uno, ¿no? Eso ocurre de esa manera, ¿verdad? Sí. No, sí me explic.
+Vianey Correa: Sí, sí, sí,
+Josué Torres: Okay.
+Vianey Correa: sí, sí.
+Josué Torres: Okay. ¿Qué pasa si yo eh hagan de cuenta, yo Josué tengo un proyecto con ustedes este de 10,000ones,
+Vianey Correa: Aá.
+Josué Torres: tengo tres campañas ya este que pactamos al inicio, ¿no? Este, sí, sí ocurre así, ¿verdad? Tenemos un proyecto, ustedes y yo 10,000ones en tres campañas de tres, 3 y 4 m000ones, ¿no?
+Vianey Correa: Hm.
+Josué Torres: Esto hablando de la parte comercial, ¿no? Ya regresándonos un poquito a la parte de solicitantes, ¿no? Apactamos y demás, se inicia la primera campaña.
+
+01:11:20
+
+Josué Torres: Okay.
+Vianey Correa: Sí.
+Josué Torres: se fondea, recibo eh y hago disposición de los fondos, se genera esta parte de la este inversión confirmada efectiva, confirmación de inversión efectiva, ¿no?
+Vianey Correa: Sí.
+Josué Torres: Y entonces empiezo yo a pagar, ¿no? En ese momento en teoría, se tendría que iniciar la campaña dos de mi proyecto, ¿no?
+Vianey Correa: Aha. Sí,
+Josué Torres: Okay. Okay. ¿Qué pasa si yo durante ese tiempo que esa campaña de fonteo está activa,
+Vianey Correa: correcto.
+Josué Torres: la dos, caigo en mora grave con la campaña uno en pagos? ¿Me tendrían que bloquear la campaña dos o cómo cómo sucede?
+Vianey Correa: No ocurre así realmente. Lo que está ocurriendo,
+Josué Torres: Ok.
+Vianey Correa: lo que está pasando ahorita es de que si tienes, no has pagado la campaña uno, pero ya tienes la campaña dos en proceso, de los recursos que juntas de la campaña dos, tomamos lo que debes de la campaña uno, se paga los inversionistas y solamente te damos lo que te reste, ¿no? O sea, restando comisiones, los rendimientos que que debías, eh quedándonos con el salado en garantía y si te queda algo te lo damos.
+
+01:12:32
+
+Vianey Correa: Si no es queda como a cuenta de tus adus.
+Josué Torres: Okay, okay. O sea, lo pregunto porque sí para que para ver igual de este lado qué relaciones vamos a tener que hacer o cruces de información entre los estos tickets de campaña, porque entonces entiendo que si uno está en este en mora cuando cuando termine el fondeo o la más más que el fondeo, la fecha de las de la otra campaña, entonces ese recurso se va a tomar para pagar tu campaña uno, No.
+Vianey Correa: Sí, es muy similar a lo que pasa, por ejemplo, con las refinanciamientos que justamente, o sea, tienes que liquidar eh la campaña inicial, ¿no? Entonces, haces un refinanciamiento para pagar a los inversionistas de tu campaña inicial y debes ahora la del refinanciamiento, ¿no? Entonces, todo lo que yo recaudo a través de las campañas de refinanciamiento son para pagar la campaña inicial y
+Josué Torres: Okay.
+Vianey Correa: probablemente te quede un sobrante a ti como solicitante o no te quede nada, ¿no? Pero funciona más o menos similar.
+Josué Torres: Sí, mi pregunta iba más en ese sentido, ¿no? Y creo que ya está respondida. Entonces, si alguien entra en incumplimiento en Mora y todavía tiene una campaña activa, no se le bloquea la campaña, se deja que siga para que entre en recursos y se le tome la cuenta,
+
+01:13:58
+
+Vianey Correa: O sea, probablemente yo veo un bloqueo de campaña en el escenario que tú estás poniendo para una
+Josué Torres: No.
+Vianey Correa: tercera. No puedo ocupar la segunda para pagar la primera. Sí. Y empezar como a negociar, comunicarme con el solicitante de qué va a pasar. Pero si yo veo que sigue sin pagarme, probablemente sí. la tercera, que aún ni siquiera está en fondeo, ya no la firmaría, o sea, ya me quedaría solamente con la
+Josué Torres: Okay. Una vez que ya estás en mora,
+Vianey Correa: lados,
+Josué Torres: o sea, se te bloquea, si tienes más de dos campañas, te va a bloquear la
+Vianey Correa: las que no estén abiertas,
+Josué Torres: tercera.
+Vianey Correa: diga di que no esté previamente autorizado.
+Josué Torres: Ah, okay. Ese es otro escenario, ¿no? O sea,
+Vianey Correa: Mm.
+Josué Torres: si tú tienes ya una campaña que vas que ya estás en cobranza, haz cuenta, hoy estamos a 10 y el día 20 inicia tu campaña dos, esa ya no se va a iniciar, la bloqueas de una vez.
+Vianey Correa: Sí, salvo que esté superautorizada, pero sí no no no tendría sentido pues de lanzarse que independientemente,
+
+01:14:52
+
+Josué Torres: Ok.
+Vianey Correa: o sea, déjame decirte, no, a lo mejor todo esto pasa eh internamente en Munific y previo a que se lancen las campañas porque por muy programadas que tengamos las campañas, hay un como acuerdo y negociación previa con el solicitante en donde ellos tienen que estar firmando estas campañas. Probablemente no llevemos hasta hotspot esta decisión de si se fondea o no. Simplemente si se sube a la campaña muy seguramente es porque ya pasó todo lo de todo lo de atrás, ¿no? O sea, ya se acordó con el solicitante, ya sabemos para qué se va a usar la campaña, ya está autorizada.
+Josué Torres: Okay. Entonces seguimos manteniendo como que el check o el detonante para iniciar todo el proceso en hotspot es este documento que nos mostrabas de inversión efectiva, ¿no?
+Vianey Correa: Sí, para iniciar cobranzas, sí, siempre va a ser inversión efectiva.
+Josué Torres: Sí, porque justo
+Vianey Correa: Para publicar campaña, es la firma de ay,
+Josué Torres: veces.
+Vianey Correa: tiene un nombre ese documento, pero es se firma algo, no me acuerdo, pero tiene un nombre, o sea, son diferentes pasos. El contrato marco es el que te autoriza el financiamiento total.
+Josué Torres: Okay.
+
+01:16:21
+
+Vianey Correa: Cada que se va a publicar una campaña, firmas otra cosa chiquita que no recuerdo el nombre, que es de la que me estoy acordando, ¿no? Si esa está firmada,
+Josué Torres: Okay.
+Vianey Correa: ya se puede publicar la campaña y para iniciar cobranza 100% es la inversión efectiva.
+Josué Torres: Entonces, la lógica creo que que queda igual fuera de hosp, ¿no? Obviamente, si tú no tienes este si tú tienes tu campaña en Mora y al momento de hacer esta firma ese de ese documento pequeño que comentas ahora que no sabemos cómo se llama este, bueno, sabemos, no no recordamos,
+Vianey Correa: Perdón.
+Josué Torres: vamos a ponerle firma de este de nueva campaña, ¿no? Este documento pequeño si no lo podemos firmar porque ya tienes una campaña en Mora, todo eso queda fuera de hospital, ¿no? Va que va.
+Vianey Correa: Sí, correcto. Queda fuera.
+Josué Torres: Okay. Okay. Entonces, yo yo ya estoy bien. No tengo ningún comentario y este duda adicional más que los comentarios que salieron ahora en toda la sesión. Eh, dejo igual el micrófono si alguien más quiere añadir algo o con lo con lo que seguimos.
+Vianey Correa: Yo me s me surgió una duda ahorita que nos enseñaste la parte donde viene la lista de propiedades.
+
+01:17:29
+
+Josué Torres: Ajá.
+Vianey Correa: Eh, ¿podemos sugerir una propiedad extra de arranqu?
+Josué Torres: Ah, no, sí, claro, claro, claro. Las que gustes,
+Vianey Correa: Ah,
+Josué Torres: sí.
+Vianey Correa: okay. O sea, yo lo reviso completo, pero al menos en lo que nos enseñaste de la primera partecita que viene de origen, esas, nombre, apellido, correo electrónico, teléfono, RFC solicitante. Tienes bien mapeado identificado el ID solicitante, que es el que nos va a decir, "Ah,
+Josué Torres: Mhm.
+Vianey Correa: la empresa ABCS, ADB siempre te va a deber de tantas campañas, ¿no? Pero independientemente del nombre del proyecto que le demos, que es justo a lo que llegaba Raquel con el ejemplo de Onuble Boutique, que son ocho campañas ahoritas activas y las que vengan por el financiamiento,
+Josué Torres: Aha.
+Vianey Correa: si pueden poner ahí lo del ID del proyecto, que es el que yo les menciono como Fin 001, FIN 002, porque estamos tratando de llevar al admin que todo lo ligue justo a este ID.
+Josué Torres: Ah, okay, okay, okay. Entonces, este ID no es el mismo ID de que tú
+Vianey Correa: No,
+
+01:18:27
+
+Josué Torres: comentas.
+Vianey Correa: son dos diferentes. El ID, el solicitante me identifica la empresa porque tenemos casos donde también el el mismo solicitante, la empresa ABC, tiene dos proyectos diferentes.
+Josué Torres: Ok.
+Vianey Correa: Uno uno es el de, ¿qué ejemplo te puedo dar? olivo y otro que tiene el mismo, no me acuerdo quién es,
+Monific: Sheres tiene dos proyectos,
+Vianey Correa: pero bueno.
+Monific: el que sacamos ahorita, el conquistador y el paraíso.
+Vianey Correa: Ah, cierto, es otro. Entonces son dos proyectos diferentes. Vas a tener en las propiedades que tú ahorita nos nos platicabas del el
+Josué Torres: Ok.
+Vianey Correa: diagrama, dos edificios, por así llamarlo. O sea, viene el mismo dueño, dos edificios y de cada edificio un montón de campañas, ¿no? O tickets de cobranza, como ahorita le están nombrando. Entonces ese ID de solicitante que nos muestras es el dueño. ID de proyecto es el ID del edificio y ya de ahí las campañas
+Josué Torres: Okay,
+Monific: El ID del financiamiento te
+Vianey Correa: ya son este ah el ID el ID
+Josué Torres: bien.
+Monific: falta.
+Vianey Correa: del financiamiento es justo este, o sea, el del proyecto que me identifica a qué edificio está ligado más Mhm.
+
+01:19:35
+
+Monific: Ok.
+Josué Torres: Adelante, Recho, adelante.
+Ricardo Gomez: pregunta. Equipo, ¿quieren entonces que vamos, pusimos el nombre ahí como medio genérico, no? edificio, pero les gustaría entonces que se llame proyecto ese edificio como tal o edificio. ¿Cómo les parece
+Monific: A mí me da igual, pero casi les quiero compartir pantalla bien del admin nada más para que ellos vean una cosa y tú también y que vean una parte de los IDs este y que decidan ellos en esta estructura contigo a ver qué qué conviene más. Un segundo, me estoy metiendo al admin y ya comparto pantalla.
+Vianey Correa: Sí,
+Monific: Nada más que se cargue porque ya sabes que te pide la verificación de que eres un humano
+Vianey Correa: sí, sí,
+Monific: y sí,
+Vianey Correa: perdón. Sí, igual a mí me da igual si se llama edificio o no, pero mientras se identifique cuál
+Monific: a mí también.
+Vianey Correa: es.
+Monific: total y un
+Ricardo Gomez: Okay.
+Monific: segundo.
+Ricardo Gomez: Digo, de mientras Raquel, entonces José, al menos de momento yo visualizo que son tres, justamente el del solicita,
+Monific: Okay. Este,
+Ricardo Gomez: de proyecto
+Monific: ahorita pueden ver ya mi pantalla, ¿no? Si se dan cuenta, aquí está el número de proyecto,
+
+01:20:49
+
+Josué Torres: Sí.
+Monific: que en este caso, como yo les entiendo, este es el edificio,
+Ricardo Gomez: Sí.
+Monific: como ustedes le llaman. Esta sería la clave del ticket, que es el financiamiento. O sea, por ejemplo, un alumno tiene dos campañas. Es el número del edificio es cinco, el solicitante es solicitante 003 y la
+Ricardo Gomez: Hm.
+Monific: campaña uno es fin 005 y la campaña dos es 0010, pero todas están relacionadas al proyecto
+Josué Torres: Okay, entonces aquí tendríamos,
+Monific: cinco.
+Ricardo Gomez: Sí.
+Josué Torres: solo quiero confirmar, no tendríamos el ID o clave de solicitante, ¿no? Ese es uno.
+Monific: Ajá. Sol
+Josué Torres: Ajá. Después también tendríamos el número o identificador de
+Vianey Correa: Ajá.
+Monific: 003.
+Josué Torres: proyecto, ¿no? Y también tendríamos una clave para es una para campaña, ¿verdad?
+Vianey Correa: Si me ayudan como para dejar los nombres que ya identificamos y que también ustedes no se hagan bolas en nuestra documentación, el fin 00 20 el que sea es el ID del financiamiento y del proyecto como tal.
+Josué Torres: Mhm.
+Vianey Correa: O sea, nosotros identificamos cada uno de los proyectos así con esos fin, ¿no?
+
+01:22:10
+
+Vianey Correa: El numerito chiquito que marcaba Raquel, que ese, por ejemplo, que 60, 61, 62, vendría siendo el del edificio que ustedes tienen marcado,
+Josué Torres: Mhm.
+Vianey Correa: con el nombre que sea, no importa, ¿no? Y este y el del sol si es el ID del solicitante que ya tenían por ahí mapeado, que es tal cual el que me liga a la persona a quien le estoy abriendo proyectos de financiamiento, uno, o dos, independientemente de cuántas campañas tengan.
+Josué Torres: Okay.
+Monific: Pero chance no vamos a no no hay que mandar este número bien porque ve, si te das cuenta, Palmarreal acá TED lo marca como un proyecto diferente porque ve que no era refinanciamiento es 36 y el refinanciamiento de Palmar Real es 61 porque lo hizo como un nuevo proyecto.
+Vianey Correa: Pero está ligado al mismo solicitante,
+Monific: Sí,
+Vianey Correa: o sea, era lo que yo les mencionaba que puede tener un solicitante diferentes edificios.
+Monific: sí.
+Vianey Correa: Aquí cambió de edificio, pero sigue teniendo otro pin hijo cada edificio,
+Josué Torres: Sí, es que ahí la lógica cambió. No sé este e Rich,
+Vianey Correa: No.
+Josué Torres: si me pudieras apoyar. Bueno, no cambió, no cambió, no nos espantemos.
+
+01:23:20
+
+Ricardo Gomez: Sí,
+Josué Torres: No sé si tienes por ahí como a la mano el diagramita que
+Ricardo Gomez: sí, digo,
+Josué Torres: conm
+Ricardo Gomez: creo que estamos alineados, o sea, ustedes lo manejan tal vez como un re,
+Josué Torres: Hm.
+Ricardo Gomez: vamos a ver, un edificio, ahorita mencionas a Raquel, un edificio puede tener dos registros. Entonces, eso es lo que tal vez no estamos buscando nosotros, que sea solamente un edificio de Palmas, ¿sabes? los hijos pues sean los fin sabe qué.
+Josué Torres: Mhm.
+Ricardo Gomez: Entonces creo que sí estamos bien con eso para también no generar un objeto que se llama palme palma real sabe qué después otro aparte la verdad es que no creo que se me hace más práctico compactarlo. Sí, sí, sí, sí. Josué, creo que estamos estamos alineados con esa parte.
+Josué Torres: Sí, sí, sí,
+Ricardo Gomez: Vamos, a seguir manejando así.
+Josué Torres: sí. Nada más para confirmar. Entonces, aquí tenemos el es el ID del solicitante, ID del proyecto y ID de campaña. Este de proyecto pues es el edificio, ¿no? Cuando haya un refinanciamiento,
+Ricardo Gomez: Sí,
+Josué Torres: el que va el que va a cambiar es el de ID de campaña, ¿no?
+Vianey Correa: Correcto.
+
+01:24:31
+
+Josué Torres: Sí,
+Ricardo Gomez: así es.
+Josué Torres: va.
+Vianey Correa: Sí. O la campaña uno, la campaña dos,
+Josué Torres: Okay,
+Vianey Correa: la campaña tres, que son los tickets de cobranza, van a ser diferentes IDs de campañas.
+Josué Torres: aquí es donde diría lo de fin y ref, ¿no?
+Vianey Correa: Sí.
+Josué Torres: Okay. para
+Vianey Correa: Y sí puede tener también, o sea, en la misma pregunta o en el sentido que mencionaba RAC,
+Josué Torres: identificarlo.
+Vianey Correa: un proyecto puede tener muchas campañas, ¿no? Sin límite y también un solicitante puede tener diferentes edificios o diferentes proyectos. ¿Correcto?
+Ricardo Gomez: Sí, es correcto.
+Vianey Correa: Sí, con eso estamos más que okay.
+Josué Torres: Va que va. Pues igual de este lado ya está. Nada más lo aquí termino de llenar estos tipos
+Vianey Correa: Ah, sí. Y regresándome a mi duda principal,
+Josué Torres: de
+Vianey Correa: entonces en estas este lista de propiedades sí podemos nosotros como sugerirles, ¿verdad? y decirles por qué eh sugerimos que se
+Josué Torres: Sí, sí, sin problema, sin problema. Claro que sí.
+Vianey Correa: disionen.
+
+01:25:35
+
+Josué Torres: Solo igual si si nos hicieran el par como cuando se agregue una, pues este a lo mejor José agregue esta propiedad para que yo valide si hay que hacer otra referencia en la Ajá. Pues más que nada en esta hoja,
+Vianey Correa: Cambio.
+Josué Torres: ¿no? Si eso workflow o algo, pues redactarlo también por acá.
+Vianey Correa: Muchas gracias.
+Josué Torres: No, de nada, al contrario. Bueno, entonces por mi lado estamos okay. E, dejo la palabra igual al equipo para lo que sigue.
+Ricardo Gomez: Eh, digo igual para ir cerrando, creo que obviamente vamos a quedar de compartirles este documento, así como lo hemos compartido el otro. Sale. Y yo creo que apoyará tal vez Caro o David a compartírselo. Y lo mismo, ¿no? Si estamos abiertos justamente que sigan este pipeline, pues prohibe que se implemente también se puede ajustar después en todo ese tema de soporte, ¿no? Ya que esté implementado, ya que lo estén usando. Eh, y nada más. Entonces ahí estamos en comunicación para el último proceso que viene siendo el de servicio, ¿no? Y bueno, va a hacer la misma metodología de flujograma y ya después el má.
+Monific: Va, mil gracias.
+Caroline Bersot: Gracias.
+
+01:26:49
+
+Caroline Bersot: Raquel, no sé si tú te puedes quedar 10 minutos para verlo. Estaba haciendo aquí unas cositas para validar,
+Monific: Sí, sí,
+Caroline Bersot: por favor.
+Monific: obvio.
+Caroline Bersot: Gracias, chicos. Que esté muy bien.
+Vianey Correa: Muchas gracias.
+Caroline Bersot: Bye bye.
+Monific: Gracias por
+Caroline Bersot: Voy a solamente esto. Eh, también aquí para listo. Estaba aquí solamente tengo unas duditas. No sé por qué no me deja quitar la grabación. Bueno, okay. Déjame te comparto pantalla.
+Monific: de lo de las licencias, ¿verdad?
+Caroline Bersot: Así es.
+Monific: Voy a tener que cambiar todo con esta junta.
+Caroline Bersot: Aquí casi todo, o sea, aquí solamente de pronto Emiliano dependendo se puede quedar con visualización. Eso es lo que quiero ver contigo. A ver, eh, Guillermo trabaja tanto con negocios, déjame ver, ejecuta tareas de cobranza, o sea, también va a estar ahí con servicios. Okay, ese aquí está okay.
+Monific: Correcto.
+Caroline Bersot: Eh, para eh esta vacante a contratar llamadas de empuje eh se puede hacer con el service, no es necesario que que esté con ventas. seguimiento, el post no your customer.
+
+01:28:15
+
+Caroline Bersot: Ese seguimiento es por es por dónde, qué tipo de seguimiento él Sí,
+Monific: es para mis representantes de atención a clientes y ventas,
+Caroline Bersot: Es
+Monific: que se que te acuerdas que es para todo los flujogramas de ventas para inversionistas que se proponen ahí en, o sea, sí se van a a enviar correos y todo eso, entonces sí necesita la de la de
+Caroline Bersot: Correcto, pero ella,
+Monific: sales
+Caroline Bersot: esta persona va a manejar el pipeline de ventas como tal.
+Monific: para inversionistas.
+Caroline Bersot: Entonces, entonces sí, aquí también vamos a dejar así. Aquí más el el cheque va a ser manejar la parte del pipeline. Eh, a Sasha sí dejamos el el Service Pro por toda la parte de las llamadas. Bueno, las llamadas son por CPER. Okay. Eh, pero aquí la pate la bandeja de entrada, los fines de semana e aquí sería con service también. Para ti el core también está bien. Para Ana Luisa, el core es supera de mí. Okay, aquí para Ted, eh, que es el director general y comité de aprobación, este si de pronto se va a necesitar una licencia de pago porque déjame ver, toma decisión por comité, responde por correo. Esa respuesta por correo necesita que esté también ahí dentro de Hubspot con el correo conectado.
+
+01:29:49
+
+Monific: Es que realmente no sé si se vaya a meter a Hotspot a
+Caroline Bersot: Porque mira,
+Monific: registrarlo.
+Caroline Bersot: aquí tú pusiste al responder, Hubspot crea una tarea automática a Guillermo. Desafortunadamente esto no pasa de simplemente contestar y que se crea una tarea automática, ¿no? Para crear una tarea eh, hay que obtener un workflow con alguna propiedad que se cambie y desafortunadamente solamente con un cambio de correo no es posible hacer este cambio. Si tú me dices que se puede hacer por fuera y que no es necesario crear una tarea para Guillermo basado en alguna otra cosa que no sea esto, esta se puede ser una visualización.
+Monific: Okay. Sería más bien evaluar si es visualización o si lo metemos en
+Caroline Bersot: Exactamente.
+Monific: cor.
+Caroline Bersot: O sea, el convoca comité de riesgo por correo o WhatsApp. Si quiere utilizar el número dentro de WhatsApp,
+Monific: Ok.
+Caroline Bersot: se va a necesitar de una licencia, ¿vale? O sea, eh si si aquí como tú dijiste, todo ocurre por fuera de Hubspot, el WhatsApp que nos necesita crear una tarea automática, se puede crear una tarea automática para Guillermo, pero basado en algunas otras cosas que tenga un cambio de propiedad, que eso no necesariamente va a ser eh va a ser vinculado al usuario de TED. Se puede ser de alguna otra manera dentro del CRM, ¿no?
+
+01:31:22
+
+Caroline Bersot: Alguien cambiar una propiedad que esa propiedad se va a desencadenar a una a una tarea para Guillermo.
+Monific: Okay.
+Caroline Bersot: Entonces aquí de pronto voy a dejar aquí eso en rojo por este
+Monific: Evaluar.
+Caroline Bersot: motivo para Banei eh opera en
+Monific: Ok.
+Caroline Bersot: adminifico, no negocia acuerdos de pago por teléfono, revisa calendario de pagos. Eh, hoy no utiliza nada dentro de Hubspot.
+Monific: Pues ahorita con lo que dijeron va a poner la calificación cuando se liquide los proyectos, o sea, va a ser muy cada vez que se liquiden los proyectos.
+Caroline Bersot: Eh, negocio. M.
+Monific: O sea, a ver, ahorita se lo podría mandar a a Memo y decirle, puedes ponerle esta calificación a este proyecto porque es uno al mes, a prox, no es de que van a ser muchos,
+Caroline Bersot: La calificación que tú dices es como una encuesta, ¿cierto?
+Monific: ¿no? Porque este este Josué le puso un campo para que en el momento en el que se liquida un proyecto como cierre exitoso, está Vian pueda meter un campo como de score de que, o sea, por las cosas, cómo se comportó, cuánto fue de calificación. Pero si esa validación igual ella la hace en un lugar y ya esa calificación se la pasa a Guillermo para que él la meta y ya aparte le genere el reporte que le va a tener que generar, eso sí lo podría meter.
+
+01:32:59
+
+Monific: O sea, igual ponemos la licencia también en rojo y ya yo lo evalúo con
+Caroline Bersot: Vale,
+Monific: Bionil.
+Caroline Bersot: vale, vale, vale. Porque mira, de pronto si esto se puede hacer por la monific y eso sea una uno de los campos que se pueda viajar para integrar aquí la la visualización podría ser.
+Monific: Va. Okay. Es buena idea.
+Caroline Bersot: Sí. Eh, aquí eh recibe le responde Hubspot. Aquí es lo mismo que te había comentado para para Ted de la respuesta, pero cómo vimos que el la evalua este equipo va a recibir eh correos o notificaciones o tareas relacionado a la parte de Mora. Aquí eh aquí sería bueno una licencia o de ventas, déjame pensar aquí, o de ventas o de service. Si ya les respondo, déjame ver correo automática, Guillermo. Valida cuentas por correo, evalúa estructura análisis interno.
+Monific: No.
+Caroline Bersot: El Enterprise se va a poder. Sí, ese sería conveniente ser uno de ventas porque es un correo más que se puede utilizar para enviar para enviar las secuencias.
+Monific: Okay, me lo puedes marcar con rojo para evaluarlo.
+Caroline Bersot: Acceso técnico a la configuración. Aquí, aquí estamos en Okay. Supervisa avances, fuente de comunicación. Vale, de aquí, sí, esa de aquí también puede ser. Corre, que yo había pensado en otra cosa cuando yo había puesto.
+Monific: Yo le puse view only. Tú les tú me estás sugiriendo que sea core.
+Caroline Bersot: No, no, no. Aquí yo estaba pensando en una otra cosita, pero con lo que hace Karen, si ella no va a recibir ninguna notificación de nada dentro de Hubspot, que se no va a necesitar estar dentro de este workflow para para este recibimiento, si puede ser una visualización.
+
+La transcripción finalizó después de 01:35:58
+
+Esta transcripción editable se ha generado por ordenador y puede contener errores. Los usuarios también pueden cambiar el texto después de que se haya generado.

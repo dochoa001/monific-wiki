@@ -1,0 +1,52 @@
+=== ID: D147 ===
+=== SOURCE: Wiki Monific\drive-download-20260807T143807Z-1-001\Mapeo propiedades integración Monific - Interna_ 2026_03_11 10_59 GMT-05_00 - Notas de Gemini.docx ===
+=== MODIFIED: 2026-08-07 ===
+
+📝 Las notas
+11 mar 2026
+Mapeo propiedades integración Monific - Interna
+Invitados Josue Torres David Ochoa Caroline Bersot
+Archivos adjuntos Mapeo propiedades integración Monific - Interna
+Registros de la reunión Grabación
+
+Resumen
+Revisión de documentación para homologar propiedades de Monifi con enfoque en la clasificación y automatización, seguido por la resolución de la inserción de la tabla de cuotas.
+
+Homologación y Clasificación de Propiedades
+Se revisó la documentación de Monifi, acordando homologar las propiedades mapeadas y compartirlas en un formato sencillo para facilitar la integración. Se confirmó la clasificación de las propiedades entre automáticas y manuales, sugiriendo la automatización de algunos campos manuales como "fecha de cierre perdido".
+
+Solución de Tabla de Cuotas
+Se tomó la decisión principal de no replicar la compleja tabla de cuotas en HubSpot debido a las limitaciones de las propiedades y la arquitectura del CRM. Se optó por la solución de que Monifi genere un PDF dinámico con el calendario de pagos, creando una propiedad de tipo archivo y un link en HubSpot para la comunicación externa.
+
+Ajuste de Propiedades y Frecuencia API
+Se sugirió crear una propiedad inteligente que resuma el estado de las cuotas vencidas desde el PDF para su uso en correos de cobro automáticos. Se propuso aumentar la frecuencia de la llamada a la API a varias veces al mes para asegurar la actualización oportuna de los montos tras pagos parciales o adelantados.
+
+Detalles
+Revisión inicial de la documentación y homologación de propiedades: Josué Torres confirmó haber revisado la documentación de Monifi, aunque mencionó estar saturado de proyectos [i]. La propuesta es homologar las propiedades ya mapeadas y compartirlas con el equipo de Monifi, posiblemente en un formato tabular [i]. David Ochoa mostró un archivo sencillo con la propiedad y el tipo (numérico, alfanumérico, fecha, etc.) que utilizan habitualmente para facilitar la integración [i, 2].
+Identificación de campos clave para integración: David Ochoa identificó campos como "motivo de interés" y datos de solicitantes/inversionistas que deben ser integrados, y propuso agregarlos al archivo para que el equipo de Monifi los complete. Josué Torres sugirió que en la tabla maestra se validen las propiedades ya mapeadas para ver si coinciden con las de Monifi, y propuso agregar notas con el nombre de la propiedad según la nomenclatura interna de Monifi.
+Clasificación de propiedades por automatización: Discutieron la clasificación de las propiedades como automáticas o manuales, un aspecto importante para la integración. Josué Torres confirmó que las propiedades etiquetadas como "automática" lo son, mientras que otras pueden ser "automática o manual" dependiendo del tipo de proceso, como si se trata de un inversionista o un solicitante.
+Propuesta de automatizar campos manuales: Se sugirió la posibilidad de automatizar algunos campos actualmente marcados como manuales, como "fecha de cierre perdido," para reducir la carga de trabajo, aunque otros, como "campañas proyectadas," deben seguir siendo manuales. Josué Torres reafirmó que el objetivo de la documentación inicial era entregar una lista de propiedades bien definida con el tipo y otras especificaciones para la integración.
+Propiedades automáticas y sus criterios de cálculo: Se revisó una lista de propiedades automáticas como nombre, correo, RFC, ID de proyecto e ID de campaña. David Ochoa aclaró que el "historial de pago" (en mora o resuelto) sería un desplegable automático que se calcularía en función de la fecha de pago.
+Discusión sobre la "tabla completa de cuotas": Se planteó el desafío de cómo gestionar la "tabla completa de cuotas," que Josué Torres explicó es esencialmente el calendario de pagos. El objetivo de este dato en HubSpot es programar recordatorios automáticos de cobro tanto para el solicitante como para el ejecutivo de cobranza.
+Limitaciones para insertar tablas en HubSpot: David Ochoa desaconsejó insertar la tabla directamente en HubSpot como texto porque las propiedades actuales no permiten insertar un formato de tabla complejo, como si fuera un Excel. Las propiedades de texto enriquecido tienen limitaciones y el formato resultante no sería legible para el cliente si se envía por automatización.
+Alternativas para el calendario de pagos: Josué Torres preguntó si sería mejor enlistar las columnas de la tabla de cuotas como propiedades individuales en HubSpot. David Ochoa propuso que Monifi genere una URL dinámica en formato PDF, que se podría inyectar en correos o mensajes de WhatsApp, dirigiendo a la persona al archivo PDF actualizado.
+Mecanismos de Hotspot para leer archivos y automatizar acciones: Se discutió la dificultad para que HubSpot lea directamente un PDF para detectar fechas de pago. David Ochoa sugirió crear una propiedad de tipo archivo para inyectar el PDF, lo que permitiría a HubSpot leerlo para funciones como un asistente de IA que pueda responder preguntas sobre pagos o cuotas.
+Frecuencia de actualización de la información: Josué Torres indicó que el PDF con el calendario de pagos debe generarse el día 15 después de las 6 p.m. David Ochoa confirmó que el archivo y el enlace se actualizarían en ese momento, permitiendo a HubSpot leer el archivo internamente y usar el enlace para la comunicación externa, como el envío de recordatorios de pago.
+Viabilidad de replicar la tabla en Hotspot: Josué Torres sugirió extraer cada columna de la tabla de cuotas como una propiedad para replicar la tabla dentro de HubSpot. David Ochoa explicó que HubSpot, al no ser un ERP, no puede crear ilimitadamente propiedades vinculadas a registros crecientes (como 24 cuotas), ya que esto requeriría crear un objeto adicional y complicaría la arquitectura, además de que HubSpot no genera documentos como PDFs.
+Definición de las propiedades de archivo y link: Se acordó que la solución más viable es que Monifi continúe generando el archivo. La tarea de Josué Torres es asegurar la creación de una propiedad de tipo archivo (para lectura del asistente de IA) y una propiedad de tipo texto que contenga el link al PDF actualizado del calendario de pagos, con ambas actualizándose de forma recurrente (el día 15 después de las 6 p.m.).
+Desafío de las cuotas vencidas y los correos de cobro: Caroline Bersot planteó que, aunque el asistente de IA pueda leer el documento, la automatización del correo de cobro requiere que la información esté en propiedades para usar tokens. David Ochoa reconoció que HubSpot no podría acceder al historial completo (cuotas vencidas), ya que guardarlo generaría propiedades infinitas.
+Solución para los correos de cobro y propiedades inteligentes: Se propuso que las comunicaciones automáticas incluyan la última cuota vigente atrasada y el link al PDF del calendario de pagos. Además, David Ochoa sugirió la creación de una propiedad inteligente que analice el PDF cada mes para resumir en un texto sencillo el estado de las cuotas vencidas, lo cual se podría insertar en el correo.
+Ajuste en la frecuencia de la llamada a la API por pagos parciales: Josué Torres transmitió la preocupación de Vianey sobre la actualización de los montos tras pagos parciales o adelantados. David Ochoa sugirió que la llamada a la API se realice varias veces al mes (ejemplo: días 1, 15 y 25) para mantener la data actualizada, ya que el calendario de pagos en Monific registraría estos cambios y recalcularía la fecha de vencimiento.
+Revisión de otras propiedades automáticas: Se revisó la lista de propiedades y David Ochoa no encontró nada inusual en "estatus de cobranza," "semáforo de proyecto" o "tipo de cliente". Josué Torres mencionó que algunos archivos se desorganizaron debido a la migración a Microsoft, pero aseguró que actualizaría el archivo actual de propiedades.
+Aclaración sobre la propiedad "Ruta de Scoring": Caroline Bersot y David Ochoa cuestionaron la utilidad de la propiedad "Ruta de Scoring" en el proceso de negocios inicial. Josué Torres explicó que había propuesto originalmente que fuera un *health score* o precalificación, pero luego la descartó al considerar que no era necesaria en esa etapa y que posiblemente se mantendría para un segundo MVP.
+Compromiso de Josué Torres con la documentación actualizada: Josué Torres se comprometió a actualizar el archivo de propiedades para eliminar el "Ruta de Scoring" y otros datos obsoletos, y a compartirlos con Caroline Bersot o David Ochoa para evitar que se eliminen durante la próxima baja de cuentas. Se acordó que Josué Torres trabajaría sobre el archivo B1, que es la última versión que tiene el cliente.
+Planificación de las próximas reuniones de presentación: Caroline Bersot solicitó a Josué Torres actualizar el máster de inversionistas y el de servicios. El plan es presentar mañana el flujograma de servicios. Discutieron la fecha de la presentación del máster, acordando que la interna sería el viernes de 3 a 4 p.m. hora de la Ciudad de México, y la presentación al cliente se haría el martes 17, de 1 p.m. a 3 p.m. hora de la Ciudad de México.
+
+Pasos siguientes recomendados
+Josué Torres hará una homologación de propiedades mapeadas, revisará cuáles tiene Monifi y las pasará a David Ochoa y Caroline Bersot en una tabla, asegurando que las propiedades coincidan con las de Adminif o agregando una nota con el nombre de la propiedad como le llaman allí.
+Josué Torres validará por qué no está la información de los valores en la lista de propiedades y subirá el archivo actualizado a David Ochoa o Caroline Bersot después de la sesión, incluyendo el máster de inversionistas y removiendo la 'ruta de scoring' del archivo maestro.
+David Ochoa y Caroline Bersot subirán el archivo compartido por Josué Torres a su propia propiedad para evitar que sea borrado tras la baja de la cuenta de Google de Arco Code.
+Caroline Bersot, Josué Torres y David Ochoa agendarán una reunión interna el viernes de 3 a 4 (hora de Ciudad de México) para revisar el máster y David Ochoa iniciará la grabación.
+
+Revisa las notas de Gemini para asegurarte de que sean correctas. Obtén consejos y descubre cómo toma notas Gemini
+Danos tu opinión sobre el uso de Gemini para tomar notas en una breve encuesta.

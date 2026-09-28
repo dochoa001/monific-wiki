@@ -1,0 +1,182 @@
+=== ID: D187 ===
+=== SOURCE: Wiki Monific\drive-download-20260807T144042Z-1-001\8. Martes 10 de Marzo 2026.docx ===
+=== MODIFIED: 2026-08-07 ===
+
+​​
+MINUTA DE REUNIÓN
+Sesión de Capacitación y Revisión de Máster de Cobranza — HubSpot
+Fecha
+ | 10 de Marzo 2026
+ |
+Plataforma
+ | Videollamada (Meet)
+ |
+Tema principal
+ | Revisión del máster de cobranza en HubSpot y estructura de objetos
+ |
+Responsable de sesión
+ | Josué (presentador principal), Ricardo (intro de estructura)
+ |
+Participantes
+ | David, Raquel, Vianey (Vian), Josué, Ricardo (Richie), Caro
+ |
+
+1. Objetivo de la Reunión
+Presentar y validar la estructura de objetos en HubSpot para el proceso de cobranza, así como revisar las etapas del máster de cobranza propuesto, alineando al equipo en la lógica de flujo, automatizaciones y propiedades clave.
+
+2. Estructura de Objetos en HubSpot
+Ricardo presentó la arquitectura base de objetos en HubSpot. Los puntos clave son:
+•   	HubSpot maneja objetos como contenedores de información (contacto, negocio, empresa, etc.).
+•   	Para el proceso de cobranza se propone un objeto llamado Edificio (o Proyecto), que funcionará como objeto madre.
+•   	Dentro de cada Edificio/Proyecto se derivarán múltiples Tickets de Cobranza, uno por campaña.
+•   	Jerarquía propuesta:
+◦   	ID Solicitante → identifica a la empresa/persona física (ej. SOL-003)
+◦   	ID Proyecto / Edificio → identifica el inmueble o desarrollo (ej. número de proyecto)
+◦   	ID Campaña / Ticket → identifica cada financiamiento individual (ej. FIN-005, FIN-0010, REFIN-001)
+•   	Un solicitante puede tener múltiples edificios/proyectos.
+•   	Un edificio/proyecto puede tener múltiples campañas (tickets de cobranza).
+•   	No hay límite de tickets por objeto edificio.
+
+3. Etapas del Máster de Cobranza
+Josué presentó las 7 etapas propuestas para el pipeline de cobranza en HubSpot:
+3.1 Nuevo Registro
+•   	Etapa inicial que ocurre "detrás de bambalinas" (sin intervención manual visible).
+•   	Interacción entre Admin, Monific y HubSpot.
+•   	Admin Monific es la fuente de verdad; HubSpot recibe y valida la información mínima para crear el registro de cobranza.
+•   	Se activa con la confirmación de Inversión Efectiva.
+•   	Para proyectos de rendimiento variable: se crea una tarea automática al ejecutivo de cobranza para configurar el ciclo de seguimiento y registrar la primera cuota (SLA: 3 días antes).
+•   	Para proyectos de rendimiento fijo: la configuración es automática, no requiere intervención manual adicional.
+•   	Automatizaciones clave:
+◦   	Importación de calendario de pagos
+◦   	Generación de objetos de cuenta de pago
+◦   	Asignación automática al ejecutivo de cobranza
+◦   	Envío de correo de bienvenida al solicitante con su programación de pagos (sustituyendo el envío manual actual en Monific)
+•   	Al procesarse exitosamente, avanza automáticamente a la etapa de Cobranza Activa.
+3.2 Cobranza Activa
+•   	Etapa central del pipeline; aquí se gestiona la mayor parte del ciclo de vida de cada campaña.
+•   	HubSpot valida que los pagos cuadren contra las tablas de pago (sustituyendo el cotejo manual actual).
+•   	Sistema de etiquetas de mora:
+◦   	Al corriente
+◦   	Mora temprana
+◦   	Mora moderada
+◦   	Mora grave (a partir de 61 días → detonador de cambio de etapa)
+•   	Alerta anticipada de capital: 90 días antes del último pago, se crea tarea automática para el Ejecutivo de Cobranza para contactar al solicitante y validar su capacidad de pago.
+•   	Si se detecta riesgo de incumplimiento de capital: se crea tarea para Dirección de Finanzas para coordinar con Dirección General un posible refinanciamiento anticipado.
+•   	Aclaración de roles: la tarea de contacto al solicitante corresponde al Ejecutivo de Cobranza (no al Director Comercial). El Director Comercial recibe aviso para gestionar comunicados hacia inversionistas.
+•   	Salidas posibles desde esta etapa:
+◦   	Campaña Liquidada (cliente pagó todo en tiempo y forma)
+◦   	Refinanciamiento (solicitante no puede cubrir capital)
+◦   	Mora grave → Ejecución de Garantía (61+ días de mora)
+•   	Automatización clave: sincronización con Admin Monific de montos, pagos parciales y acuerdos especiales sobre las cuotas (propiedad en evaluación técnica por David).
+3.3 Refinanciamiento
+•   	Etapa de transición para formalizar condiciones de reestructura.
+•   	Se registra la decisión del comité (motivo, fecha, notas) — atendiendo pain point de falta de trazabilidad en decisiones.
+•   	Propiedades clave: fecha de inicio de reestructura, motivo, condiciones especiales, mutuo al contrato.
+•   	Salidas:
+◦   	Si el comité aprueba: se cierra el ticket actual (Cierre por Refinanciamiento) y se crea un nuevo ticket/campaña hijo del mismo edificio.
+◦   	Si el comité rechaza: pasa a Ejecución de Garantía.
+•   	Nota: el refinanciamiento genera un nuevo ticket (con nuevo ID de campaña, ej. REFIN-001), pero sigue siendo hijo del mismo objeto Edificio/Proyecto.
+3.4 Ejecución de Garantía
+•   	Etapa de transición negativa (cierre negativo esperado).
+•   	Responsable principal: Director de Cumplimiento Legal, quien recibe el expediente y coordina con el abogado externo.
+•   	El abogado externo NO recibe notificaciones directas de HubSpot; todo se gestiona internamente por Cumplimiento Legal.
+•   	Propiedades de seguimiento: Estatus del proceso jurídico (Iniciado / En proceso / Concluido), fecha de envío a garantía.
+•   	Soporte: Dirección de Finanzas, Dirección Comercial y Comité (Director General).
+•   	SLA para decisión del comité: máximo 3 días.
+•   	Se envían recordatorios continuos hasta que el estatus del proceso jurídico sea marcado como "Iniciado" manualmente.
+•   	Salidas:
+◦   	Caso muy excepcional: regreso a Refinanciamiento (si surgen nuevas condiciones que mejoren la posición de los inversionistas, como ocurrió con Vértice).
+◦   	Cierre por Incumplimiento (salida natural).
+3.5 Cierre por Refinanciamiento
+•   	Etapa terminal de transición exitosa.
+•   	Se cierra el ticket de la campaña original.
+•   	El nuevo proyecto/campaña de refinanciamiento se configura en Admin Monific y genera un nuevo ingreso al pipeline de cobranza.
+•   	El equipo valida con Vianey qué información de Monific debe quedar mapeada en HubSpot para eliminar la dependencia de Monific en reportes.
+3.6 Campaña Liquidada
+•   	Etapa terminal exitosa: el solicitante pagó todos sus rendimientos y capital sin contratiempos.
+•   	Automatizaciones al entrar:
+◦   	Llenado automático de fecha de liquidación, historial de pago y estado de crédito final.
+◦   	Validación por Director de Finanzas (conciliación final).
+◦   	Carga de link del expediente en el repositorio (Drive u otro).
+◦   	Asignación de score/calificación al proyecto.
+•   	Si hay algún pago pendiente o error en el sistema, se genera alerta para Director de Finanzas y no se cierra automáticamente.
+•   	Notificaciones al entrar: Director Comercial, Finanzas, Legal y cliente (correo de cierre de ciclo).
+•   	Aplica tanto para proyectos de rendimiento fijo como variable.
+3.7 Cierre por Incumplimiento
+•   	Etapa terminal negativa.
+•   	Al entrar: se registra fecha de cierre por incumplimiento y se notifica a Dirección Comercial para coordinar comunicados a inversionistas.
+•   	Se crea tarea automática para Director Comercial para elaborar comunicados.
+•   	Nota: el protocolo de comunicación a inversionistas en caso de incumplimiento total está en proceso de definición (se está elaborando manual de comunicación).
+
+4. Temas Relevantes Discutidos
+4.1 Gestión de Campañas Paralelas con Mora
+•   	Si un solicitante tiene una campaña en mora y ya se fondeó una segunda campaña, los recursos de la segunda se utilizan para saldar la primera (rendimientos + condiciones).
+•   	Las campañas no fondeadas o no firmadas se bloquean si hay mora activa en campañas previas.
+•   	La firma del documento de autorización de nueva campaña es el punto de control previo al fondeo; si hay mora, no se puede firmar.
+4.2 Sustitución de Monific por HubSpot
+•   	HubSpot sustituirá a Monflo/Monific como fuente de seguimiento.
+•   	Tarea asignada a Vianey: revisar el máster y validar qué información actualmente obtenida de Monific ya estará disponible en HubSpot, para eliminar la dependencia.
+•   	Cualquier funcionalidad de Monific no mapeada debe ser comunicada a Josué para incorporarla.
+4.3 Correo de Bienvenida / Día 1
+•   	HubSpot enviará automáticamente el correo del día 1 al solicitante con datos de la campaña (número de cuota, monto, periodo de pago), sustituyendo el envío manual actual de Vianey.
+4.4 Proyectos de Rendimiento Variable
+•   	También pueden liquidarse anticipadamente (el solicitante recompra su parte o vende el inmueble).
+•   	La bifurcación con rendimiento fijo solo aplica en la etapa de Nuevo Registro (configuración del ciclo). A partir de Cobranza Activa, el flujo se unifica.
+4.5 Licencias de HubSpot
+•   	Revisión post-sesión (Raquel con Ricardo):
+◦   	Guillermo: requiere evaluar si es licencia Core o Sales (por envío de secuencias de correo y WhatsApp para inversionistas).
+◦   	Miguel / Emiliano (Cumplimiento Legal): actualmente en versión gratuita; requiere cambio a licencia de pago (Service Pro mínimo) para acceso a pipeline de cobranza.
+◦   	Ana Luisa / Director General / Comité: evaluar si puede ser visualización (View Only) o requiere Core.
+◦   	Sasha: mantener licencia Sales Pro por parte de llamadas (Paul/Peter).
+◦   	Kari / Supervisión: puede ser visualización (no recibe notificaciones ni interactúa con workflows).
+◦   	Calificación de proyectos liquidados: evaluar si se puede ingresar vía Admin Monific o requiere acceso directo en HubSpot.
+
+5. Acuerdos y Próximos Pasos
+Acción
+ | Responsable
+ | Plazo / Notas
+ |
+Revisar el máster compartido y validar qué información de Monific ya está mapeada en HubSpot; reportar faltantes a Josué.
+ | Vianey
+ | Próxima revisión
+ |
+Compartir el archivo del máster (Excel/documento) con el equipo para revisión detallada.
+ | Josué / Black & Orange
+ | Inmediato
+ |
+Ajustar el workflow de Ejecución de Garantía: recordatorios continuos hasta que el estatus jurídico sea marcado como "Iniciado".
+ | Josué / Black & Orange
+ | En desarrollo
+ |
+Corregir el mapeo de tareas en Cobranza Activa: la tarea de contacto al solicitante (alerta anticipada de capital) corresponde al Ejecutivo de Cobranza, no al Director Comercial.
+ | Josué
+ | Inmediato
+ |
+Evaluar y definir las licencias de HubSpot por usuario según roles revisados en sesión.
+ | Raquel
+ | Próxima semana
+ |
+Validar con David la propiedad de Admin Monific que sincroniza cambios en montos/acuerdos especiales hacia HubSpot.
+ | Josué / David
+ | Pendiente
+ |
+Sugerir propiedades adicionales al máster (ej. ID de financiamiento, ID de proyecto) a través del archivo compartido.
+ | Vianey / Equipo Monific
+ | En la revisión del máster
+ |
+Preparar el siguiente proceso a mapear: dispersión (metodología similar a flujo/flujograma).
+ | Josué / Black & Orange
+ | Próxima sesión
+ |
+Definir protocolo formal de comunicación a inversionistas en caso de incumplimiento total.
+ | Raquel / Dirección Comercial
+ | En proceso (este año)
+ |
+
+6. Notas Adicionales
+•   	El sistema HubSpot es un MVP; se esperan ajustes y mejoras conforme el equipo lo utilice y se presenten casos no mapeados (ej. ejecución de garantías reales).
+•   	El CRM es un ambiente vivo que evolucionará con la operación.
+•   	La siguiente sesión cubrirá el proceso de dispersión con la misma metodología (flujograma + revisión de máster).
+
+Documento generado para registro interno — Equipo de Implementación HubSpot
+

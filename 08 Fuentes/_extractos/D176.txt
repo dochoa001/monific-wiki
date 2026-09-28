@@ -1,0 +1,297 @@
+=== ID: D176 ===
+=== SOURCE: Wiki Monific\drive-download-20260807T144042Z-1-001\17. Jueves y Viernes 5 Junio 2026.docx ===
+=== MODIFIED: 2026-08-07 ===
+
+
+Minutas y accionables
+Reuniones BOOST / HubSpot — Monific × Black & Orange
+
+Documento
+ | Detalle
+ |
+Proyecto
+ | BOOST — Implementación HubSpot CRM en Monific
+ |
+Reuniones
+ | Green Tower 5 (reportes y soporte) · Blvd Manuel Ávila Camacho 3 (capacitación base)
+ |
+Preparado por
+ | Raquel Alfie · Directora Comercial · Monific
+ |
+Fecha del documento
+ | 5 de junio de 2026
+ |
+Audiencia
+ | Ted, Vianey, Jesús, Emiliano, Karen
+ |
+Confidencialidad
+ | Uso interno
+ |
+
+Sesión 1 · Fundamentos de HubSpot
+Arquitectura del CRM, contactos, empresas, leads, vistas y filtros. Sesión base para el perfil que opera el día a día (A.A.I. / A.A.S. / E.A.C.).
+Campo
+ | Detalle
+ |
+Fecha estimada
+ | Junio 2026 (referencia: día previo a la sesión 2)
+ |
+Duración
+ | ≈ 55 minutos
+ |
+Asistentes Monific
+ | Raquel Alfie (toma la sesión para el perfil que se incorporará)
+ |
+Asistentes B&O
+ | Caroline
+ |
+Tipo de sesión
+ | Capacitación fundacional HubSpot CRM (sesión 1 de 2)
+ |
+Grabación
+ | Se otorgó permiso de edición a Raquel para descargarla y archivarla en su carpeta
+ |
+
+Contexto
+Caroline aclaró de entrada que la sesión está diseñada para alguien que nunca ha visto HubSpot. Raquel la toma a nombre del perfil que ocupará el puesto (A.A.I. / A.A.S.) y advierte que va a tomar notas y guardarse las dudas para el final. La siguiente sesión, al día siguiente, cubre Negocios y Pipeline.
+
+Acuerdos
+La grabación se queda como referencia para la persona que ocupe el puesto de A.A.I./A.A.S.
+La siguiente sesión cubre Negocios y Pipeline.
+Caroline da permiso de edición a Raquel sobre la carpeta de capacitaciones para que pueda descargar las grabaciones.
+Las capacitaciones se organizan en carpetas por tema: Ventas, Solicitantes, Tickets, Cobranza.
+En la operación, el nombre del contacto se trata como obligatorio aunque HubSpot no lo marque así, para que las secuencias salgan con tokens personalizados.
+La nota va en el objeto donde más sentido tiene: contacto si hay 1 stakeholder, empresa si hay múltiples interlocutores.
+Disclaimer operativo dejado en grabación por Raquel
+"Ustedes no creen contactos, por favor. Los contactos se van a crear solitos, a menos que seas del área de Solicitantes y tengas que crear un contacto. Crealo. Normalmente se crean por la página de Monific o por el formulario de solicitantes."
+Es la regla operativa más importante de la sesión. Si no se respeta, se ensucia la base, se duplican registros y se rompen automatizaciones que dependen del canal de entrada.
+Preguntas que Raquel dejó respondidas
+¿Es forzoso que los correos se manden desde HubSpot para que se registren? No, si Gmail está conectado, los correos enviados desde Gmail también se sincronizan a HubSpot.
+¿La métrica "última actividad" mide al cliente o al propietario? Al propietario del objeto. Sirve para medir efectividad del equipo, no respuesta del cliente.
+¿Cuentan como actividad los WhatsApp/LinkedIn enviados desde plataformas externas? Solo si se registran manualmente como "mensaje" en el contacto/empresa/negocio. Si no se registran, no cuentan.
+¿La fuente de registro "Integración" cómo se desglosa? Hoy aparece como "Trama1" (nombre que le puso Jesús). Con el avance técnico, las propiedades se enriquecerán para distinguir comportamiento del usuario.
+¿Cómo se medirá el costo de atribución por campaña de marketing? Eso vive en los reportes, no en la fuente de registro.
+Accionables
+Acción
+ | Responsable
+ | Fecha / criterio
+ | Estatus
+ |
+Subir grabación de la sesión 1 a la carpeta de capacitaciones en Drive.
+ | Caroline / B&O
+ | Al día siguiente
+ | Abierto
+ |
+Otorgar permiso de edición a Raquel sobre la carpeta de capacitaciones.
+ | Caroline / B&O
+ | Inmediato
+ | Comprometido
+ |
+Crear estructura de carpetas en Drive: Ventas, Solicitantes, Tickets, Cobranza.
+ | Caroline
+ | Antes de subir grabación 2
+ | En curso
+ |
+Preparar sesión 2 enfocada en Negocios y Pipeline.
+ | Caroline / B&O
+ | Día siguiente
+ | Cumplido
+ |
+Dejar disclaimer operativo escrito sobre creación manual de contactos para incluir en onboarding.
+ | Raquel
+ | Antes del cierre del onboarding documental del A.A.I./A.A.S.
+ | Abierto
+ |
+Validar con cada usuario del CRM que Gmail esté correctamente conectado y la extensión de ventas instalada.
+ | Raquel / B&O
+ | Durante onboarding por persona
+ | Abierto
+ |
+Definir qué actividades externas (WhatsApp personal, LinkedIn, llamadas no registradas) deben capturarse manualmente y dejarlo en el manual de operación.
+ | Raquel
+ | Antes de medir KPIs de equipo
+ | Abierto
+ |
+Confirmar a Caroline la canalización del correo legal al abogado de Monific (Emiliano).
+ | Raquel
+ | Mismo día
+ | Cerrado
+ |
+
+Riesgos identificados
+Si los usuarios crean contactos manualmente sin criterio, se ensucia la base, se duplican registros y se rompen automatizaciones que dependen de canal de entrada.
+Si Gmail no está correctamente conectado, se pierde la trazabilidad de comunicación y la métrica de última actividad subestima al equipo.
+Si las actividades en WhatsApp personal o LinkedIn no se registran como nota, la última actividad no refleja la gestión real del A.A.I.
+Si las grabaciones de capacitación no se organizan por tema, el onboarding de nuevas contrataciones se vuelve dependiente de Raquel.
+Sesión 2 · Negocios y Pipeline
+Arquitectura de Negocios, creación, asociaciones, registro de actividades, detalles de propiedad y vistas. Cierra el bloque base de Ventas. Incluye decisiones operativas relevantes para el proyecto.
+Campo
+ | Detalle
+ |
+Fecha estimada
+ | Junio 2026 (día siguiente a la sesión 1)
+ |
+Duración
+ | ≈ 55 minutos
+ |
+Asistentes Monific
+ | Raquel Alfie
+ |
+Asistentes B&O
+ | Caroline
+ |
+Tipo de sesión
+ | Capacitación fundacional HubSpot CRM (sesión 2 de 2)
+ |
+Grabación
+ | Activa desde el inicio de la sesión
+ |
+
+Contexto
+Caroline arranca con una confirmación operativa importante: Lalo (Black & Orange) ya alineó internamente la decisión de mover el alcance del proyecto a asesoría/consultoría, lo que significa que el equipo de TI Monific va a ejecutar las configuraciones con apoyo de B&O. Caroline puso sesión de alineamiento interno con Jazz (Jasmine, desarrolladora B&O) el lunes para definir quién de TI Monific será la persona asignada y arrancar las sesiones técnicas pertinentes. De los 6 integrantes del equipo de Jesús, queda pendiente que él decida quién entra (Dani, Frida o Erey son los candidatos mencionados).
+
+Decisiones operativas importantes que se cerraron en esta sesión
+1. Restricción de vistas por equipo
+Raquel planteó que cada vendedor debería ver únicamente el pipeline que le corresponde (A.A.S. solo Solicitantes, A.A.I. solo Inversionistas) porque el perfil del equipo se confunde con varios pipelines a la vista. Caroline confirmó que es posible hacerlo a nivel vistas por equipo y queda en validar si también es factible a nivel pipeline. Compromiso: Caroline confirma esto antes de la siguiente sesión.
+2. Limpieza de pipelines viejos
+Caroline elimina todos los pipelines de Negocios que no sean Solicitantes ni Inversionistas. Los de Cobranza se ven el lunes para definir qué hacer con ellos. Para no perder histórico del año en curso, B&O configurará una automatización que respalde los negocios actuales en un pipeline "Antiguo Monific" antes de eliminar. Raquel confirma que no le preocupa la eliminación porque toda la información también vive en Admin.Monific.
+3. Formulario de Solicitantes en HubSpot
+Raquel envió a Caroline el formulario "Baby" que ya está validado por Monific desde el 26 de enero (segunda pestaña del documento del proceso). Caroline lo replicará dentro de HubSpot con David. Aclaró que el diseño visual no será idéntico (la "cajita" cambia ligeramente), pero las preguntas se mantienen tal cual. Una vez listo el formulario y la automatización para caer al pipeline de Solicitantes, B&O entrega el código embebible para sustituir el actual de Google Forms en el sitio web. Caroline explicó por qué importa: cuando se inserta un formulario externo en HubSpot, la información a veces no viaja al 100%.
+4. Acuerdo técnico: TI Monific ejecuta, B&O capacita
+Reconfirmado al inicio de la sesión. Caroline programó alineación interna con Jasmine para el lunes y enviará por correo a Raquel quién será la persona designada por Jesús para arrancar las sesiones técnicas.
+Enfoque acordado para las próximas capacitaciones
+Esta es la conversación más importante del cierre. Raquel le pidió a Caroline que las próximas sesiones cambien de enfoque: que estén alineadas a los workflows y masters de operación de Monific, no a un orden temático de HubSpot. Le pidió textualmente que entren a "la grasa de la carne": "en el módulo de cobranza, cuando pasa esto, tú tienes que entrar a esto".
+Caroline propuso un esquema en el que Raquel envía la lista de capacitaciones pendientes (basadas en flujogramas y masters finales) y las dan juntas, porque "tú no operas el día a día y yo soy la que conoce al 100% la operación". Las próximas sesiones cubren una más de Ventas, Soporte y Cobranza. Caroline recomendó que algunas sesiones (Cobranza completa, Soporte avanzado) se hagan al final de la integración para que las automatizaciones se vean en vivo.
+Acuerdos
+B&O elimina los pipelines de Negocios viejos (todos excepto Solicitantes e Inversionistas).
+Antes de eliminar, B&O configura una automatización que respalde los negocios actuales en un pipeline "Antiguo Monific" para conservar histórico del año.
+B&O replica el formulario validado de Solicitantes dentro de HubSpot y entrega código embebible para sustituir el de Google Forms.
+Caroline valida si la restricción de vistas se puede hacer a nivel pipeline o solo a nivel vistas por equipo.
+Las próximas capacitaciones cambian de enfoque: alineadas a workflows y masters de Monific, con casos operativos reales.
+Raquel envía a Caroline la lista de capacitaciones pendientes basada en flujogramas y masters finales.
+Caroline y Raquel co-imparten las sesiones operativas: Caroline lleva la herramienta, Raquel lleva el flujo Monific.
+Caroline confirma el lunes con Jasmine quién de TI Monific entrará al proyecto.
+Raquel manda por escrito los acuerdos a los directivos (incluyendo Ted, CBO) para enterar a las áreas que aún no saben.
+Disclaimer reforzado por Raquel
+"Ustedes no creen contactos, por favor. Se van a crear solitos. A menos que seas del área de Solicitantes y tengas que crear un contacto que no esté previamente creado, créalo." Raquel volvió a marcarlo en grabación para que quede en el manual de operación.
+Accionables
+Acción
+ | Responsable
+ | Fecha / criterio
+ | Estatus
+ |
+Validar si la restricción de vistas se puede hacer a nivel pipeline.
+ | Caroline / B&O
+ | Antes de siguiente sesión
+ | Abierto
+ |
+Eliminar pipelines de Negocios viejos (todos excepto Solicitantes e Inversionistas).
+ | Caroline / B&O
+ | Esta semana
+ | Comprometido
+ |
+Configurar automatización de respaldo en pipeline "Antiguo Monific" antes de eliminar.
+ | Caroline / B&O
+ | Previo a la eliminación
+ | Abierto
+ |
+Revisar el lunes los pipelines de Cobranza y definir qué hacer con ellos.
+ | Caroline + Raquel
+ | Lunes
+ | Comprometido
+ |
+Replicar formulario de Solicitantes (versión Baby validada por Monific) dentro de HubSpot.
+ | Caroline + David / B&O
+ | Esta semana
+ | Comprometido
+ |
+Conectar formulario HubSpot al pipeline de Solicitantes con la automatización correspondiente.
+ | Caroline / B&O
+ | Tras replicar el formulario
+ | Abierto
+ |
+Entregar código embebible del formulario para sustituir Google Forms en el sitio web.
+ | Caroline / B&O
+ | Tras conectar automatización
+ | Abierto
+ |
+Sesión de alineamiento interno con Jasmine para definir persona asignada de TI Monific.
+ | Caroline / B&O internamente
+ | Lunes
+ | Agendado
+ |
+Enviar por correo a Raquel la persona designada por Jesús para track técnico.
+ | Caroline tras hablar con Jasmine
+ | Después del lunes
+ | Comprometido
+ |
+Enviar a directivos Monific (Ted, Vianey, Jesús, Emiliano) el acuerdo escrito del cambio a esquema de capacitaciones.
+ | Raquel
+ | Mismo día / esta semana
+ | En curso
+ |
+Enviar a Caroline el temario de capacitaciones pendientes basado en flujogramas y masters.
+ | Raquel
+ | Fin de semana
+ | En curso
+ |
+Subir grabación de la sesión 2 a la carpeta de capacitaciones.
+ | Caroline / B&O
+ | Lunes
+ | Comprometido
+ |
+
+Riesgos identificados
+Si las próximas sesiones siguen siendo genéricas (la herramienta sin la operación), no aterrizan en el equipo. Raquel ya lo dejó dicho en sesión y queda en el temario nuevo cerrarlo.
+Si la integración Admin.Monific–HubSpot no avanza, las sesiones de Cobranza y Soporte completas quedan suspendidas, porque dependen de eventos automáticos para tener sentido.
+Si Jesús no asigna a alguien dedicado de TI esta semana, el track técnico no arranca y el resto del proyecto se desfasa.
+Si la automatización de respaldo de pipelines viejos no se configura antes de eliminar, se pierde histórico del año.
+Si el formulario de Solicitantes no se sustituye en el sitio web, los nuevos solicitantes siguen cayendo a Google Forms y no entran al pipeline de HubSpot.
+Pendientes consolidados entre las dos sesiones
+Resumen ejecutivo de lo que queda abierto al cierre de la sesión 2, para que cualquier área que reciba esta minuta sepa qué se viene esta semana y la próxima.
+#
+ | Pendiente
+ | Responsable
+ | Fecha
+ |
+1
+ | Persona designada por Jesús para track técnico TI.
+ | Jesús → Caroline (tras hablar con Jasmine)
+ | Lunes
+ |
+2
+ | Validación de vistas restringidas por pipeline.
+ | Caroline
+ | Antes de siguiente sesión
+ |
+3
+ | Eliminación de pipelines viejos con respaldo.
+ | Caroline + David
+ | Esta semana
+ |
+4
+ | Definición sobre pipelines de Cobranza viejos.
+ | Caroline + Raquel
+ | Lunes
+ |
+5
+ | Formulario Solicitantes en HubSpot + código embebible.
+ | Caroline + David
+ | Esta semana
+ |
+6
+ | Temario de capacitaciones pendientes alineadas a masters.
+ | Raquel → Caroline
+ | Fin de semana
+ |
+7
+ | Correo formal a directivos Monific sobre acuerdo técnico.
+ | Raquel
+ | Esta semana
+ |
+8
+ | Subida de grabaciones a carpeta de capacitaciones.
+ | Caroline
+ | Continuo
+ |
+

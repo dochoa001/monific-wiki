@@ -1,0 +1,40 @@
+=== ID: D161 ===
+=== SOURCE: Wiki Monific\drive-download-20260807T143807Z-1-001\Recurrente Monific_ 2026_04_15 10_56 GMT-05_00 - Notas de Gemini.docx ===
+=== MODIFIED: 2026-08-07 ===
+
+📝 Las notas
+abr 15, 2026
+Recurrente Monific
+Invitado Caroline Bersot David Ochoa Monific
+Archivos adjuntos Recurrente Monific
+Registros de la reunión Grabación
+
+Resumen
+Implementación inicial de pipelines comerciales para solicitantes e inversionistas en Monific con revisión de lógica de creación de negocios y asociación de registros.
+
+Implementación MVP Pipelines Comerciales
+Se presentó el Producto Mínimo Viable de los pipelines comerciales para solicitantes e inversionistas con etapas definidas, incluyendo una confirmación de que el sistema permite crear negocios en etapas posteriores. Se revisaron las propiedades dependientes obligatorias del formulario de ingreso y la vinculación con un formulario de HubSpot para el llenado automático de datos.
+
+Asociación de Registros y Google Drive
+Se confirmó que al mover un solicitante a “Cierre Ganado” se crea un objeto de cobro, y HubSpot tiene mecanismos para fusionar contactos duplicados. Se anunció e instaló la nueva integración de Google Drive con HubSpot, permitiendo vincular documentos directamente a los registros de negocios y contactos.
+
+Optimización de Datos y Cierre
+Se acordó convertir campos de texto libre a desplegables para mejorar el reporte de datos, especialmente en los motivos de congelamiento de oportunidades. Se revisó la funcionalidad de IA de HubSpot para calificar y enriquecer automáticamente los registros de negocios.
+
+Próximos pasos
+[Monific] Enviar Retroalimentación: Revisar implementación de pipelines solicitantes e inversionistas. Enviar correo con retroalimentación, incluyendo lista de motivos desplegables para congelados.
+
+Detalles
+Implementación Inicial de Pipelines Comerciales: Caroline Bersot y David Ochoa presentaron el Producto Mínimo Viable (MVP) de los pipelines comerciales para solicitantes e inversionistas a Monific. El propósito de la reunión fue revisar la lógica de creación de negocios y la configuración de las etapas dentro del sistema CRM, específicamente las etapas de solicitantes que incluyen Nuevo Solicitante, Evaluación, Formalización, Proceso de Firma, Ganado y Perdido.
+Lógica de Creación de Negocios en Pipeline de Solicitantes: Se discutió si un nuevo negocio en el pipeline de solicitantes debe crearse obligatoriamente en la primera etapa ("Nuevo Solicitante") o si puede iniciarse en etapas posteriores. Monific indicó que, debido a la entrada de solicitantes a través de socios, podrían ingresar directamente a una etapa como "Evaluación". Caroline Bersot confirmó que el sistema permite la creación en etapas posteriores, pero señaló que esto puede omitir la solicitud de propiedades dependientes obligatorias de las etapas previas.
+Propiedades Dependientes y Formulario de Ingreso: Se demostró que al mover un negocio de una etapa a otra (por ejemplo, de "Nuevo Solicitante" a "Evaluación"), el sistema solicita llenar propiedades dependientes que son obligatorias, como el tipo de negocio o el canal de entrada. Monific preguntó si el pipeline estaría conectado a un formulario de HubSpot, y Caroline Bersot confirmó que sí, lo que automáticamente llenaría muchas de las propiedades iniciales.
+Manejo de Solicitantes con Cierre Ganado y Asociación de Registros: Monific preguntó qué sucede en HubSpot cuando un solicitante se mueve a la etapa de "Cierre Ganado". David Ochoa explicó que esto crea un objeto de cobro, también conocido como un ticket, que se vincula con el solicitante. Se discutió que es posible que el solicitante sea creado en el administrador (admin) de Monific, y se confirmó que HubSpot tiene mecanismos para fusionar o asociar contactos duplicados para evitar la redundancia y duplicación de comunicaciones.
+Implementación del Pipeline de Inversionistas y Campos Desplegables: Se presentó el MVP del pipeline de inversionistas, que opera de manera similar al de solicitantes, solicitando información al pasar por sus cuatro etapas. Caroline Bersot sugirió que si Monific puede proporcionar una lista de motivos comunes para "congelar" la oportunidad, podrían convertir el campo de texto libre a un campo de casillas desplegables para facilitar el futuro reporte de datos. Monific estuvo de acuerdo con la sugerencia, reconociendo que esto facilitaría el análisis de reportes.
+Novedad: Integración de Google Drive en HubSpot: David Ochoa anunció una nueva actualización de HubSpot (disponible desde el 31 de marzo) que permite la integración con Google Drive. Esta integración permite vincular carpetas y archivos de Google Drive directamente a los registros de negocios, contactos y empresas de HubSpot a través de una tarjeta especial. Monific procedió a instalar la aplicación de Google Drive a través del mercado de aplicaciones de HubSpot.
+Configuración y Uso de la Integración de Google Drive: Después de que Monific instaló la aplicación, David Ochoa configuró la integración de manera rápida para contactos y negocios. Caroline Bersot explicó que esta funcionalidad permite tener hasta 25 documentos de Drive a la vista en cada contacto o negocio, y que las propiedades mapeadas y llenadas (ya sea manualmente o automáticamente) aparecerán en las vistas de negocios, las cuales se pueden personalizar.
+Funcionalidad de IA en la Tarjeta de Descripción de Negocios: David Ochoa presentó la funcionalidad de inteligencia artificial (IA) integrada en la tarjeta de "Descripción" de los registros de negocios. Esta herramienta proporciona una calificación del negocio basada en las actividades registradas (correos, llamadas) y puede ofrecer resúmenes y calcular información faltante, enriqueciendo los datos del negocio automáticamente.
+Discusión sobre la Fecha de Cierre Predeterminada de Negocios: Se revisó el ciclo de ventas de solicitantes, el cual puede durar hasta 6 meses. Caroline Bersot propuso establecer una fecha de cierre predeterminada de 30 días para los negocios, ya que no se puede configurar por pipeline. David Ochoa explicó que la fecha de cierre es un indicador para saber si un negocio está a tiempo o atrasado, y que se utiliza para generar estadísticas sobre el tiempo promedio de cierre.
+Proceso de Implementación y Retroalimentación Continua: David Ochoa aclaró que la reunión fue una presentación del concepto y el estado actual de la implementación, no una capacitación final. El equipo espera la retroalimentación de Monific sobre las propiedades existentes y faltantes para seguir ajustando el sistema, y confirmó que se continuará mostrando entregables funcionales de avance (como automatizaciones) en sesiones recurrentes. Monific indicó que revisará los detalles y enviará por correo las listas de propiedades desplegables, como los motivos de congelamiento, para que se puedan implementar .
+
+Revisa las notas de Gemini para asegurarte de que sean precisas. Obtén sugerencias y descubre cómo Gemini toma notas
+Cómo es la calidad de estas notas específicas? Responde una breve encuesta para darnos tu opinión; por ejemplo, cuán útiles te resultaron las notas.

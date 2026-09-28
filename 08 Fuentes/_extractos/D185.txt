@@ -1,0 +1,110 @@
+=== ID: D185 ===
+=== SOURCE: Wiki Monific\drive-download-20260807T144042Z-1-001\6. Lunes 2 de Marzo 2026.docx ===
+=== MODIFIED: 2026-08-07 ===
+
+Alineación Técnica
+Minuta de Reunión: Alineación de Integración Monific - HubSpot
+Participantes:
+Monific: Raquel, Jesús (CTO), Daniel (TI).
+Equipo de Consultoría/Implementación: David, Caro, Ricardo.
+Tareas
+Monific-HubSpot-Integracion-Tecnica.docx
+Monific-HubSpot-Integracion-Tecnica.pdf
+Objetivo de la sesión:
+Evaluar el estado actual de la integración, identificar fallas técnicas, definir los identificadores únicos y establecer una hoja de ruta para el mapeo de propiedades y optimización de datos.
+
+1. Estado Actual de la Integración
+Conexión: Se realiza vía API desde el servidor web principal de Monific hacia HubSpot.
+Flujo de Datos: Es unidireccional (Monific → HubSpot). Actualmente, cuando se crea o actualiza un registro, HubSpot devuelve el ID del contacto a Monific para futuras referencias.
+Información enviada: Datos personales en fases tempranas (leads), información completa al finalizar el registro y datos de participaciones (inversiones).
+Estructura de Objetos: Se utilizan Contactos, Empresas (para vincular usuarios con proyectos/acreditados) y Negocios (para registrar las inversiones).
+2. Problemas y Desafíos Identificados
+Inconsistencias en Tiempo Real: La propiedad "nivel de registro" (etapa del embudo) ha dejado de actualizarse correctamente.
+Saturación por Volumen: El alto volumen de transacciones (ej. múltiples inversiones pequeñas de $1,000 MXN) generó un exceso de eventos que HubSpot no procesa adecuadamente, provocando que la información de nuevos proyectos o inversiones no se actualice.
+Falta de Documentación: No existe un documento técnico que detalle el proceso de desarrollo previo ni el mapeo exacto de las propiedades actuales.
+Mantenimiento: Tras una mala experiencia con un proveedor anterior, las APIs no recibieron el seguimiento ni mantenimiento adecuado.
+3. Requerimientos de Negocio y Reporteo
+Atribución de Marketing: Raquel enfatizó la necesidad de medir el retorno de inversión (ROI) y el costo de adquisición (CAC). El objetivo es saber si un usuario que llega por una campaña específica (ej. Facebook Ads) termina convirtiéndose en un inversionista rentable.
+Visión Macro: En lugar de saturar el sistema con cada micro-transacción, se busca tener una visión consolidada (cuánto ha invertido un usuario en total en un proyecto específico).
+Automatización: Se busca que HubSpot sustituya procesos manuales (como el uso de Moonflow) para la comunicación con solicitantes y recordatorios de pago de forma automática.
+4. Acuerdos y Próximos Pasos
+Acción
+ | Responsable
+ | Fecha Entrega
+ |
+Enviar código actual y documentación técnica de la integración.
+ | Jesús (TI Monific)
+ | Viernes (próximo)
+ |
+Compartir el "Master de Propiedades" (documento de mapeo) para validación de nomenclaturas y tipos de datos.
+ | David / Equipo Consultoría
+ | Pendiente
+ |
+Revisar internamente qué propiedades son esenciales para reportes y segmentación (evitar "ruido" de datos).
+ | Ambos equipos
+ | Continua
+ |
+Validar si la información de cobranza se cargará automáticamente desde el Admin a HubSpot.
+ | Caro / Raquel / Vian
+ | Próxima sesión
+ |
+5. Definiciones Técnicas Pendientes
+Confirmar el tipo de dato y formato de cada propiedad en el sistema interno de Monific.
+Evaluar la creación de objetos personalizados si los "Negocios" estándar no son suficientes para manejar el volumen de inversiones.
+Mantener la "Fuente de Verdad" en el sistema de Monific, dejando a HubSpot como herramienta de reporteo y ejecución comercial por el momento.
+
+Próxima reunión: Se programará una vez revisado el código y el documento de mapeo de propiedades.
+
+Minuta de Reunión
+Minuta de Reunión: Gestión de Secuencias y Operatividad en HubSpot
+Participantes:
+Caro: Consultora / Implementadora.
+Raquel: Monific.
+Vian: Monific.
+
+1. Acuerdos de Agenda y Próximas Sesiones
+Debido a conflictos de calendario, se han reprogramado las sesiones de los jueves para finalizar el mapeo de procesos:
+Jueves 5 y Jueves 12 de mayo: Se mueven a las 10:00 AM (Ciudad de México).
+Sesión Especial de Cobranza (Flujograma y Máster): Martes 10 de mayo de 12:00 PM a 2:00 PM (Duración: 2 horas). Se debe incluir a Vian en esta invitación.
+
+2. Definiciones sobre Secuencias y Licencias
+Se discutió la viabilidad técnica de manejar las secuencias de correos sin necesidad de escalar inmediatamente a una licencia Enterprise.
+Limitaciones Técnicas:
+Capacidad: 500 correos de secuencia por día, por usuario. Con las 3 licencias actuales de Monific, el límite total es de 1,500 correos/día.
+Diferencia Pro vs. Enterprise: En la versión Pro, el enrolamiento masivo se hace manual (en bloques de 50 en 50 hasta llegar al límite). En Enterprise, el enrolamiento puede ser 100% automático mediante Workflows.
+Estrategia de Enrolamiento Manual (Workaround):
+Listas Activas: Se crearán listas basadas en filtros (ej. "Fecha de creación es hoy" + "Inversionista").
+Batching: El usuario selecciona hasta 50 contactos de la lista y hace clic en "Inscribir en secuencia".
+Control de duplicados: HubSpot impide inscribir a un contacto en una secuencia si ya tiene una activa, evitando spam accidental.
+Automatización del Cierre de Secuencias:
+Las secuencias se detienen automáticamente si el cliente responde o agenda una cita. Para casos donde el cliente avanza en su registro (cambio de propiedad) pero no responde el correo:
+Solución: Se configurará un Workflow que, al detectar el cambio de estatus en Monific, genere una Tarea Urgente para que el asesor detenga la secuencia manualmente en ese contacto específico.
+
+3. Segmentación y Propiedades de Datos
+Para que el sistema funcione, es crítico diferenciar el origen y el interés del contacto desde el inicio:
+Propiedad Clave: Motivo de interés (Inversionista vs. Solicitante).
+Captura: Se utilizarán formularios de HubSpot que marcarán automáticamente esta propiedad según el flujo que el usuario elija.
+Uso: Esta propiedad será el filtro principal para las Listas Activas que alimentarán las secuencias.
+
+4. Próximos Pasos y Tareas Pendientes
+Acción
+ | Responsable
+ | Estatus
+ |
+Estimación de Volumen: Crear un Excel con el histórico de crecimiento de los últimos 6 meses y proyectar el volumen diario de correos por secuencia.
+ | Vian
+ | Pendiente
+ |
+Análisis de Costos: Evaluar si el volumen proyectado justifica el salto a licencia Enterprise o si se mantiene la operación manual/Pro.
+ | Raquel / Vian
+ | Pendiente
+ |
+Actualización de Invitaciones: Mover las sesiones de los jueves a las 10:00 AM y agendar la sesión de Cobranza.
+ | Caro
+ | Por hacer
+ |
+Definición de Secuencias: Listar los momentos exactos (triggers) donde se deben detonar correos para solicitantes e inversionistas.
+ | Vian
+ | En revisión
+ |
+

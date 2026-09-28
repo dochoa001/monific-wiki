@@ -1,0 +1,316 @@
+=== ID: D164 ===
+=== SOURCE: Wiki Monific\drive-download-20260807T143807Z-1-001\Sesión inicial #1 - Alineación Técnica - Monific _ B&O_ 2026_03_02 14_26 GMT-05_00 - Notas de Gemini.docx ===
+=== MODIFIED: 2026-08-07 ===
+
+📝 Las notas
+2 mar 2026
+ Sesión inicial #1 - Alineación Técnica - Monific / B&O
+Invitados David Ochoa Caroline Bersot Jazmín Córdova Vanessa Gustin Josue Torres Monific Ricardo Gomez Jesus Torres Hernandez Daniel Torres
+Archivos adjuntos  Sesión inicial #1 - Alineación Técnica - Monific / B&O
+Registros de la reunión Transcripción Grabación
+
+Resumen
+En una sesión de alineamiento de la integración entre Monific y HubSpot, los participantes confirmaron que la conexión unidireccional actual (Monific a HubSpot) utiliza el correo electrónico y un ID interno como identificadores únicos, enviando información a los objetos de Contacto, Empresa y Negocio de HubSpot, pero presenta fallas en el envío de datos de actividad del usuario en tiempo real y movimientos de inversión subsecuentes. Jesús Torres Hernandez, Monific, Vanessa Gustin, Caroline Bersot, David Ochoa y Jazmín Córdova discutieron la falta de documentación y acordaron que el equipo de Monific, con Jesús Torres Hernandez a la cabeza, compartirá el código fuente y el layout de las propiedades actuales, mientras que el equipo de integración creará un documento de mapeo de propiedades para validación. Los puntos clave de la reunión fueron la identificación de fallas, la necesidad de mapear propiedades para segmentación y reportes de HubSpot, y el entendimiento de que Monific seguirá siendo la fuente de la verdad para el sistema, sin interés en una integración bidireccional inmediata.
+
+Detalles
+Objetivo de la Reunión y Estado de la Integración Actual: La sesión inicial de alineamiento de la integración entre Monific y HubSpot tuvo como objetivo comprender el estado actual de la integración, identificar fallas, y determinar los datos e identificadores únicos utilizados por Monific para facilitar el mapeo de campos y ajustes necesarios (00:00:00). Actualmente, la conexión con HubSpot se realiza por API, enviando datos personales e información sobre registros en fases tempranas (leads) y tras la finalización del registro, además de las compras de participaciones (00:01:36).
+Identificadores Únicos y Datos Enviados por Monific: Jesús Torres Hernandez confirmó que los identificadores únicos utilizados son la dirección de correo electrónico y un ID interno (00:01:36). La información actualmente enviada se dirige a los objetos de Contacto, Empresa y Negocio en HubSpot. El proceso de unión se da cuando un usuario compra una participación en un proyecto, creando un negocio que relaciona al acreditado (empresa solicitante) con el usuario, estableciendo así una relación entre el Contacto, el Negocio y la Empresa (00:07:32).
+Fallas Reportadas en la Integración de Datos en Tiempo Real: La integración comenzó a presentar problemas con el envío de datos en flujos más complejos de la aplicación. Se dejaron de enviar datos en tiempo real sobre la actividad del usuario, como la compra o venta específica de participaciones (00:03:12). Específicamente, una propiedad llamada "nivel de registro", que indicaba la etapa del embudo en tiempo real, comenzó a fallar, al igual que la información relacionada con el volumen de participaciones (00:04:46).
+Documentación de la Integración y Acceso al Código: Jazmín Córdova cuestionó si existía documentación sobre el proceso de desarrollo de la integración y el mapeo de propiedades (00:04:46). Monific indicó que la documentación no está disponible, pero Jesús Torres Hernandez confirmó que tienen acceso al código fuente de la integración y que pueden compartir el *layout* de las propiedades que están enviando actualmente a HubSpot (00:06:10).
+Flujo de Inversiones y Aspiración de Datos del Inversionista: Jesús Torres Hernandez confirmó que Monific envía la información de la primera inversión, pero no los movimientos posteriores de inversión (inversiones subsecuentes) (00:09:18). Monific explicó que existe un gran volumen de eventos, ya que un inversionista puede realizar múltiples transacciones diarias o mensuales, y el equipo de Monific busca el flujo adecuado que les permita dar un buen seguimiento sin saturar HubSpot con todos los eventos de $1,000 MXN (00:10:50).
+Estructura y Direccionalidad de la Integración: Vanessa Gustin aclaró que la integración es unidireccional, fluyendo de Monific a HubSpot, con la excepción de que HubSpot devuelve el ID del contacto generado después de la creación o actualización de un *lead*. Este proceso ocurre en tiempo real y la fuente de la verdad para el sistema es Monific (00:13:37). Se confirmó que la integración está alojada en un servidor web principal de Monific (00:15:12).
+Objetivos Comerciales y Uso de Negocios en HubSpot: Caroline Bersot sugirió la necesidad de mapear hitos dentro de Monific (como la inversión o el desembolso) para modelar los objetos de Negocio Ganado o Perdido en HubSpot. Monific confirmó que estos hitos son esenciales para el área comercial, ya que permiten la medición y complementación con el flujo real de ventas (00:16:49). Por ahora, Monific prefiere que los datos solo se envíen a HubSpot para reportes preliminares, manteniendo la fuente de la verdad en Monific, y no están interesados en que HubSpot regrese datos a Monific en el futuro cercano (00:18:19).
+Necesidad de Mapeo de Propiedades por Parte del Equipo de Integración: Monific enfatizó que existe una cantidad ilimitada de propiedades en su sistema, lo cual puede complicar el proceso de selección. El equipo de Monific preferiría que el equipo de integración identifique las propiedades necesarias para los objetivos de segmentación y reportes de HubSpot, y luego el equipo de TI de Monific confirmaría cuáles son esas propiedades internamente (00:27:44). David Ochoa sugirió que el equipo de integración creará un documento de mapeo con los campos que consideran necesarios para que Monific valide la nomenclatura, el tipo de dato y el formato, lo cual fue aceptado por Jesús Torres Hernandez y Monific (00:28:54).
+Acuerdos y Próximos Pasos: Se acordó que el equipo de Monific compartirá la documentación técnica (códigos y *layout* de las propiedades) de la integración actual para el viernes, con el fin de que el equipo de integración pueda analizar y llenar el documento de mapeo de propiedades. El equipo de integración se enfocará en las propiedades que sirvan para segmentación, reportes, completar datos y, prioritariamente, los identificadores únicos, siempre considerando no saturar el sistema (00:31:33).
+
+Pasos siguientes recomendados
+Jesus Torres Hernandez enviará el layout de propiedades que están enviando a Hubspot y la documentación técnica de cómo está integrada la API de Hopspot para ver qué propiedades se envían y en qué flujo, con fecha límite para el viernes.
+Jesus Torres Hernandez preparará algo, si es necesario, mostrando el funcionamiento del sistema Monific en la integración para enviarlo por correo.
+
+Revisa las notas de Gemini para asegurarte de que sean correctas. Obtén consejos y descubre cómo toma notas Gemini
+Danos tu opinión sobre el uso de Gemini para tomar notas en una breve encuesta.
+📖 Transcripción
+2 mar 2026
+ Sesión inicial #1 - Alineación Técnica - Monific / B&O - Transcripción
+00:00:00
+
+Caroline Bersot: Eh, bueno, la idea de esta eh sesión inicial de alineamiento de de la integración es realmente para saber eh cómo está la integración hoy, eh si está fallando algo, qué es lo que está fallando. también identificar cuáles son los identificadores únicos que Monique está utilizando, qué datos hay eh para que se pueda hacer también el mapeo de de estos campos, de estas propiedades y se pueda ahí ajustar lo que se necesita ajustar de las integraciones, ¿va? Eh, David nos va, o sea, les va a hacer algunas preguntas, ¿va? Eh, Jesús. Entonces ahí D te te doy te dejo la palabra.
+David Ochoa: Va, buenísimo, Carol. Muchas gracias. Pues nada, un gusto conocerte, Jesús. Creo que es la primera vez que igual estamos platicando y tal y como lo decía Caro, el objetivo de esta sesión es ir entendiendo mucho más el tema de cómo tienen la aplicación de Monific y de pronto qué llevan conectado dentro de Hostpot, ¿no? Igual, permíteme, dejo entrar a Daniel. Y entonces creo que con lo que me gustaría comenzar aquí en Jesús es que me vayas platicando un poquito más de cómo es que funciona actualmente la aplicación de Monific a nivel integración, qué es lo que recopila, qué información es la que llevas, etcétera.
+
+00:01:36
+
+David Ochoa: Aquí me gustaría cederte la palabra para poder escuchar un poquito más desde tu punto de vista.
+Jesus Torres Hernandez: David, sí, e con Hopsot la conexión ahorita es por API, donde tenemos conectado ahí eh los datos personales, enviamos la información de los registros en en fases tempranas cuando son considerados leads, también cuando el usuario ya termina su registro, enviamos información eh personal ya más completa y ahorita nada más es eh como el flujo de registro y completado de datos que que tenemos. Enviamos cuando hacen compra de participaciones y y y nada más.
+David Ochoa: Ah, perfecto. Será posible que me lo puedas ir mostrando en compartir pantalla de pronto para que vayamos viendo en conjunto, ir viendo cómo tienen por dentro el sistema y demás.
+Jesus Torres Hernandez: No lo tenía pensado mostrar en pantalla en este momento, pero sí les puedo preparar algo para para enviárselos por por correo o algo así si lo necesitan. M.
+David Ochoa: Sí, de pronto, mira, más que nada necesitamos conocer los campos específicos y por ejemplo, actualmente para Monific la app, ¿cuál es el dato que digamos sirve para identificador único? De su lado tienen, por ejemplo, el correo, el identificador único y cuáles otros más.
+Jesus Torres Hernandez: De momento nadaamos el correo y enviamos un ID interno que tenemos también.
+David Ochoa: Okay, este ID internos entiendo que tienen conectado con hotpot, ¿no es así?
+
+00:03:12
+
+Jesus Torres Hernandez: Sí, sí, sí.
+David Ochoa: Okay, perfecto, entiendo. Ahora, yéndome un poquito más a detalle con el tema de la integración, me comentaban a o más bien nos comentaba Raquel de que la integración empezó a presentar fallos no hace mucho. ¿Me podrías relatar un poco más desde tu punto de vista? ¿Qué es exactamente lo que empezó a fallar o cómo es que se dieron cuenta? ¿Qué información ya dejaban de enviar la API?
+Jesus Torres Hernandez: Sí, hubo creo que algunos problemas con el envío de datos en flujos más complejos
+David Ochoa: Ok.
+Jesus Torres Hernandez: de de la aplicación y y ya empez empezamos a dejar de enviar datos respecto a al tiempo real de la actividad del usuario, o sea, enviábamos como en el flujo del registro y tuvimos inconsistencias con ya el tiempo real que hace el usuario, por ejemplo, la compra específica de participaciones o cuando vende participaciones, cuando hace varias operaciones en la aplicación, es que ahí hubo como un poco de inconsistencias. Vamos.
+Monific: Ahí para ampliar un poquito la respuesta de Jesús, este, les comento, nosotros tenemos una propiedad en Hotspot que le mandaba datos a a más bien que le mandaba datos a Hotspot, que se llama nivel de registro. Esa propiedad de nivel de registro iba diciendo en tiempo real en la etapa del embudo en la que el usuario se encontraba.
+
+00:04:46
+
+Monific: Esa era una de las propiedades que empezó a tener fallas. La segunda, como bien comenta Jesús, es a nivel volumen de participaciones en en la página, los inversionistas pues invierten desde 1,000 pes. Entonces, como que yo creo que ahí tantos eventos para hotspot se hicieron también un caos y eso ya no se está mandando ni las inversiones que se hacen ni el nivel de registro en tiempo real. Entonces, no se actualiza ni el nivel de registro, ni ya hay nuevos proyectos. O sea, Hobspot se quedó con hasta lo que se le mandó cuando sí servía en tiempo real, por así decirlo, y ya no Jesús
+Jesus Torres Hernandez: Es correcto. Sí, sí.
+David Ochoa: Okay, adelante
+Jazmín Córdova: Hola, buenas tardes. Una pregunta. ¿Y ustedes tienen documentado todo este proceso del cómo debería de estar funcionando la
+David Ochoa: Ok.
+Jazmín Córdova: integración ahorita y qué propiedades son las que se están este mapeando y todo eso? Yeah.
+Monific: O sea, como tal en propiedades, no no sé cuáles son las que se deberían de mandar hacia Hotspot,
+Jazmín Córdova: Mhm.
+Monific: que eso es ahí donde nos gustaría que ustedes nos apoyaran. Eh, lo que yo les comenté es todos estos procesos sí se hacen adentro de nuestro sistema y los tenemos mapeados en tiempo real.
+
+00:06:10
+
+Monific: Hay unos que, como lo mencionó anteriormente Vianey en la en la última reunión, valen la pena tener en Hotspot y hay unos que no, porque es demasiada información que Hopspot ni siquiera necesita tener porque solamente saturaríamos eh la plataforma. Entonces, eh respecto a esa parte, eh va a ser un poquito de reto entre entre ambos definir qué sí y qué no,
+Jazmín Córdova: Ho.
+Monific: porque justo nuestro sistema ya hace varias cosas que podemos evitar para que nos saltemos hacia el siguiente paso. No sé si me explico ahí. M.
+Jazmín Córdova: Sí, sí, claro. Entonces, eh tengo entendido o bien lo que estoy entendiendo es de que no existe como tal documentado el proceso que se llevó a cabo para desarrollar esta integración que ustedes ya tienen y tampoco tienen como tanta claridad de cuáles son las propiedades que están mandando. Eso nosotros lo podemos este revisar directamente del código y ahí va mi siguiente pregunta. ¿Ustedes tienen acceso a ese código que hace que funcione esta integración entre hotspot?
+Jesus Torres Hernandez: Sí, sí, sí.
+Jazmín Córdova: Okay, perfecto. Jesús y nos lo pueden compartir para que nosotras también revisemos a nivel código qué son cuáles son estas propiedades que se están este sincronizando para que de ahí partamos de que esto si lo ocupo, esto no lo ocupo, yo necesito que esto sí se mande, pero en este determinado momento.
+
+00:07:32
+
+Jesus Torres Hernandez: Sí, podemos enviarles el layout de de propiedades que estamos enviando a a Hobspot.
+Jazmín Córdova: Okay, perfecto.
+David Ochoa: Igual estaría excelente, Jesús, que aparte de ese de propiedades que están enviando actualmente en Hotspot, pudieran compartirnos qué otras propiedades tienen actualmente disponibles en Monific, ¿no? Igual con el nombre específico. Esto nos permitirá poder ir identificando qué otras propiedades podemos ir subiendo también, qué otras propiedades podemos ir creando en la plataforma y en qué lugar lo estaríamos alojando. Por otro lado, avanzando un poquito más con esto, entiendo que ahí me corregirás Jesús. Actualmente la información que envían lo envían a la base del contacto, ¿no? No utilizan como tal otro objeto aparte de este.
+Jesus Torres Hernandez: el de empresas y y no recuerdo bien, creo que son eso es nada más el de empresas y el de negocios para unir Ajá.
+David Ochoa: negocios.
+Jesus Torres Hernandez: para unir a las empresas con con los contactos.
+David Ochoa: Okay. ¿Me explicas un poquito más de cómo funciona ese esa unión?
+Jesus Torres Hernandez: Sí,
+David Ochoa: ¿Cómo lo visualiz?
+Jesus Torres Hernandez: sí, sí.
+David Ochoa: Okay.
+Jesus Torres Hernandez: Cuando el usuario crea, compra una participación en un proyecto, eh hacemos como un negocio entre el la empresa, que solicitó el dinero, el acreditado con con el usuario y así podemos ir como creando una relación entre los usuarios que pertenecen a un proyecto y un proyecto fondeado.
+
+00:09:18
+
+Jesus Torres Hernandez: Entonces, lo creamos como como un un negocio y así tener la relación en conta y negocio, digo, empresa.
+David Ochoa: Okay, si entiendo bien, es una relación de tres. Te traes el contacto principal, te traes la empresa que lo está solicitando y aparte tienes el negocio de cuánto están solicitando, ¿no? Esto es para solicitantes, por lo que entiendo que me comentas.
+Jesus Torres Hernandez: Sí, sí, sí,
+David Ochoa: Sí, es así tal cual lo mencioné.
+Jesus Torres Hernandez: sí, sí,
+David Ochoa: Tiene algún Okay,
+Jesus Torres Hernandez: sí.
+David Ochoa: perfecto. Y en el caso de los inversionistas, ¿tienen algún detalle que envíen? como por ejemplo la primera inversión o el saldo acumulado o no se envía nada más que sus datos de registro.
+Jesus Torres Hernandez: Sí, también enviamos cuando es su primera inversión. Sí.
+David Ochoa: Okay, okay, okay. Adelante, Caro.
+Caroline Bersot: Gracias, Jesús. Una duda, en la aplicación ustedes tienen también mapeado cuáles inversionistas están invertiendo en cuáles proyectos, ¿cierto?
+Jesus Torres Hernandez: Sí, es correcto.
+Caroline Bersot: Perfecto.
+David Ochoa: Okay. Y en esta parte, entiendo, corrígeme igual, en Jesús solo envían la primera, pero la subsecuente, las que ocurran en un futuro, no están siendo enviadas ahorita, no solo envían como tal la primera inversión que hace la persona.
+
+00:10:50
+
+Jesus Torres Hernandez: Sí, es correcto.
+David Ochoa: Okay, okay, okay, okay. Va buenísimo para ir entendiendo. No sé si de momento, Ricardo, tengas igual alguna pregunta. ¿Te gustaría profundizar más?
+Ricardo Gomez: Eh,
+David Ochoa: Ş.
+Ricardo Gomez: tengo una de que si justamente la aspiración es que esas otras inversiones siguientes del lado de los inversionistas también esperen que entren a Hobswood.
+Monific: las aspiraciones que ustedes nos este den el flujo adecuado. O sea, al final del camino la, o sea, por lo que se optó así y yo tengo entendido de parte del área de TI es que después de de lo que nos pasó con la empresa anterior, que nos recomendaron mal este y nos dieron flujos que no estaban de forma correcta,
+Ricardo Gomez: Hm.
+Monific: no le dimos mantenimiento ni seguimiento a a las APIs que hicimos. Entonces fue como todo muy de nuestra parte. Eh, entonces ahí sí lo que ustedes nos digan y con el camino que ustedes nos digan, chance vale la pena por acá, por acá para poder dar un buen seguimiento de acuerdo a los workflows que ya vimos en las sesiones pasadas.
+Ricardo Gomez: Sí.
+Monific: O sea, maybe no, o sea, no sé si me agarran ahí.
+Ricardo Gomez: Okay.
+Monific: Chance no es enviar el evento como tal, chance es enviar otra cosa, pero no sé, o sea, yo estoy ahí hablando desde desde mi área.
+
+00:12:19
+
+Monific: Ustedes son los expertos en Hotspot. Ah.
+Ricardo Gomez: Muy bien, de acuerdo. Ah.
+David Ochoa: Por otro lado, sumando un poquito más la palabra, igual, no sé si tengas alguna otra
+Ricardo Gomez: Creo que ahorita no,
+David Ochoa: pregunta.
+Ricardo Gomez: David, solamente era esa, pero ya, o sea, tengo entendido que hay que ver si justamente lo que se hablaba, ¿no? Si es necesario el jalar todo eso o tal vez por ahí solamente una parte de de toda esa información, dígase para cada una de las inversiones, ¿no? que conviene entonces bajar Ha.
+David Ochoa: Okay, okay, perfecto.
+Monific: Acá quiero hacer una un mini paréntesis, o sea, porque no es es muchísimo volumen. Un inversionista se puede meter en un día y hacer cinco transacciones diferentes eh de 1000 pesos o meterse en un mes y hacer 30 transacciones diferentes. Entonces sí hay que pensarle con mucha cabeza porque es un mundo los eventos que hay en Monific. Entonces sí, o sea, cada evento de 1000 pesos es como, no sé si me explico,
+Ricardo Gomez: Sí, sí, sí. cada transferencia, ¿no? Hay que ver si es conveniente.
+Monific: cada selección de participación o participaciones en un momento específico del tiempo es un evento. Yeah.
+
+00:13:37
+
+Ricardo Gomez: Muy
+David Ochoa: Okay, perfecto.
+Vanessa Gustin: Sí. Eh, tenía una duda para Jesús nada más para entender un poco más cómo está la estructura actualmente. Eh, primero entiendo que es unidireccional, ¿no? Va desde Monefic hasta Hotspot, pero no regresa ningún tipo de información, ¿o sí?
+Jesus Torres Hernandez: No,
+Vanessa Gustin: Okay,
+Jesus Torres Hernandez: solo guardamos de Hotspot el ID del usuario.
+Vanessa Gustin: vale.
+Jesus Torres Hernandez: Sí. para futuras
+Vanessa Gustin: Okay. Entonces,
+Jesus Torres Hernandez: actualizaciones.
+Vanessa Gustin: se crea en Monifi. Esto viaja hasta Hotpot y Hospot cuando se crea regresa el ID hacia Monific.
+Jesus Torres Hernandez: Correct.
+Vanessa Gustin: ¿Listo? Eso sucede en tiempo real, todo.
+Jesus Torres Hernandez: ¿Qué?
+Vanessa Gustin: Okay. Se está utilizando eh como un desencadenante de eventos, webhook o cómo se está haciendo esa parte.
+Jesus Torres Hernandez: Eh, en la en la misma petición que que hacemos cuando actualizamos los datos de registros o que se genera un nuevo lead, nos responde en ese momento Hotspot, el ID del contacto generado, si es que es nuevo o si se actualiza, pues ya tenemos ahí el ID guardado.
+Vanessa Gustin: Okay, eso del lado de Hotpot, pero en Monifack también tienen ese desencadenante por eventos.
+Jesus Torres Hernandez: Eh, no, ahorita no no suscribimos eventos de de Hobs Food, tomamos como fuente de verdad a lo que está en el en el sistema de Monific.
+
+00:15:12
+
+Vanessa Gustin: Okay. Vale. Esta integración e dónde se encuentra alojada.
+Jesus Torres Hernandez: en un servidor web principal de de Monifica que se encarga de las peticiones de los de los clientes y inversionistas.
+Vanessa Gustin: Ya. Okay. Eh, vale. Eh, no sé si eh creo que nos habías comentado, pero bueno, documentación nos comentaban como de que no no cuentan con ella, hay que revisar el código. ¿Tienen acceso a un repositorio en Ghup o algo donde podamos ver como lo que se ha trabajado?
+Jesus Torres Hernandez: Sí, les podemos compartir documentación de cómo está integrada la la pid de Hopspot, que vean qué propiedad están enviando y en qué flujo.
+Vanessa Gustin: Va. Okay. Listo. Eso era todo. Ahora nada más para clarificar cómo está el flujo y la estructura actualmente.
+Jesus Torres Hernandez: Va, que va.
+David Ochoa: Perfecto.
+Caroline Bersot: Gracias. Eh, una duda dentro de la app de Monificando, ¿a qué voy a preguntar de ambos, vale? tanto del inversionista como del solicitante. Eh, cuando un solicitante pide un pide el préstamo y cuando el inversionista invierte, eh ustedes ahí cuando se cierra este ciclo, o sea, ¿qué quiero decir con cerrar el ciclo?
+
+00:16:49
+
+Caroline Bersot: El inversionista hizo el pago antes que que que finalice para que ustedes entiendan. Estoy preguntando esto para ver cómo que se puede acomodar dentro de Hubspot, el negocio creado y el negocio ganado o el negocio perdido, ¿no? Que la idea es hacer esto. Entonces aquí digamos que necesita tener hitos para cada uno de ellos. Entonces, para inversionista, el el inversionista dio, digamos que eh eh inscribió y ya que está listo para invertir. Aquí sería la oponente de negocio. Invertió, es un negocio ganado, no invertió después de x tiempo a negocio perdido y si él llega de nuevo se puede ir para un nuevo negocio. Eso para inversionista, para solicitante muy parecido. vino la solicitud, se vio que se puede hacer el desembolso y cuando se hace el desembolso también sería el negocio ganado y si no se puede hacer por algún motivo sería el negocio perdido. Entonces hay algunos de estos hitos dentro de la appunific que eso se eh eh para que esto se viaje dentro hacia HSpot.
+Monific: No, esto es más comercial y la idea de esto que es a nivel comercial este es que se pueda medir, o sea, y que se complemente con con la parte ya real de, o sea, con el flujo real de venta.
+
+00:18:19
+
+Caroline Bersot: Perfecto. Entonces, eso sería algo solamente para ver dentro de Hubspot y cuando sí se fuera para cobranza que se tuviera la conexión con la API Monific, ¿cierto?
+Monific: No me interesa tanto que le mande los datos a Munific de regreso Hopspot a Monific porque como dijo Jesús en un inicio, la fuente, la verdad hoy es este el admin. Está bien que ahorita nos den los datos en Hotspot como reportes preliminares y posiblemente más adelante en un futuro les estoy hablando posiblemente el siguiente año ya podríamos estar entablando conversaciones para ver ahora sí de hacerlo unidireccional que no solamente lleguen de uno a otro, o sea, que lleguen de ambos lados, pero primero que funcione de un lado.
+Caroline Bersot: Perfecto. Gracias.
+Monific: Up.
+David Ochoa: Excelente. No sé si está aquí Ricardo. Ya tengan alguna pregunta adicional complementar.
+Jazmín Córdova: De mi lado, ¿no? Este, David, probablemente ya cuando veamos el código si van a surgir varias dudas, pero ya te los hacemos llegar.
+David Ochoa: Okay, va perfecto.
+Ricardo Gomez: Solo yo tengo una solo para validar este tema entre el admin y Moonflow no hay una conexión pues establecida, ¿no? Todo lo que se carga dentro de MFOD es manual del lado de BN.
+Monific: Este, supongo que ahorita la verdad es que tenemos una reunión con Vian Justo Caro y yo, pero lo podemos confirmar con ella.
+
+00:19:57
+
+Monific: Según lo que recuerdo es que Vian saca esta información obviamente del admin y ya después lo carga manual.
+Ricardo Gomez: Ok.
+Monific: La idea es que esto se sustituya y que automáticamente se cargue eh en hotspot, ya no necesitemos moonflow y que saquen los datos automáticamente
+Ricardo Gomez: Sí, sí.
+Monific: del admin, que el admin prácticamente ya genera los calendarios de pagos, que ese este pues es la tirada ideal para que ya se pueda hacer la comunicación directa con los solicitantes de recordatorios y todo.
+Ricardo Gomez: Mm. Okay, vale, muy bien. Perfecto.
+David Ochoa: Va, perfecto. Entonces, aquí entonces entrando un poquito más a detalle, igual voy a compartir pantalla para de pronto entender un poquito más la aspiración. Aquí, Raquel, tú me dirás si si se va entendiendo un poquito más la aspiración debido a que compartieron o más bien tienen demasiados datos que se reciben. Aquí enfocándome un poquito más al de inversionistas, ¿no? Me comentabas de que el inversionista puede, por ejemplo, ahorita les comparto, eh, tener n cantidad de movimientos que realice dentro de la plataforma y que enviar esta cantidad de información a Hotspot podría ser demasiado abrumado para la plataforma y para las APIs. Entonces, viendo justamente cómo lo tienen actualmente en Monific, entiendo que, por ejemplo, tomando esta cuenta, tú me dirás si te hace o no sentido.
+
+00:21:19
+
+David Ochoa: Tal vez lo que podríamos estar haciendo es que un contacto, o sea, lléndome por ejemplo a Hotpot, ¿no? Un contacto que tenemos, ejemplo, este contacto que tenemos aquí con esta información, va a tener un apartado, voy a bajar esto aquí, va a tener un apartado que son las de inversiones, que puede ser el apartado de negocios o algún objeto que creemos. Eso lo vamos a ir definiendo. Y en este objeto que tenemos debe de tener registrado cuáles son estas inversiones específicas que tiene en los diferentes apartados, pero no lo va a estar enviando por cada uno de los cargos. Porque por ejemplo, me decías, una persona puede invertir 1000, 2,000, 3,000, 4,000 y estar enviando, pues sí sería mucho, pero sí de cierta manera que puedas ver lo macro, ¿no? De que por ejemplo este usuario ha invertido en Mayacal P10 tanto dinero y en otro eh, por ejemplo, Ton Tower ha invertido otra cantidad. Algo así sí sería como la aspiración esperada, Raquel, o es un poquito diferente lo que tú esperarías para de pronto ir atando
+Monific: Este, a ver, yo no entiendo muy bien la parte de objetos y todo eso, D, en esa parte ustedes te digo, son los expertos.
+David Ochoa: sí,
+
+00:22:31
+
+Monific: Eh,
+David Ochoa: sí.
+Monific: si tú consideras que a nivel volumen eso es mucho mejor porque eh satura menos al sistema. Este, buenísimo. No sé qué tan viable es en la parte de reportes, por ejemplo, para ver cuándo se hizo cada transacción, las además del monto que me dé los citos en cuanto a a fechas, todo eso.
+David Ochoa: Sí, justamente más que va más que nada atado a eso, ¿no? A los reportes que tú quieres estar viendo dentro de Hotspot. Por ejemplo, tú quisieras tener algún reporte que te permita saber que este usuario ha realizado 13 inversiones en estos desarrollos y a su vez ha invertido en total tanto dinero. O sea, ese tipo de datos para ti si te ofrece valor tenerlo dentro de hotspot o cómo lo
+Monific: me ofrecería valor si se logra complementar con lo que le había dicho a Caro la vez
+David Ochoa: Ajá.
+Monific: pasada este que nos puedan ya sacar eh realmente si vienen de campañas, por ejemplo, porque entonces ahí ya podemos saber, okay,
+David Ochoa: Ajá.
+Monific: invertimos tanto en una campaña publicitaria, llegó este usuario por la campaña, recorrió esto, esto, esto en la página, invirtió tanto, es rentable, no es rentable, entonces ahí ya mi flujo me hace sentido o no me hace sentido en área de finanzas ya dice, sí te puedo destinar tanto a las pautas o no nos está saliendo esta agencia de marketing.
+
+00:23:55
+
+Monific: Cambia de agencia.
+David Ochoa: Okay, okay, okay,
+Monific: No sé si si me explico mi idea.
+David Ochoa: okay. Sí, justo por ejemplo tienen, a ver, para traerlo y que lo enteramos, Ricardo y yo de mejor manera, por ejemplo, Raquel, tienen una pauta en Facebook, ¿no? Una pauta en Facebook. Esta les trae, ejemplo, una conversión de 50 contactos, no vamos a meter en tema detalle, sino 50 contactos, ¿no? 50 contactos que entraron a la aplicación de la app de Monific y que también cayeron en host. Ya lo tenemos en estos dos lugares. De estos 50 usuarios que llegaron por esa pauta original, cinco iniciaron su proceso, ¿no? Que siguieron todo el tema que hemos platicado con Ricardo de cargar su documentación, de tener su clave única, realizar la eh la inversión del dinero, pero todavía no han metido en ninguna campaña. Ya metieron el dinero a la plataforma y lo tenemos capturado. De estos 50, supongamos que 30 completaron esto que acabo de decir. De estos 30 que ya metieron dinero, cada uno n cantidad, pongamos 1000 pesos solo para el ejemplo práctico. Cada uno realizó inversiones en diferentes campañas.
+
+00:25:05
+
+David Ochoa: Estas campañas también las cacha la aplicación de Moneific y también, ejemplo, va a viajar en hotspot en su total, no por transacción, sino en su total. Así de esta manera podríamos entonces generar un reporte que, por ejemplo, el medio de pauta apagada, es decir, lo que tuviste inicialmente generó tantos contactos, 50 inicialmente. De estos 50, 30 realizaron su proceso completo, hicieron su primer depósito en la cuenta, pero ejemplo solo 20 realizaron la compra de una campaña de las que tienen activas. Algo así es como lo visualizas a nivel macro,
+Monific: Exacto. O sea, algo así es como más indicadores este a nivel,
+David Ochoa: No.
+Monific: o sea, porque yo sí, entiéndanme, si yo quiero ver cuánto hemos vendido mensual, me puedo meter a mi sistema y no necesito a Hotspot. O sea, esos reportes no los hace justo Jesús y Dani que están acá. La idea de esto es real entender cuánto nos está costando cada cada cliente.
+David Ochoa: Okay, okay,
+Monific: Y bueno, también la otra parte que es automatizar todos estos todos estos flujos eh a nivel que es lo
+David Ochoa: okay.
+Monific: que ya estamos haciendo hacia atrás, que lo que vimos en los flujogramas,
+David Ochoa: Correcto. Va, perfecto. Me queda más claro, no
+
+00:26:23
+
+Monific: que en eso también es parte de los reportes,
+David Ochoa: sé.
+Monific: o sea, ver qué tanto nos está funcionando esa, o sea, esa interacción para ver si yo cambio algo en los mails, todo eso de los flujogramas que ya definimos.
+David Ochoa: Okay, perfecto. Queda claro de ahí, Ricardo, no sé si tengas algo más que complementar respecto al lograma máster de preguntas adicionales.
+Ricardo Gomez: A ver, estoy pensando, digo, como tal, creo que te habló, David, también en su momento me gustaría ver, digo, ya después que nos compartan es ese tipo de de layout de propiedades y el otro que solicitaste tú, que es básicamente como el detalle o el completo de esas propiedades para hacer ese ejercicio, ¿no?, de tachar, oye, mira, tal vez esta sí la necesito, la voy a jalar para acá y meterla en la en la API. Yo siento que ya después de que recibamos esa información podemos como que comenzar a avanzar un poco más en todo esto a nivel de propiedades,
+Monific: En esta parte quiero interrumpirte un poco, Ricardo, y ya sé que Day también ya había hecho esa solicitud. Eh, yo en algún momento cuando trabajé con el equipo de de Smart Team, que fueron los que nos intentaron ayudar en un inicio, le había pedido a Jesús que me comparta todas las propiedades que existen en Munific.
+
+00:27:44
+
+Monific: real, se los juro que es un mundo. O sea, me había compartido más de siete Exceles en su momento y no eran todas en ese momento porque a lo que voy y ahí sí me va a ayudar Jesús a complementar es que el, o sea, la cantidad es ilimitada, tenemos, o sea, está medido todo. Entonces ahí sí es al revés,
+Ricardo Gomez: Ah. Yeah.
+Monific: yo siento de qué información necesitamos para que ahí
+Ricardo Gomez: Ok.
+Monific: saquemos cuáles serían las propiedades. Yo sé que va a ser más talachudo por nuestra parte porque pero tú, Jesús y Dani, ustedes díganme qué qué prefieren y lo hacemos porque lo que no quiero es que nos pase lo que nos pasó con Smarty. ¿Qué opinas, Jesús?
+Jesus Torres Hernandez: Sí, de propiedades tenemos muchas y como bien mencionas ahí en los Exceles que compartí y en ese en su momento ahí venían todas las opciones que tenemos y acomodese en acomodarlas o enviarlas o en los flujos que se requieran. Sol solo plantearlos bien para tenerlos bien identificados. M.
+Monific: El problema es que son un mundo y luego, o sea, se pueden llegar a hacer bolas ustedes, este, eso genera trabas. Entonces, es mejor que ustedes digan, "¿Saben qué? A ver,
+
+00:28:54
+
+Monific: necesitamos estas y lo que necesitamos con estas propiedades es que hagan esto y entonces ya el equipo de ti sabe qué propiedades son cada una de esas, ¿no?
+Jesus Torres Hernandez: Sí, sí.
+David Ochoa: Okay, va equipo. Miren, si les parece, creo que lo que podemos dialogar internamente entre Caro,
+Ricardo Gomez: Ah. Yeah.
+David Ochoa: Ricardo, Van y yo, igual les voy a compartir pantalla, es hacer algo como este documento. A ver, permítanme, les comparto. A ver, creo que no que se quedó. A ver, déjenme les vuelvo a compartir como se me congeló un momento. Y nosotros usualmente manejamos este documento.
+Ricardo Gomez: Hm.
+David Ochoa: Ahorita que les estoy presentando, este documento nos ayuda mucho a, por ejemplo, Pane y Jaz que se encarga de la integración a identificar cuáles son los campos que se tienen y cuáles son las nomenclaturas. En este caso, si les parece y si están de acuerdo, entonces basado en lo que platicamos, es aquí agregaremos los campos que nosotros consideramos. Aquí yo he agregado algunos, ¿no? Pero aquí agregaremos qué otros campos tienen. Y ya entonces de su lado lo que habría que hacer es validar si estos campos número uno tienen el nombre correcto o cómo los llaman internamente. Número dos, ¿cuál es el tipo de dato que están recopilando?
+
+00:30:17
+
+David Ochoa: si es un dato alfanumérico, si es un dato únicamente numérico, si este dato tiene múltiples opciones que pueden abarcarse o es incluso de fecha y en qué
+Monific: Ah.
+David Ochoa: formato de fecha, etcétera, ¿no? ir aquí identificando y por supuesto ya ustedes cuando nos estén marcando cuáles sí y cuáles no se tienen con dudas y preguntas, por supuesto, si identifican algún otro que consideren que no, mira, sabes que en Monific identificamos que también esto nos complementa con la información se agrega. No sé si eso les hace un poco más de sentido para que podamos ir manejando este
+Monific: ¿Tú
+David Ochoa: formato.
+Monific: cómo ves,
+Jesus Torres Hernandez: Sí,
+Monific: Jesús?
+Jesus Torres Hernandez: ya habíamos hecho algo similar, entonces sí me parece
+David Ochoa: Va, perfecto. En este caso entendemos que de momento no van a ser bidireccionales debido a que quieren hacer primero el desarrollo de que toda la información de Munificot. Así que podemos ocultar esto, pero eventualmente podemos ir e agregando, ¿no?, con esta columna cuáles de pronto podrían llegar a ser o no, bidireccionales. Entonces, si les parece eso podemos realizarlo de nuestro lado, ir verificando qué datos hay, tocobase, como les digo, con nuestro equipo interno y les compartimos ese documentito, ¿no? Sin problema.
+
+00:31:33
+
+Monific: Va, entonces ustedes nos los comparten de lo rebotamos nosotros y ya revisamos cómo se llaman nuestros nombres
+David Ochoa: Sí.
+Monific: internos para poder hacerlo y además nosotros les compartimos a ustedes cómo están ahorita los códigos que le están mandando datos eh de Bonifica
+David Ochoa: Correcto,
+Monific: Hopspot.
+David Ochoa: correcto. Sí, de su lado nos comparten esta documentación ya completamente técnica para que ya si van y puedan ir leyendo, identificando y viendo. De nuestro lado, Ricardo Caro y Jaz identificamos cuáles son las propiedades que consideramos necesarias más que nada para traer de MIFIC a hotspot. Tomando en consideración que si traemos propiedades a Hotspot es porque estas propiedades o nos van a servir para hacer alguna segmentación, nos van a servir para algún reporte, nos van a servir, por ejemplo, para completar datos de la persona o tienen alguna razón de caer en la plataforma, por ejemplo, identificadores únicos, ¿no? va a ser como la prioridad que vamos a tener con la integración, que por supuesto Raquel y Jesús, si ustedes identifican que sabes que hay otras prioridades que también queremos tener, se van integrando, ¿no? En este máster de
+Monific: Va.
+David Ochoa: propiedades.
+Monific: Este, igual ahí eh también acuérdense también de lo que llegó a decir Viá para no saturar el
+David Ochoa: Sí.
+Monific: sistema, tipo en la parte de la cobranza, si se llegan a querer ahí saltar algunos pasos que son este
+
+00:32:50
+
+Ricardo Gomez: M.
+David Ochoa: Perfecto.
+Monific: que no se tienen que llegar a subir y llegan a tener dudas, nos pueden enviar un correo o nos pueden mandar un WhatsApp y ahí los atendemos. Entonces, no tienen ningún problema para que cualquier cosa o consulta no las vayan haciendo,
+Ricardo Gomez: Perfecto. Gracias,
+Monific: ¿no? ustedes.
+Ricardo Gomez: Rapel.
+Monific: Adios.
+David Ochoa: Pues listo, equipo. No sé si hay algo más que les gustaría abordar, equipo, antes de ir finalizando la sesión. ¿Alguna duda? Non.
+Jesus Torres Hernandez: A mi lado todo
+Jazmín Córdova: Nada más yo, David, eh, ¿cuándo nos podrían compartir esta información? Jesús
+Jesus Torres Hernandez: Yo creo que para el viernes la tendríamos. Vamos a empezar a trabajarla, bueno, vamos a ordenarla en las prioridades y y la avanzamos para tenerla. estimo el
+Jazmín Córdova: Va, perfecto. Sí,
+Jesus Torres Hernandez: viernes
+Jazmín Córdova: porque de esto depende también para que podamos llenarlo del mapeo que les acaba de mostrar este David, ¿vale?
+Jesus Torres Hernandez: y sin duda. Yeah.
+Jazmín Córdova: Va.
+Monific: Gracias.
+David Ochoa: Va perfecto entonces si no hay ningún otro comentario adicional y tomando aquí la palabra Caro en podemos ir finalizando esta sesión. Está perfecto justamente que estarían todos estos avances y ya es probable que en próximas sesiones de alineación y demás sean un poquito más largas, ¿no? Pero en este caso pues ya para no tomarles más de su tiempo.
+Jesus Torres Hernandez: Gracias.
+
+La transcripción finalizó después de 00:34:45
+
+Esta transcripción editable se ha generado por ordenador y puede contener errores. Los usuarios también pueden cambiar el texto después de que se haya generado.

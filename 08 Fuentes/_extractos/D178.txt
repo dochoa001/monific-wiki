@@ -1,0 +1,42 @@
+=== ID: D178 ===
+=== SOURCE: Wiki Monific\drive-download-20260807T144042Z-1-001\19. Lunes 29 de Junio.docx ===
+=== MODIFIED: 2026-08-07 ===
+
+Minuta — Reunión de cierre Proyecto BOOST (Monific × Black & Orange)
+Fecha: 29 de junio 2026 · Plataforma: Videollamada (grabada) Asistentes:
+Monific: Raquel Alfie Salame (Dirección Comercial)
+Black & Orange: Emmanuel (Gerente de Operaciones — lidera el cierre del proyecto en rol de consultor), Dave/David (acompañamiento técnico desde el inicio)
+
+1. Contexto
+B&O compartió las actualizaciones en el documento solicitado y un Gantt por correo, construido a partir del análisis de las primeras auditorías y sus dependencias. Emmanuel asume el rol de consultor para llevar el proyecto al cierre; Dave continúa en la parte técnica. Raquel reiteró que todo lo que dependa de Monific saldrá en tiempo de su parte.
+2. Discrepancia máster vs. flujos mapeados
+Hay acuerdo: existe discrepancia entre el máster de implementación y los flujos mapeados, atribuible a cambios surgidos durante la implementación. B&O se lleva la tarea de homologar el máster para que se refleje en el entregable final. Raquel señaló que el origen fue falta de comunicación y que el deber ser es actualizar el máster cada vez que se modifica algo.
+3. Objeto de cobranza → objeto de tickets
+Emmanuel aclaró que el objeto de cobranza se sustituyó por el objeto de tickets, donde se lleva ese tracking. Varios puntos de auditoría que reportaban "falta del objeto de cobranza" o de atributos quedan validados desde tickets. Con esto, B&O puede cerrar esos tracks de auditoría y concentrarse en homologar SIMs y reportes de implementación.
+4. Comunicaciones
+Raquel explicó que su auditoría se hizo cruzando el documento máster vía API con IA, sin revisar flujo por flujo. La mayoría de los correos ya están cargados en HubSpot. B&O fue proactivo y construyó una plantilla autoadministrable (adicional a la plantilla HTML que envió Raquel) para generar nuevas comunicaciones.
+5. Dependencias técnicas
+a) Plantillas de WhatsApp. Se generan desde el administrador de Meta, al cual B&O no tiene acceso. Los copies ya están listos. Raquel conoce Meta Business API; lo platicará con Jesús, creará las plantillas y, una vez aprobadas por Meta, B&O hará los cruces necesarios en HubSpot.
+b) Integración de plataformas (app Monific ↔ HubSpot). Por restricciones del banco/manejo de la bolsa, B&O no puede ejecutar la conexión directa. Pendiente definir (1) qué debe llegar preparado de su lado y (2) sesiones con el equipo técnico de Monific (Jesús y Daniel, este último responsable) para guiarlos. B&O enviará un documento de delivery hacia el equipo esta semana.
+6. Puntos adicionales (Dave)
+Algunas comunicaciones quedaron sin los enlaces de CTA; Raquel los enviará para actualizarlos.
+Los equipos se crearon según la auditoría, pero faltan definir personas/roles en algunos. Dave pasará el desglose para que Monific defina.
+Los flujos dependen de la integración; quedarán funcionando una vez resuelta.
+7. Capacitaciones y base de conocimientos
+Ya están en el plan de trabajo, contempladas para después de la integración (con el sistema funcionando completo). B&O propuso poder iniciar en paralelo con los puntos básicos de lo ya construido. Raquel estuvo de acuerdo con este enfoque.
+
+Acuerdos y siguientes pasos
+Black & Orange:
+Homologar máster de implementación con flujos y SIMs.
+Cerrar tracks de auditoría del objeto de cobranza (validados vía tickets).
+Cargar comunicaciones pendientes en HubSpot.
+Enviar esta semana: correo con puntos por revisar, desglose de equipos/roles por definir y CTAs faltantes.
+Enviar esta semana el documento de delivery/requerimientos al equipo técnico de Monific.
+Realizar los cruces de plantillas de WhatsApp cuando Raquel las defina.
+Monific (Raquel):
+Enviar los enlaces de CTA faltantes.
+Definir/validar equipos y roles pendientes.
+Platicar con Jesús los accesos de Meta Business y crear las plantillas de WhatsApp.
+Coordinar con Jesús y Daniel la fase de integración.
+Regresar los pendientes esta misma semana, una vez recibido el correo de B&O.
+
